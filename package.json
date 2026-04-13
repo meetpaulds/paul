@@ -2,11 +2,13 @@
   "name": "paul",
   "private": true,
   "scripts": {
-    "dev": "turbo run dev",
-    "build": "turbo run build",
-    "lint": "turbo run lint",
-    "typecheck": "turbo run typecheck",
-    "clean": "turbo run clean && rm -rf node_modules"
+    "dev": "pnpm --filter @paul/storybook dev",
+    "build": "pnpm --filter @meetpaul/ui build",
+    "build:storybook": "pnpm --filter @paul/storybook build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "publish:ui": "pnpm --filter @meetpaul/ui publish --no-git-checks"
   },
   "devDependencies": {
     "turbo": "latest",

@@ -34,5 +34,8 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      - name: Build
+      - name: Build package
         run: pnpm build
+
+      - name: Build storybook
+        run: pnpm build:storybook

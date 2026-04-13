@@ -1,0 +1,8 @@
+<script>
+  // Force dark mode class when theme changes
+  window.addEventListener('storybook:theme:change', (e) => {
+    const theme = e.detail?.theme || 'light'
+    document.documentElement.classList.remove('light', 'dark')
+    document.documentElement.classList.add(theme)
+  })
+</script>

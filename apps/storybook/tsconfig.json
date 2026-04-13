@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@meetpaul/ui/*": ["../../packages/ui/src/*"]
+    },
+    "noEmit": true
+  },
+  "include": [".storybook/**/*", "src/**/*"]
+}
