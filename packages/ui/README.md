@@ -1,59 +1,47 @@
 # @meetpaul/ui
 
-paul — Pattern, Asset & UI Library by SirPauls
+> paul — Pattern, Asset & UI Library.
+> A complete design system by SirPauls, built for teams who ship great products.
 
-## Installation
+## Install
 
 ```bash
 npm install @meetpaul/ui
+# or
+pnpm add @meetpaul/ui
 ```
 
-## Usage
+## Setup
 
-Import the global styles once in your application entry point:
+Import the styles once at the root of your app:
 
 ```tsx
 import '@meetpaul/ui/styles'
 ```
 
-Then use the components:
+## Usage
 
 ```tsx
-import { Button, Input, Card } from '@meetpaul/ui'
+import { Button } from '@meetpaul/ui'
 
 export default function App() {
-  return (
-    <Card>
-      <h1>Hello paul</h1>
-      <Input placeholder="Enter your name" />
-      <Button>Submit</Button>
-    </Card>
-  )
+  return <Button variant="default">Click me</Button>
 }
 ```
 
-## Available Components
+## Peer dependencies
 
-- `Avatar` - User avatar with fallback
-- `Badge` - Status indicators and labels
-- `Button` - Interactive button with variants
-- `Card` - Container for grouping related content
-- `Checkbox` - Form checkbox control
-- `Input` - Text input field
-- `Label` - Form label element
-- `Separator` - Visual divider
-- `Skeleton` - Loading placeholder
-- `Switch` - Toggle switch control
-- `Textarea` - Multi-line text input
-
-## Peer Dependencies
-
-This package requires React 19+ and React DOM 19+ as peer dependencies.
-
-```bash
-npm install react react-dom
 ```
+react >= 18
+react-dom >= 18
+```
+
+## Links
+
+- GitHub: https://github.com/meetpaulds/paul
+- Issues: https://github.com/meetpaulds/paul/issues
+- Contact: office@sirpauls.com
 
 ## License
 
-MIT
+MIT — use it, remix it, make something great with it.

@@ -1,0 +1,11 @@
+src/
+*.stories.tsx
+*.test.tsx
+*.spec.tsx
+vite.config.ts
+tsconfig.json
+.eslintrc
+.prettierrc
+node_modules/
+coverage/
+.turbo/
