@@ -8,7 +8,6 @@ import {
   getSortedRowModel,
   SortingState,
 } from '@tanstack/react-table'
-import { cn } from '@/lib/utils'
 import {
   Table,
   TableBody,

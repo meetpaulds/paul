@@ -16,5 +16,8 @@
     "eslint": "latest",
     "prettier": "latest"
   },
+  "engines": {
+    "node": ">=24"
+  },
   "packageManager": "pnpm@9.0.0"
 }

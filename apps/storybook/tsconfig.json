@@ -5,6 +5,7 @@
     "paths": {
       "@meetpaul/ui/*": ["../../packages/ui/src/*"]
     },
+    "types": ["node"],
     "noEmit": true
   },
   "include": [".storybook/**/*", "src/**/*"]

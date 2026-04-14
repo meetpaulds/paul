@@ -1,12 +1,12 @@
-import type { Preview } from '@storybook/react'
+import type { Preview } from '@storybook/react-vite'
 import { withThemeByClassName } from '@storybook/addon-themes'
-import '../../packages/ui/src/styles/globals.css'
+import '@meetpaul/ui/styles/globals.css'
 
 const preview: Preview = {
   parameters: {
     layout: 'centered',
     backgrounds: {
-      disable: true,
+      disabled: true,
     },
     controls: {
       matchers: {
@@ -22,7 +22,7 @@ const preview: Preview = {
         dark: 'dark',
       },
       defaultTheme: 'light',
-    }),
+    }) as any,
   ],
 }
 

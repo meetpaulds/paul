@@ -5,9 +5,10 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "types": ["node"],
     "outDir": "./dist",
     "rootDir": "./src"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "src/**/*.stories.tsx"]
+  "exclude": ["node_modules", "dist"]
 }

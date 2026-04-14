@@ -23,8 +23,8 @@ const ChartContainer = React.forwardRef<
       )}
       {...props}
     >
-      <Chart style={{ minHeight: '200px' }}>
-        {children}
+      <Chart>
+        {children as React.ReactElement}
       </Chart>
       <style>{`
         [data-chart=${chartId}] {
@@ -118,7 +118,7 @@ const ChartLegendContent = React.forwardRef<
     }
 >(
   (
-    { className, hideIcon = false, payload, verticalAlign = 'bottom', nameKey },
+    { className, hideIcon = false, payload, verticalAlign = 'bottom' },
     ref
   ) => {
     if (!payload || payload.length === 0) {
