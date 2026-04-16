@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import * as React from 'react'
 import { Terminal } from 'lucide-react'
 import { Alert, AlertDescription, AlertTitle } from '@meetpaul/ui'
 
@@ -24,7 +25,7 @@ export const Default: Story = {
   args: {
     className: 'w-[450px]',
   },
-  render: (args) => (
+  render: (args: React.ComponentProps<typeof Alert>) => (
     <Alert {...args}>
       <Terminal className="h-4 w-4" />
       <AlertTitle>Heads up!</AlertTitle>
@@ -40,7 +41,7 @@ export const Destructive: Story = {
     variant: 'destructive',
     className: 'w-[450px]',
   },
-  render: (args) => (
+  render: (args: React.ComponentProps<typeof Alert>) => (
     <Alert {...args}>
       <Terminal className="h-4 w-4" />
       <AlertTitle>Error</AlertTitle>

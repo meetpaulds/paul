@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import * as React from 'react'
 import { Input } from '@meetpaul/ui'
 import { Label } from '@meetpaul/ui'
 
@@ -30,7 +31,7 @@ export const Default: Story = {
 }
 
 export const WithLabel: Story = {
-  render: (args) => (
+  render: (args: React.ComponentProps<typeof Input>) => (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <Label htmlFor="email">Email</Label>
       <Input {...args} id="email" type="email" placeholder="Email" />

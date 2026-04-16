@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import * as React from 'react'
 import { AspectRatio } from '@meetpaul/ui'
 
 const meta = {
@@ -18,7 +19,7 @@ export const Default: Story = {
     ratio: 16 / 9,
     className: 'bg-muted w-[400px]',
   },
-  render: (args) => (
+  render: (args: React.ComponentProps<typeof AspectRatio>) => (
     <AspectRatio {...args}>
       <img
         src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
@@ -34,7 +35,7 @@ export const Square: Story = {
     ratio: 1,
     className: 'bg-muted w-[200px]',
   },
-  render: (args) => (
+  render: (args: React.ComponentProps<typeof AspectRatio>) => (
     <AspectRatio {...args}>
       <div className="flex h-full w-full items-center justify-center bg-muted rounded-md">
         <span className="text-muted-foreground">1:1</span>
@@ -48,7 +49,7 @@ export const Portrait: Story = {
     ratio: 2 / 3,
     className: 'bg-muted w-[200px]',
   },
-  render: (args) => (
+  render: (args: React.ComponentProps<typeof AspectRatio>) => (
     <AspectRatio {...args}>
       <img
         src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"

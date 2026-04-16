@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import * as React from 'react'
 import {
   Accordion,
   AccordionContent,
@@ -33,7 +34,7 @@ export const Default: Story = {
     collapsible: true,
     className: 'w-full max-w-md',
   },
-  render: (args) => (
+  render: (args: React.ComponentProps<typeof Accordion>) => (
     <Accordion {...args}>
       <AccordionItem value="item-1">
         <AccordionTrigger>Is it accessible?</AccordionTrigger>
@@ -62,7 +63,7 @@ export const Multiple: Story = {
     type: 'multiple',
     className: 'w-full max-w-md',
   },
-  render: (args) => (
+  render: (args: React.ComponentProps<typeof Accordion>) => (
     <Accordion {...args}>
       <AccordionItem value="item-1">
         <AccordionTrigger>Item 1</AccordionTrigger>

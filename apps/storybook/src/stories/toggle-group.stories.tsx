@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import * as React from 'react'
 import { Bold, Italic, Underline } from 'lucide-react'
 import { ToggleGroup, ToggleGroupItem } from '@meetpaul/ui'
 
@@ -32,7 +33,7 @@ export const Default: Story = {
   args: {
     type: 'single',
   },
-  render: (args) => (
+  render: (args: React.ComponentProps<typeof ToggleGroup>) => (
     <ToggleGroup {...args}>
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
         <Bold className="h-4 w-4" />
@@ -52,7 +53,7 @@ export const Outline: Story = {
     type: 'single',
     variant: 'outline',
   },
-  render: (args) => (
+  render: (args: React.ComponentProps<typeof ToggleGroup>) => (
     <ToggleGroup {...args}>
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
         <Bold className="h-4 w-4" />
@@ -71,7 +72,7 @@ export const Multiple: Story = {
   args: {
     type: 'multiple',
   },
-  render: (args) => (
+  render: (args: React.ComponentProps<typeof ToggleGroup>) => (
     <ToggleGroup {...args}>
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
         <Bold className="h-4 w-4" />
