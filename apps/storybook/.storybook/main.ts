@@ -19,10 +19,13 @@ const config: StorybookConfig = {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
-  viteFinal: async (config) => {
+  viteFinal: async (config: import('vite').InlineConfig) => {
     config.resolve ??= {}
+    const existingAlias = Array.isArray(config.resolve.alias)
+      ? config.resolve.alias
+      : Object.entries((config.resolve.alias as Record<string, string>) ?? {}).map(([find, replacement]) => ({ find, replacement }))
     config.resolve.alias = [
-      ...(Array.isArray(config.resolve.alias) ? config.resolve.alias : Object.entries(config.resolve.alias ?? {}).map(([find, replacement]) => ({ find, replacement }))),
+      ...existingAlias,
       { find: '@meetpaul/ui/styles', replacement: resolve(uiSrc, 'styles/globals.css') },
       { find: '@meetpaul/ui', replacement: uiSrc },
       { find: '@', replacement: uiSrc },
@@ -33,6 +36,6 @@ const config: StorybookConfig = {
 
 export default config
 
-function getAbsolutePath(value: string): any {
+function getAbsolutePath(value: string): string {
   return dirname(fileURLToPath(import.meta.resolve(join(value, "package.json"))))
 }
