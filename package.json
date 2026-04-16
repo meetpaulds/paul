@@ -9,9 +9,9 @@
     "typecheck": "pnpm -r typecheck",
     "clean": "turbo run clean && rm -rf node_modules",
     "publish:ui": "pnpm --filter @meetpaul/ui publish --no-git-checks",
-    "version:patch": "pnpm --filter @meetpaul/ui version patch",
-    "version:minor": "pnpm --filter @meetpaul/ui version minor",
-    "version:major": "pnpm --filter @meetpaul/ui version major"
+    "version:patch": "cd packages/ui && npm version patch",
+    "version:minor": "cd packages/ui && npm version minor",
+    "version:major": "cd packages/ui && npm version major"
   },
   "devDependencies": {
     "turbo": "latest",
