@@ -51,6 +51,9 @@ importers:
       '@storybook/addon-docs':
         specifier: 10.3.5
         version: 10.3.5(@types/react@19.2.14)(esbuild@0.25.12)(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.8.2)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@8.0.8(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1))
+      '@storybook/addon-themes':
+        specifier: 10.3.5
+        version: 10.3.5(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.8.2)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))
       '@storybook/react-vite':
         specifier: 10.3.5
         version: 10.3.5(esbuild@0.25.12)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.8.2)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@5.9.3)(vite@8.0.8(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1))
@@ -1507,6 +1510,11 @@ packages:
 
   '@storybook/addon-docs@10.3.5':
     resolution: {integrity: sha512-WuHbxia/o5TX4Rg/IFD0641K5qId/Nk0dxhmAUNoFs5L0+yfZUwh65XOBbzXqrkYmYmcVID4v7cgDRmzstQNkA==}
+    peerDependencies:
+      storybook: ^10.3.5
+
+  '@storybook/addon-themes@10.3.5':
+    resolution: {integrity: sha512-Mv+C7GuZ0MhGRx5C+rv8sCEjgYsDTLBvq68101V0s8Vwh3gKd6W9cbS31HoOeLAiIMiPPZ8C1iWudA3Oumdtlw==}
     peerDependencies:
       storybook: ^10.3.5
 
@@ -4808,6 +4816,11 @@ snapshots:
       - rollup
       - vite
       - webpack
+
+  '@storybook/addon-themes@10.3.5(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.8.2)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))':
+    dependencies:
+      storybook: 10.3.5(@testing-library/dom@10.4.0)(prettier@3.8.2)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      ts-dedent: 2.2.0
 
   '@storybook/builder-vite@10.3.5(esbuild@0.25.12)(storybook@10.3.5(@testing-library/dom@10.4.0)(prettier@3.8.2)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(vite@8.0.8(@types/node@22.19.17)(esbuild@0.25.12)(jiti@2.6.1))':
     dependencies:
