@@ -8,7 +8,10 @@
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck",
     "clean": "turbo run clean && rm -rf node_modules",
-    "publish:ui": "pnpm --filter @meetpaul/ui publish --no-git-checks"
+    "publish:ui": "pnpm --filter @meetpaul/ui publish --no-git-checks",
+    "version:patch": "pnpm --filter @meetpaul/ui version patch",
+    "version:minor": "pnpm --filter @meetpaul/ui version minor",
+    "version:major": "pnpm --filter @meetpaul/ui version major"
   },
   "devDependencies": {
     "turbo": "latest",
