@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Textarea } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Textarea',
+  title: 'Data Entry & Forms/Textarea',
   component: Textarea,
   parameters: {
     layout: 'centered',

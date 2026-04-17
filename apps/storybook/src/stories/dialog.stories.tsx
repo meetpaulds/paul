@@ -13,7 +13,7 @@ import { Button } from '@meetpaul/ui'
 import { Label, Input } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Dialog',
+  title: 'Overlays/Dialog',
   component: Dialog,
   parameters: {
     layout: 'centered',

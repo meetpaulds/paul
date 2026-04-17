@@ -10,7 +10,7 @@ import {
 } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Menubar',
+  title: 'Navigation/Menubar',
   component: Menubar,
   parameters: {
     layout: 'centered',

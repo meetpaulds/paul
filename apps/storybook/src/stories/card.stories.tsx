@@ -10,7 +10,7 @@ import {
 import { Button, Input, Label } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Card',
+  title: 'Data Display/Card',
   component: Card,
   parameters: {
     layout: 'centered',

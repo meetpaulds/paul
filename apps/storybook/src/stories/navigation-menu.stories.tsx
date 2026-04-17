@@ -10,7 +10,7 @@ import {
 } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/NavigationMenu',
+  title: 'Navigation/NavigationMenu',
   component: NavigationMenu,
   parameters: {
     layout: 'centered',

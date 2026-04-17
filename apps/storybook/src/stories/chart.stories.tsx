@@ -21,7 +21,7 @@ const data = [
 ]
 
 const meta = {
-  title: 'Components/Chart',
+  title: 'Charts/Chart',
   parameters: {
     layout: 'centered',
   },

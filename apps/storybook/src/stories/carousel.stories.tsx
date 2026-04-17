@@ -9,7 +9,7 @@ import {
 import { Card, CardContent } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Carousel',
+  title: 'Media/Carousel',
   parameters: {
     layout: 'centered',
   },

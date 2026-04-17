@@ -5,7 +5,7 @@ import { Button } from '@meetpaul/ui'
 import { ArrowUpDown } from 'lucide-react'
 
 const meta = {
-  title: 'Components/DataTable',
+  title: 'Tables & Data/DataTable',
   component: DataTable,
   parameters: {
     layout: 'centered',

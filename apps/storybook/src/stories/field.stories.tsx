@@ -3,7 +3,7 @@ import { Field } from '@meetpaul/ui'
 import { Input } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Field',
+  title: 'Data Entry & Forms/Field',
   parameters: {
     layout: 'centered',
   },

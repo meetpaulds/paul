@@ -4,7 +4,7 @@ import { Toaster } from '@meetpaul/ui'
 import { Button } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Sonner',
+  title: 'Feedback/Sonner',
   component: Toaster,
   parameters: {
     layout: 'centered',

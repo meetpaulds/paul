@@ -12,7 +12,7 @@ import {
 import { Calculator, Calendar, CreditCard, Settings, Smile, User } from 'lucide-react'
 
 const meta = {
-  title: 'Components/Command',
+  title: 'Navigation/Command',
   component: Command,
   parameters: {
     layout: 'centered',

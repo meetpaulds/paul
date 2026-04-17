@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@meetpaul/ui'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Tabs',
+  title: 'Navigation/Tabs',
   component: Tabs,
   parameters: {
     layout: 'centered',

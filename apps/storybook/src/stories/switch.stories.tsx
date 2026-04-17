@@ -4,7 +4,7 @@ import { Switch } from '@meetpaul/ui'
 import { Label } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Switch',
+  title: 'Data Entry & Forms/Switch',
   component: Switch,
   parameters: {
     layout: 'centered',

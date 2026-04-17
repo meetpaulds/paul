@@ -6,7 +6,7 @@ import { Button } from '@meetpaul/ui'
 import { ChevronDown } from 'lucide-react'
 
 const meta = {
-  title: 'Components/Collapsible',
+  title: 'Disclosure/Collapsible',
   component: Collapsible,
   parameters: {
     layout: 'centered',

@@ -10,7 +10,7 @@ import {
 } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Pagination',
+  title: 'Navigation/Pagination',
   component: Pagination,
   parameters: {
     layout: 'centered',

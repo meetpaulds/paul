@@ -3,7 +3,7 @@ import { Button } from '@meetpaul/ui'
 import { ButtonGroup } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/ButtonGroup',
+  title: 'Actions & Buttons/ButtonGroup',
   parameters: {
     layout: 'centered',
   },

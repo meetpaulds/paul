@@ -14,7 +14,7 @@ import {
 import { Home, Settings, User } from 'lucide-react'
 
 const meta = {
-  title: 'Components/Sidebar',
+  title: 'Layout/Sidebar',
   component: Sidebar,
   parameters: {
     layout: 'centered',

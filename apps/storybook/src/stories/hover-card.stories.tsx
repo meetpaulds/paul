@@ -8,7 +8,7 @@ import {
 import { Button, Avatar, AvatarFallback, AvatarImage } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/HoverCard',
+  title: 'Overlays/HoverCard',
   component: HoverCard,
   parameters: {
     layout: 'centered',

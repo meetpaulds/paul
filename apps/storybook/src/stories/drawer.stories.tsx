@@ -13,7 +13,7 @@ import {
 } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Drawer',
+  title: 'Overlays/Drawer',
   component: Drawer,
   parameters: {
     layout: 'centered',

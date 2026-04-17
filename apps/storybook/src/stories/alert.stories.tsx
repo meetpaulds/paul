@@ -4,7 +4,7 @@ import { Terminal } from 'lucide-react'
 import { Alert, AlertDescription, AlertTitle } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Alert',
+  title: 'Feedback/Alert',
   component: Alert,
   parameters: {
     layout: 'centered',

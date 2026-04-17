@@ -11,7 +11,7 @@ import {
 import { Button } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/DropdownMenu',
+  title: 'Overlays/DropdownMenu',
   component: DropdownMenu,
   parameters: {
     layout: 'centered',

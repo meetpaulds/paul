@@ -4,7 +4,7 @@ import { Bold, Italic, Underline } from 'lucide-react'
 import { ToggleGroup, ToggleGroupItem } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/ToggleGroup',
+  title: 'Actions & Buttons/ToggleGroup',
   component: ToggleGroup,
   parameters: {
     layout: 'centered',
