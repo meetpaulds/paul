@@ -2,6 +2,10 @@ import * as React from 'react'
 import * as ProgressPrimitive from '@radix-ui/react-progress'
 import { cn } from '@/lib/utils'
 
+/**
+ * A styled progress bar built on Radix UI ProgressPrimitive.
+ * Key props: `value` (0–100) representing the current progress percentage.
+ */
 const Progress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>

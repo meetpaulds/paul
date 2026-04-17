@@ -11,6 +11,12 @@ const ToggleGroupContext = React.createContext<
   variant: 'default',
 })
 
+/**
+ * A group of toggle buttons with shared `variant` and `size` context.
+ * Set `type="single"` for single selection or `type="multiple"` for multi-select.
+ * @prop variant - Visual style applied to all items: 'default' | 'outline'. @default 'default'
+ * @prop size - Size applied to all items: 'sm' | 'default' | 'lg'. @default 'default'
+ */
 const ToggleGroup = React.forwardRef<
   React.ElementRef<typeof ToggleGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root> &
@@ -29,6 +35,11 @@ const ToggleGroup = React.forwardRef<
 
 ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName
 
+/**
+ * An individual toggle item inside a `ToggleGroup`.
+ * Inherits `variant` and `size` from the parent `ToggleGroup` context.
+ * Requires a unique `value` prop for selection tracking.
+ */
 const ToggleGroupItem = React.forwardRef<
   React.ElementRef<typeof ToggleGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item> &

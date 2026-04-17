@@ -38,6 +38,13 @@ function useSidebar() {
   return context
 }
 
+/**
+ * Required context provider for all sidebar components.
+ * Mount once at the layout root.
+ * @prop defaultOpen - Initial expanded state. @default true
+ * @prop open - Controlled open state.
+ * @prop onOpenChange - Callback when open state changes.
+ */
 const SidebarProvider = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<'div'> & {

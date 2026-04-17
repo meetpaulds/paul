@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils'
 
+/** Animated placeholder block used to indicate loading state. Size and shape are controlled via `className`. */
 function Skeleton({
   className,
   ...props

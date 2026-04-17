@@ -2,6 +2,11 @@ import * as React from 'react'
 import * as SliderPrimitive from '@radix-ui/react-slider'
 import { cn } from '@/lib/utils'
 
+/**
+ * A styled range slider built on Radix UI SliderPrimitive.
+ * Key props: `value`, `defaultValue` (number[]), `min`, `max`, `step`, `onValueChange`, `disabled`.
+ * Pass multiple values in the `value` array to render a range slider.
+ */
 const Slider = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>

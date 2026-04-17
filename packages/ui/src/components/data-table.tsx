@@ -19,8 +19,11 @@ import {
 import { Button } from './button'
 
 interface DataTableProps<TData, TValue> {
+  /** Column definitions used to configure headers, cells, and sorting. See TanStack Table `ColumnDef`. */
   columns: ColumnDef<TData, TValue>[]
+  /** Array of row data objects to display in the table. */
   data: TData[]
+  /** Additional CSS classes applied to the outer wrapper div. */
   className?: string
 }
 

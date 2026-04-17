@@ -25,6 +25,12 @@ const toggleVariants = cva(
   }
 )
 
+/**
+ * A styled two-state toggle button built on Radix UI TogglePrimitive.
+ * Key props: `pressed`, `defaultPressed`, `onPressedChange`, `disabled`.
+ * @prop variant - Visual style: 'default' (transparent) | 'outline'. @default 'default'
+ * @prop size - Size variant: 'sm' | 'default' | 'lg'. @default 'default'
+ */
 const Toggle = React.forwardRef<
   React.ElementRef<typeof TogglePrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root> &

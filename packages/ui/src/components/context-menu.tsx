@@ -3,18 +3,27 @@ import * as ContextMenuPrimitive from '@radix-ui/react-context-menu'
 import { Check, ChevronRight, Circle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/** Root context menu. Shown on right-click of `ContextMenuTrigger`. */
 const ContextMenu = ContextMenuPrimitive.Root
 
+/** Element that opens the context menu on right-click. */
 const ContextMenuTrigger = ContextMenuPrimitive.Trigger
 
+/** Groups related `ContextMenuItem` elements. */
 const ContextMenuGroup = ContextMenuPrimitive.Group
 
 const ContextMenuPortal = ContextMenuPrimitive.Portal
 
+/** Root for a nested sub-menu within a context menu. */
 const ContextMenuSub = ContextMenuPrimitive.Sub
 
+/** Groups `ContextMenuRadioItem` elements for single selection. */
 const ContextMenuRadioGroup = ContextMenuPrimitive.RadioGroup
 
+/**
+ * Item that opens a sub-menu on hover.
+ * @prop inset - When true, adds left padding to align with items that have icons.
+ */
 const ContextMenuSubTrigger = React.forwardRef<
   React.ElementRef<typeof ContextMenuPrimitive.SubTrigger>,
   React.ComponentPropsWithoutRef<typeof ContextMenuPrimitive.SubTrigger> & {

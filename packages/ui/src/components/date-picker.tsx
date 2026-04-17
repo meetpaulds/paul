@@ -11,9 +11,13 @@ import {
 } from './popover'
 
 interface DatePickerProps {
+  /** The currently selected date (controlled). */
   date?: Date
+  /** Callback fired when the user selects or clears a date. */
   onSelect: (date: Date | undefined) => void
+  /** Placeholder text shown in the trigger when no date is selected. @default 'Pick a date' */
   placeholder?: string
+  /** Additional CSS classes applied to the trigger button. */
   className?: string
 }
 

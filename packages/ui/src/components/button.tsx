@@ -36,6 +36,11 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
+  /** Visual style variant of the button. @default 'default' */
+  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link'
+  /** Size variant of the button. @default 'default' */
+  size?: 'default' | 'sm' | 'lg' | 'icon'
+  /** When true, renders the button's child as the root element via Radix Slot. */
   asChild?: boolean
 }
 

@@ -3,18 +3,27 @@ import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
 import { Check, ChevronRight, Circle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/** Root dropdown menu. Key props: `open`, `defaultOpen`, `onOpenChange`, `modal`. */
 const DropdownMenu = DropdownMenuPrimitive.Root
 
+/** Element that opens the dropdown when clicked. */
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger
 
+/** Groups related `DropdownMenuItem` elements. */
 const DropdownMenuGroup = DropdownMenuPrimitive.Group
 
 const DropdownMenuPortal = DropdownMenuPrimitive.Portal
 
+/** Root for a nested sub-menu. */
 const DropdownMenuSub = DropdownMenuPrimitive.Sub
 
+/** Groups `DropdownMenuRadioItem` elements for single selection. */
 const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
 
+/**
+ * Item that opens a sub-menu on hover.
+ * @prop inset - When true, adds left padding to align with items that have icons.
+ */
 const DropdownMenuSubTrigger = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.SubTrigger>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubTrigger> & {

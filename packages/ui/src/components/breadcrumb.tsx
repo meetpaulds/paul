@@ -3,6 +3,10 @@ import { Slot } from '@radix-ui/react-slot'
 import { ChevronRight, MoreHorizontal } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/**
+ * Root breadcrumb `<nav>` element with `aria-label="breadcrumb"`.
+ * @prop separator - Custom separator node overriding the default chevron.
+ */
 const Breadcrumb = React.forwardRef<
   HTMLElement,
   React.ComponentPropsWithoutRef<'nav'> & {
@@ -11,6 +15,7 @@ const Breadcrumb = React.forwardRef<
 >(({ ...props }, ref) => <nav ref={ref} aria-label="breadcrumb" {...props} />)
 Breadcrumb.displayName = 'Breadcrumb'
 
+/** Ordered list (`<ol>`) wrapping `BreadcrumbItem` elements. */
 const BreadcrumbList = React.forwardRef<
   HTMLOListElement,
   React.ComponentPropsWithoutRef<'ol'>
@@ -26,6 +31,7 @@ const BreadcrumbList = React.forwardRef<
 ))
 BreadcrumbList.displayName = 'BreadcrumbList'
 
+/** List item (`<li>`) wrapping a single breadcrumb link or page. */
 const BreadcrumbItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentPropsWithoutRef<'li'>
@@ -38,6 +44,10 @@ const BreadcrumbItem = React.forwardRef<
 ))
 BreadcrumbItem.displayName = 'BreadcrumbItem'
 
+/**
+ * Anchor link inside a breadcrumb item.
+ * @prop asChild - When true, merges props onto the child element via Radix Slot.
+ */
 const BreadcrumbLink = React.forwardRef<
   HTMLAnchorElement,
   React.ComponentPropsWithoutRef<'a'> & {
@@ -56,6 +66,7 @@ const BreadcrumbLink = React.forwardRef<
 })
 BreadcrumbLink.displayName = 'BreadcrumbLink'
 
+/** Non-interactive span representing the current page. Sets `aria-current="page"`. */
 const BreadcrumbPage = React.forwardRef<
   HTMLSpanElement,
   React.ComponentPropsWithoutRef<'span'>
@@ -71,6 +82,7 @@ const BreadcrumbPage = React.forwardRef<
 ))
 BreadcrumbPage.displayName = 'BreadcrumbPage'
 
+/** Decorative separator rendered between breadcrumb items. Hidden from screen readers. */
 const BreadcrumbSeparator = ({
   children,
   className,
@@ -87,6 +99,7 @@ const BreadcrumbSeparator = ({
 )
 BreadcrumbSeparator.displayName = 'BreadcrumbSeparator'
 
+/** Ellipsis indicator for collapsed breadcrumb items. Hidden from screen readers. */
 const BreadcrumbEllipsis = ({
   className,
   ...props

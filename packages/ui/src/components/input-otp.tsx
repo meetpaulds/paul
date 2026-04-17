@@ -3,6 +3,10 @@ import { OTPInput, OTPInputContext } from 'input-otp'
 import { Dot } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/**
+ * OTP input root built on `input-otp`.
+ * Key props: `maxLength` (required), `value`, `onChange`, `pattern`, `disabled`.
+ */
 const InputOTP = React.forwardRef<
   React.ElementRef<typeof OTPInput>,
   React.ComponentPropsWithoutRef<typeof OTPInput>
@@ -19,6 +23,7 @@ const InputOTP = React.forwardRef<
 ))
 InputOTP.displayName = 'InputOTP'
 
+/** Groups a set of `InputOTPSlot` elements in a flex row. */
 const InputOTPGroup = React.forwardRef<
   React.ElementRef<'div'>,
   React.ComponentPropsWithoutRef<'div'>
@@ -27,6 +32,10 @@ const InputOTPGroup = React.forwardRef<
 ))
 InputOTPGroup.displayName = 'InputOTPGroup'
 
+/**
+ * An individual character slot in an OTP input.
+ * @prop index - Zero-based position of this slot in the OTP input.
+ */
 const InputOTPSlot = React.forwardRef<
   React.ElementRef<'div'>,
   React.ComponentPropsWithoutRef<'div'> & { index: number }
@@ -55,6 +64,7 @@ const InputOTPSlot = React.forwardRef<
 })
 InputOTPSlot.displayName = 'InputOTPSlot'
 
+/** Visual dot separator between groups of `InputOTPSlot` elements. */
 const InputOTPSeparator = React.forwardRef<
   React.ElementRef<'div'>,
   React.ComponentPropsWithoutRef<'div'>

@@ -3,6 +3,10 @@ import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import { Check } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/**
+ * A styled checkbox control built on Radix UI CheckboxPrimitive.
+ * Accepts all Radix Checkbox.Root props including `checked`, `defaultChecked`, `onCheckedChange`, and `disabled`.
+ */
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>

@@ -3,6 +3,10 @@ import { Drawer as DrawerPrimitive } from 'vaul'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
+/**
+ * Bottom-sheet drawer built on Vaul.
+ * Key props: `open`, `onOpenChange`, `shouldScaleBackground`, `direction`.
+ */
 const Drawer = ({
   shouldScaleBackground = true,
   ...props
@@ -14,10 +18,12 @@ const Drawer = ({
 )
 Drawer.displayName = 'Drawer'
 
+/** Element that opens the drawer when clicked. */
 const DrawerTrigger = DrawerPrimitive.Trigger
 
 const DrawerPortal = DrawerPrimitive.Portal
 
+/** Element that closes the drawer when clicked. */
 const DrawerClose = DrawerPrimitive.Close
 
 const DrawerOverlay = React.forwardRef<
@@ -51,7 +57,10 @@ const drawerContentVariants = cva(
 
 interface DrawerContentProps
   extends React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>,
-    VariantProps<typeof drawerContentVariants> {}
+    VariantProps<typeof drawerContentVariants> {
+  /** Direction the drawer slides from. @default 'bottom' */
+  direction?: 'bottom' | 'top' | 'left' | 'right'
+}
 
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
@@ -71,6 +80,7 @@ const DrawerContent = React.forwardRef<
 ))
 DrawerContent.displayName = 'DrawerContent'
 
+/** Layout wrapper for `DrawerTitle` and `DrawerDescription`. */
 const DrawerHeader = ({
   className,
   ...props
@@ -82,6 +92,7 @@ const DrawerHeader = ({
 )
 DrawerHeader.displayName = 'DrawerHeader'
 
+/** Layout wrapper for action buttons at the bottom of the drawer. */
 const DrawerFooter = ({
   className,
   ...props
@@ -93,6 +104,7 @@ const DrawerFooter = ({
 )
 DrawerFooter.displayName = 'DrawerFooter'
 
+/** Accessible title for the drawer, announced by screen readers. */
 const DrawerTitle = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
@@ -108,6 +120,7 @@ const DrawerTitle = React.forwardRef<
 ))
 DrawerTitle.displayName = DrawerPrimitive.Title.displayName
 
+/** Supplementary description text rendered below `DrawerTitle`. */
 const DrawerDescription = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>
