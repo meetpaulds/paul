@@ -41,3 +41,16 @@ export const Default: Story = {
     </>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <>
+      <Toaster />
+      <div className="space-x-2">
+        <Button onClick={() => toast('Event has been created')}>Show Toast</Button>
+        <Button variant="outline" onClick={() => toast.success('Success!')}>Success</Button>
+      </div>
+    </>
+  ),
+  globals: { theme: 'dark' },
+}

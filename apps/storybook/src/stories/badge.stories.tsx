@@ -45,3 +45,26 @@ export const Outline: Story = {
     children: 'Outline',
   },
 }
+
+export const AllVariants: Story = {
+  render: () => (
+    <div className="flex flex-wrap gap-2">
+      <Badge>Default</Badge>
+      <Badge variant="secondary">Secondary</Badge>
+      <Badge variant="destructive">Destructive</Badge>
+      <Badge variant="outline">Outline</Badge>
+    </div>
+  ),
+}
+
+export const Dark: Story = {
+  render: () => (
+    <div className="flex flex-wrap gap-2">
+      <Badge>Default</Badge>
+      <Badge variant="secondary">Secondary</Badge>
+      <Badge variant="destructive">Destructive</Badge>
+      <Badge variant="outline">Outline</Badge>
+    </div>
+  ),
+  globals: { theme: 'dark' },
+}

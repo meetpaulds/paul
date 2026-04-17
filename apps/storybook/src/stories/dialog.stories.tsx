@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { fn } from 'storybook/test'
+import { expect, fn, userEvent, within } from 'storybook/test'
 import {
   Dialog,
   DialogContent,
@@ -25,6 +25,12 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByRole('button', { name: 'Edit Profile' }))
+    await expect(within(document.body).getByRole('dialog')).toBeVisible()
+    await expect(within(document.body).getByText('Edit profile')).toBeVisible()
+  },
   render: () => (
     <Dialog>
       <DialogTrigger asChild>
@@ -57,4 +63,24 @@ export const Default: Story = {
       </DialogContent>
     </Dialog>
   ),
+}
+
+export const Dark: Story = {
+  render: () => (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline">Open Dialog</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Dark Mode Dialog</DialogTitle>
+          <DialogDescription>This dialog is shown in dark mode.</DialogDescription>
+        </DialogHeader>
+        <DialogFooter>
+          <Button onClick={fn()}>Confirm</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  ),
+  globals: { theme: 'dark' },
 }

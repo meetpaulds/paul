@@ -32,3 +32,14 @@ export const Sizes: Story = {
     </div>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Spinner size="sm" />
+      <Spinner size="default" />
+      <Spinner size="lg" />
+    </div>
+  ),
+  globals: { theme: 'dark' },
+}

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { expect, userEvent, within } from 'storybook/test'
 import { Popover, PopoverContent, PopoverTrigger } from '@meetpaul/ui'
 import { Button } from '@meetpaul/ui'
 import { Input, Label } from '@meetpaul/ui'
@@ -16,6 +17,11 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByRole('button', { name: 'Open popover' }))
+    await expect(within(document.body).getByText('Dimensions')).toBeVisible()
+  },
   render: () => (
     <Popover>
       <PopoverTrigger asChild>
@@ -43,4 +49,18 @@ export const Default: Story = {
       </PopoverContent>
     </Popover>
   ),
+}
+
+export const Dark: Story = {
+  render: () => (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline">Open popover</Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-60">
+        <p className="text-sm">Popover content in dark mode.</p>
+      </PopoverContent>
+    </Popover>
+  ),
+  globals: { theme: 'dark' },
 }

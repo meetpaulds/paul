@@ -53,3 +53,20 @@ export const WithCheckbox: Story = {
     </ContextMenu>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <ContextMenu>
+      <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm">
+        Right click here
+      </ContextMenuTrigger>
+      <ContextMenuContent className="w-64">
+        <ContextMenuItem>Back</ContextMenuItem>
+        <ContextMenuItem disabled>Forward</ContextMenuItem>
+        <ContextMenuSeparator />
+        <ContextMenuItem>Reload</ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
+  ),
+  globals: { theme: 'dark' },
+}

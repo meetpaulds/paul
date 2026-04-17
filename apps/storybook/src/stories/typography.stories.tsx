@@ -49,3 +49,16 @@ export const AllVariants: Story = {
     </div>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <div className="space-y-4 max-w-md">
+      <Typography variant="h1">Heading 1</Typography>
+      <Typography variant="h2">Heading 2</Typography>
+      <Typography variant="p">Regular paragraph text for body content.</Typography>
+      <Typography variant="muted">Muted text for secondary information</Typography>
+      <Typography variant="code">inline code</Typography>
+    </div>
+  ),
+  globals: { theme: 'dark' },
+}

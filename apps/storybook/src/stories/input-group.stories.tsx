@@ -56,3 +56,21 @@ export const WithPassword: Story = {
     </InputGroup>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4 w-80">
+      <InputGroup>
+        <InputGroupText>https://</InputGroupText>
+        <Input placeholder="example.com" />
+      </InputGroup>
+      <InputGroup>
+        <InputGroupText>
+          <DollarSign className="h-4 w-4" />
+        </InputGroupText>
+        <Input type="number" placeholder="0.00" />
+      </InputGroup>
+    </div>
+  ),
+  globals: { theme: 'dark' },
+}

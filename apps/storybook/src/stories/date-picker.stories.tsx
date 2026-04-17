@@ -37,3 +37,16 @@ export const WithPlaceholder: Story = {
     )
   },
 }
+
+export const Dark: Story = {
+  render: () => {
+    const [date, setDate] = React.useState<Date | undefined>(new Date())
+    return (
+      <DatePicker
+        date={date}
+        onSelect={setDate}
+      />
+    )
+  },
+  globals: { theme: 'dark' },
+}
