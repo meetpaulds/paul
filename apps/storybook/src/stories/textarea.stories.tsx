@@ -32,3 +32,11 @@ export const Disabled: Story = {
     className: 'w-[300px]',
   },
 }
+
+export const Dark: Story = {
+  args: {
+    placeholder: 'Type your message here.',
+    className: 'w-[300px]',
+  },
+  globals: { theme: 'dark' },
+}

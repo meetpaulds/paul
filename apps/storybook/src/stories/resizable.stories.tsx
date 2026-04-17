@@ -78,3 +78,25 @@ export const WithHandle: Story = {
     </ResizablePanelGroup>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <ResizablePanelGroup
+      direction="horizontal"
+      className="max-w-md rounded-lg border"
+    >
+      <ResizablePanel defaultSize={50}>
+        <div className="flex h-40 items-center justify-center p-6">
+          <span className="font-semibold">One</span>
+        </div>
+      </ResizablePanel>
+      <ResizableHandle withHandle />
+      <ResizablePanel defaultSize={50}>
+        <div className="flex h-40 items-center justify-center p-6">
+          <span className="font-semibold">Two</span>
+        </div>
+      </ResizablePanel>
+    </ResizablePanelGroup>
+  ),
+  globals: { theme: 'dark' },
+}

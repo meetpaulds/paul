@@ -58,3 +58,19 @@ export const Destructive: Story = {
     </ToastProvider>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <ToastProvider>
+      <Toast>
+        <div className="grid gap-1">
+          <ToastTitle>Scheduled: Catch up</ToastTitle>
+          <ToastDescription>Friday, February 10, 2023 at 5:57 PM</ToastDescription>
+        </div>
+        <ToastClose />
+      </Toast>
+      <ToastViewport />
+    </ToastProvider>
+  ),
+  globals: { theme: 'dark' },
+}

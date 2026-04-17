@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { fn } from 'storybook/test'
+import { expect, fn, userEvent, within } from 'storybook/test'
 import {
   Sheet,
   SheetClose,
@@ -27,6 +27,13 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByRole('button', { name: 'Open' }))
+    const body = within(document.body)
+    await expect(body.getByRole('dialog')).toBeVisible()
+    await expect(body.getByText('Edit profile')).toBeVisible()
+  },
   render: () => (
     <Sheet>
       <SheetTrigger asChild>
@@ -89,4 +96,26 @@ export const Bottom: Story = {
       </SheetContent>
     </Sheet>
   ),
+}
+
+export const Dark: Story = {
+  render: () => (
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline">Open Sheet</Button>
+      </SheetTrigger>
+      <SheetContent>
+        <SheetHeader>
+          <SheetTitle>Dark Mode Sheet</SheetTitle>
+          <SheetDescription>This sheet is shown in dark mode.</SheetDescription>
+        </SheetHeader>
+        <SheetFooter>
+          <SheetClose asChild>
+            <Button onClick={fn()}>Close</Button>
+          </SheetClose>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
+  ),
+  globals: { theme: 'dark' },
 }

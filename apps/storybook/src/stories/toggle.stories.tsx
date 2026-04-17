@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { expect, userEvent, within } from 'storybook/test'
 import { Bold, Italic, Underline } from 'lucide-react'
 import { Toggle } from '@meetpaul/ui'
 
@@ -36,6 +37,13 @@ export const Default: Story = {
       <Bold className="h-4 w-4" />
     </Toggle>
   ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const toggle = canvas.getByRole('button', { name: 'Toggle bold' })
+    await expect(toggle).toHaveAttribute('data-state', 'off')
+    await userEvent.click(toggle)
+    await expect(toggle).toHaveAttribute('data-state', 'on')
+  },
 }
 
 export const Outline: Story = {
@@ -77,4 +85,21 @@ export const Sizes: Story = {
       </Toggle>
     </div>
   ),
+}
+
+export const Dark: Story = {
+  render: () => (
+    <div className="flex items-center gap-2">
+      <Toggle aria-label="Toggle bold">
+        <Bold className="h-4 w-4" />
+      </Toggle>
+      <Toggle variant="outline" aria-label="Toggle italic">
+        <Italic className="h-4 w-4" />
+      </Toggle>
+      <Toggle aria-label="Toggle underline" pressed>
+        <Underline className="h-4 w-4" />
+      </Toggle>
+    </div>
+  ),
+  globals: { theme: 'dark' },
 }

@@ -35,3 +35,12 @@ export const Shortcuts: Story = {
     </div>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+      Press <Kbd>⌘</Kbd> + <Kbd>K</Kbd> to open command palette
+    </div>
+  ),
+  globals: { theme: 'dark' },
+}

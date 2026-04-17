@@ -32,3 +32,14 @@ export const WithVariants: Story = {
     </ButtonGroup>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <ButtonGroup>
+      <Button variant="outline">One</Button>
+      <Button variant="outline">Two</Button>
+      <Button variant="outline">Three</Button>
+    </ButtonGroup>
+  ),
+  globals: { theme: 'dark' },
+}

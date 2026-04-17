@@ -68,3 +68,11 @@ export const Default: Story = {
     columns: columns as ColumnDef<unknown>[],
   },
 }
+
+export const Dark: Story = {
+  args: {
+    data,
+    columns: columns as ColumnDef<unknown>[],
+  },
+  globals: { theme: 'dark' },
+}

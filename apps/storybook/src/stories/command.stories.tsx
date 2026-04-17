@@ -65,3 +65,19 @@ export const Default: Story = {
     </Command>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <Command className="rounded-lg border shadow-md max-w-[400px]">
+      <CommandInput placeholder="Type a command or search..." />
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandGroup heading="Suggestions">
+          <CommandItem><Calendar className="mr-2 h-4 w-4" /><span>Calendar</span></CommandItem>
+          <CommandItem><Settings className="mr-2 h-4 w-4" /><span>Settings</span><CommandShortcut>⌘S</CommandShortcut></CommandItem>
+        </CommandGroup>
+      </CommandList>
+    </Command>
+  ),
+  globals: { theme: 'dark' },
+}

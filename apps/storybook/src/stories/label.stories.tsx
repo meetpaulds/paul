@@ -31,3 +31,13 @@ export const WithCheckbox: Story = {
     </div>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <div className="grid w-full max-w-sm items-center gap-1.5">
+      <Label htmlFor="dark-email">Email</Label>
+      <Input type="email" id="dark-email" placeholder="Email" />
+    </div>
+  ),
+  globals: { theme: 'dark' },
+}
