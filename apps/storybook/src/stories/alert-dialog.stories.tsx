@@ -14,7 +14,7 @@ import {
 import { Button } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/AlertDialog',
+  title: 'Feedback/AlertDialog',
   component: AlertDialog,
   parameters: {
     layout: 'centered',

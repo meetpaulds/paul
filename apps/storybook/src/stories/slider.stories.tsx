@@ -3,7 +3,7 @@ import { expect, within } from 'storybook/test'
 import { Slider } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Slider',
+  title: 'Data Entry & Forms/Slider',
   component: Slider,
   parameters: {
     layout: 'centered',

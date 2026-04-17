@@ -9,7 +9,7 @@ import {
 } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Breadcrumb',
+  title: 'Navigation/Breadcrumb',
   component: Breadcrumb,
   parameters: {
     layout: 'centered',

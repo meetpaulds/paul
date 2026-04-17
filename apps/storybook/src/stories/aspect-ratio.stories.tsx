@@ -3,7 +3,7 @@ import * as React from 'react'
 import { AspectRatio } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/AspectRatio',
+  title: 'Layout/AspectRatio',
   component: AspectRatio,
   parameters: {
     layout: 'centered',

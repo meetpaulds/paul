@@ -4,7 +4,7 @@ import { Input } from '@meetpaul/ui'
 import { DollarSign, AtSign, Lock } from 'lucide-react'
 
 const meta = {
-  title: 'Components/InputGroup',
+  title: 'Data Entry & Forms/InputGroup',
   parameters: {
     layout: 'centered',
   },

@@ -9,7 +9,7 @@ import {
 } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/ContextMenu',
+  title: 'Utilities/ContextMenu',
   component: ContextMenu,
   parameters: {
     layout: 'centered',

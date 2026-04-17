@@ -9,7 +9,7 @@ import {
 } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Select',
+  title: 'Data Entry & Forms/Select',
   component: Select,
   parameters: {
     layout: 'centered',

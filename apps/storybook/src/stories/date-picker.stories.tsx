@@ -3,7 +3,7 @@ import * as React from 'react'
 import { DatePicker } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/DatePicker',
+  title: 'Data Entry & Forms/DatePicker',
   parameters: {
     layout: 'centered',
   },

@@ -9,7 +9,7 @@ import {
 import { Button } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Tooltip',
+  title: 'Overlays/Tooltip',
   component: Tooltip,
   parameters: {
     layout: 'centered',

@@ -10,7 +10,7 @@ import {
 } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Table',
+  title: 'Tables & Data/Table',
   component: Table,
   parameters: {
     layout: 'centered',

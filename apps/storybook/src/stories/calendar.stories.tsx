@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Calendar } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Calendar',
+  title: 'Date & Time/Calendar',
   component: Calendar,
   parameters: {
     layout: 'centered',

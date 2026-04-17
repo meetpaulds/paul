@@ -3,7 +3,7 @@ import { Label } from '@meetpaul/ui'
 import { Input } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Label',
+  title: 'Data Entry & Forms/Label',
   component: Label,
   parameters: {
     layout: 'centered',

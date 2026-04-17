@@ -5,7 +5,7 @@ import { Button } from '@meetpaul/ui'
 import { Input, Label } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Popover',
+  title: 'Overlays/Popover',
   component: Popover,
   parameters: {
     layout: 'centered',
