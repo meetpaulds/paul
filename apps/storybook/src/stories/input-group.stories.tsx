@@ -18,7 +18,7 @@ export const WithTextPrefix: Story = {
   render: () => (
     <InputGroup>
       <InputGroupText>https://</InputGroupText>
-      <Input placeholder="example.com" />
+      <Input aria-label="Website URL" placeholder="example.com" />
     </InputGroup>
   ),
 }
@@ -38,9 +38,9 @@ export const WithAtSign: Story = {
   render: () => (
     <InputGroup>
       <InputGroupText>
-        <AtSign className="h-4 w-4" />
+        <AtSign className="h-4 w-4" aria-hidden="true" />
       </InputGroupText>
-      <Input placeholder="username" />
+      <Input aria-label="Username" placeholder="username" />
       <InputGroupText>@example.com</InputGroupText>
     </InputGroup>
   ),

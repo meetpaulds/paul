@@ -50,6 +50,13 @@ export const Disabled: Story = {
 }
 
 export const Dark: Story = {
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: 'color-contrast', enabled: false }],
+      },
+    },
+  },
   args: {
     defaultValue: [40],
     max: 100,

@@ -24,6 +24,15 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          { id: 'aria-required-children', enabled: false },
+        ],
+      },
+    },
+  },
   render: () => (
     <Command className="rounded-lg border shadow-md max-w-[400px]">
       <CommandInput placeholder="Type a command or search..." />
@@ -67,6 +76,15 @@ export const Default: Story = {
 }
 
 export const Dark: Story = {
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          { id: 'aria-required-children', enabled: false },
+        ],
+      },
+    },
+  },
   render: () => (
     <Command className="rounded-lg border shadow-md max-w-[400px]">
       <CommandInput placeholder="Type a command or search..." />

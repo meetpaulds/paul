@@ -43,12 +43,13 @@ function Combobox({
           variant="outline"
           role="combobox"
           aria-expanded={open}
+          aria-label={placeholder}
           className={cn('w-[200px] justify-between', className)}
         >
           {value
             ? options.find((option) => option.value === value)?.label
             : placeholder}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" aria-hidden="true" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
