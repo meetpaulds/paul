@@ -18,6 +18,10 @@ const alertVariants = cva(
   }
 )
 
+/**
+ * Alert container with a `role="alert"` for accessibility.
+ * @prop variant - Visual style: 'default' | 'destructive'. @default 'default'
+ */
 const Alert = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
@@ -31,6 +35,7 @@ const Alert = React.forwardRef<
 ))
 Alert.displayName = 'Alert'
 
+/** Heading element rendered inside an `Alert`. */
 const AlertTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
@@ -43,6 +48,7 @@ const AlertTitle = React.forwardRef<
 ))
 AlertTitle.displayName = 'AlertTitle'
 
+/** Supporting description text rendered inside an `Alert`. */
 const AlertDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>

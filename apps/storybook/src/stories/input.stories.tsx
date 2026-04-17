@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import * as React from 'react'
+import { expect, userEvent, within } from 'storybook/test'
 import { Input } from '@meetpaul/ui'
 import { Label } from '@meetpaul/ui'
 
@@ -28,6 +29,12 @@ export const Default: Story = {
   args: {
     placeholder: 'Enter text...',
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByRole('textbox')
+    await userEvent.type(input, 'Hello World')
+    await expect(input).toHaveValue('Hello World')
+  },
 }
 
 export const WithLabel: Story = {
@@ -55,7 +62,20 @@ export const Password: Story = {
 }
 
 export const File: Story = {
-  args: {
-    type: 'file',
-  },
+  render: () => (
+    <div className="grid w-full max-w-sm items-center gap-1.5">
+      <Label htmlFor="file-upload">Upload file</Label>
+      <Input id="file-upload" type="file" />
+    </div>
+  ),
+}
+
+export const Dark: Story = {
+  render: (_args: React.ComponentProps<typeof Input>) => (
+    <div className="grid w-full max-w-sm items-center gap-1.5">
+      <Label htmlFor="dark-input">Email</Label>
+      <Input id="dark-input" type="email" placeholder="Enter email..." />
+    </div>
+  ),
+  globals: { theme: 'dark' },
 }

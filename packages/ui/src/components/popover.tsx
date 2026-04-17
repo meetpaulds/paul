@@ -2,12 +2,16 @@ import * as React from 'react'
 import * as PopoverPrimitive from '@radix-ui/react-popover'
 import { cn } from '@/lib/utils'
 
+/** Root popover component. Key props: `open`, `defaultOpen`, `onOpenChange`. */
 const Popover = PopoverPrimitive.Root
 
+/** Element that opens the popover when clicked. */
 const PopoverTrigger = PopoverPrimitive.Trigger
 
+/** Optional custom anchor position element. */
 const PopoverAnchor = PopoverPrimitive.Anchor
 
+/** Styled floating content panel. Key props: `align`, `sideOffset`. @default align='center', sideOffset=4 */
 const PopoverContent = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>

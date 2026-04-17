@@ -12,11 +12,17 @@ import {
 import { Popover, PopoverContent, PopoverTrigger } from './popover'
 
 interface ComboboxProps {
+  /** List of selectable options. Each item requires a unique `value` and a display `label`. */
   options: { value: string; label: string }[]
+  /** The currently selected value. */
   value?: string
+  /** Callback fired when the selected value changes. Passes an empty string when the selection is cleared. */
   onChange: (value: string) => void
+  /** Placeholder text shown in the trigger when no value is selected. @default 'Select option...' */
   placeholder?: string
+  /** Message displayed inside the dropdown when no options match the search query. @default 'No results found.' */
   emptyMessage?: string
+  /** Additional CSS classes applied to the trigger button. */
   className?: string
 }
 
@@ -37,12 +43,13 @@ function Combobox({
           variant="outline"
           role="combobox"
           aria-expanded={open}
+          aria-label={placeholder}
           className={cn('w-[200px] justify-between', className)}
         >
           {value
             ? options.find((option) => option.value === value)?.label
             : placeholder}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" aria-hidden="true" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">

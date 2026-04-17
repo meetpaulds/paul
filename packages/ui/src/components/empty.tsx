@@ -2,9 +2,13 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 
 interface EmptyProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Icon element displayed at the top of the empty state. */
   icon?: React.ReactNode
+  /** Primary heading text. */
   title?: string
+  /** Supporting description text rendered below the title. */
   description?: string
+  /** Optional action element (e.g. a Button) rendered below the description. */
   action?: React.ReactNode
 }
 

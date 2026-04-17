@@ -2,12 +2,16 @@ import * as React from 'react'
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 import { cn } from '@/lib/utils'
 
+/** Wraps the app (or subtree) to provide shared tooltip delay and skip-delay config. */
 const TooltipProvider = TooltipPrimitive.Provider
 
+/** Root tooltip. Key props: `open`, `defaultOpen`, `onOpenChange`, `delayDuration`. */
 const Tooltip = TooltipPrimitive.Root
 
+/** Element that triggers the tooltip on hover/focus. */
 const TooltipTrigger = TooltipPrimitive.Trigger
 
+/** Styled floating content panel. Key props: `side`, `sideOffset`, `align`. @default sideOffset=4 */
 const TooltipContent = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>

@@ -62,3 +62,20 @@ export const LineChartStory: Story = {
     </ChartContainer>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <ChartContainer config={{ value: { label: 'Sales', color: 'hsl(var(--chart-1))' } }} className="h-[300px] w-[400px]">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip content={<ChartTooltipContent />} />
+          <Bar dataKey="value" fill="hsl(var(--chart-1))" />
+        </BarChart>
+      </ResponsiveContainer>
+    </ChartContainer>
+  ),
+  globals: { theme: 'dark' },
+}

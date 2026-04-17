@@ -12,9 +12,13 @@ type CarouselOptions = UseCarouselParameters[0]
 type CarouselPlugin = UseCarouselParameters[1]
 
 type CarouselProps = {
+  /** Embla Carousel options (e.g. `loop`, `align`, `slidesToScroll`). */
   opts?: CarouselOptions
+  /** Embla Carousel plugins (e.g. Autoplay). */
   plugins?: CarouselPlugin
+  /** Scroll axis. @default 'horizontal' */
   orientation?: 'horizontal' | 'vertical'
+  /** Callback to expose the Embla API instance for imperative control. */
   setApi?: (api: CarouselApi) => void
 }
 
@@ -39,6 +43,10 @@ function useCarousel() {
   return context
 }
 
+/**
+ * Scrollable carousel container powered by Embla Carousel.
+ * Compose with `CarouselContent`, `CarouselItem`, `CarouselPrevious`, and `CarouselNext`.
+ */
 const Carousel = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & CarouselProps

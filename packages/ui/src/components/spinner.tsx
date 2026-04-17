@@ -20,6 +20,9 @@ const spinnerVariants = cva('animate-spin text-primary', {
 interface SpinnerProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof spinnerVariants> {
+  /** Size of the spinner icon. @default 'default' */
+  size?: 'sm' | 'default' | 'lg' | 'xl'
+  /** When true, renders the child element as the root via Radix Slot. */
   asChild?: boolean
 }
 

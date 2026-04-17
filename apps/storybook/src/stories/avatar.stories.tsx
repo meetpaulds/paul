@@ -30,3 +30,19 @@ export const Fallback: Story = {
     </Avatar>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <div className="flex gap-4">
+      <Avatar>
+        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+        <AvatarFallback>CN</AvatarFallback>
+      </Avatar>
+      <Avatar>
+        <AvatarImage src="/broken-image.jpg" alt="@user" />
+        <AvatarFallback>US</AvatarFallback>
+      </Avatar>
+    </div>
+  ),
+  globals: { theme: 'dark' },
+}

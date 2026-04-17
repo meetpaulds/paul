@@ -51,3 +51,21 @@ export const Destructive: Story = {
     </Alert>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4 w-[450px]">
+      <Alert>
+        <Terminal className="h-4 w-4" />
+        <AlertTitle>Default</AlertTitle>
+        <AlertDescription>You can add components using the cli.</AlertDescription>
+      </Alert>
+      <Alert variant="destructive">
+        <Terminal className="h-4 w-4" />
+        <AlertTitle>Error</AlertTitle>
+        <AlertDescription>Your session has expired.</AlertDescription>
+      </Alert>
+    </div>
+  ),
+  globals: { theme: 'dark' },
+}

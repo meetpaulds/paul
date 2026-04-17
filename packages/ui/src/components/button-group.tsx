@@ -8,7 +8,10 @@ const buttonGroupVariants = cva(
 
 interface ButtonGroupProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof buttonGroupVariants> {}
+    VariantProps<typeof buttonGroupVariants> {
+  /** Button elements to group together. Adjacent borders are merged via CSS. */
+  children?: React.ReactNode
+}
 
 const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
   ({ className, ...props }, ref) => {

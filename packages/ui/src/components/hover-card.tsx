@@ -2,10 +2,13 @@ import * as React from 'react'
 import * as HoverCardPrimitive from '@radix-ui/react-hover-card'
 import { cn } from '@/lib/utils'
 
+/** Root hover card. Key props: `open`, `defaultOpen`, `onOpenChange`, `openDelay`, `closeDelay`. */
 const HoverCard = HoverCardPrimitive.Root
 
+/** Element that triggers the hover card on mouse enter. */
 const HoverCardTrigger = HoverCardPrimitive.Trigger
 
+/** Styled floating content panel. Key props: `align`, `sideOffset`. @default align='center', sideOffset=4 */
 const HoverCardContent = React.forwardRef<
   React.ElementRef<typeof HoverCardPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content>

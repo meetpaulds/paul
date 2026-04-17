@@ -4,10 +4,13 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/** Root sheet component built on Radix Dialog. Key props: `open`, `defaultOpen`, `onOpenChange`. */
 const Sheet = SheetPrimitive.Root
 
+/** Element that opens the sheet when clicked. */
 const SheetTrigger = SheetPrimitive.Trigger
 
+/** Element that closes the sheet when clicked. */
 const SheetClose = SheetPrimitive.Close
 
 const SheetPortal = SheetPrimitive.Portal
@@ -48,7 +51,10 @@ const sheetVariants = cva(
 
 interface SheetContentProps
   extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
-    VariantProps<typeof sheetVariants> {}
+    VariantProps<typeof sheetVariants> {
+  /** Side from which the sheet slides in. @default 'right' */
+  side?: 'top' | 'bottom' | 'left' | 'right'
+}
 
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
@@ -71,6 +77,7 @@ const SheetContent = React.forwardRef<
 ))
 SheetContent.displayName = SheetPrimitive.Content.displayName
 
+/** Layout wrapper for the sheet title and description. */
 const SheetHeader = ({
   className,
   ...props
@@ -85,6 +92,7 @@ const SheetHeader = ({
 )
 SheetHeader.displayName = 'SheetHeader'
 
+/** Layout wrapper for action buttons at the bottom of the sheet. */
 const SheetFooter = ({
   className,
   ...props
@@ -99,6 +107,7 @@ const SheetFooter = ({
 )
 SheetFooter.displayName = 'SheetFooter'
 
+/** Accessible title for the sheet, announced by screen readers. */
 const SheetTitle = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>
@@ -111,6 +120,7 @@ const SheetTitle = React.forwardRef<
 ))
 SheetTitle.displayName = SheetPrimitive.Title.displayName
 
+/** Supplementary description text rendered below `SheetTitle`. */
 const SheetDescription = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>

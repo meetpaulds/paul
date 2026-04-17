@@ -3,16 +3,24 @@ import * as MenubarPrimitive from '@radix-ui/react-menubar'
 import { Check, ChevronRight, Circle } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/** A single menu inside `Menubar`. Wrap `MenubarTrigger` + `MenubarContent` inside. */
 const MenubarMenu: typeof MenubarPrimitive.Menu = MenubarPrimitive.Menu
 
+/** Groups related `MenubarItem` elements. */
 const MenubarGroup: typeof MenubarPrimitive.Group = MenubarPrimitive.Group
 
 const MenubarPortal: typeof MenubarPrimitive.Portal = MenubarPrimitive.Portal
 
+/** Root for a nested sub-menu within a menubar menu. */
 const MenubarSub: typeof MenubarPrimitive.Sub = MenubarPrimitive.Sub
 
+/** Groups `MenubarRadioItem` elements for single selection. */
 const MenubarRadioGroup: typeof MenubarPrimitive.RadioGroup = MenubarPrimitive.RadioGroup
 
+/**
+ * Horizontal menu bar built on Radix UI MenubarPrimitive.
+ * Compose with `MenubarMenu`, `MenubarTrigger`, and `MenubarContent`.
+ */
 const Menubar = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Root>

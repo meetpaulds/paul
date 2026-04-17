@@ -20,7 +20,10 @@ const inputGroupVariants = cva(
 
 interface InputGroupProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof inputGroupVariants> {}
+    VariantProps<typeof inputGroupVariants> {
+  /** Height size variant of the group. @default 'default' */
+  size?: 'default' | 'sm' | 'lg'
+}
 
 const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
   ({ className, size, ...props }, ref) => {

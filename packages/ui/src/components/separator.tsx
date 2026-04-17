@@ -2,6 +2,11 @@ import * as React from 'react'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 import { cn } from '@/lib/utils'
 
+/**
+ * Visual divider built on Radix UI SeparatorPrimitive.
+ * @prop orientation - 'horizontal' | 'vertical'. @default 'horizontal'
+ * @prop decorative - When true, hidden from screen readers. @default true
+ */
 const Separator = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>

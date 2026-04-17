@@ -36,3 +36,20 @@ export const WithError: Story = {
     </Field>
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <div className="space-y-4 w-80">
+      <Field label="Email" hint="We will never share your email.">
+        <Input type="email" placeholder="Enter your email" />
+      </Field>
+      <Field label="Username" required>
+        <Input placeholder="Enter username" />
+      </Field>
+      <Field label="Password" error="Password must be at least 8 characters.">
+        <Input type="password" value="123" />
+      </Field>
+    </div>
+  ),
+  globals: { theme: 'dark' },
+}

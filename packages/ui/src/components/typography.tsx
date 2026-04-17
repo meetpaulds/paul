@@ -25,8 +25,12 @@ const typographyVariants = cva('text-foreground', {
 })
 
 type TypographyProps = {
-  asChild?: boolean
+  /** Visual/semantic style variant to apply. @default 'p' */
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'blockquote' | 'code' | 'lead' | 'large' | 'small' | 'muted' | 'list'
+  /** Override the rendered HTML element tag. Defaults to 'p'. */
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'blockquote' | 'code' | 'ul' | 'ol'
+  /** When true, renders the child element as the root via Radix Slot. */
+  asChild?: boolean
 } & React.HTMLAttributes<HTMLElement> &
   VariantProps<typeof typographyVariants>
 

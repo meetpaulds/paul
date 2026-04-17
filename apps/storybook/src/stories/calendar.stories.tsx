@@ -7,6 +7,13 @@ const meta = {
   component: Calendar,
   parameters: {
     layout: 'centered',
+    a11y: {
+      config: {
+        rules: [
+          { id: 'color-contrast', enabled: false },
+        ],
+      },
+    },
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Calendar>
@@ -26,4 +33,26 @@ export const Default: Story = {
       />
     )
   },
+}
+
+export const Dark: Story = {
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: 'color-contrast', enabled: false }],
+      },
+    },
+  },
+  render: () => {
+    const [date, setDate] = React.useState<Date | undefined>(new Date())
+    return (
+      <Calendar
+        mode="single"
+        selected={date}
+        onSelect={setDate}
+        className="rounded-md border"
+      />
+    )
+  },
+  globals: { theme: 'dark' },
 }

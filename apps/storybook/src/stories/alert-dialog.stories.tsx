@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { fn } from 'storybook/test'
+import { expect, fn, userEvent, within } from 'storybook/test'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -26,6 +26,14 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByRole('button', { name: 'Show Dialog' }))
+    const body = within(document.body)
+    await expect(body.getByRole('alertdialog')).toBeVisible()
+    await expect(body.getByText('Are you absolutely sure?')).toBeVisible()
+    await userEvent.click(body.getByRole('button', { name: 'Cancel' }))
+  },
   render: () => (
     <AlertDialog>
       <AlertDialogTrigger asChild>
@@ -46,4 +54,34 @@ export const Default: Story = {
       </AlertDialogContent>
     </AlertDialog>
   ),
+}
+
+export const Dark: Story = {
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: 'color-contrast', enabled: false }],
+      },
+    },
+  },
+  render: () => (
+    <AlertDialog>
+      <AlertDialogTrigger asChild>
+        <Button variant="destructive">Delete Account</Button>
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+          <AlertDialogDescription>
+            This action cannot be undone.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction onClick={fn()}>Delete</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  ),
+  globals: { theme: 'dark' },
 }

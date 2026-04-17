@@ -3,8 +3,13 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/**
+ * Root accordion container. Set `type="single"` for one-open or `type="multiple"` for multi-open.
+ * Key props: `type`, `value`, `defaultValue`, `onValueChange`, `collapsible`.
+ */
 const Accordion = AccordionPrimitive.Root
 
+/** A single accordion section. Requires a unique `value` prop. */
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
@@ -17,6 +22,7 @@ const AccordionItem = React.forwardRef<
 ))
 AccordionItem.displayName = 'AccordionItem'
 
+/** Clickable header that toggles the accordion section open/closed. */
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
@@ -37,6 +43,7 @@ const AccordionTrigger = React.forwardRef<
 ))
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 
+/** Collapsible content panel rendered below the `AccordionTrigger`. */
 const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>

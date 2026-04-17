@@ -44,6 +44,21 @@ export const Square: Story = {
   ),
 }
 
+export const Dark: Story = {
+  args: {
+    ratio: 16 / 9,
+    className: 'bg-muted w-[400px]',
+  },
+  render: (args: React.ComponentProps<typeof AspectRatio>) => (
+    <AspectRatio {...args}>
+      <div className="flex h-full w-full items-center justify-center rounded-md bg-muted text-muted-foreground text-sm">
+        16:9
+      </div>
+    </AspectRatio>
+  ),
+  globals: { theme: 'dark' },
+}
+
 export const Portrait: Story = {
   args: {
     ratio: 2 / 3,

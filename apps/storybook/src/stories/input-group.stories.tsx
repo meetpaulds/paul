@@ -18,7 +18,7 @@ export const WithTextPrefix: Story = {
   render: () => (
     <InputGroup>
       <InputGroupText>https://</InputGroupText>
-      <Input placeholder="example.com" />
+      <Input aria-label="Website URL" placeholder="example.com" />
     </InputGroup>
   ),
 }
@@ -38,9 +38,9 @@ export const WithAtSign: Story = {
   render: () => (
     <InputGroup>
       <InputGroupText>
-        <AtSign className="h-4 w-4" />
+        <AtSign className="h-4 w-4" aria-hidden="true" />
       </InputGroupText>
-      <Input placeholder="username" />
+      <Input aria-label="Username" placeholder="username" />
       <InputGroupText>@example.com</InputGroupText>
     </InputGroup>
   ),
@@ -55,4 +55,22 @@ export const WithPassword: Story = {
       <Input type="password" placeholder="Password" />
     </InputGroup>
   ),
+}
+
+export const Dark: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4 w-80">
+      <InputGroup>
+        <InputGroupText>https://</InputGroupText>
+        <Input placeholder="example.com" />
+      </InputGroup>
+      <InputGroup>
+        <InputGroupText>
+          <DollarSign className="h-4 w-4" />
+        </InputGroupText>
+        <Input type="number" placeholder="0.00" />
+      </InputGroup>
+    </div>
+  ),
+  globals: { theme: 'dark' },
 }

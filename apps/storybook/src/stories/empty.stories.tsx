@@ -44,3 +44,15 @@ export const Simple: Story = {
     />
   ),
 }
+
+export const Dark: Story = {
+  render: () => (
+    <Empty
+      icon={<FolderOpen className="h-10 w-10 text-muted-foreground" />}
+      title="No items found"
+      description="Get started by creating a new item."
+      action={<Button>Create Item</Button>}
+    />
+  ),
+  globals: { theme: 'dark' },
+}

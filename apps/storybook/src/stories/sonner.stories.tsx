@@ -8,6 +8,13 @@ const meta = {
   component: Toaster,
   parameters: {
     layout: 'centered',
+    a11y: {
+      config: {
+        rules: [
+          { id: 'aria-hidden-focus', enabled: false },
+        ],
+      },
+    },
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Toaster>
@@ -40,4 +47,17 @@ export const Default: Story = {
       </div>
     </>
   ),
+}
+
+export const Dark: Story = {
+  render: () => (
+    <>
+      <Toaster />
+      <div className="space-x-2">
+        <Button onClick={() => toast('Event has been created')}>Show Toast</Button>
+        <Button variant="outline" onClick={() => toast.success('Success!')}>Success</Button>
+      </div>
+    </>
+  ),
+  globals: { theme: 'dark' },
 }

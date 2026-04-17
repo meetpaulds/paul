@@ -4,6 +4,10 @@ import { cva } from 'class-variance-authority'
 import { ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/**
+ * Root navigation menu built on Radix UI NavigationMenuPrimitive.
+ * Compose with `NavigationMenuList`, `NavigationMenuItem`, `NavigationMenuTrigger`, and `NavigationMenuContent`.
+ */
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>

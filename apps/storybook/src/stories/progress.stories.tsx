@@ -31,3 +31,11 @@ export const Complete: Story = {
     className: 'w-[300px]',
   },
 }
+
+export const Dark: Story = {
+  args: {
+    value: 60,
+    className: 'w-[300px]',
+  },
+  globals: { theme: 'dark' },
+}
