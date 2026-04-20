@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
@@ -24,28 +25,46 @@ const typographyVariants = cva('text-foreground', {
   },
 })
 
+const variantElementMap: Record<string, React.ElementType> = {
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  p: 'p',
+  blockquote: 'blockquote',
+  code: 'code',
+  lead: 'p',
+  large: 'p',
+  small: 'small',
+  muted: 'p',
+  list: 'ul',
+}
+
 type TypographyProps = {
   /** Visual/semantic style variant to apply. @default 'p' */
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'blockquote' | 'code' | 'lead' | 'large' | 'small' | 'muted' | 'list'
-  /** Override the rendered HTML element tag. Defaults to 'p'. */
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'blockquote' | 'code' | 'ul' | 'ol'
   /** When true, renders the child element as the root via Radix Slot. */
   asChild?: boolean
 } & React.HTMLAttributes<HTMLElement> &
   VariantProps<typeof typographyVariants>
 
+/**
+ * Typography — renders styled text with semantic HTML automatically chosen per variant.
+ *
+ * The `variant` prop controls both the visual style and the rendered element
+ * (e.g. `h1` → `<h1>`, `list` → `<ul>`, `lead` → `<p>`). Use `asChild` to
+ * render any custom element while keeping the variant's styles.
+ *
+ * @example
+ * ```tsx
+ * <Typography variant="h1">Page Title</Typography>
+ * <Typography variant="muted">Helper text</Typography>
+ * <Typography variant="h2" asChild><a href="/about">About</a></Typography>
+ * ```
+ */
 const Typography = React.forwardRef<HTMLElement, TypographyProps>(
-  ({ className, variant = 'p', as: Component = 'p', asChild, ...props }, ref) => {
-    if (asChild) {
-      return (
-        <span
-          ref={ref as React.Ref<HTMLSpanElement>}
-          className={cn(typographyVariants({ variant }), className)}
-          {...props}
-        />
-      )
-    }
-    const Comp = Component as any
+  ({ className, variant = 'p', asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : (variantElementMap[variant] ?? 'p') as any
     return (
       <Comp
         ref={ref}

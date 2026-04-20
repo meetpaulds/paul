@@ -25,6 +25,18 @@ interface InputGroupProps
   size?: 'default' | 'sm' | 'lg'
 }
 
+/**
+ * InputGroup — wraps an `Input` with optional prefix/suffix text or icon addons.
+ * Compose with `InputGroupText` for labelled add-ons (e.g. currency symbol, domain).
+ *
+ * @example
+ * ```tsx
+ * <InputGroup>
+ *   <InputGroupText>https://</InputGroupText>
+ *   <Input placeholder="yoursite.com" />
+ * </InputGroup>
+ * ```
+ */
 const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
   ({ className, size, ...props }, ref) => {
     return (
@@ -38,6 +50,7 @@ const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
 )
 InputGroup.displayName = 'InputGroup'
 
+/** Non-interactive add-on rendered before or after an `Input` inside an `InputGroup`. */
 const InputGroupText = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>

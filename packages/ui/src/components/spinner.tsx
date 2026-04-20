@@ -26,6 +26,18 @@ interface SpinnerProps
   asChild?: boolean
 }
 
+/**
+ * Spinner — an animated loading indicator using a `Loader2` icon.
+ *
+ * @example
+ * ```tsx
+ * <Spinner />
+ * <Spinner size="lg" />
+ * ```
+ *
+ * @accessibility Wrap with `role="status"` and a visually-hidden label when used
+ * as a standalone loading state: `<span role="status"><Spinner /><span className="sr-only">Loading…</span></span>`
+ */
 const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
   ({ className, size, ...props }, ref) => {
     return (

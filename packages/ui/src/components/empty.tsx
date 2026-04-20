@@ -12,6 +12,19 @@ interface EmptyProps extends React.HTMLAttributes<HTMLDivElement> {
   action?: React.ReactNode
 }
 
+/**
+ * Empty — a centred empty-state layout with optional icon, title, description, and action.
+ *
+ * @example
+ * ```tsx
+ * <Empty
+ *   icon={<InboxIcon className="h-8 w-8 text-muted-foreground" />}
+ *   title="No results"
+ *   description="Try adjusting your filters."
+ *   action={<Button>Clear filters</Button>}
+ * />
+ * ```
+ */
 const Empty = React.forwardRef<HTMLDivElement, EmptyProps>(
   ({ className, icon, title, description, action, ...props }, ref) => {
     return (

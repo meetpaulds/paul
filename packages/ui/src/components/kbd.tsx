@@ -6,6 +6,15 @@ interface KbdProps extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode
 }
 
+/**
+ * Kbd — renders a `<kbd>` element styled as a keyboard key badge.
+ *
+ * @example
+ * ```tsx
+ * Press <Kbd>⌘K</Kbd> to open the command palette.
+ * <Kbd>Enter</Kbd>
+ * ```
+ */
 const Kbd = React.forwardRef<HTMLElement, KbdProps>(
   ({ className, ...props }, ref) => {
     return (
