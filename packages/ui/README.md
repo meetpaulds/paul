@@ -19,7 +19,7 @@ npm install @meetpaul/ui
 Import the global styles once in your application entry point:
 
 ```tsx
-import '@meetpaul/ui/styles'
+import '@meetpaul/ui/styles/globals.css'
 ```
 
 Then use any component:
@@ -174,13 +174,13 @@ npm install react react-dom
 Components use CSS variables for theming. Import the global styles to get the default design system:
 
 ```tsx
-import '@meetpaul/ui/styles'
+import '@meetpaul/ui/styles/globals.css'
 ```
 
 The styles include:
 - Tailwind CSS v4 with utility classes
 - CSS custom properties for colors, spacing, and typography
-- Google Fonts (Nunito Sans) integration
+- Google Fonts (Montserrat) integration
 
 ## Documentation
 
@@ -188,6 +188,25 @@ For interactive documentation and component examples, visit our Storybook:
 
 ```bash
 pnpm dev  # Starts Storybook at http://localhost:6006
+```
+
+Online: [paul Storybook](https://meetpaulds.github.io/paul/)
+
+## Testing
+
+Components are tested with Vitest and Testing Library:
+
+```bash
+pnpm --filter @meetpaul/ui test
+```
+
+Accessibility is verified automatically against all 177 stories with `@storybook/test-runner` + `axe-playwright`:
+
+```bash
+# In a separate terminal, start Storybook first
+pnpm --filter paul dev
+# Then run the a11y audit
+pnpm exec test-storybook --url http://localhost:6006
 ```
 
 ## Contributing
