@@ -15,7 +15,7 @@ describe('Alert', () => {
 
   it('renders destructive variant', () => {
     render(<Alert variant="destructive">Error</Alert>)
-    expect(screen.getByRole('alert')).toHaveClass('text-destructive')
+    expect(screen.getByRole('alert')).toHaveClass('text-destructive-text')
   })
 
   it('renders AlertTitle', () => {
