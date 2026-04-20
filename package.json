@@ -7,6 +7,7 @@
     "build:storybook": "pnpm --filter paul build",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter @meetpaul/ui test",
     "clean": "turbo run clean && rm -rf node_modules",
     "publish:ui": "pnpm --filter @meetpaul/ui publish --no-git-checks",
     "version:patch": "cd packages/ui && npm version patch",

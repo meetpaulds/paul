@@ -14,6 +14,13 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    a11y: {
+      config: {
+        rules: [
+          { id: 'aria-hidden-focus', enabled: false },
+        ],
+      },
+    },
   },
   decorators: [
     withThemeByClassName({
