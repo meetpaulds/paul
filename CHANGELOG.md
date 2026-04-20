@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.3.0] — 2026-04-20
+
+### Added
+
+- **Storybook introduction page** (`paul / Introduction`) — origin story, values, component list, quick start code block, and get involved CTA sourced from the `meetpaulds` GitHub profile
+
+### Changed
+
+- **Bundle size** — externalised all Radix UI, TanStack Table, lucide-react, recharts, date-fns, embla-carousel, cmdk, sonner, vaul and other heavy runtime deps; ESM bundle drops from 780kb to 92kb (gzip: 203kb → 17kb)
+- **`peerDependencies`** — all externalised packages moved from `dependencies` to `peerDependencies`; `clsx`, `class-variance-authority`, `tailwind-merge` remain as direct deps
+- **`homepage`** — updated to `https://meetpaulds.github.io/paul` (live Storybook)
+- **npm keywords** — added `radix-ui`, `accessibility`, `wcag`, `typescript`, `dark-mode`
+
+### Fixed
+
+- **CI — Chromatic** — replaced `chromaui/action@v1` (bundled CLI 11.x) with direct `pnpm chromatic` call using locally installed `chromatic@16.3.0`
+- **Unit test** — `alert.test.tsx` destructive variant assertion updated from `text-destructive` to `text-destructive-text`
+- **`.gitignore`** — added `storybook-static/`, `playwright-report/`, `test-results/`, `.playwright/`
+
+### Infrastructure
+
+- **Automated npm publish** — added `publish` job to `ci.yml`; runs on push to `main` only, after `ci` job passes, uses `npm publish --provenance --access public` (requires `NPM_TOKEN` secret)
+
+---
+
 ## [0.2.0] — 2026-04-20
 
 ### Fixed
@@ -56,5 +81,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ESLint `no-undef` error on `IntersectionObserver` in test setup (`packages/ui/src/test/setup.ts`)
 - Storybook a11y test runner now merges per-story rule overrides with global suppressions
 
+[0.3.0]: https://github.com/meetpaulds/paul/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/meetpaulds/paul/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/meetpaulds/paul/releases/tag/v0.1.0

@@ -1,0 +1,243 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="paul / Introduction" />
+
+<div style={{
+  fontFamily: "'Montserrat', sans-serif",
+  maxWidth: '720px',
+  margin: '0 auto',
+  padding: '48px 24px 80px',
+  color: 'var(--sb-color-defaulttext, #1a1a2e)',
+  lineHeight: '1.7',
+}}>
+
+<div style={{ marginBottom: '48px' }}>
+  <div style={{
+    fontSize: '13px',
+    fontWeight: '600',
+    letterSpacing: '0.12em',
+    textTransform: 'uppercase',
+    color: '#888',
+    marginBottom: '12px',
+  }}>
+    Pattern, Asset &amp; UI Library
+  </div>
+  <h1 style={{
+    fontSize: '56px',
+    fontWeight: '800',
+    lineHeight: '1.1',
+    margin: '0 0 16px',
+    letterSpacing: '-0.02em',
+  }}>
+    Hi, I'm paul. 👋
+  </h1>
+  <p style={{
+    fontSize: '20px',
+    fontWeight: '400',
+    color: '#555',
+    margin: '0 0 32px',
+    maxWidth: '560px',
+  }}>
+    A complete design system built for teams who ship great products and refuse to waste time reinventing the wheel.
+  </p>
+  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+    {[
+      { label: 'v0.2.0', color: '#e8f5e9', text: '#2e7d32' },
+      { label: 'WCAG AA', color: '#e3f2fd', text: '#1565c0' },
+      { label: '56 Components', color: '#fce4ec', text: '#880e4f' },
+      { label: 'MIT License', color: '#fff3e0', text: '#e65100' },
+      { label: 'TypeScript', color: '#e8eaf6', text: '#283593' },
+    ].map(({ label, color, text }) => (
+      <span key={label} style={{
+        display: 'inline-block',
+        padding: '4px 12px',
+        borderRadius: '999px',
+        fontSize: '12px',
+        fontWeight: '700',
+        letterSpacing: '0.04em',
+        backgroundColor: color,
+        color: text,
+      }}>
+        {label}
+      </span>
+    ))}
+  </div>
+</div>
+
+<hr style={{ border: 'none', borderTop: '1px solid #e5e5e5', margin: '0 0 48px' }} />
+
+<section style={{ marginBottom: '48px' }}>
+  <h2 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '16px', letterSpacing: '-0.01em' }}>
+    The story 📖
+  </h2>
+  <p style={{ margin: '0 0 16px', color: '#444' }}>
+    It started with a sticky note on a monitor in a small Graz agency.
+  </p>
+  <blockquote style={{
+    borderLeft: '4px solid #111',
+    margin: '24px 0',
+    padding: '12px 0 12px 24px',
+    fontSize: '18px',
+    fontStyle: 'italic',
+    fontWeight: '600',
+    color: '#111',
+  }}>
+    "Never build this button again."
+  </blockquote>
+  <p style={{ margin: '0', color: '#444' }}>
+    One component became ten. Ten became a library. A library became paul — a design system born out of frustration, raised on late nights, and built with one simple belief: <strong>every great product deserves a solid foundation behind it.</strong> paul is that foundation.
+  </p>
+</section>
+
+<section style={{ marginBottom: '48px' }}>
+  <h2 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '16px', letterSpacing: '-0.01em' }}>
+    What paul is 🧱
+  </h2>
+  <p style={{ margin: '0 0 16px', color: '#444' }}>
+    paul is not just a collection of components. He's a shared language between designers and developers. A set of decisions made once, applied everywhere. A foundation that lets teams focus on what actually matters — building things people love.
+  </p>
+  <p style={{ margin: '0', color: '#444' }}>
+    Consistent, accessible, and honest. No bloat, no magic, no surprises. Just solid ground to build on.
+  </p>
+</section>
+
+<section style={{ marginBottom: '48px' }}>
+  <h2 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '24px', letterSpacing: '-0.01em' }}>
+    The values 💛
+  </h2>
+  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+    {[
+      { title: 'Consistent', icon: '⬛', desc: 'One decision made well, applied everywhere. Predictability is a feature.' },
+      { title: 'Accessible', icon: '♿', desc: 'Built for everyone, not just the average user. WCAG AA compliance throughout.' },
+      { title: 'Honest', icon: '🔍', desc: 'No bloat, no magic, no surprises. 177 automated a11y tests back every component.' },
+      { title: 'Human', icon: '🤝', desc: 'Behind every component is a person using it. We build with that in mind.' },
+    ].map(({ title, icon, desc }) => (
+      <div key={title} style={{
+        padding: '20px',
+        borderRadius: '12px',
+        border: '1px solid #e5e5e5',
+        backgroundColor: '#fafafa',
+      }}>
+        <div style={{ fontSize: '24px', marginBottom: '8px' }}>{icon}</div>
+        <div style={{ fontWeight: '700', fontSize: '15px', marginBottom: '6px' }}>{title}</div>
+        <div style={{ fontSize: '14px', color: '#666', lineHeight: '1.6' }}>{desc}</div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section style={{ marginBottom: '48px' }}>
+  <h2 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '16px', letterSpacing: '-0.01em' }}>
+    What's inside 🏠
+  </h2>
+  <p style={{ margin: '0 0 20px', color: '#444' }}>
+    56 production-ready components built on Radix UI primitives, styled with Tailwind CSS v4, fully typed with TypeScript, and documented right here in Storybook.
+  </p>
+  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+    {[
+      'Accordion','Alert','AlertDialog','AspectRatio','Avatar','Badge','Button','ButtonGroup',
+      'Calendar','Card','Carousel','Chart','Checkbox','Collapsible','Combobox','Command',
+      'ContextMenu','DataTable','DatePicker','Dialog','Drawer','DropdownMenu','Empty','Field',
+      'Form','HoverCard','Input','InputGroup','InputOTP','Kbd','Label','Menubar',
+      'NavigationMenu','Pagination','Popover','Progress','RadioGroup','ResizablePanels',
+      'ScrollArea','Select','Separator','Sheet','Sidebar','Skeleton','Slider','Sonner',
+      'Switch','Table','Tabs','Textarea','Toast','Toggle','ToggleGroup','Tooltip','Typography',
+    ].map((name) => (
+      <span key={name} style={{
+        display: 'inline-block',
+        padding: '3px 10px',
+        borderRadius: '6px',
+        fontSize: '12px',
+        fontWeight: '500',
+        backgroundColor: '#f0f0f0',
+        color: '#333',
+      }}>
+        {name}
+      </span>
+    ))}
+  </div>
+</section>
+
+<section style={{ marginBottom: '48px' }}>
+  <h2 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '16px', letterSpacing: '-0.01em' }}>
+    Quick start 🚀
+  </h2>
+  <div style={{
+    backgroundColor: '#1a1a1a',
+    borderRadius: '10px',
+    padding: '20px 24px',
+    fontFamily: "'Fira Code', 'Cascadia Code', monospace",
+    fontSize: '13px',
+    lineHeight: '2',
+    color: '#e5e5e5',
+    overflowX: 'auto',
+  }}>
+    <div><span style={{ color: '#888' }}># install the package</span></div>
+    <div><span style={{ color: '#79c0ff' }}>npm</span> install <span style={{ color: '#ffa657' }}>@meetpaul/ui</span></div>
+    <br />
+    <div><span style={{ color: '#888' }}># import the styles once in your app root</span></div>
+    <div><span style={{ color: '#79c0ff' }}>import</span> <span style={{ color: '#ffa657' }}>'@meetpaul/ui/styles'</span></div>
+    <br />
+    <div><span style={{ color: '#888' }}># use any component</span></div>
+    <div><span style={{ color: '#79c0ff' }}>import</span> {'{ Button }'} <span style={{ color: '#79c0ff' }}>from</span> <span style={{ color: '#ffa657' }}>'@meetpaul/ui'</span></div>
+  </div>
+</section>
+
+<section style={{ marginBottom: '48px' }}>
+  <h2 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '16px', letterSpacing: '-0.01em' }}>
+    Who made paul? 👤
+  </h2>
+  <p style={{ margin: '0 0 8px', color: '#444' }}>
+    paul was designed and built by the small but mighty team at{' '}
+    <a href="https://sirpauls.com" target="_blank" rel="noreferrer" style={{ color: '#111', fontWeight: '600' }}>
+      SirPauls
+    </a>
+    {' '}— a digital service agency from <strong>Graz, Austria 🇦🇹</strong>
+  </p>
+  <p style={{ margin: '0', color: '#444' }}>
+    We built paul because we needed him. We're sharing paul because maybe you do too.
+  </p>
+</section>
+
+<section>
+  <div style={{
+    backgroundColor: '#111',
+    borderRadius: '16px',
+    padding: '32px',
+    color: '#fff',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '16px',
+  }}>
+    <div style={{ fontSize: '20px', fontWeight: '700' }}>Get involved 🤝</div>
+    <p style={{ margin: '0', color: '#aaa', fontSize: '15px' }}>
+      paul is open source and always will be.
+    </p>
+    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+      {[
+        { label: '🐛 Report a bug', href: 'https://github.com/meetpaulds/paul/issues' },
+        { label: '💡 Start a discussion', href: 'https://github.com/meetpaulds/paul/discussions' },
+        { label: '📦 npm package', href: 'https://www.npmjs.com/package/@meetpaul/ui' },
+        { label: '⭐ Star on GitHub', href: 'https://github.com/meetpaulds/paul' },
+      ].map(({ label, href }) => (
+        <a key={label} href={href} target="_blank" rel="noreferrer" style={{
+          display: 'inline-block',
+          padding: '8px 16px',
+          borderRadius: '8px',
+          backgroundColor: '#fff',
+          color: '#111',
+          fontWeight: '600',
+          fontSize: '13px',
+          textDecoration: 'none',
+        }}>
+          {label}
+        </a>
+      ))}
+    </div>
+    <div style={{ fontSize: '12px', color: '#666', marginTop: '8px' }}>
+      MIT — use it, remix it, make something great with it. Made with care and too much coffee ☕ in Graz by @SirPauls
+    </div>
+  </div>
+</section>
+
+</div>

@@ -43,3 +43,11 @@ pnpm-debug.log*
 
 # Turbo
 .turbo/
+
+# Storybook
+storybook-static/
+
+# Playwright / test-runner
+playwright-report/
+test-results/
+.playwright/
