@@ -15,6 +15,26 @@ interface FieldProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
 }
 
+/**
+ * Field — a form field wrapper that pairs a `Label`, a form control, and optional
+ * hint/error text. Automatically associates the label with the control via a
+ * generated `id`.
+ *
+ * @example
+ * ```tsx
+ * <Field label="Email" hint="We'll never share your email." required>
+ *   <Input type="email" />
+ * </Field>
+ *
+ * <Field label="Username" error="Username is already taken.">
+ *   <Input />
+ * </Field>
+ * ```
+ *
+ * @accessibility The label is linked to the child control via `htmlFor` / `id`.
+ * Required fields get a visible `*` marker; always also set `required` on the
+ * underlying input for screen reader support.
+ */
 const Field = React.forwardRef<HTMLDivElement, FieldProps>(
   ({ className, label, error, hint, required, children, ...props }, ref) => {
     const id = React.useId()

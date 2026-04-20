@@ -26,6 +26,20 @@ interface ComboboxProps {
   className?: string
 }
 
+/**
+ * Combobox — a searchable select built on `Command` + `Popover`.
+ *
+ * @example
+ * ```tsx
+ * const [value, setValue] = React.useState('')
+ * <Combobox
+ *   options={[{ value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}
+ *   value={value}
+ *   onChange={setValue}
+ *   placeholder="Select framework…"
+ * />
+ * ```
+ */
 function Combobox({
   options,
   value,

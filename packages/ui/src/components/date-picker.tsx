@@ -21,6 +21,15 @@ interface DatePickerProps {
   className?: string
 }
 
+/**
+ * DatePicker — a controlled date selection input built on `Calendar` + `Popover`.
+ *
+ * @example
+ * ```tsx
+ * const [date, setDate] = React.useState<Date>()
+ * <DatePicker date={date} onSelect={setDate} placeholder="Pick a date" />
+ * ```
+ */
 export function DatePicker({
   date,
   onSelect,

@@ -9,6 +9,19 @@ export interface TextareaProps
   disabled?: boolean
 }
 
+/**
+ * Textarea — a styled multi-line text input.
+ *
+ * Supports all native `<textarea>` props.
+ *
+ * @example
+ * ```tsx
+ * <Textarea placeholder="Write a message…" rows={4} />
+ * ```
+ *
+ * @accessibility Always pair with a `<Label>` using `htmlFor` / `id`, or use
+ * inside a `<Field>` which handles association automatically.
+ */
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, ...props }, ref) => {
     return (
