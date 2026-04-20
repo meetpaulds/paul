@@ -7,6 +7,21 @@ export interface InputProps
   type?: React.InputHTMLAttributes<HTMLInputElement>['type']
 }
 
+/**
+ * Input — a styled single-line text input.
+ *
+ * Supports all native `<input>` props. Use `type` to control the input mode
+ * (text, email, password, number, file, etc.).
+ *
+ * @example
+ * ```tsx
+ * <Input placeholder="Email address" type="email" />
+ * <Input type="password" />
+ * ```
+ *
+ * @accessibility Always pair with a `<Label>` using `htmlFor` / `id`, or use
+ * inside a `<Field>` which handles association automatically.
+ */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
     return (

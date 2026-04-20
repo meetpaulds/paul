@@ -34,6 +34,19 @@ describe('Button', () => {
     expect(clicked).toBe(true)
   })
 
+  it('applies destructive-outline variant classes', () => {
+    render(<Button variant="destructive-outline">Delete</Button>)
+    const btn = screen.getByRole('button')
+    expect(btn.className).toContain('text-destructive-text')
+    expect(btn.className).toContain('border-destructive')
+  })
+
+  it('applies destructive-ghost variant classes', () => {
+    render(<Button variant="destructive-ghost">Delete</Button>)
+    const btn = screen.getByRole('button')
+    expect(btn.className).toContain('text-destructive-text')
+  })
+
   it('renders as child when asChild is true', () => {
     render(
       <Button asChild>

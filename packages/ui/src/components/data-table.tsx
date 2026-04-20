@@ -27,6 +27,21 @@ interface DataTableProps<TData, TValue> {
   className?: string
 }
 
+/**
+ * DataTable — a sortable, paginated table built on TanStack Table v8.
+ *
+ * Pass `columns` (TanStack `ColumnDef[]`) and `data` to render a fully
+ * functional table with client-side sorting and pagination controls.
+ *
+ * @example
+ * ```tsx
+ * const columns: ColumnDef<Payment>[] = [
+ *   { accessorKey: 'status', header: 'Status' },
+ *   { accessorKey: 'amount', header: 'Amount' },
+ * ]
+ * <DataTable columns={columns} data={payments} />
+ * ```
+ */
 export function DataTable<TData, TValue>({
   columns,
   data,

@@ -13,6 +13,18 @@ interface ButtonGroupProps
   children?: React.ReactNode
 }
 
+/**
+ * ButtonGroup — renders a row of buttons with adjacent borders merged into a single unit.
+ *
+ * @example
+ * ```tsx
+ * <ButtonGroup>
+ *   <Button variant="outline">Left</Button>
+ *   <Button variant="outline">Center</Button>
+ *   <Button variant="outline">Right</Button>
+ * </ButtonGroup>
+ * ```
+ */
 const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
   ({ className, ...props }, ref) => {
     return (
