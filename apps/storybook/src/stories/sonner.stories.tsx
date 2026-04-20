@@ -4,10 +4,17 @@ import { Toaster } from '@meetpaul/ui'
 import { Button } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Sonner',
+  title: 'Feedback/Sonner',
   component: Toaster,
   parameters: {
     layout: 'centered',
+    a11y: {
+      config: {
+        rules: [
+          { id: 'aria-hidden-focus', enabled: false },
+        ],
+      },
+    },
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Toaster>

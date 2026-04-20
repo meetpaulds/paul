@@ -3,7 +3,7 @@ import { expect, fn, userEvent, within } from 'storybook/test'
 import { Button } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Button',
+  title: 'Actions & Buttons/Button',
   component: Button,
   parameters: {
     layout: 'centered',

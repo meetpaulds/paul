@@ -4,7 +4,7 @@ import { expect, userEvent, within } from 'storybook/test'
 import { Combobox } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Combobox',
+  title: 'Data Entry & Forms/Combobox',
   parameters: {
     layout: 'centered',
   },

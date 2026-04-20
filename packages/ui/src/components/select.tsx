@@ -3,12 +3,16 @@ import * as SelectPrimitive from '@radix-ui/react-select'
 import { Check, ChevronDown, ChevronUp } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/** Root select component. Key props: `value`, `defaultValue`, `onValueChange`, `disabled`. */
 const Select = SelectPrimitive.Root
 
+/** Groups related `SelectItem` elements with an optional label. */
 const SelectGroup = SelectPrimitive.Group
 
+/** Renders the currently selected value inside `SelectTrigger`. */
 const SelectValue = SelectPrimitive.Value
 
+/** Styled button that opens the select dropdown. */
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
@@ -64,6 +68,7 @@ const SelectScrollDownButton = React.forwardRef<
 SelectScrollDownButton.displayName =
   SelectPrimitive.ScrollDownButton.displayName
 
+/** Dropdown panel containing `SelectItem` elements. Rendered in a portal. */
 const SelectContent = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
@@ -96,6 +101,7 @@ const SelectContent = React.forwardRef<
 ))
 SelectContent.displayName = SelectPrimitive.Content.displayName
 
+/** Non-interactive label rendered above a group of items in `SelectContent`. */
 const SelectLabel = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Label>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
@@ -108,6 +114,7 @@ const SelectLabel = React.forwardRef<
 ))
 SelectLabel.displayName = SelectPrimitive.Label.displayName
 
+/** A selectable option inside `SelectContent`. Requires a unique `value` prop. */
 const SelectItem = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
@@ -130,6 +137,7 @@ const SelectItem = React.forwardRef<
 ))
 SelectItem.displayName = SelectPrimitive.Item.displayName
 
+/** Horizontal divider between groups in `SelectContent`. */
 const SelectSeparator = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>

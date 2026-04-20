@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Toast, ToastAction, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Toast',
+  title: 'Feedback/Toast',
   component: Toast,
   parameters: {
     layout: 'centered',

@@ -15,7 +15,7 @@ import { Input } from '@meetpaul/ui'
 import { Label } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Sheet',
+  title: 'Overlays/Sheet',
   component: Sheet,
   parameters: {
     layout: 'centered',

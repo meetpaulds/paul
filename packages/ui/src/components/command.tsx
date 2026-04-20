@@ -5,6 +5,11 @@ import { Search } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Dialog, DialogContent } from './dialog'
 
+/**
+ * Accessible command palette built on `cmdk`.
+ * Compose with `CommandInput`, `CommandList`, `CommandEmpty`, `CommandGroup`, and `CommandItem`.
+ * Key props: `value`, `onValueChange`, `filter`, `loop`.
+ */
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive>

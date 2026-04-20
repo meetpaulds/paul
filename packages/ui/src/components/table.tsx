@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 
+/** Responsive `<table>` wrapper with overflow scroll. */
 const Table = React.forwardRef<
   HTMLTableElement,
   React.HTMLAttributes<HTMLTableElement>
@@ -15,6 +16,7 @@ const Table = React.forwardRef<
 ))
 Table.displayName = 'Table'
 
+/** `<thead>` section containing header rows. */
 const TableHeader = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
@@ -23,6 +25,7 @@ const TableHeader = React.forwardRef<
 ))
 TableHeader.displayName = 'TableHeader'
 
+/** `<tbody>` section containing data rows. */
 const TableBody = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
@@ -35,6 +38,7 @@ const TableBody = React.forwardRef<
 ))
 TableBody.displayName = 'TableBody'
 
+/** `<tfoot>` section for summary or totals rows. */
 const TableFooter = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
@@ -50,6 +54,7 @@ const TableFooter = React.forwardRef<
 ))
 TableFooter.displayName = 'TableFooter'
 
+/** A `<tr>` row with hover and selected state styling. */
 const TableRow = React.forwardRef<
   HTMLTableRowElement,
   React.HTMLAttributes<HTMLTableRowElement>
@@ -65,6 +70,7 @@ const TableRow = React.forwardRef<
 ))
 TableRow.displayName = 'TableRow'
 
+/** `<th>` header cell. */
 const TableHead = React.forwardRef<
   HTMLTableCellElement,
   React.ThHTMLAttributes<HTMLTableCellElement>
@@ -80,6 +86,7 @@ const TableHead = React.forwardRef<
 ))
 TableHead.displayName = 'TableHead'
 
+/** `<td>` data cell. */
 const TableCell = React.forwardRef<
   HTMLTableCellElement,
   React.TdHTMLAttributes<HTMLTableCellElement>
@@ -95,6 +102,7 @@ const TableCell = React.forwardRef<
 ))
 TableCell.displayName = 'TableCell'
 
+/** `<caption>` element rendered below the table describing its contents. */
 const TableCaption = React.forwardRef<
   HTMLTableCaptionElement,
   React.HTMLAttributes<HTMLTableCaptionElement>

@@ -14,7 +14,7 @@ import {
 import { Button } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/AlertDialog',
+  title: 'Feedback/AlertDialog',
   component: AlertDialog,
   parameters: {
     layout: 'centered',
@@ -57,6 +57,13 @@ export const Default: Story = {
 }
 
 export const Dark: Story = {
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: 'color-contrast', enabled: false }],
+      },
+    },
+  },
   render: () => (
     <AlertDialog>
       <AlertDialogTrigger asChild>

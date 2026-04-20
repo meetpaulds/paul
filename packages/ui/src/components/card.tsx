@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 
+/** Styled surface container with border, background, and shadow. */
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -16,6 +17,7 @@ const Card = React.forwardRef<
 ))
 Card.displayName = 'Card'
 
+/** Top section of a Card, typically containing `CardTitle` and `CardDescription`. */
 const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -28,6 +30,7 @@ const CardHeader = React.forwardRef<
 ))
 CardHeader.displayName = 'CardHeader'
 
+/** Primary heading inside `CardHeader`. */
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
@@ -40,6 +43,7 @@ const CardTitle = React.forwardRef<
 ))
 CardTitle.displayName = 'CardTitle'
 
+/** Secondary supporting text inside `CardHeader`. */
 const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
@@ -52,6 +56,7 @@ const CardDescription = React.forwardRef<
 ))
 CardDescription.displayName = 'CardDescription'
 
+/** Main body area of a Card. */
 const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -60,6 +65,7 @@ const CardContent = React.forwardRef<
 ))
 CardContent.displayName = 'CardContent'
 
+/** Bottom section of a Card, typically containing action buttons. */
 const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>

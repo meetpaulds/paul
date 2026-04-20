@@ -4,6 +4,11 @@ import { cn } from '@/lib/utils'
 
 const Chart = RechartsPrimitive.ResponsiveContainer
 
+/**
+ * Wrapper that injects Recharts CSS custom properties from a `config` map and
+ * renders a `ResponsiveContainer` child. Use alongside Recharts chart primitives.
+ * @prop config - Map of data-key → `{ label, color }` used to set `--color-<key>` CSS vars.
+ */
 const ChartContainer = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<'div'> & {

@@ -6,6 +6,11 @@ import { buttonVariants } from './button'
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
+/**
+ * Date picker calendar built on `react-day-picker`.
+ * Key props: `mode` ('single' | 'multiple' | 'range'), `selected`, `onSelect`, `disabled`, `initialFocus`.
+ * Accepts all `DayPicker` props.
+ */
 function Calendar({
   className,
   classNames,

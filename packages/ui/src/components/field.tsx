@@ -3,10 +3,15 @@ import { cn } from '@/lib/utils'
 import { Label } from './label'
 
 interface FieldProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Label text rendered above the child input. */
   label?: string
+  /** Validation error message. Replaces hint when present. */
   error?: string
+  /** Helper text rendered below the child input when there is no error. */
   hint?: string
+  /** When true, appends a required asterisk (*) to the label. */
   required?: boolean
+  /** The form control element (e.g. Input, Select) to associate with the label. */
   children: React.ReactNode
 }
 

@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@meetpaul/ui'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Tabs',
+  title: 'Navigation/Tabs',
   component: Tabs,
   parameters: {
     layout: 'centered',
@@ -55,7 +55,7 @@ export const Default: Story = {
     await expect(canvas.getByText('Account settings content')).toBeVisible()
     await userEvent.click(canvas.getByRole('tab', { name: 'Password' }))
     await expect(canvas.getByText('Password settings content')).toBeVisible()
-    await expect(canvas.queryByText('Account settings content')).not.toBeVisible()
+    await expect(canvas.queryByText('Account settings content')).not.toBeInTheDocument()
   },
 }
 

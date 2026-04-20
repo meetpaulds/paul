@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 import { cn } from '@/lib/utils'
 
+/** Circular image container. Falls back to `AvatarFallback` when the image fails to load. */
 const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
@@ -17,6 +18,7 @@ const Avatar = React.forwardRef<
 ))
 Avatar.displayName = AvatarPrimitive.Root.displayName
 
+/** Avatar image. Requires `src` and `alt` props. Hidden while loading; shows `AvatarFallback` on error. */
 const AvatarImage = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Image>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
@@ -29,6 +31,7 @@ const AvatarImage = React.forwardRef<
 ))
 AvatarImage.displayName = AvatarPrimitive.Image.displayName
 
+/** Fallback content (e.g. initials) shown when `AvatarImage` is not available. */
 const AvatarFallback = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Fallback>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>

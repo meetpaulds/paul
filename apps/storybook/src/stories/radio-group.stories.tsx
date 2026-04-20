@@ -4,7 +4,7 @@ import { RadioGroup, RadioGroupItem } from '@meetpaul/ui'
 import { Label } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/RadioGroup',
+  title: 'Data Entry & Forms/RadioGroup',
   component: RadioGroup,
   parameters: {
     layout: 'centered',

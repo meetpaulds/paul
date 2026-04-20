@@ -8,7 +8,7 @@ import {
 import { Button, Avatar, AvatarFallback, AvatarImage } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/HoverCard',
+  title: 'Overlays/HoverCard',
   component: HoverCard,
   parameters: {
     layout: 'centered',
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    await userEvent.hover(canvas.getByRole('link', { name: '@nextjs' }))
+    await userEvent.hover(canvas.getByRole('button', { name: '@nextjs' }))
   },
   render: () => (
     <HoverCard>
@@ -73,7 +73,7 @@ export const Open: Story = {
     </HoverCard>
   ),
   play: async () => {
-    await expect(within(document.body).getByText('@nextjs')).toBeVisible()
+    await expect(within(document.body).getByText('The React Framework for the Web.')).toBeVisible()
   },
 }
 

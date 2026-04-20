@@ -3,7 +3,7 @@ import { ScrollArea } from '@meetpaul/ui'
 import { Separator } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/ScrollArea',
+  title: 'Layout/ScrollArea',
   component: ScrollArea,
   parameters: {
     layout: 'centered',

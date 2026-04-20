@@ -4,7 +4,7 @@ import { Empty } from '@meetpaul/ui'
 import { Button } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Empty',
+  title: 'Data Display/Empty',
   parameters: {
     layout: 'centered',
   },

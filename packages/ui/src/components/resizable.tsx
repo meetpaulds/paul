@@ -2,6 +2,10 @@ import { GripVertical } from 'lucide-react'
 import * as ResizablePrimitive from 'react-resizable-panels'
 import { cn } from '@/lib/utils'
 
+/**
+ * Root group wrapping resizable panels. Key prop: `direction` ('horizontal' | 'vertical').
+ * Built on `react-resizable-panels`.
+ */
 const ResizablePanelGroup = ({
   className,
   ...props
@@ -15,8 +19,13 @@ const ResizablePanelGroup = ({
   />
 )
 
+/** Individual resizable panel. Key props: `defaultSize`, `minSize`, `maxSize`. */
 const ResizablePanel = ResizablePrimitive.Panel
 
+/**
+ * Drag handle between panels.
+ * @prop withHandle - When true, renders a visible grip icon on the handle.
+ */
 const ResizableHandle = ({
   withHandle,
   className,

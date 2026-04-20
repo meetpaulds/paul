@@ -5,7 +5,7 @@ import { Input } from '@meetpaul/ui'
 import { Label } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Input',
+  title: 'Data Entry & Forms/Input',
   component: Input,
   parameters: {
     layout: 'centered',
@@ -62,9 +62,12 @@ export const Password: Story = {
 }
 
 export const File: Story = {
-  args: {
-    type: 'file',
-  },
+  render: () => (
+    <div className="grid w-full max-w-sm items-center gap-1.5">
+      <Label htmlFor="file-upload">Upload file</Label>
+      <Input id="file-upload" type="file" />
+    </div>
+  ),
 }
 
 export const Dark: Story = {

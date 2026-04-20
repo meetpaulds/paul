@@ -4,7 +4,7 @@ import { Checkbox } from '@meetpaul/ui'
 import { Label } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Checkbox',
+  title: 'Data Entry & Forms/Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',

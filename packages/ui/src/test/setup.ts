@@ -18,6 +18,7 @@ class IntersectionObserverMock {
   unobserve() {}
   disconnect() {}
 }
+// eslint-disable-next-line no-undef
 global.IntersectionObserver = IntersectionObserverMock as unknown as typeof IntersectionObserver
 
 if (typeof window !== 'undefined' && !window.matchMedia) {

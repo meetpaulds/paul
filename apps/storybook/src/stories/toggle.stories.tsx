@@ -4,7 +4,7 @@ import { Bold, Italic, Underline } from 'lucide-react'
 import { Toggle } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Toggle',
+  title: 'Actions & Buttons/Toggle',
   component: Toggle,
   parameters: {
     layout: 'centered',

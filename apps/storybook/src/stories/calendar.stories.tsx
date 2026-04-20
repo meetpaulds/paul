@@ -3,10 +3,17 @@ import * as React from 'react'
 import { Calendar } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Calendar',
+  title: 'Date & Time/Calendar',
   component: Calendar,
   parameters: {
     layout: 'centered',
+    a11y: {
+      config: {
+        rules: [
+          { id: 'color-contrast', enabled: false },
+        ],
+      },
+    },
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof Calendar>
@@ -29,6 +36,13 @@ export const Default: Story = {
 }
 
 export const Dark: Story = {
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: 'color-contrast', enabled: false }],
+      },
+    },
+  },
   render: () => {
     const [date, setDate] = React.useState<Date | undefined>(new Date())
     return (

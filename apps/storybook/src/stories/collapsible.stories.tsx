@@ -6,7 +6,7 @@ import { Button } from '@meetpaul/ui'
 import { ChevronDown } from 'lucide-react'
 
 const meta = {
-  title: 'Components/Collapsible',
+  title: 'Disclosure/Collapsible',
   component: Collapsible,
   parameters: {
     layout: 'centered',
@@ -45,7 +45,7 @@ export const Default: Story = {
     await userEvent.click(toggle)
     await expect(canvas.getByText('@radix-ui/colors')).toBeVisible()
     await userEvent.click(toggle)
-    await expect(canvas.queryByText('@radix-ui/colors')).not.toBeVisible()
+    await expect(canvas.queryByText('@radix-ui/colors')).not.toBeInTheDocument()
   },
 }
 

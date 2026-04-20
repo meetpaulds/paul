@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Typography } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Typography',
+  title: 'Data Display/Typography',
   component: Typography,
   parameters: {
     layout: 'centered',

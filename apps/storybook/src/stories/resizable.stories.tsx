@@ -6,7 +6,7 @@ import {
 } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Resizable',
+  title: 'Layout/Resizable',
   parameters: {
     layout: 'centered',
   },

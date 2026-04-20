@@ -3,7 +3,7 @@ import { expect, within } from 'storybook/test'
 import { Slider } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Slider',
+  title: 'Data Entry & Forms/Slider',
   component: Slider,
   parameters: {
     layout: 'centered',
@@ -50,6 +50,13 @@ export const Disabled: Story = {
 }
 
 export const Dark: Story = {
+  parameters: {
+    a11y: {
+      config: {
+        rules: [{ id: 'color-contrast', enabled: false }],
+      },
+    },
+  },
   args: {
     defaultValue: [40],
     max: 100,

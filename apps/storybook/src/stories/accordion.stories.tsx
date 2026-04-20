@@ -9,7 +9,7 @@ import {
 } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Accordion',
+  title: 'Disclosure/Accordion',
   component: Accordion,
   parameters: {
     layout: 'centered',

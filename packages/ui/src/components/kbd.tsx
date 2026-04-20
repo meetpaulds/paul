@@ -1,7 +1,10 @@
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 
-interface KbdProps extends React.HTMLAttributes<HTMLElement> {}
+interface KbdProps extends React.HTMLAttributes<HTMLElement> {
+  /** Keyboard key or shortcut text to display (e.g. '⌘K', 'Enter', '⇧'). */
+  children?: React.ReactNode
+}
 
 const Kbd = React.forwardRef<HTMLElement, KbdProps>(
   ({ className, ...props }, ref) => {

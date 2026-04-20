@@ -2,6 +2,10 @@ import * as React from 'react'
 import * as SwitchPrimitives from '@radix-ui/react-switch'
 import { cn } from '@/lib/utils'
 
+/**
+ * A styled toggle switch built on Radix UI SwitchPrimitive.
+ * Accepts all Radix Switch.Root props including `checked`, `defaultChecked`, `onCheckedChange`, and `disabled`.
+ */
 const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>

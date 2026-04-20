@@ -9,7 +9,7 @@ import {
 } from '@meetpaul/ui'
 
 const meta = {
-  title: 'Components/Select',
+  title: 'Data Entry & Forms/Select',
   component: Select,
   parameters: {
     layout: 'centered',
@@ -23,7 +23,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: () => (
     <Select>
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-[180px]" aria-label="Select a fruit">
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
       <SelectContent>
@@ -49,7 +49,7 @@ export const Default: Story = {
 export const Disabled: Story = {
   render: () => (
     <Select disabled>
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-[180px]" aria-label="Disabled select">
         <SelectValue placeholder="Disabled" />
       </SelectTrigger>
       <SelectContent>
@@ -66,7 +66,7 @@ export const Disabled: Story = {
 export const Dark: Story = {
   render: () => (
     <Select>
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-[180px]" aria-label="Select a fruit">
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
       <SelectContent>

@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { ButtonProps, buttonVariants } from './button'
 
+/** Root `<nav>` wrapper with `role="navigation"` and `aria-label="pagination"`. */
 const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (
   <nav
     role="navigation"
@@ -13,6 +14,7 @@ const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (
 )
 Pagination.displayName = 'Pagination'
 
+/** `<ul>` container for pagination items. */
 const PaginationContent = React.forwardRef<
   HTMLUListElement,
   React.ComponentProps<'ul'>
@@ -25,6 +27,7 @@ const PaginationContent = React.forwardRef<
 ))
 PaginationContent.displayName = 'PaginationContent'
 
+/** Wrapper `<li>` for a single pagination element. */
 const PaginationItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentProps<'li'>
@@ -34,6 +37,7 @@ const PaginationItem = React.forwardRef<
 PaginationItem.displayName = 'PaginationItem'
 
 type PaginationLinkProps = {
+  /** When true, applies `aria-current="page"` and outline styling. */
   isActive?: boolean
 } & Pick<ButtonProps, 'size'> &
   React.ComponentProps<'a'>
@@ -58,6 +62,7 @@ const PaginationLink = ({
 )
 PaginationLink.displayName = 'PaginationLink'
 
+/** Previous-page navigation link with chevron icon. */
 const PaginationPrevious = ({
   className,
   ...props
@@ -74,6 +79,7 @@ const PaginationPrevious = ({
 )
 PaginationPrevious.displayName = 'PaginationPrevious'
 
+/** Next-page navigation link with chevron icon. */
 const PaginationNext = ({
   className,
   ...props
@@ -90,6 +96,7 @@ const PaginationNext = ({
 )
 PaginationNext.displayName = 'PaginationNext'
 
+/** Ellipsis indicator for skipped page ranges. Hidden from screen readers. */
 const PaginationEllipsis = ({
   className,
   ...props
