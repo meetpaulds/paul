@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.4.0] — 2026-04-20
+
+### Added
+
+- **Destructive button variants** — `destructive-outline` (red border + text, transparent bg) and `destructive-ghost` (red text only) added to `buttonVariants`; covered by new unit tests and Storybook stories
+- **JSDoc on all 35 components** — every exported component now has a component-level JSDoc block with description, `@example` snippet, and `@accessibility` notes where relevant
+
+### Changed
+
+- **Typography polymorphism** — removed `as` prop; each variant now auto-renders its semantic HTML element via an internal `variantElementMap` (`h1`→`<h1>`, `lead`→`<p>`, `list`→`<ul>`, etc.); `asChild` delegates correctly to `@radix-ui/react-slot`
+- **Dependencies** — moved all Radix UI, TanStack Table, lucide-react, recharts, and other runtime packages from `peerDependencies` to `dependencies`; only `react` and `react-dom` (`>=18.0.0 || >=19.0.0`) remain as peers
+
+### Breaking
+
+- **`Typography` `as` prop removed** — replace `<Typography as="h1">` with `<Typography variant="h1">`
+
+---
+
 ## [0.3.0] — 2026-04-20
 
 ### Added
@@ -81,6 +99,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ESLint `no-undef` error on `IntersectionObserver` in test setup (`packages/ui/src/test/setup.ts`)
 - Storybook a11y test runner now merges per-story rule overrides with global suppressions
 
+[0.4.0]: https://github.com/meetpaulds/paul/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/meetpaulds/paul/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/meetpaulds/paul/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/meetpaulds/paul/releases/tag/v0.1.0
