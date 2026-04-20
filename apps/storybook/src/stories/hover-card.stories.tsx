@@ -32,7 +32,7 @@ export const Default: Story = {
       <HoverCardContent className="w-80">
         <div className="flex justify-between space-x-4">
           <Avatar>
-            <AvatarImage src="https://github.com/vercel.png" />
+            <AvatarImage src="https://github.com/vercel.png" alt="Vercel" />
             <AvatarFallback>VC</AvatarFallback>
           </Avatar>
           <div className="space-y-1">
@@ -61,7 +61,7 @@ export const Open: Story = {
       <HoverCardContent className="w-80">
         <div className="flex justify-between space-x-4">
           <Avatar>
-            <AvatarImage src="https://github.com/vercel.png" />
+            <AvatarImage src="https://github.com/vercel.png" alt="Vercel" />
             <AvatarFallback>VC</AvatarFallback>
           </Avatar>
           <div className="space-y-1">

@@ -11,7 +11,6 @@ const config: TestRunnerConfig = {
     const storyRules: { id: string; enabled: boolean }[] =
       storyContext.parameters?.a11y?.config?.rules ?? []
     const globalRules = [
-      { id: 'color-contrast', enabled: false },
       { id: 'aria-hidden-focus', enabled: false },
     ]
     const mergedRules = [
