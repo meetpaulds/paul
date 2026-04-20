@@ -39,7 +39,27 @@ export default defineConfig({
       fileName: (format) => `index.${format === 'es' ? 'js' : 'cjs'}`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: [
+        'react',
+        'react-dom',
+        'react/jsx-runtime',
+        /^@radix-ui\/.*/,
+        /^@tanstack\/.*/,
+        'class-variance-authority',
+        'clsx',
+        'cmdk',
+        'date-fns',
+        'embla-carousel-react',
+        'input-otp',
+        'lucide-react',
+        'next-themes',
+        'react-day-picker',
+        'react-resizable-panels',
+        'recharts',
+        'sonner',
+        'tailwind-merge',
+        'vaul',
+      ],
       output: {
         globals: {
           react: 'React',
