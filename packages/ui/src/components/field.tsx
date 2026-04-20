@@ -24,11 +24,11 @@ const Field = React.forwardRef<HTMLDivElement, FieldProps>(
         {label && (
           <Label htmlFor={id}>
             {label}
-            {required && <span className="text-destructive ml-1">*</span>}
+            {required && <span className="text-destructive-text ml-1">*</span>}
           </Label>
         )}
         {React.isValidElement(children) && React.cloneElement(children as React.ReactElement<{ id?: string }>, { id } as any)}
-        {error && <p className="text-sm text-destructive">{error}</p>}
+        {error && <p className="text-sm text-destructive-text">{error}</p>}
         {hint && !error && <p className="text-sm text-muted-foreground">{hint}</p>}
       </div>
     )

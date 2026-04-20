@@ -17,7 +17,6 @@ const preview: Preview = {
     a11y: {
       config: {
         rules: [
-          { id: 'color-contrast', enabled: false },
           { id: 'aria-hidden-focus', enabled: false },
         ],
       },

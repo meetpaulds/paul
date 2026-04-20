@@ -58,13 +58,6 @@ export const AllVariants: Story = {
 }
 
 export const Dark: Story = {
-  parameters: {
-    a11y: {
-      config: {
-        rules: [{ id: 'color-contrast', enabled: false }],
-      },
-    },
-  },
   render: () => (
     <div className="flex flex-wrap gap-2">
       <Badge>Default</Badge>
