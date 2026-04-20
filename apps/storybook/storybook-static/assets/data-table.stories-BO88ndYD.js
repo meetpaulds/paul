@@ -1,6 +1,0 @@
-import{n as e}from"./chunk-BneVvdWh.js";import{t}from"./jsx-runtime-D16BNjX-.js";import{Ar as n,Rr as r,nn as i,ri as a,t as o}from"./src-B3Lk02FA.js";var s,c,l,u,d,f;e((()=>{o(),r(),s=t(),c={title:`Components/DataTable`,component:i,parameters:{layout:`centered`},tags:[`autodocs`]},l=[{id:`728ed52f`,amount:100,status:`pending`,email:`m@example.com`},{id:`489e1d42`,amount:125,status:`processing`,email:`example@gmail.com`},{id:`489e1d43`,amount:200,status:`success`,email:`test@example.com`}],u=[{accessorKey:`status`,header:`Status`},{accessorKey:`email`,header:({column:e})=>(0,s.jsxs)(n,{variant:`ghost`,onClick:()=>e.toggleSorting(e.getIsSorted()===`asc`),children:[`Email`,(0,s.jsx)(a,{className:`ml-2 h-4 w-4`})]})},{accessorKey:`amount`,header:()=>(0,s.jsx)(`div`,{className:`text-right`,children:`Amount`}),cell:({row:e})=>{let t=parseFloat(e.getValue(`amount`));return(0,s.jsx)(`div`,{className:`text-right font-medium`,children:new Intl.NumberFormat(`en-US`,{style:`currency`,currency:`USD`}).format(t)})}}],d={args:{data:l,columns:u}},d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:`{
-  args: {
-    data,
-    columns: columns as ColumnDef<unknown>[]
-  }
-}`,...d.parameters?.docs?.source}}},f=[`Default`]}))();export{d as Default,f as __namedExportsOrder,c as default};

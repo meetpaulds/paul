@@ -9,7 +9,10 @@ const __dirname = dirname(__filename)
 const uiSrc = resolve(__dirname, '../../../packages/ui/src')
 
 const config: StorybookConfig = {
-  stories: ['../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: [
+    '../src/stories/**/*.mdx',
+    '../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+  ],
   addons: [
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-themes"),
