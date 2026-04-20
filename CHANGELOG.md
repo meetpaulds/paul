@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.2.0] — 2026-04-20
+
+### Fixed
+
+- **WCAG 2.1 AA contrast** — restored full compliance in both light and dark mode without any axe bypasses or `color-contrast` suppressions
+- **`--destructive` token split** — introduced `--destructive-text` semantic token for text-on-background use cases (`Alert` variant, `Field` error, required asterisk); `--destructive` remains the background-fill token
+  - Light `--destructive-text`: `hsl(0,72%,44%)` → 6.02:1 on white
+  - Dark `--destructive-text`: `hsl(0,90%,65%)` → high contrast on near-black
+  - Light `--destructive`: `hsl(0,84.2%,50%)` with pure-white foreground → 4.53:1 ✓
+- **`--muted-foreground` light**: `hsl(240,5%,38%)` → 6.61:1 on white (up from borderline 4.48:1)
+- **`--destructive-foreground`**: set to pure white (`100%`) in both modes for accurate axe computation
+- **`Alert` destructive variant**: `text-destructive` → `text-destructive-text`
+- **`Field` error & required asterisk**: `text-destructive` → `text-destructive-text`
+- **`HoverCard` stories**: added `alt="Vercel"` to `AvatarImage` (`image-alt` violation)
+- **Release artifacts**: `CHANGELOG.md`, consumer `README.md` corrections, `deploy-storybook.yml` GitHub Pages workflow, unit test step in `ci.yml`
+
+### Removed
+
+- All `color-contrast` axe suppressions from `preview.ts`, `test-runner.ts`, and per-story overrides (`alert-dialog`, `badge`, `slider`)
+
+---
+
 ## [0.1.0] — 2026-04-20
 
 ### Added
@@ -34,4 +56,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ESLint `no-undef` error on `IntersectionObserver` in test setup (`packages/ui/src/test/setup.ts`)
 - Storybook a11y test runner now merges per-story rule overrides with global suppressions
 
+[0.2.0]: https://github.com/meetpaulds/paul/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/meetpaulds/paul/releases/tag/v0.1.0
