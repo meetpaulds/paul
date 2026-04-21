@@ -1,0 +1,76 @@
+{
+  "name": "@meetpaul/ui-vue",
+  "version": "0.1.0",
+  "description": "paul — Vue 3 component library. The same design system as @meetpaul/ui, built natively for Vue.",
+  "license": "MIT",
+  "author": "SirPauls <office@sirpauls.com>",
+  "homepage": "https://meetpaulds.github.io/paul",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meetpaulds/paul.git",
+    "directory": "packages/ui-vue"
+  },
+  "bugs": {
+    "url": "https://github.com/meetpaulds/paul/issues"
+  },
+  "keywords": [
+    "design-system",
+    "ui",
+    "components",
+    "vue",
+    "vue3",
+    "radix-vue",
+    "tailwind",
+    "dark-mode",
+    "accessibility",
+    "wcag",
+    "typescript",
+    "paul",
+    "meetpaul"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "peerDependencies": {
+    "vue": ">=3.4.0"
+  },
+  "dependencies": {
+    "@meetpaul/tokens": "workspace:*",
+    "radix-vue": "^1.9.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.4",
+    "lucide-vue-next": "^0.454.0",
+    "@tanstack/vue-table": "^8.20.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.14",
+    "vite-plugin-dts": "^4.3.0",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.2.0"
+  }
+}
