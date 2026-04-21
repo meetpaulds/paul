@@ -13,7 +13,7 @@ import { cn } from '@/lib/utils'
  * `aria-valuenow` automatically.
  */
 defineOptions({ name: 'Progress' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{ modelValue?: number; max?: number; class?: string }>()
 </script>
 <template>
   <ProgressRoot v-bind="props" :class="cn('relative h-2 w-full overflow-hidden rounded-full bg-primary/20', props.class)">
