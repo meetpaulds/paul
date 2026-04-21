@@ -4,7 +4,7 @@ import { Check } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 /** A single selectable option inside SelectContent. Shows a checkmark when selected. */
 defineOptions({ name: 'SelectItem' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{ value: string; disabled?: boolean; textValue?: string; class?: string }>()
 </script>
 <template>
   <SelectItem v-bind="props" :class="cn('relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50', props.class)">

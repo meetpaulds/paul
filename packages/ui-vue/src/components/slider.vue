@@ -12,7 +12,7 @@ import { cn } from '@/lib/utils'
  * @accessibility Keyboard: Arrow keys move by step, Home/End jump to min/max.
  */
 defineOptions({ name: 'Slider' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{ modelValue?: number[]; min?: number; max?: number; step?: number; disabled?: boolean; orientation?: 'horizontal' | 'vertical'; class?: string }>()
 </script>
 <template>
   <SliderRoot v-bind="props" :class="cn('relative flex w-full touch-none select-none items-center', props.class)">
