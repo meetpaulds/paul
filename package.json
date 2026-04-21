@@ -3,8 +3,9 @@
   "private": true,
   "scripts": {
     "dev": "pnpm --filter paul dev",
+    "dev:storybook": "pnpm --filter @meetpaul/tokens build && concurrently \"pnpm --filter paul dev\" \"pnpm --filter paul-storybook-vue dev\" \"pnpm --filter paul-storybook-svelte dev\"",
     "build": "pnpm --filter @meetpaul/ui build",
-    "build:storybook": "pnpm --filter @meetpaul/tokens build && pnpm --filter paul build",
+    "build:storybook": "pnpm --filter @meetpaul/tokens build && pnpm --filter paul build && pnpm --filter paul-storybook-vue build && pnpm --filter paul-storybook-svelte build",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm --filter @meetpaul/ui test",
@@ -15,6 +16,7 @@
     "version:major": "cd packages/ui && npm version major"
   },
   "devDependencies": {
+    "concurrently": "^9.0.0",
     "turbo": "latest",
     "typescript": "latest",
     "eslint": "latest",
