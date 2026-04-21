@@ -1,0 +1,63 @@
+{
+  "name": "@meetpaul/tokens",
+  "version": "1.0.0",
+  "description": "Design tokens for the paul design system — CSS custom properties, Tailwind v4 preset, and typed JS token object.",
+  "license": "MIT",
+  "author": "SirPauls <office@sirpauls.com>",
+  "homepage": "https://meetpaulds.github.io/paul",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meetpaulds/paul.git",
+    "directory": "packages/tokens"
+  },
+  "bugs": {
+    "url": "https://github.com/meetpaulds/paul/issues"
+  },
+  "keywords": [
+    "design-tokens",
+    "css-variables",
+    "tailwind",
+    "design-system",
+    "paul",
+    "meetpaul",
+    "dark-mode",
+    "theming"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./preset": {
+      "import": "./dist/preset.js",
+      "require": "./dist/preset.cjs",
+      "types": "./dist/preset.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly --declaration --outDir dist",
+    "dev": "vite build --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^5.4.14"
+  }
+}
