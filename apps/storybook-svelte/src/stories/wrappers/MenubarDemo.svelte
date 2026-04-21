@@ -8,7 +8,9 @@
 
 <Menubar>
   <MenubarMenu>
-    <MenubarTrigger>File</MenubarTrigger>
+    {#snippet trigger({ toggle })}
+      <MenubarTrigger onclick={toggle}>File</MenubarTrigger>
+    {/snippet}
     <MenubarItem>New Tab</MenubarItem>
     <MenubarItem>New Window</MenubarItem>
     <MenubarSeparator />
@@ -17,7 +19,9 @@
     <MenubarItem>Print</MenubarItem>
   </MenubarMenu>
   <MenubarMenu>
-    <MenubarTrigger>Edit</MenubarTrigger>
+    {#snippet trigger({ toggle })}
+      <MenubarTrigger onclick={toggle}>Edit</MenubarTrigger>
+    {/snippet}
     <MenubarItem>Undo</MenubarItem>
     <MenubarItem>Redo</MenubarItem>
     <MenubarSeparator />
@@ -26,7 +30,9 @@
     <MenubarItem>Paste</MenubarItem>
   </MenubarMenu>
   <MenubarMenu>
-    <MenubarTrigger>View</MenubarTrigger>
+    {#snippet trigger({ toggle })}
+      <MenubarTrigger onclick={toggle}>View</MenubarTrigger>
+    {/snippet}
     <MenubarItem>Zoom In</MenubarItem>
     <MenubarItem>Zoom Out</MenubarItem>
   </MenubarMenu>

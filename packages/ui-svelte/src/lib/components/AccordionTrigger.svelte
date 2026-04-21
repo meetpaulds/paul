@@ -1,5 +1,4 @@
 <script lang="ts">
-  // @ts-nocheck
   /** Clickable header that toggles the accordion section. Animates a chevron icon. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'
@@ -11,7 +10,7 @@
     children?: import('svelte').Snippet
   }
   const { value, class: cls = '', children }: Props = $props()
-  const accordion = getContext<ReturnType<typeof import('@melt-ui/svelte').createAccordion>>('paul-accordion')
+  const accordion = getContext<any>('paul-accordion')
 </script>
 <button
   use:melt={accordion.elements.trigger(value)}

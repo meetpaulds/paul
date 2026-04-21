@@ -6,9 +6,11 @@
 </script>
 
 <DropdownMenu>
-  <button slot="trigger" class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
-    Open
-  </button>
+  {#snippet trigger({ toggle })}
+    <button class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90" onclick={toggle}>
+      Open
+    </button>
+  {/snippet}
   <DropdownMenuLabel>My Account</DropdownMenuLabel>
   <DropdownMenuSeparator />
   <DropdownMenuItem>Profile</DropdownMenuItem>

@@ -1,5 +1,5 @@
 <script lang="ts">
   import type { Snippet } from 'svelte'
-  let { value = '', pressed = $bindable(false), class: className = '', onclick, children, ...props } = $props()
+  let { value = '', pressed = $bindable(false), class: className = '', onclick, children, ...props }: { value?: string; pressed?: boolean; class?: string; onclick?: any; children?: Snippet; [key: string]: unknown } = $props()
 </script>
 <button type="button" role="radio" aria-checked={pressed} {onclick} class={['inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground h-10 px-3', className].join(' ')} data-state={pressed ? 'on' : 'off'} {...props}>{@render children?.()}</button>

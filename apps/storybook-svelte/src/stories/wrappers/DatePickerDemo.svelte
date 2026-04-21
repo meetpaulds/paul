@@ -11,14 +11,16 @@
 </script>
 
 <Popover bind:open>
-  <button
-    slot="trigger"
-    class="flex w-56 items-center justify-start gap-2 rounded-md border px-3 py-2 text-sm hover:bg-accent {!selected ? 'text-muted-foreground' : ''}"
-  >
-    <span>📅</span>
-    {selected ? formatDate(selected) : 'Pick a date'}
-  </button>
+  {#snippet trigger({ open: _, toggle })}
+    <button
+      class="flex w-56 items-center justify-start gap-2 rounded-md border px-3 py-2 text-sm hover:bg-accent {!selected ? 'text-muted-foreground' : ''}"
+      onclick={toggle}
+    >
+      <span>📅</span>
+      {selected ? formatDate(selected) : 'Pick a date'}
+    </button>
+  {/snippet}
   <div class="p-0">
-    <Calendar bind:selected onSelect={() => (open = false)} />
+    <Calendar bind:selected />
   </div>
 </Popover>

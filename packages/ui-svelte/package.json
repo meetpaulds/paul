@@ -54,7 +54,8 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
-    "typecheck": "svelte-check --tsconfig ./tsconfig.json"
+    "typecheck": "svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run"
   },
   "peerDependencies": {
     "svelte": ">=5.0.0"
@@ -67,10 +68,14 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/svelte": "^5.3.1",
+    "jsdom": "^26.1.0",
     "svelte": "^5.55.0",
     "svelte-check": "^4.4.6",
     "typescript": "^5.9.3",
     "vite": "^8.0.8",
-    "vite-plugin-dts": "^4.3.0"
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^3.1.2"
   }
 }

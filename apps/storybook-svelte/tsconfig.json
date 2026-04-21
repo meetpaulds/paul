@@ -7,7 +7,12 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@meetpaul/ui-svelte/*": ["../../packages/ui-svelte/src/lib/components/*"],
+      "@meetpaul/tokens/*": ["../../packages/tokens/src/*"]
+    }
   },
   "include": ["src", ".storybook"]
 }
