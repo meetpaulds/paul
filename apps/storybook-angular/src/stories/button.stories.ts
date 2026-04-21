@@ -1,26 +1,25 @@
-import type { Meta, StoryObj } from '@storybook/svelte-vite'
-import Button from '@meetpaul/ui-svelte/Button.svelte'
+import type { Meta, StoryObj } from '@storybook/angular'
+import { moduleMetadata } from '@storybook/angular'
+import { ButtonComponent } from '@meetpaul/ui-angular'
 
-const meta: Meta<typeof Button> = {
+const meta: Meta<ButtonComponent> = {
   title: 'Actions & Buttons/Button',
-  component: Button,
+  component: ButtonComponent,
   tags: ['autodocs'],
   parameters: { layout: 'centered' },
+  decorators: [moduleMetadata({ imports: [ButtonComponent] })],
+  render: (args) => ({
+    props: args,
+    template: `<button paul-button [variant]="variant" [size]="size" [disabled]="disabled">Button</button>`,
+  }),
   argTypes: {
-    variant: {
-      control: 'select',
-      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link', 'destructive-outline', 'destructive-ghost'],
-    },
-    size: {
-      control: 'select',
-      options: ['default', 'sm', 'lg', 'icon'],
-    },
+    variant: { control: 'select', options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link', 'destructive-outline', 'destructive-ghost'] },
+    size: { control: 'select', options: ['default', 'sm', 'lg', 'icon'] },
     disabled: { control: 'boolean' },
   },
 }
-
 export default meta
-type Story = StoryObj<typeof Button>
+type Story = StoryObj<ButtonComponent>
 
 export const Default: Story = { args: { variant: 'default', size: 'default' } }
 export const Destructive: Story = { args: { variant: 'destructive' } }

@@ -33,6 +33,11 @@ const config: StorybookConfig = {
       url: 'http://localhost:6008',
       expanded: false,
     },
+    angular: {
+      title: 'Angular',
+      url: 'http://localhost:6009',
+      expanded: false,
+    },
   },
   viteFinal: async (config: import('vite').InlineConfig) => {
     config.resolve ??= {}
