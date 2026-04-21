@@ -1,0 +1,74 @@
+{
+  "name": "@meetpaul/ui-svelte",
+  "version": "1.0.0",
+  "description": "paul — Svelte 5 component library. The same design system as @meetpaul/ui, built natively for Svelte.",
+  "license": "MIT",
+  "author": "SirPauls <office@sirpauls.com>",
+  "homepage": "https://meetpaulds.github.io/paul",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meetpaulds/paul.git",
+    "directory": "packages/ui-svelte"
+  },
+  "bugs": {
+    "url": "https://github.com/meetpaulds/paul/issues"
+  },
+  "keywords": [
+    "design-system",
+    "ui",
+    "components",
+    "svelte",
+    "svelte5",
+    "melt-ui",
+    "tailwind",
+    "dark-mode",
+    "accessibility",
+    "wcag",
+    "typescript",
+    "paul",
+    "meetpaul"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "svelte": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "typecheck": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "peerDependencies": {
+    "svelte": ">=5.0.0"
+  },
+  "dependencies": {
+    "@melt-ui/svelte": "^0.86.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.4"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "svelte": "^5.55.0",
+    "svelte-check": "^4.4.6",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.8",
+    "vite-plugin-dts": "^4.3.0"
+  }
+}
