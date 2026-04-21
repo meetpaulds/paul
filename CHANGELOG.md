@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.1] — 2026-04-21
+
+### Added
+
+- **`@meetpaul/ui-vue`** — `ChartContainer` and `ChartTooltip` components added to reach full 56-component parity with React, Svelte, and Angular; `ChartContainer` accepts a `config` prop to inject `--color-*` CSS custom properties
+
+### Fixed
+
+- **Angular Storybook build** — resolved `@ngtools/webpack` "file missing from TypeScript compilation" error by introducing a scoped `tsconfig.storybook.json`; `globals.css` now processed via `postcss.config.cjs` + `@tailwindcss/postcss` instead of a broken Vite import
+- **Vue Storybook build** — `chart.stories.ts` added; all 4 framework Storybooks now build successfully with 56 stories each
+- **`.gitignore`** — added `.angular/` cache directory; untracked previously committed `storybook-static/` build output
+
+---
+
 ## [1.0.0] — 2026-04-21
 
 ### Added
@@ -118,6 +132,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ESLint `no-undef` error on `IntersectionObserver` in test setup (`packages/ui/src/test/setup.ts`)
 - Storybook a11y test runner now merges per-story rule overrides with global suppressions
 
+[1.0.1]: https://github.com/meetpaulds/paul/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/meetpaulds/paul/compare/v0.4.0...v1.0.0
 [0.4.0]: https://github.com/meetpaulds/paul/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/meetpaulds/paul/compare/v0.2.0...v0.3.0
