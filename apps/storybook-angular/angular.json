@@ -15,7 +15,7 @@
             "index": "src/index.html",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.json",
-            "styles": [],
+            "styles": ["src/styles/globals.css"],
             "scripts": []
           }
         },
@@ -24,6 +24,7 @@
           "options": {
             "configDir": ".storybook",
             "browserTarget": "storybook-angular:build",
+            "tsConfig": "tsconfig.storybook.json",
             "port": 6009,
             "compodoc": false
           }
@@ -33,6 +34,7 @@
           "options": {
             "configDir": ".storybook",
             "browserTarget": "storybook-angular:build",
+            "tsConfig": "tsconfig.storybook.json",
             "outputDir": "storybook-static",
             "compodoc": false
           }

@@ -16,5 +16,5 @@
       "@meetpaul/tokens/*": ["../../packages/tokens/src/*"]
     }
   },
-  "include": ["src", ".storybook"]
+  "include": ["src/**/*.ts", ".storybook/**/*.ts"]
 }

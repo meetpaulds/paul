@@ -136,6 +136,9 @@ export { default as BreadcrumbSeparator } from './components/breadcrumb-separato
 
 export { default as Calendar } from './components/calendar.vue'
 
+export { default as ChartContainer } from './components/chart-container.vue'
+export { default as ChartTooltip } from './components/chart-tooltip.vue'
+
 export { default as Carousel } from './components/carousel.vue'
 export { default as CarouselContent } from './components/carousel-content.vue'
 export { default as CarouselItem } from './components/carousel-item.vue'
