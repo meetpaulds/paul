@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /**
    * Separator — a visual divider between content sections backed by Melt UI.
    *

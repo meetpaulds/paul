@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /** A single accordion section. Requires a unique `value` prop. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'

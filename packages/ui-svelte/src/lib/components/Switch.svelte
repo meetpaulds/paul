@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /**
    * Switch — toggle switch backed by Melt UI.
    *

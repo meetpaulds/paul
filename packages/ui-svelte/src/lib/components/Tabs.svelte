@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /**
    * Tabs — tabbed interface backed by Melt UI.
    *

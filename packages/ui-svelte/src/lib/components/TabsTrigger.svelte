@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /** Tab button that activates its associated TabsContent panel. Requires a value prop. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'

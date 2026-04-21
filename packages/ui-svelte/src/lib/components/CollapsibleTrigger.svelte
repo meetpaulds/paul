@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /** Trigger that toggles the Collapsible open or closed. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'

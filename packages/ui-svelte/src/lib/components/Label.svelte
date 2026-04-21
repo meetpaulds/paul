@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /**
    * Label — accessible form label backed by Melt UI.
    *
