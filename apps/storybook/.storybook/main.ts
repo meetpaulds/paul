@@ -22,6 +22,23 @@ const config: StorybookConfig = {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
+  refs: {
+    vue: {
+      title: 'Vue',
+      url: 'http://localhost:6007',
+      expanded: false,
+    },
+    svelte: {
+      title: 'Svelte',
+      url: 'http://localhost:6008',
+      expanded: false,
+    },
+    angular: {
+      title: 'Angular',
+      url: 'http://localhost:6009',
+      expanded: false,
+    },
+  },
   viteFinal: async (config: import('vite').InlineConfig) => {
     config.resolve ??= {}
     const existingAlias = Array.isArray(config.resolve.alias)

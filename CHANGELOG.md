@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.1] — 2026-04-21
+
+### Added
+
+- **Multi-framework Storybook** — four fully independent Storybook apps now compose into a single Storybook Composition hub:
+  - `apps/storybook` (React, existing) — 56 stories
+  - `apps/storybook-svelte` (Svelte 5 + `@storybook/svelte-vite`) — 56 stories covering all `@meetpaul/ui-svelte` components
+  - `apps/storybook-vue` (`@storybook/vue3-vite`) — 56 stories covering all `@meetpaul/ui-vue` components
+  - `apps/storybook-angular` (`@storybook/angular`) — 56 stories covering all `@meetpaul/ui-angular` components
+- **`@meetpaul/ui-svelte` — new components** — `AlertDialog`, `Breadcrumb`/`BreadcrumbList`/`BreadcrumbItem`/`BreadcrumbLink`/`BreadcrumbPage`/`BreadcrumbSeparator`, `Calendar`, `Carousel`/`CarouselItem`, `ChartContainer`/`ChartTooltip`, `Command`/`CommandGroup`/`CommandItem`/`CommandSeparator`, `ContextMenu`, `Drawer`, `DropdownMenu`/`DropdownMenuItem`/`DropdownMenuLabel`/`DropdownMenuSeparator`, `HoverCard`, `InputOTP`, `Menubar`/`MenubarMenu`/`MenubarTrigger`/`MenubarItem`/`MenubarSeparator`, `NavigationMenu`/`NavigationMenuList`/`NavigationMenuLink`, `Pagination`/`PaginationContent`/`PaginationItem`/`PaginationLink`/`PaginationPrevious`/`PaginationNext`/`PaginationEllipsis`, `Popover`, `ResizableHandle`/`ResizablePanel`/`ResizablePanelGroup`, `Sheet`, `Sidebar`/`SidebarHeader`/`SidebarContent`/`SidebarMenu`/`SidebarMenuItem`/`SidebarMenuButton`, `Sonner`, `Table`/`TableHeader`/`TableBody`/`TableFooter`/`TableRow`/`TableHead`/`TableCell`/`TableCaption`, `Toast`/`ToastTitle`/`ToastDescription`/`ToastViewport`, `ToggleGroup`/`ToggleGroupItem`
+- **`@meetpaul/ui-vue` — new components** — `AlertDialog`/`AlertDialogTrigger`/`AlertDialogContent`/`AlertDialogHeader`/`AlertDialogFooter`/`AlertDialogTitle`/`AlertDialogDescription`/`AlertDialogAction`/`AlertDialogCancel`, `Breadcrumb` family, `Calendar`, `Carousel`/`CarouselContent`/`CarouselItem`/`CarouselPrevious`/`CarouselNext`, `ChartContainer`/`ChartTooltip`, `Combobox`, `Command`/`CommandInput`/`CommandList`/`CommandGroup`/`CommandItem`/`CommandSeparator`/`CommandEmpty`, `DataTable`, `DatePicker`, `Drawer` family, `InputOTP`, `NavigationMenu`/`NavigationMenuList`/`NavigationMenuItem`/`NavigationMenuTrigger`/`NavigationMenuContent`/`NavigationMenuLink`, `Pagination` family, `ResizablePanelGroup`/`ResizablePanel`/`ResizableHandle`, `Sheet` family, `Sidebar`/`SidebarProvider`/`SidebarTrigger`/`SidebarHeader`/`SidebarContent`/`SidebarFooter`/`SidebarGroup`/`SidebarMenu`/`SidebarMenuItem`/`SidebarMenuButton`, `Table` family, `Toast`/`ToastProvider`/`ToastTitle`/`ToastDescription`/`ToastAction`/`ToastClose`/`ToastViewport`, `Toaster`
+- **`@meetpaul/ui-angular` — new components** — `AlertDialog`, `Breadcrumb` family, `Calendar`, `Carousel`/`CarouselItem`, `ChartContainer`/`ChartTooltip`, `Command`/`CommandGroup`/`CommandItem`/`CommandSeparator`, `ContextMenu` family, `Drawer`, `DropdownMenu` family, `HoverCard`, `InputOTP`, `Menubar` family, `NavigationMenu` family, `Pagination` family, `Popover`, `ResizablePanelGroup`/`ResizablePanel`/`ResizableHandle`, `Select`/`SelectItem`, `Sheet`, `Sidebar` family, `Sonner`, `Table` family, `Toast`/`ToastTitle`/`ToastDescription`/`ToastViewport`, `ToggleGroup`/`ToggleGroupItem`
+- **`@meetpaul/ui-vue`** — `ChartContainer` and `ChartTooltip` components; `ChartContainer` accepts a `config` prop to inject `--color-*` CSS custom properties
+
+### Fixed
+
+- **Angular Storybook build** — resolved `@ngtools/webpack` "file missing from TypeScript compilation" error by introducing a scoped `tsconfig.storybook.json`; `globals.css` now processed via `postcss.config.cjs` + `@tailwindcss/postcss` instead of a broken Vite import
+- **Vue Storybook build** — `chart.stories.ts` added; all 4 framework Storybooks now build successfully with 56 stories each
+- **`.gitignore`** — added `.angular/` cache directory; untracked previously committed `storybook-static/` build output
+
+---
+
 ## [1.0.0] — 2026-04-21
 
 ### Added
@@ -118,6 +140,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ESLint `no-undef` error on `IntersectionObserver` in test setup (`packages/ui/src/test/setup.ts`)
 - Storybook a11y test runner now merges per-story rule overrides with global suppressions
 
+[1.0.1]: https://github.com/meetpaulds/paul/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/meetpaulds/paul/compare/v0.4.0...v1.0.0
 [0.4.0]: https://github.com/meetpaulds/paul/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/meetpaulds/paul/compare/v0.2.0...v0.3.0

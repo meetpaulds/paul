@@ -1,6 +1,6 @@
 {
   "name": "@meetpaul/tokens",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Design tokens for the paul design system — CSS custom properties, Tailwind v4 preset, and typed JS token object.",
   "license": "MIT",
   "author": "SirPauls <office@sirpauls.com>",
