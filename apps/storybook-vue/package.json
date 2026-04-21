@@ -19,6 +19,7 @@
     "@storybook/addon-themes": "10.3.5",
     "@storybook/vue3-vite": "10.3.5",
     "@tailwindcss/vite": "^4.0.0",
+    "tailwindcss": "^4.0.0",
     "@types/node": "^22.0.0",
     "@vitejs/plugin-vue": "^5.0.0",
     "storybook": "10.3.5",

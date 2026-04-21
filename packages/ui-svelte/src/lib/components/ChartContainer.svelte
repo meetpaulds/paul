@@ -1,6 +1,7 @@
 <script lang="ts">
-  let { class: className = '', config = {}, ...props } = $props()
+  import type { Snippet } from 'svelte'
+  let { class: className = '', config = {}, children, ...props } = $props()
 </script>
 <div class={['flex aspect-video justify-center text-xs', className].join(' ')} {...props}>
-  <slot />
+  {@render children?.()}
 </div>

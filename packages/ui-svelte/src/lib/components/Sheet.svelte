@@ -1,5 +1,6 @@
 <script lang="ts">
-  let { open = $bindable(false), side = 'right', class: className = '', ...props } = $props()
+  import type { Snippet } from 'svelte'
+  let { open = $bindable(false), side = 'right', class: className = '', children, ...props }: { open?: boolean; side?: string; class?: string; children?: Snippet; [key: string]: unknown } = $props()
 
   const sideClass: Record<string, string> = {
     top: 'inset-x-0 top-0 border-b',
@@ -11,9 +12,9 @@
 
 {#if open}
   <div class="fixed inset-0 z-50">
-    <div class="fixed inset-0 bg-black/80" onclick={() => (open = false)}></div>
+    <div class="fixed inset-0 bg-black/80" role="presentation" onclick={() => (open = false)} onkeydown={(e) => e.key === 'Escape' && (open = false)}></div>
     <div class={['fixed z-50 bg-background p-6 shadow-lg transition ease-in-out', sideClass[side] ?? sideClass.right, className].join(' ')} {...props}>
-      <slot />
+        {@render children?.()}
     </div>
   </div>
 {/if}

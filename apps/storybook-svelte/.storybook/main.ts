@@ -1,12 +1,10 @@
 import type { StorybookConfig } from '@storybook/svelte-vite'
-import { resolve, dirname, join } from 'path'
+import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-const svelteSrc = resolve(__dirname, '../../../packages/ui-svelte/src')
-const tokensSrc = resolve(__dirname, '../../../packages/tokens/src')
 
 const config: StorybookConfig = {
   stories: [
@@ -21,18 +19,6 @@ const config: StorybookConfig = {
   framework: {
     name: getAbsolutePath('@storybook/svelte-vite'),
     options: {},
-  },
-  viteFinal: async (config) => {
-    config.resolve ??= {}
-    const existingAlias = Array.isArray(config.resolve.alias)
-      ? config.resolve.alias
-      : Object.entries((config.resolve.alias as Record<string, string>) ?? {}).map(([find, replacement]) => ({ find, replacement }))
-    config.resolve.alias = [
-      ...existingAlias,
-      { find: '@meetpaul/ui-svelte', replacement: svelteSrc },
-      { find: '@meetpaul/tokens', replacement: tokensSrc },
-    ]
-    return config
   },
 }
 

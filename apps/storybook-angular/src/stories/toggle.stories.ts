@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/angular'
 import { moduleMetadata } from '@storybook/angular'
 import { ToggleComponent } from '@meetpaul/ui-angular'
 
-const meta: Meta<ToggleComponent> = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const meta: Meta<any> = {
   title: 'Actions & Buttons/Toggle',
   component: ToggleComponent,
   tags: ['autodocs'],
@@ -19,10 +20,10 @@ const meta: Meta<ToggleComponent> = {
   },
 }
 export default meta
-type Story = StoryObj<ToggleComponent>
+type Story = StoryObj<typeof meta>
 
-export const Default: Story = { args: { variant: 'default' } }
-export const Outline: Story = { args: { variant: 'outline' } }
-export const Pressed: Story = { args: { pressed: true } }
-export const Disabled: Story = { args: { disabled: true } }
-export const Dark: Story = { args: { variant: 'default' }, globals: { theme: 'dark' } }
+export const Default: Story = { args: { variant: 'default' } as any }
+export const Outline: Story = { args: { variant: 'outline' } as any }
+export const Pressed: Story = { args: { pressed: true } as any }
+export const Disabled: Story = { args: { disabled: true } as any }
+export const Dark: Story = { args: { variant: 'default' } as any, globals: { theme: 'dark' } }

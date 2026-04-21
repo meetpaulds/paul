@@ -8,7 +8,13 @@
     "emitDecoratorMetadata": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@meetpaul/ui-angular": ["../../packages/ui-angular/dist"],
+      "@meetpaul/ui-angular/*": ["../../packages/ui-angular/dist/*"],
+      "@meetpaul/tokens": ["../../packages/tokens/src"],
+      "@meetpaul/tokens/*": ["../../packages/tokens/src/*"]
+    }
   },
   "include": ["src", ".storybook"]
 }

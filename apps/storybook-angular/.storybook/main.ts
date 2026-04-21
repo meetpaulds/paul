@@ -5,6 +5,9 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
+const angularDist = resolve(__dirname, '../../../packages/ui-angular/dist')
+const tokensSrc = resolve(__dirname, '../../../packages/tokens/src')
+
 const config: StorybookConfig = {
   stories: [
     '../src/stories/**/*.mdx',
@@ -17,7 +20,18 @@ const config: StorybookConfig = {
   ],
   framework: {
     name: getAbsolutePath('@storybook/angular'),
-    options: {},
+    options: {
+      angularBrowserTarget: 'storybook-angular:build',
+    },
+  },
+  webpackFinal: async (config) => {
+    config.resolve ??= {}
+    config.resolve.alias = {
+      ...(config.resolve.alias as Record<string, string> ?? {}),
+      '@meetpaul/ui-angular': angularDist,
+      '@meetpaul/tokens': tokensSrc,
+    }
+    return config
   },
 }
 

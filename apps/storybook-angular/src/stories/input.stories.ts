@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/angular'
 import { moduleMetadata } from '@storybook/angular'
 import { InputComponent } from '@meetpaul/ui-angular'
 
-const meta: Meta<InputComponent> = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const meta: Meta<any> = {
   title: 'Data Entry & Forms/Input',
   component: InputComponent,
   tags: ['autodocs'],
@@ -18,9 +19,9 @@ const meta: Meta<InputComponent> = {
   },
 }
 export default meta
-type Story = StoryObj<InputComponent>
+type Story = StoryObj<typeof meta>
 
-export const Default: Story = { args: { placeholder: 'Email', type: 'email' } }
-export const File: Story = { args: { type: 'file' } }
-export const Disabled: Story = { args: { placeholder: 'Disabled', disabled: true } }
-export const Dark: Story = { args: { placeholder: 'Email' }, globals: { theme: 'dark' } }
+export const Default: Story = { args: { placeholder: 'Email', type: 'email' } as any }
+export const File: Story = { args: { type: 'file' } as any }
+export const Disabled: Story = { args: { placeholder: 'Disabled', disabled: true } as any }
+export const Dark: Story = { args: { placeholder: 'Email' } as any, globals: { theme: 'dark' } }

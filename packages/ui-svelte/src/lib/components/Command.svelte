@@ -1,5 +1,6 @@
 <script lang="ts">
-  let { class: className = '', ...props } = $props()
+  import type { Snippet } from 'svelte'
+  let { class: className = '', children, ...props }: { class?: string; children?: Snippet<[{ search: string }]>; [key: string]: unknown } = $props()
   let search = $state('')
 </script>
 
@@ -8,5 +9,5 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="mr-2 shrink-0 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     <input bind:value={search} placeholder="Type a command or search..." class="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50" />
   </div>
-  <slot {search} />
+  {@render children?.({ search })}
 </div>

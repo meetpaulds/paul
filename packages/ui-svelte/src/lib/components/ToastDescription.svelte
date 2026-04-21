@@ -1,4 +1,5 @@
 <script lang="ts">
-  let { class: className = '', ...props } = $props()
+  import type { Snippet } from 'svelte'
+  let { class: className = '', children, ...props} = $props()
 </script>
-<div class={['text-sm opacity-90', className].join(' ')} {...props}><slot /></div>
+<div class={['text-sm opacity-90', className].join(' ')} {...props}>{@render children?.()}</div>
