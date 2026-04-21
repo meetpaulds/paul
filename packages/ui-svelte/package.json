@@ -34,13 +34,15 @@
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js",
       "import": "./dist/index.js"
-    }
+    },
+    "./*.svelte": "./src/lib/components/*.svelte"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "svelte": "./dist/index.js",
   "files": [
     "dist",
+    "src",
     "README.md",
     "LICENSE"
   ],
