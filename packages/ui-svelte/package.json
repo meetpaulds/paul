@@ -1,14 +1,14 @@
 {
-  "name": "@meetpaul/ui-angular",
+  "name": "@meetpaul/ui-svelte",
   "version": "0.1.0",
-  "description": "paul — Angular component library. The same design system as @meetpaul/ui, built natively for Angular.",
+  "description": "paul — Svelte 5 component library. The same design system as @meetpaul/ui, built natively for Svelte.",
   "license": "MIT",
   "author": "SirPauls <office@sirpauls.com>",
   "homepage": "https://meetpaulds.github.io/paul",
   "repository": {
     "type": "git",
     "url": "https://github.com/meetpaulds/paul.git",
-    "directory": "packages/ui-angular"
+    "directory": "packages/ui-svelte"
   },
   "bugs": {
     "url": "https://github.com/meetpaulds/paul/issues"
@@ -17,8 +17,9 @@
     "design-system",
     "ui",
     "components",
-    "angular",
-    "angular-cdk",
+    "svelte",
+    "svelte5",
+    "melt-ui",
     "tailwind",
     "dark-mode",
     "accessibility",
@@ -27,6 +28,17 @@
     "paul",
     "meetpaul"
   ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "svelte": "./dist/index.js",
   "files": [
     "dist",
     "README.md",
@@ -38,31 +50,25 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "build": "ng-packagr -p ng-package.json",
-    "dev": "ng-packagr -p ng-package.json --watch",
-    "typecheck": "tsc --noEmit -p tsconfig.lib.json"
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "typecheck": "svelte-check --tsconfig ./tsconfig.json"
   },
   "peerDependencies": {
-    "@angular/common": ">=21.0.0",
-    "@angular/core": ">=21.0.0",
-    "@angular/cdk": ">=21.0.0",
+    "svelte": ">=5.0.0"
+  },
+  "dependencies": {
+    "@melt-ui/svelte": "^0.86.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
-    "@angular/cdk": "^21.0.0",
-    "@angular/common": "^21.2.9",
-    "@angular/compiler": "^21.2.9",
-    "@angular/compiler-cli": "^21.2.9",
-    "@angular/core": "^21.2.9",
-    "@angular/forms": "^21.2.9",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "ng-packagr": "^21.0.0",
-    "tailwind-merge": "^2.5.4",
-    "tslib": "^2.3.0",
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "svelte": "^5.55.0",
+    "svelte-check": "^4.4.6",
     "typescript": "^5.9.3",
-    "zone.js": "^0.15.0"
+    "vite": "^8.0.8",
+    "vite-plugin-dts": "^4.3.0"
   }
 }
