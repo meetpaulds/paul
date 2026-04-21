@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.0] — 2026-04-21
+
+### Added
+
+- **`@meetpaul/ui-svelte`** — Svelte 5 component library (55 components) using Melt UI primitives and Svelte 5 runes syntax (`$props()`, `$state()`, `$derived()`, `$effect()`); full `bind:` reactive props, Svelte 5 snippets for `Field` and `Empty`, JSDoc on all components, README
+- **`@meetpaul/ui-angular`** — Angular 21 standalone component library (55 components) using Angular CDK for accessibility, `class-variance-authority` for variants, JSDoc on all components, README
+- **`@meetpaul/ui-vue`** — Vue 3 component library (55 components) using Headless UI and `class-variance-authority`, Composition API, JSDoc on all components, README
+- **`@meetpaul/tokens`** — extracted design token package; exports CSS custom properties (`globals.css`), a JavaScript token object, and a Tailwind CSS preset for cross-framework token sharing
+
+### Changed
+
+- **Version alignment** — all packages (`@meetpaul/ui`, `@meetpaul/ui-vue`, `@meetpaul/ui-angular`, `@meetpaul/ui-svelte`, `@meetpaul/tokens`) aligned to `1.0.0` marking general availability
+
+### Breaking
+
+- This is the **1.0.0 stable release**. All packages follow semantic versioning from this point forward.
+
+---
+
 ## [0.4.0] — 2026-04-20
 
 ### Added
@@ -99,6 +118,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ESLint `no-undef` error on `IntersectionObserver` in test setup (`packages/ui/src/test/setup.ts`)
 - Storybook a11y test runner now merges per-story rule overrides with global suppressions
 
+[1.0.0]: https://github.com/meetpaulds/paul/compare/v0.4.0...v1.0.0
 [0.4.0]: https://github.com/meetpaulds/paul/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/meetpaulds/paul/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/meetpaulds/paul/compare/v0.1.0...v0.2.0

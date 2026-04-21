@@ -1,6 +1,6 @@
 {
   "name": "@meetpaul/ui-angular",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "paul — Angular component library. The same design system as @meetpaul/ui, built natively for Angular.",
   "license": "MIT",
   "author": "SirPauls <office@sirpauls.com>",
