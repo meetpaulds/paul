@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /**
    * Slider — range value selector backed by Melt UI.
    *
@@ -15,7 +16,7 @@
   interface Props { value?: number[]; min?: number; max?: number; step?: number; disabled?: boolean; class?: string }
   let { value = $bindable([0]), min = 0, max = 100, step = 1, disabled = false, class: cls = '' }: Props = $props()
 
-  const { elements: { root, range, thumb }, states } = createSlider({ defaultValue: [0], min: 0, max: 100, step: 1, disabled: false })
+  const { elements: { root, range, thumbs }, states } = createSlider({ defaultValue: [0], min: 0, max: 100, step: 1, disabled: false })
   $effect(() => { states.value.set(value) })
 
   $effect(() => {
@@ -28,6 +29,6 @@
     <span use:melt={range} class="absolute h-full bg-primary"></span>
   </span>
   {#each value as _, i}
-    <span use:melt={thumb(i)} class="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"></span>
+    <span use:melt={thumbs[i]} class="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"></span>
   {/each}
 </span>

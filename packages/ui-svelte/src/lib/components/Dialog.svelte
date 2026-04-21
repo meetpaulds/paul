@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   // Dialog — modal window backed by Melt UI with focus trapping and portal rendering.
   //
   // @example

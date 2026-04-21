@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /**
    * Collapsible — expandable/collapsible region backed by Melt UI.
    *

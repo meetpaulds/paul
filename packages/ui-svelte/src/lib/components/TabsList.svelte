@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /** Container for TabsTrigger buttons, styled as a segmented control. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'

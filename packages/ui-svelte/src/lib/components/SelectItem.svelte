@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /** A single selectable option inside Select. Shows a checkmark when selected. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'

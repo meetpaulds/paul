@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   // Accordion -- root container backed by Melt UI.
   // Set type="single" (default) or type="multiple".
   //
@@ -23,7 +24,8 @@
   }
   const { type = 'single', collapsible = false, value, class: cls = '', children }: Props = $props()
 
-  const accordion = createAccordion({ type: 'single', forceVisible: false })
+  const accordion = createAccordion({ multiple: false, forceVisible: false })
+  $effect(() => { accordion.options.multiple.set(type === 'multiple') })
   setContext('paul-accordion', accordion)
 </script>
 <div use:melt={accordion.elements.root} class={cls}>

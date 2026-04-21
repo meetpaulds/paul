@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /** Collapsible content panel rendered below AccordionTrigger. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'

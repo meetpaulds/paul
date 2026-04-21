@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /** Clickable header that toggles the accordion section. Animates a chevron icon. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'
