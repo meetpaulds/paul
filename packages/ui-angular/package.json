@@ -46,7 +46,7 @@
     "@angular/common": ">=21.0.0",
     "@angular/core": ">=21.0.0",
     "@angular/cdk": ">=21.0.0",
-    "@meetpaul/tokens": "*",
+    "@meetpaul/tokens": "workspace:*",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.4"
