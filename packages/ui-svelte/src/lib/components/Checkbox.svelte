@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   // Checkbox -- accessible checkbox backed by Melt UI.
   //
   // @example

@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "pnpm --filter paul dev",
     "build": "pnpm --filter @meetpaul/ui build",
-    "build:storybook": "pnpm --filter paul build",
+    "build:storybook": "pnpm --filter @meetpaul/tokens build && pnpm --filter paul build",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm --filter @meetpaul/ui test",

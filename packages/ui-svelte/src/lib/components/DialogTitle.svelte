@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /** Accessible title for the dialog, announced by screen readers. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'

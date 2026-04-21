@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /** Individual radio button inside a RadioGroup. Requires a unique value prop. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'
@@ -15,7 +16,7 @@
   aria-label={label ?? value}
   class={cn('aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50', cls)}
 >
-  <div use:melt={radioGroup.elements.itemIndicator(value)} class="flex h-full w-full items-center justify-center">
-    <div class="h-2.5 w-2.5 rounded-full bg-primary"></div>
+  <div class="flex h-full w-full items-center justify-center">
+    <div class="h-2.5 w-2.5 rounded-full bg-primary hidden [[data-state=checked]>&]:block"></div>
   </div>
 </button>

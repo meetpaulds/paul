@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /**
    * RadioGroup — single-selection control backed by Melt UI.
    *

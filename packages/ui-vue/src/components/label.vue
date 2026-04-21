@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LabelRoot, type LabelProps } from 'radix-vue'
+import { Label as LabelRoot } from 'radix-vue'
 import { cn } from '@/lib/utils'
 /**
  * Label — accessible form label backed by Radix Vue LabelRoot.
@@ -13,6 +13,6 @@ import { cn } from '@/lib/utils'
  * ```
  */
 defineOptions({ name: 'Label' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{ for?: string; class?: string }>()
 </script>
 <template><LabelRoot v-bind="props" :class="cn('text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70', props.class)"><slot /></LabelRoot></template>

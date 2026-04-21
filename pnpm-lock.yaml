@@ -312,6 +312,10 @@ importers:
         version: 3.2.4(@types/node@22.19.17)(jiti@2.6.1)(jsdom@26.1.0)(less@4.6.4)(lightningcss@1.32.0)(sass@1.99.0)
 
   packages/ui-angular:
+    dependencies:
+      '@meetpaul/tokens':
+        specifier: workspace:*
+        version: link:../tokens
     devDependencies:
       '@angular/cdk':
         specifier: ^21.0.0

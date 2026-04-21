@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 
 /** Image element inside an Avatar. Shows the fallback if the image fails to load. */
 defineOptions({ name: 'AvatarImage' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{ src: string; class?: string }>()
 </script>
 
 <template>

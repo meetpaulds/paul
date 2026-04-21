@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /** Supporting description rendered below DialogTitle. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'

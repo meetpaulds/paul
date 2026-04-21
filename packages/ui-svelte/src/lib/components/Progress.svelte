@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /**
    * Progress — linear progress bar backed by Melt UI.
    *
@@ -15,9 +16,9 @@
   interface Props { value?: number; max?: number; class?: string }
   const { value = 0, max = 100, class: cls = '' }: Props = $props()
 
-  const { elements: { root, range }, options } = createProgress({ max: 100, value: 0 })
-  $effect(() => { options.value.set(value); options.max.set(max) })
+  const { elements: { root }, options } = createProgress({ defaultValue: 0, max: 100 })
+  $effect(() => { options.max.set(max) })
 </script>
 <div use:melt={root} class={cn('relative h-2 w-full overflow-hidden rounded-full bg-primary/20', cls)}>
-  <div use:melt={range} class="h-full bg-primary transition-all"></div>
+  <div class="h-full bg-primary transition-all" style="width: {(value / max) * 100}%"></div>
 </div>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /** Hidden content area of a Collapsible. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'

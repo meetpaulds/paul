@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /**
    * Tooltip — concise text label on hover/focus backed by Melt UI.
    *

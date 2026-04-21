@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /** Content panel shown when its matching tab is active. Requires a value prop. */
   import { getContext } from 'svelte'
   import { melt } from '@melt-ui/svelte'

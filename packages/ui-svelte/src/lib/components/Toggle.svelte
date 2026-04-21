@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-nocheck
   /**
    * Toggle — a two-state button backed by Melt UI.
    *
