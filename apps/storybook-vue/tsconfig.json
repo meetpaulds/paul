@@ -9,8 +9,11 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["../../packages/ui-vue/src/*"]
+      "@/*": ["../../packages/ui-vue/src/*"],
+      "@meetpaul/ui-vue": ["../../packages/ui-vue/src/index.ts"],
+      "@meetpaul/ui-vue/*": ["../../packages/ui-vue/src/components/*.vue"]
     }
   },
   "include": ["src", ".storybook"]

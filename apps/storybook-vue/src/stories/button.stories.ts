@@ -22,7 +22,7 @@ type Story = StoryObj<typeof Button>
 
 export const Default: Story = {
   args: { variant: 'default', size: 'default' },
-  render: (args) => ({
+  render: (args: any) => ({
     components: { Button },
     setup: () => ({ args }),
     template: '<Button v-bind="args">Button</Button>',
@@ -31,7 +31,7 @@ export const Default: Story = {
 
 export const Outline: Story = {
   args: { variant: 'outline' },
-  render: (args) => ({
+  render: (args: any) => ({
     components: { Button },
     setup: () => ({ args }),
     template: '<Button v-bind="args">Button</Button>',
@@ -40,7 +40,7 @@ export const Outline: Story = {
 
 export const Destructive: Story = {
   args: { variant: 'destructive' },
-  render: (args) => ({
+  render: (args: any) => ({
     components: { Button },
     setup: () => ({ args }),
     template: '<Button v-bind="args">Delete</Button>',
