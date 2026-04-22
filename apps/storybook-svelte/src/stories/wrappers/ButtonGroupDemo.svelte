@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import ButtonGroup from '@meetpaul/ui-svelte/ButtonGroup.svelte'
   import Button from '@meetpaul/ui-svelte/Button.svelte'
 </script>

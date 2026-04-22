@@ -12,5 +12,6 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
+// @ts-ignore Storybook Svelte render typing with wrapper components
 export const Destructive: Story = { render: () => ({ Component: AlertDestructiveDemo, props: {} }) }
 export const Dark: Story = { globals: { theme: 'dark' } }
