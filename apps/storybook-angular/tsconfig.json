@@ -9,9 +9,10 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "resolveJsonModule": true,
+    "baseUrl": ".",
     "paths": {
-      "@meetpaul/ui-angular": ["../../packages/ui-angular/dist"],
-      "@meetpaul/ui-angular/*": ["../../packages/ui-angular/dist/*"],
+      "@meetpaul/ui-angular": ["../../packages/ui-angular/src/public-api.ts"],
+      "@meetpaul/ui-angular/*": ["../../packages/ui-angular/src/lib/*"],
       "@meetpaul/tokens": ["../../packages/tokens/src"],
       "@meetpaul/tokens/*": ["../../packages/tokens/src/*"]
     }
