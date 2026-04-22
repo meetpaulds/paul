@@ -12,5 +12,5 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
-export const Destructive: Story = { render: () => ({ Component: AlertDestructiveDemo }) }
+export const Destructive: Story = { render: () => ({ Component: AlertDestructiveDemo, props: {} }) }
 export const Dark: Story = { globals: { theme: 'dark' } }

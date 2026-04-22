@@ -3,9 +3,11 @@
 </script>
 
 <Popover>
-  <button slot="trigger" class="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground">
-    Open popover
-  </button>
+  {#snippet trigger({ open, toggle })}
+    <button class="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground" onclick={toggle}>
+      Open popover
+    </button>
+  {/snippet}
   <div class="grid gap-4">
     <div class="space-y-2">
       <h4 class="font-medium leading-none">Dimensions</h4>

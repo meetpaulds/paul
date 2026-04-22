@@ -3,7 +3,9 @@
 </script>
 
 <HoverCard>
-  <a slot="trigger" href="#" class="inline-flex items-center text-sm font-medium underline-offset-4 hover:underline">@meetpaul</a>
+  {#snippet trigger()}
+    <a href="#" class="inline-flex items-center text-sm font-medium underline-offset-4 hover:underline">@meetpaul</a>
+  {/snippet}
   <div class="flex justify-between space-x-4">
     <div class="space-y-1">
       <h4 class="text-sm font-semibold">@meetpaul</h4>

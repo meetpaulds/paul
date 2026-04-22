@@ -3,6 +3,6 @@
   import Input from '@meetpaul/ui-svelte/Input.svelte'
 </script>
 
-<Field label="Email" description="We will never share your email." class="w-72">
+<Field label="Email" hint="We will never share your email." class="w-72">
   <Input placeholder="you@example.com" />
 </Field>

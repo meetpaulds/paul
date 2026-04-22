@@ -25,6 +25,8 @@
         </SidebarMenuItem>
       </SidebarMenu>
     </SidebarContent>
-    <div slot="content" class="p-4 text-sm text-muted-foreground">Main content area</div>
+    {#snippet content()}
+      <div class="p-4 text-sm text-muted-foreground">Main content area</div>
+    {/snippet}
   </Sidebar>
 </div>

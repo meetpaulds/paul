@@ -7,15 +7,15 @@
 
 <Accordion type="single" collapsible class="w-full max-w-md">
   <AccordionItem value="item-1">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+    <AccordionTrigger value="item-1">Is it accessible?</AccordionTrigger>
+    <AccordionContent value="item-1">Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
   </AccordionItem>
   <AccordionItem value="item-2">
-    <AccordionTrigger>Is it styled?</AccordionTrigger>
-    <AccordionContent>Yes. It comes with default styles that match the other components.</AccordionContent>
+    <AccordionTrigger value="item-2">Is it styled?</AccordionTrigger>
+    <AccordionContent value="item-2">Yes. It comes with default styles that match the other components.</AccordionContent>
   </AccordionItem>
   <AccordionItem value="item-3">
-    <AccordionTrigger>Is it animated?</AccordionTrigger>
-    <AccordionContent>Yes. It's animated by default.</AccordionContent>
+    <AccordionTrigger value="item-3">Is it animated?</AccordionTrigger>
+    <AccordionContent value="item-3">Yes. It's animated by default.</AccordionContent>
   </AccordionItem>
 </Accordion>
