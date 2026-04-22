@@ -21,8 +21,8 @@ import { CommonModule } from '@angular/common'
         {{ label }}<span *ngIf="required" class="text-destructive-text ml-0.5" aria-hidden="true">*</span>
       </label>
       <ng-content />
-      <p *ngIf="hint && !error" class="text-sm text-muted-foreground">{{ hint }}</p>
-      <p *ngIf="error" class="text-sm text-destructive-text" role="alert">{{ error }}</p>
+      <p *ngIf="hint && !error" [id]="hintId" class="text-sm text-muted-foreground">{{ hint }}</p>
+      <p *ngIf="error" [id]="errorId" class="text-sm text-destructive-text" role="alert">{{ error }}</p>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -33,4 +33,8 @@ export class FieldComponent {
   @Input() error = ''
   @Input() required = false
   @Input() fieldId = `field-${Math.random().toString(36).slice(2, 9)}`
+
+  get hintId() { return `${this.fieldId}-hint` }
+  get errorId() { return `${this.fieldId}-error` }
+  get describedBy() { return this.error ? this.errorId : this.hint ? this.hintId : undefined }
 }

@@ -7,13 +7,14 @@ import { FormsModule } from '@angular/forms'
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-2" (paste)="onPaste($event)">
       <input *ngFor="let i of slots; let idx = index"
         [value]="getSlot(idx)"
         (input)="onInput($event, idx)"
         (keydown)="onKeydown($event, idx)"
         maxlength="1"
-        class="flex h-9 w-9 rounded-md border border-input bg-transparent text-center text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+        autocomplete="one-time-code"
+        class="flex h-9 w-9 rounded-md border border-input bg-transparent text-center text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         [attr.id]="'otp-' + idx"
       />
     </div>
@@ -46,5 +47,12 @@ export class InputOTPComponent {
       const prev = document.getElementById(`otp-${idx - 1}`)
       prev?.focus()
     }
+  }
+
+  onPaste(e: ClipboardEvent) {
+    e.preventDefault()
+    const pasted = e.clipboardData?.getData('text')?.replace(/\D/g, '').slice(0, this.maxLength) ?? ''
+    this.value = pasted
+    this.valueChange.emit(this.value)
   }
 }

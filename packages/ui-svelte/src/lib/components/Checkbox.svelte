@@ -8,6 +8,8 @@
   //   <label for="terms">Accept terms</label>
   //
   // @accessibility Supports indeterminate state. Keyboard-navigable with Space.
+  // Touch target is 24×24px (WCAG 2.5.8 AA). For strict AAA (44×44px),
+  // wrap with a larger clickable area or use inside a `<label>` that extends the hit region.
   import { createCheckbox, melt } from '@melt-ui/svelte'
   import { cn } from '../utils'
 
@@ -35,7 +37,7 @@
   {id}
   aria-label={id ?? 'checkbox'}
   class={cn(
-    'peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground',
+    'peer h-6 w-6 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground',
     cls
   )}
 >

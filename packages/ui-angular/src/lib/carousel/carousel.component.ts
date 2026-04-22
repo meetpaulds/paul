@@ -15,8 +15,8 @@ export class CarouselItemComponent {}
           <ng-content />
         </div>
       </div>
-      <button (click)="prev()" class="absolute left-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full border bg-background shadow hover:bg-accent" type="button" aria-label="Previous">‹</button>
-      <button (click)="next()" class="absolute right-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full border bg-background shadow hover:bg-accent" type="button" aria-label="Next">›</button>
+      <button (click)="prev()" class="absolute left-2 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full border bg-background shadow hover:bg-accent" type="button" aria-label="Previous">‹</button>
+      <button (click)="next()" class="absolute right-2 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full border bg-background shadow hover:bg-accent" type="button" aria-label="Next">›</button>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

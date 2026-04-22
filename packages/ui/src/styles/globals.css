@@ -54,3 +54,10 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
 }
+
+/* WCAG 2.4.11 Focus Not Obscured — ensure focused elements are not hidden
+   behind sticky headers/overlays. Consumers should set --header-height
+   on :root to match their fixed header height. */
+html {
+  scroll-padding-top: var(--header-height, 0);
+}

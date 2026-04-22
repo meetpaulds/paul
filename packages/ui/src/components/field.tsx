@@ -32,12 +32,16 @@ interface FieldProps extends React.HTMLAttributes<HTMLDivElement> {
  * ```
  *
  * @accessibility The label is linked to the child control via `htmlFor` / `id`.
+ * Hint and error text are automatically wired to the input via `aria-describedby`.
  * Required fields get a visible `*` marker; always also set `required` on the
  * underlying input for screen reader support.
  */
 const Field = React.forwardRef<HTMLDivElement, FieldProps>(
   ({ className, label, error, hint, required, children, ...props }, ref) => {
     const id = React.useId()
+    const hintId = `${id}-hint`
+    const errorId = `${id}-error`
+    const describedBy = error ? errorId : hint ? hintId : undefined
 
     return (
       <div ref={ref} className={cn('space-y-2', className)} {...props}>
@@ -47,9 +51,9 @@ const Field = React.forwardRef<HTMLDivElement, FieldProps>(
             {required && <span className="text-destructive-text ml-1">*</span>}
           </Label>
         )}
-        {React.isValidElement(children) && React.cloneElement(children as React.ReactElement<{ id?: string }>, { id } as any)}
-        {error && <p className="text-sm text-destructive-text">{error}</p>}
-        {hint && !error && <p className="text-sm text-muted-foreground">{hint}</p>}
+        {React.isValidElement(children) && React.cloneElement(children as React.ReactElement<{ id?: string; 'aria-describedby'?: string }>, { id, 'aria-describedby': describedBy } as any)}
+        {error && <p id={errorId} className="text-sm text-destructive-text">{error}</p>}
+        {hint && !error && <p id={hintId} className="text-sm text-muted-foreground">{hint}</p>}
       </div>
     )
   }

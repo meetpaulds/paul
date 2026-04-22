@@ -22,10 +22,13 @@
     required?: boolean
     id?: string
     class?: string
-    input?: import('svelte').Snippet<[{ id: string }]>
+    input?: import('svelte').Snippet<[{ id: string; describedBy?: string }]>
     children?: import('svelte').Snippet
   }
   const { label = '', hint = '', error = '', required = false, id = `field-${uid}`, class: cls = '', input, children }: Props = $props()
+  const hintId = `${id}-hint`
+  const errorId = `${id}-error`
+  const describedBy = error ? errorId : hint ? hintId : undefined
 </script>
 <div class={cn('flex flex-col gap-1.5', cls)}>
   {#if label}
@@ -34,10 +37,10 @@
     </label>
   {/if}
   {#if input}
-    {@render input({ id })}
+    {@render input({ id, describedBy })}
   {:else}
     {@render children?.()}
   {/if}
-  {#if hint && !error}<p class="text-sm text-muted-foreground">{hint}</p>{/if}
-  {#if error}<p class="text-sm text-destructive-text" role="alert">{error}</p>{/if}
+  {#if hint && !error}<p id={hintId} class="text-sm text-muted-foreground">{hint}</p>{/if}
+  {#if error}<p id={errorId} class="text-sm text-destructive-text" role="alert">{error}</p>{/if}
 </div>

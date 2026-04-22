@@ -10,9 +10,15 @@
       value = value + e.key
     }
   }
+
+  function onpaste(e: ClipboardEvent) {
+    e.preventDefault()
+    const pasted = e.clipboardData?.getData('text')?.replace(/\D/g, '').slice(0, maxLength) ?? ''
+    value = pasted
+  }
 </script>
 
-<div class={['flex items-center gap-2', className].join(' ')} {...props} tabindex="0" role="textbox" aria-label="OTP Input" {onkeydown}>
+<div class={['flex items-center gap-2', className].join(' ')} {...props} tabindex="0" role="textbox" aria-label="One-time password" autocomplete="one-time-code" {onkeydown} {onpaste}>
   {#each slots as slot, i}
     <div class={['relative flex h-10 w-10 items-center justify-center border-y border-r text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md', i === value.length ? 'ring-2 ring-ring ring-offset-background' : ''].join(' ')}>
       {slot}

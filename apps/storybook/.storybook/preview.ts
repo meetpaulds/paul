@@ -20,6 +20,12 @@ const preview: Preview = {
           { id: 'aria-hidden-focus', enabled: false },
         ],
       },
+      options: {
+        runOnly: {
+          type: 'tag',
+          values: ['wcag2a', 'wcag2aa', 'wcag2aaa', 'best-practice'],
+        },
+      },
     },
   },
   decorators: [

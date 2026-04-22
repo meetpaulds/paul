@@ -11,6 +11,14 @@ const preview: Preview = {
       ],
     },
     layout: 'centered',
+    a11y: {
+      options: {
+        runOnly: {
+          type: 'tag',
+          values: ['wcag2a', 'wcag2aa', 'wcag2aaa', 'best-practice'],
+        },
+      },
+    },
   },
 }
 

@@ -6,6 +6,9 @@ import { cn } from '@/lib/utils'
 /**
  * A styled checkbox control built on Radix UI CheckboxPrimitive.
  * Accepts all Radix Checkbox.Root props including `checked`, `defaultChecked`, `onCheckedChange`, and `disabled`.
+ *
+ * @accessibility Touch target is 24×24px (WCAG 2.5.8 AA). For strict AAA (44×44px),
+ *   wrap with a larger clickable area or use inside a `<label>` that extends the hit region.
  */
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
@@ -14,7 +17,7 @@ const Checkbox = React.forwardRef<
   <CheckboxPrimitive.Root
     ref={ref}
     className={cn(
-      'peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground',
+      'peer h-6 w-6 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground',
       className
     )}
     {...props}

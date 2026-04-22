@@ -11,12 +11,19 @@ function onInput(e: Event) {
   const val = (e.target as HTMLInputElement).value.replace(/\D/g, '').slice(0, maxLen.value)
   modelValue.value = val
 }
+
+function onPaste(e: ClipboardEvent) {
+  e.preventDefault()
+  const pasted = e.clipboardData?.getData('text')?.replace(/\D/g, '').slice(0, maxLen.value) ?? ''
+  modelValue.value = pasted
+}
 </script>
 <template>
-  <div :class="cn('flex items-center gap-2', props.class)" aria-label="One-time password">
+  <div :class="cn('flex items-center gap-2', props.class)" aria-label="One-time password" @paste="onPaste">
     <input
       type="text"
       inputmode="numeric"
+      autocomplete="one-time-code"
       :maxlength="maxLen"
       :value="modelValue"
       @input="onInput"
