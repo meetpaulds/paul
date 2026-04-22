@@ -4,7 +4,7 @@
 
 <HoverCard>
   {#snippet trigger()}
-    <a href="#" class="inline-flex items-center text-sm font-medium underline-offset-4 hover:underline">@meetpaul</a>
+    <a href="/" class="inline-flex items-center text-sm font-medium underline-offset-4 hover:underline">@meetpaul</a>
   {/snippet}
   <div class="flex justify-between space-x-4">
     <div class="space-y-1">
