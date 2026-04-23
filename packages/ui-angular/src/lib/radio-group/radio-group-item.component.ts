@@ -26,7 +26,7 @@ export class RadioGroupItemComponent {
   @HostBinding('attr.aria-checked') get ariaChecked() { return this.checked }
   @HostBinding('class') get hostClass() {
     return cn(
-      'aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 flex items-center justify-center cursor-pointer',
+      'aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 flex items-center justify-center cursor-pointer',
       this.class
     )
   }

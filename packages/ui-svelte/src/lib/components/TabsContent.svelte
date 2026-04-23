@@ -8,6 +8,6 @@
   const { value, class: cls = '', children }: Props = $props()
   const tabs = getContext<ReturnType<typeof import('@melt-ui/svelte').createTabs>>('paul-tabs')
 </script>
-<div use:melt={tabs.elements.content(value)} class={cn('mt-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring', cls)}>
+<div use:melt={tabs.elements.content(value)} class={cn('mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring', cls)}>
   {@render children?.()}
 </div>

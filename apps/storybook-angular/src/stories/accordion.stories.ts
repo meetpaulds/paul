@@ -10,7 +10,7 @@ const meta: Meta = {
   decorators: [moduleMetadata({ imports: [AccordionComponent, AccordionItemComponent, AccordionTriggerComponent, AccordionContentComponent] })],
   render: () => ({
     template: `
-      <paul-accordion type="single" class="w-full max-w-md">
+      <paul-accordion type="single" collapsible class="w-full max-w-md">
         <paul-accordion-item value="item-1">
           <paul-accordion-trigger>Is it accessible?</paul-accordion-trigger>
           <paul-accordion-content>Yes. It adheres to the WAI-ARIA design pattern.</paul-accordion-content>
