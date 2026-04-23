@@ -8,14 +8,15 @@ import { cn } from '../../lib/utils'
   standalone: true,
   imports: [CommonModule],
   template: `
-    <button
-      type="button"
-      [class]="buttonClass"
-      [attr.aria-expanded]="open"
-      (click)="toggle()"
-    >
-      <ng-content />
-      <svg
+    <div class="flex">
+      <button
+        type="button"
+        [class]="buttonClass"
+        [attr.aria-expanded]="open"
+        (click)="toggle()"
+      >
+        <ng-content />
+        <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16" height="16"
         viewBox="0 0 24 24"
@@ -27,6 +28,7 @@ import { cn } from '../../lib/utils'
         <polyline points="6 9 12 15 18 9"/>
       </svg>
     </button>
+    </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
