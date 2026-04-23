@@ -30,7 +30,7 @@ const props = defineProps<{ class?: string }>()
 </script>
 
 <template>
-  <AccordionRoot v-bind="props" :class="cn('divide-y divide-border', props.class)">
+  <AccordionRoot v-bind="props" :class="cn(props.class)">
     <slot />
   </AccordionRoot>
 </template>

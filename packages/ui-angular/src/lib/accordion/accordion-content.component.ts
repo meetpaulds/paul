@@ -7,8 +7,10 @@ import { CommonModule } from '@angular/common'
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div *ngIf="open" class="overflow-hidden text-sm pb-4 pt-0">
-      <ng-content />
+    <div *ngIf="open" class="overflow-hidden text-sm">
+      <div class="pb-4 pt-0">
+        <ng-content />
+      </div>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
