@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.2] — 2026-04-23
+
+### Fixed
+
+- **Framework harmonization** — React components remain the source of truth; all Vue, Svelte, and Angular components audited and aligned for visual/structural parity:
+  - **Accordion** — Svelte & Angular triggers wrapped in `<div class="flex">`; Svelte & Angular content panels received inner `<div class="pb-4 pt-0">` padding divs and `data-[state=open]:animate-accordion-down` / `data-[state=closed]:animate-accordion-up` animation classes; Vue root removed redundant `divide-y divide-border` to prevent double borders
+  - **Sheet** — Svelte: added missing `gap-4` class and close button with SVG icon + `sr-only` text; Angular: replaced plain `✕` text close button with SVG icon, `sr-only` text, and `focus:ring-2 focus:ring-offset-2` focus styles
+  - **Dialog** — Vue close button upgraded from `focus:ring-1` to `focus:ring-2 focus:ring-offset-2` to match React
+  - **Breadcrumb** — Angular `BreadcrumbSeparator` switched from plain `/` text to `<ng-content>` slot accepting an SVG icon (ChevronRight) with `aria-hidden="true"`
+  - **Pagination** — Angular `PaginationEllipsis` replaced plain `…` text with inline MoreHorizontal SVG + `<span class="sr-only">More pages</span>`
+  - **Select** — Vue `SelectLabel` font size corrected from `text-xs` to `text-sm`
+- **WCAG 2.4.13 (Focus Not Obscured AAA)** — batch-upgraded `focus-visible:ring-1` → `focus-visible:ring-2` across 27+ files in all four framework libraries (Button, Checkbox, Input, RadioGroup, Resizable, Slider, Textarea, Toggle)
+
+### Changed
+
+- **Storybook introduction pages** — added `introduction.mdx` to Vue, Svelte, and Angular storybooks (React already had one); all four storybooks now open with the same onboarding docs
+- **Angular Accordion story** — added missing `collapsible` attribute to match React/Vue/Svelte story behavior
+
+---
+
 ## [1.0.1] — 2026-04-21
 
 ### Added
@@ -140,6 +160,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ESLint `no-undef` error on `IntersectionObserver` in test setup (`packages/ui/src/test/setup.ts`)
 - Storybook a11y test runner now merges per-story rule overrides with global suppressions
 
+[1.0.2]: https://github.com/meetpaulds/paul/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/meetpaulds/paul/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/meetpaulds/paul/compare/v0.4.0...v1.0.0
 [0.4.0]: https://github.com/meetpaulds/paul/compare/v0.3.0...v0.4.0

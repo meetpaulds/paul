@@ -30,7 +30,7 @@ export class ToggleGroupItemComponent {
   @Input() active = false
   @Output() activeChange = new EventEmitter<boolean>()
   get itemClass() {
-    return `inline-flex items-center justify-center rounded-md text-sm font-medium h-9 px-3 transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 ${this.active ? 'bg-accent text-accent-foreground' : ''}`
+    return `inline-flex items-center justify-center rounded-md text-sm font-medium h-9 px-3 transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 ${this.active ? 'bg-accent text-accent-foreground' : ''}`
   }
   toggle() { this.active = !this.active; this.activeChange.emit(this.active) }
 }

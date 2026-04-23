@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms'
         (input)="onInput($event, idx)"
         (keydown)="onKeydown($event, idx)"
         maxlength="1"
-        class="flex h-9 w-9 rounded-md border border-input bg-transparent text-center text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+        class="flex h-9 w-9 rounded-md border border-input bg-transparent text-center text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         [attr.id]="'otp-' + idx"
       />
     </div>

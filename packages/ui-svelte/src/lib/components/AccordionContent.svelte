@@ -12,6 +12,6 @@
   const { value, class: cls = '', children }: Props = $props()
   const accordion = getContext<any>('paul-accordion')
 </script>
-<div use:melt={accordion.elements.content(value)} class={cn('overflow-hidden text-sm', cls)}>
+<div use:melt={accordion.elements.content(value)} class={cn('overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down', cls)}>
   <div class="pb-4 pt-0">{@render children?.()}</div>
 </div>
