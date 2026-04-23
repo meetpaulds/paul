@@ -22,6 +22,6 @@ export class TabsContentComponent {
   @HostBinding('attr.role') role = 'tabpanel'
   @HostBinding('attr.data-state') get dataState() { return this.active ? 'active' : 'inactive' }
   @HostBinding('class') get hostClass() {
-    return cn('mt-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring', this.class)
+    return cn('mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring', this.class)
   }
 }

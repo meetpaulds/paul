@@ -17,5 +17,5 @@ export class BreadcrumbLinkComponent {}
 @Component({ selector: 'paul-breadcrumb-page', standalone: true, template: `<span role="link" aria-disabled="true" aria-current="page" class="font-normal text-foreground"><ng-content /></span>`, changeDetection: ChangeDetectionStrategy.OnPush })
 export class BreadcrumbPageComponent {}
 
-@Component({ selector: 'paul-breadcrumb-separator', standalone: true, template: `<li role="presentation" aria-hidden="true" class="[&>svg]:w-3.5 [&>svg]:h-3.5">/</li>`, changeDetection: ChangeDetectionStrategy.OnPush })
+@Component({ selector: 'paul-breadcrumb-separator', standalone: true, template: `<li role="presentation" aria-hidden="true" class="[&>svg]:w-3.5 [&>svg]:h-3.5"><ng-content></ng-content></li>`, changeDetection: ChangeDetectionStrategy.OnPush })
 export class BreadcrumbSeparatorComponent {}
