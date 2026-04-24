@@ -34,7 +34,7 @@
 
   /* --- Muted --- */
   --muted:                 240 4.8% 95.9%;
-  --muted-foreground:      240 5% 38%;
+  --muted-foreground:      240 5% 33%;
 
   /* --- Accent --- */
   --accent:                240 4.8% 95.9%;
@@ -43,7 +43,7 @@
   /* --- Destructive --- */
   --destructive:           0 84.2% 50%;
   --destructive-foreground:0 0% 100%;
-  --destructive-text:      0 72% 44%;
+  --destructive-text:      0 72% 39%;
 
   /* --- Form --- */
   --border:                240 5.9% 90%;
@@ -98,7 +98,7 @@
 
   /* --- Muted --- */
   --muted:                 240 3.7% 15.9%;
-  --muted-foreground:      240 5% 64.9%;
+  --muted-foreground:      240 5% 71%;
 
   /* --- Accent --- */
   --accent:                240 3.7% 15.9%;
@@ -107,7 +107,7 @@
   /* --- Destructive --- */
   --destructive:           0 62.8% 30.6%;
   --destructive-foreground:0 0% 100%;
-  --destructive-text:      0 90% 65%;
+  --destructive-text:      0 90% 70%;
 
   /* --- Form --- */
   --border:                240 3.7% 15.9%;

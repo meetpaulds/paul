@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased]
+
+### Changed — ⚠️ Visual Breaking Change
+
+- **WCAG 2.2 SC 1.4.6 / EN 301 549 §9.1.4.6 — Contrast (Enhanced) token corrections**  
+  Four design tokens were below the 7:1 AAA threshold and have been adjusted (lightness only; hue and saturation unchanged):
+
+  | Token | Mode | Before | After | Ratio before | Ratio after |
+  |-------|------|--------|-------|-------------|-------------|
+  | `--muted-foreground` | Light | `240 5% 38%` | `240 5% 33%` | 6.01–6.61:1 | 7.27–7.99:1 |
+  | `--muted-foreground` | Dark | `240 5% 64.9%` | `240 5% 71%` | 5.81–7.77:1 | 7.01–9.38:1 |
+  | `--destructive-text` | Light | `0 72% 44%` | `0 72% 39%` | 6.02:1 | 7.21:1 |
+  | `--destructive-text` | Dark | `0 90% 65%` | `0 90% 70%` | 6.03:1 | 7.02:1 |
+
+  Affected files: `packages/tokens/src/tokens.css`, `packages/tokens/src/tokens.ts`  
+  Full audit: [`docs/compliance/contrast-audit.md`](docs/compliance/contrast-audit.md)
+
+  > Chromatic snapshots for any story rendering `muted-foreground` or `destructive-text` will show a diff — accept these as the new baseline.
+
+---
+
 ## [1.0.2] — 2026-04-23
 
 ### Fixed
