@@ -1,15 +1,39 @@
 <script lang="ts">
-  let { selected = $bindable<Date | undefined>(undefined), class: className = '', ...props } = $props()
+  let { selected = $bindable<Date | undefined>(undefined), class: className = '', locale, ...props } = $props<{ selected?: Date; class?: string; locale?: string; [key: string]: unknown }>()
 
   let today = new Date()
   let viewing = $state(new Date(today.getFullYear(), today.getMonth(), 1))
 
-  const DAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
-  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
+  function resolveLocale(): string {
+    return locale ?? (typeof navigator !== 'undefined' ? navigator.language : 'en-US')
+  }
+
+  function getWeekStart(loc: string): number {
+    try {
+      const info = (new Intl.Locale(loc) as unknown as { weekInfo?: { firstDay: number } }).weekInfo
+      if (info) return info.firstDay
+    } catch { /* ignore */ }
+    const table: Record<string, number> = { de: 1, fr: 1, it: 1, es: 1, ar: 0, en: 0 }
+    return table[loc.split('-')[0]] ?? 0
+  }
+
+  let weekStart = $derived(getWeekStart(resolveLocale()))
+
+  let dayNames = $derived(() => {
+    const loc = resolveLocale()
+    const fmt = new Intl.DateTimeFormat(loc, { weekday: 'short' })
+    const ws = weekStart
+    const sunBased = Array.from({ length: 7 }, (_, i) => fmt.format(new Date(2024, 0, 7 + i)))
+    return [...sunBased.slice(ws), ...sunBased.slice(0, ws)]
+  })()
 
   let daysInMonth = $derived(new Date(viewing.getFullYear(), viewing.getMonth() + 1, 0).getDate())
-  let firstDay = $derived(new Date(viewing.getFullYear(), viewing.getMonth(), 1).getDay())
-  let monthLabel = $derived(`${MONTHS[viewing.getMonth()]} ${viewing.getFullYear()}`)
+  let firstDow = $derived(new Date(viewing.getFullYear(), viewing.getMonth(), 1).getDay())
+  let leadingBlanks = $derived(((firstDow - weekStart + 7) % 7))
+  let monthLabel = $derived(
+    new Intl.DateTimeFormat(resolveLocale(), { month: 'long', year: 'numeric' })
+      .format(new Date(viewing.getFullYear(), viewing.getMonth(), 1))
+  )
 
   function prevMonth() {
     viewing = new Date(viewing.getFullYear(), viewing.getMonth() - 1, 1)
@@ -39,12 +63,12 @@
     </button>
   </div>
   <div class="grid grid-cols-7 gap-1 mb-1">
-    {#each DAYS as day}
+    {#each dayNames as day}
       <div class="text-center text-xs text-muted-foreground">{day}</div>
     {/each}
   </div>
   <div class="grid grid-cols-7 gap-1">
-    {#each Array(firstDay) as _}
+    {#each Array(leadingBlanks) as _}
       <div></div>
     {/each}
     {#each Array(daysInMonth) as _, i}

@@ -3,13 +3,17 @@ import { ref, computed } from 'vue'
 import { cn } from '../lib/utils'
 import Calendar from './calendar.vue'
 
-const props = defineProps<{ placeholder?: string; class?: string }>()
+const props = defineProps<{ placeholder?: string; class?: string; locale?: string }>()
 const modelValue = defineModel<Date | undefined>()
 const open = ref(false)
 
+const resolvedLocale = computed(() =>
+  props.locale ?? (typeof navigator !== 'undefined' ? navigator.language : 'en-US')
+)
+
 const formatted = computed(() =>
   modelValue.value
-    ? modelValue.value.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+    ? new Intl.DateTimeFormat(resolvedLocale.value, { day: 'numeric', month: 'long', year: 'numeric' }).format(modelValue.value)
     : null
 )
 
@@ -29,7 +33,7 @@ function onSelect(d: Date | undefined) {
       <span :class="!formatted ? 'text-muted-foreground' : ''">{{ formatted ?? (props.placeholder ?? 'Pick a date') }}</span>
     </button>
     <div v-if="open" class="absolute z-50 mt-1">
-      <Calendar :model-value="modelValue" @update:model-value="onSelect" />
+      <Calendar :model-value="modelValue" :locale="resolvedLocale" @update:model-value="onSelect" />
     </div>
   </div>
 </template>

@@ -2,22 +2,48 @@
 import { ref, computed } from 'vue'
 import { cn } from '../lib/utils'
 
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{ class?: string; locale?: string }>()
 const modelValue = defineModel<Date | undefined>()
 
 const today = new Date()
 const viewYear = ref(today.getFullYear())
 const viewMonth = ref(today.getMonth())
 
-const DAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
-const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
+function resolveLocale() {
+  return props.locale ?? (typeof navigator !== 'undefined' ? navigator.language : 'en-US')
+}
 
-const title = computed(() => `${MONTHS[viewMonth.value]} ${viewYear.value}`)
+function getWeekStart(locale: string): number {
+  try {
+    const info = (new Intl.Locale(locale) as unknown as { weekInfo?: { firstDay: number } }).weekInfo
+    if (info) return info.firstDay
+  } catch { /* ignore */ }
+  const table: Record<string, number> = { 'de': 1, 'fr': 1, 'it': 1, 'es': 1, 'ar': 0, 'en': 0 }
+  return table[locale.split('-')[0]] ?? 0
+}
+
+const weekStart = computed(() => getWeekStart(resolveLocale()))
+
+const dayNames = computed(() => {
+  const loc = resolveLocale()
+  const fmt = new Intl.DateTimeFormat(loc, { weekday: 'short' })
+  const ws = weekStart.value
+  // 2024-01-07 = Sunday
+  const sunBased = Array.from({ length: 7 }, (_, i) => fmt.format(new Date(2024, 0, 7 + i)))
+  return [...sunBased.slice(ws), ...sunBased.slice(0, ws)]
+})
+
+const title = computed(() =>
+  new Intl.DateTimeFormat(resolveLocale(), { month: 'long', year: 'numeric' })
+    .format(new Date(viewYear.value, viewMonth.value, 1))
+)
 
 const days = computed(() => {
-  const first = new Date(viewYear.value, viewMonth.value, 1).getDay()
+  const ws = weekStart.value
+  const firstDow = new Date(viewYear.value, viewMonth.value, 1).getDay()
+  const leading = ((firstDow - ws + 7) % 7)
   const total = new Date(viewYear.value, viewMonth.value + 1, 0).getDate()
-  const cells: (number | null)[] = Array(first).fill(null)
+  const cells: (number | null)[] = Array(leading).fill(null)
   for (let d = 1; d <= total; d++) cells.push(d)
   while (cells.length % 7 !== 0) cells.push(null)
   return cells
@@ -58,7 +84,7 @@ function isToday(day: number | null) {
       </button>
     </div>
     <div class="grid grid-cols-7 gap-1 mb-1">
-      <div v-for="d in DAYS" :key="d" class="text-center text-xs text-muted-foreground font-medium h-7 flex items-center justify-center">{{ d }}</div>
+      <div v-for="d in dayNames" :key="d" class="text-center text-xs text-muted-foreground font-medium h-7 flex items-center justify-center">{{ d }}</div>
     </div>
     <div class="grid grid-cols-7 gap-1">
       <button

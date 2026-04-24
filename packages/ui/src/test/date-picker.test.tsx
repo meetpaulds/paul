@@ -16,7 +16,7 @@ describe('DatePicker', () => {
 
   it('renders formatted date when date is provided', () => {
     render(<DatePicker date={new Date(2024, 0, 15)} onSelect={() => {}} />)
-    expect(screen.getByText(/January 15th, 2024/)).toBeInTheDocument()
+    expect(screen.getByText(/January 15, 2024/)).toBeInTheDocument()
   })
 
   it('opens calendar on trigger click', async () => {

@@ -121,6 +121,7 @@ export * from './lib/breadcrumb/breadcrumb.component'
 
 // Calendar
 export * from './lib/calendar/calendar.component'
+export * from './lib/date-picker/date-picker.component'
 
 // Carousel
 export * from './lib/carousel/carousel.component'

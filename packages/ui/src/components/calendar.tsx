@@ -3,8 +3,15 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { DayPicker } from 'react-day-picker'
 import { cn } from '@/lib/utils'
 import { buttonVariants } from './button'
+import { getWeekStartDay, formatMonthYear, getWeekdayNames } from '@/lib/calendar-locale'
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>
+export type CalendarProps = Omit<React.ComponentProps<typeof DayPicker>, 'locale'> & {
+  /** BCP 47 locale string, e.g. 'de-DE', 'ar-SA'. Defaults to the browser locale. */
+  locale?: string
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const DayPickerAny = DayPicker as React.ComponentType<any>
 
 /**
  * Date picker calendar built on `react-day-picker`.
@@ -15,11 +22,21 @@ function Calendar({
   className,
   classNames,
   showOutsideDays = true,
+  locale,
   ...props
 }: CalendarProps) {
+  const resolvedLocale = locale ?? (typeof navigator !== 'undefined' ? navigator.language : 'en-US')
+  const weekStart = getWeekStartDay(resolvedLocale)
+  const weekdayNames = getWeekdayNames(resolvedLocale, 'short')
+
   return (
-    <DayPicker
+    <DayPickerAny
       showOutsideDays={showOutsideDays}
+      weekStartsOn={weekStart}
+      formatters={{
+        formatCaption: (date: Date) => formatMonthYear(resolvedLocale, date.getFullYear(), date.getMonth()),
+        formatWeekdayName: (date: Date) => weekdayNames[(date.getDay() - weekStart + 7) % 7] ?? '',
+      }}
       className={cn('p-3', className)}
       classNames={{
         months: 'flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
@@ -61,6 +78,8 @@ function Calendar({
     />
   )
 }
+
+// Re-export DayPickerAny reference is only internal — public type is CalendarProps above
 Calendar.displayName = 'Calendar'
 
 export { Calendar }

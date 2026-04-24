@@ -73,6 +73,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Storybook: new category **"Auth Patterns / WCAG 3.3.8"** with 9 stories (`OTPInput`, `MagicLink` ×4 states, `PasskeyButton` ×4 states, `HoneypotField`).  
   Compliance matrix: new **Auth Patterns** section with `9.3.3.8` entries all ✅.
 
+- **Calendar & DatePicker — full i18n / l10n via native `Intl` API**  
+  Replaced hard-coded English month/weekday labels and `date-fns/format` with zero-dependency `Intl.DateTimeFormat` helpers in a shared `calendar-locale.ts` module.
+
+  | Feature | Implementation |
+  |---------|---------------|
+  | Month names | `Intl.DateTimeFormat(locale, { month: 'long' })` |
+  | Weekday headers | `Intl.DateTimeFormat(locale, { weekday: 'short' })` |
+  | Date trigger label | `Intl.DateTimeFormat(locale, { day:'numeric', month:'long', year:'numeric' })` |
+  | Week-start day | `Intl.Locale(locale).weekInfo.firstDay` + ISO-normalised fallback table |
+
+  Supported locales verified: `de-DE`, `fr-FR`, `it-IT`, `es-ES`, `ar-SA` (RTL), `en-US`.  
+  `locale` prop added to **Calendar** and **DatePicker** in React, Vue, Svelte, Angular.  
+  New **Svelte `DatePicker`** and **Angular `DatePicker`** components created.  
+  Storybook: **"Date & Time / Calendar"** expanded with per-locale stories + interactive locale switcher (6 locales).  
+  Tests: 28 assertions in `calendar-locale.test.ts` covering week-start, weekday ordering, month names, date formatting, and day-grid generation.
+
 ---
 
 ## [1.0.2] — 2026-04-23
