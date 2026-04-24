@@ -26,6 +26,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
   > Chromatic snapshots for any story rendering `muted-foreground` or `destructive-text` will show a diff — accept these as the new baseline.
 
+- **WCAG 2.2 SC 2.4.13 / EN 301 549 §9.2.4.13 — Focus Not Obscured (AAA) — overlay & scroll fixes**  
+  Focused elements inside overlay components and scroll containers are now guaranteed to remain visible:
+
+  | Fix | Components affected |
+  |-----|-------------------|
+  | `SelectTrigger`: upgraded `focus:ring-1` → `focus:ring-2 focus:ring-offset-2` | `@meetpaul/ui` `select.tsx` |
+  | `scroll-py-1` added to `SelectViewport` | `@meetpaul/ui` `select.tsx` |
+  | `scroll-py-1` added to Vue `SelectViewport` | `@meetpaul/ui-vue` `select-content.vue` |
+  | `scroll-py-1` added to Vue `Combobox` option list | `@meetpaul/ui-vue` `combobox.vue` |
+  | `scroll-py-1` + `tabindex="0"` added to Svelte `ScrollArea` viewport | `@meetpaul/ui-svelte` `ScrollArea.svelte` |
+  | `scroll-py-1` + `tabindex="0"` added to Angular `ScrollArea` viewport | `@meetpaul/ui-angular` `scroll-area.component.ts` |
+
+  Storybook: new **"Focus Not Obscured — Sticky Header"** story added to `Overlays/Dialog` demonstrating the sticky-header scenario with `scroll-pt-[72px]`.
+
 ---
 
 ## [1.0.2] — 2026-04-23
