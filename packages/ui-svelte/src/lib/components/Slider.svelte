@@ -29,6 +29,6 @@
     <span use:melt={range} class="absolute h-full bg-primary"></span>
   </span>
   {#each value as _, i}
-    <span use:melt={thumbs[i]} class="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"></span>
+    <span use:melt={thumbs[i]} class="relative block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 before:absolute before:inset-[-14px] before:rounded-full before:content-['']"></span>
   {/each}
 </span>

@@ -16,7 +16,7 @@ const props = defineProps<{ class?: string; orientation?: 'vertical' | 'horizont
 </script>
 <template>
   <ScrollAreaRoot v-bind="props" :class="cn('relative overflow-hidden', props.class)">
-    <ScrollAreaViewport class="h-full w-full rounded-[inherit]"><slot /></ScrollAreaViewport>
+    <ScrollAreaViewport class="h-full w-full rounded-[inherit] scroll-py-1" tabindex="0"><slot /></ScrollAreaViewport>
     <ScrollAreaScrollbar v-if="props.orientation !== 'horizontal'" orientation="vertical" class="flex touch-none select-none transition-colors h-full w-2.5 border-l border-l-transparent p-[1px]">
       <ScrollAreaThumb class="relative flex-1 rounded-full bg-border" />
     </ScrollAreaScrollbar>

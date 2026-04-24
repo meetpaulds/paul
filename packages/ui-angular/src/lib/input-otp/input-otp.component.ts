@@ -7,15 +7,21 @@ import { FormsModule } from '@angular/forms'
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <div class="flex items-center gap-2">
-      <input *ngFor="let i of slots; let idx = index"
-        [value]="getSlot(idx)"
-        (input)="onInput($event, idx)"
-        (keydown)="onKeydown($event, idx)"
-        maxlength="1"
-        class="flex h-9 w-9 rounded-md border border-input bg-transparent text-center text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        [attr.id]="'otp-' + idx"
+    <div class="relative flex items-center gap-2" (click)="realInput.focus()">
+      <input #realInput
+        type="text"
+        inputmode="numeric"
+        autocomplete="one-time-code"
+        [maxlength]="maxLength"
+        [value]="value"
+        (input)="onRealInput($event)"
+        [attr.aria-label]="'Enter one-time password, ' + maxLength + ' digits'"
+        class="sr-only"
       />
+      <div *ngFor="let i of slots; let idx = index"
+        aria-hidden="true"
+        [class]="getSlotClass(idx)"
+      >{{ getSlot(idx) }}<span *ngIf="idx === value.length" class="pointer-events-none absolute inset-0 flex items-center justify-center"><span class="animate-caret-blink h-4 w-px bg-foreground duration-1000"></span></span></div>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -28,23 +34,19 @@ export class InputOTPComponent {
   get slots() { return Array.from({ length: this.maxLength }, (_, i) => i) }
   getSlot(i: number) { return this.value[i] ?? '' }
 
-  onInput(e: Event, idx: number) {
-    const input = e.target as HTMLInputElement
-    const char = input.value.slice(-1)
-    const arr = this.value.split('')
-    arr[idx] = char
-    this.value = arr.join('').slice(0, this.maxLength)
-    this.valueChange.emit(this.value)
-    if (char && idx < this.maxLength - 1) {
-      const next = document.getElementById(`otp-${idx + 1}`)
-      next?.focus()
-    }
+  getSlotClass(idx: number) {
+    const active = idx === this.value.length
+    return [
+      'relative flex h-11 w-11 items-center justify-center border-y border-r border-input text-sm transition-all',
+      idx === 0 ? 'rounded-l-md border-l' : '',
+      idx === this.maxLength - 1 ? 'rounded-r-md' : '',
+      active ? 'z-10 ring-2 ring-ring ring-offset-background' : '',
+    ].join(' ')
   }
 
-  onKeydown(e: KeyboardEvent, idx: number) {
-    if (e.key === 'Backspace' && !this.getSlot(idx) && idx > 0) {
-      const prev = document.getElementById(`otp-${idx - 1}`)
-      prev?.focus()
-    }
+  onRealInput(e: Event) {
+    const val = (e.target as HTMLInputElement).value.replace(/\D/g, '').slice(0, this.maxLength)
+    this.value = val
+    this.valueChange.emit(this.value)
   }
 }

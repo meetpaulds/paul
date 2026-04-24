@@ -16,5 +16,5 @@
   const { class: cls = '', children }: Props = $props()
 </script>
 <div class={cn('relative overflow-hidden', cls)}>
-  <div class="h-full w-full overflow-auto">{@render children?.()}</div>
+  <div class="h-full w-full overflow-auto scroll-py-1" tabindex="0">{@render children?.()}</div>
 </div>

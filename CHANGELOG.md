@@ -7,6 +7,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased]
+
+### Changed — ⚠️ Visual Breaking Change
+
+- **WCAG 2.2 SC 1.4.6 / EN 301 549 §9.1.4.6 — Contrast (Enhanced) token corrections**  
+  Four design tokens were below the 7:1 AAA threshold and have been adjusted (lightness only; hue and saturation unchanged):
+
+  | Token | Mode | Before | After | Ratio before | Ratio after |
+  |-------|------|--------|-------|-------------|-------------|
+  | `--muted-foreground` | Light | `240 5% 38%` | `240 5% 33%` | 6.01–6.61:1 | 7.27–7.99:1 |
+  | `--muted-foreground` | Dark | `240 5% 64.9%` | `240 5% 71%` | 5.81–7.77:1 | 7.01–9.38:1 |
+  | `--destructive-text` | Light | `0 72% 44%` | `0 72% 39%` | 6.02:1 | 7.21:1 |
+  | `--destructive-text` | Dark | `0 90% 65%` | `0 90% 70%` | 6.03:1 | 7.02:1 |
+
+  Affected files: `packages/tokens/src/tokens.css`, `packages/tokens/src/tokens.ts`  
+  Full audit: [`docs/compliance/contrast-audit.md`](docs/compliance/contrast-audit.md)
+
+  > Chromatic snapshots for any story rendering `muted-foreground` or `destructive-text` will show a diff — accept these as the new baseline.
+
+- **WCAG 2.2 SC 2.4.13 / EN 301 549 §9.2.4.13 — Focus Not Obscured (AAA) — overlay & scroll fixes**  
+  Focused elements inside overlay components and scroll containers are now guaranteed to remain visible:
+
+  | Fix | Components affected |
+  |-----|-------------------|
+  | `SelectTrigger`: upgraded `focus:ring-1` → `focus:ring-2 focus:ring-offset-2` | `@meetpaul/ui` `select.tsx` |
+  | `scroll-py-1` added to `SelectViewport` | `@meetpaul/ui` `select.tsx` |
+  | `scroll-py-1` added to Vue `SelectViewport` | `@meetpaul/ui-vue` `select-content.vue` |
+  | `scroll-py-1` added to Vue `Combobox` option list | `@meetpaul/ui-vue` `combobox.vue` |
+  | `scroll-py-1` + `tabindex="0"` added to Svelte `ScrollArea` viewport | `@meetpaul/ui-svelte` `ScrollArea.svelte` |
+  | `scroll-py-1` + `tabindex="0"` added to Angular `ScrollArea` viewport | `@meetpaul/ui-angular` `scroll-area.component.ts` |
+
+  Storybook: new **"Focus Not Obscured — Sticky Header"** story added to `Overlays/Dialog` demonstrating the sticky-header scenario with `scroll-pt-[72px]`.
+
+- **WCAG 2.2 SC 2.5.5 / EN 301 549 §9.2.5.5 — Target Size (AAA) — 44×44 px touch target audit**  
+  All interactive elements audited across React, Vue, Svelte, and Angular. Fixes applied:
+
+  | Component | Fix | Strategy |
+  |-----------|-----|----------|
+  | **Slider thumb** (React, Vue, Svelte) | `before:inset-[-14px]` transparent pseudo-element | Hit-area expansion; visual size unchanged |
+  | **Slider** (Angular) | `h-11` on `input[type=range]` | Native range 44 px height |
+  | **Toggle** all variants (all frameworks) | `default`/`lg` → `h-11`; `sm` → `h-9` | Height bump |
+  | **TabsList** (all frameworks) | `h-9` → `h-11` | Height bump |
+  | **TabsTrigger** (all frameworks) | `py-1` → `min-h-11 py-2` | Min-height; no layout shift |
+  | **Button `icon`** (React) | `h-9 w-9` → `h-11 w-11` | Cascades to `PaginationLink` via `buttonVariants` |
+  | **PaginationLink** (Vue, Svelte) | `h-9 w-9` / `h-10 w-10` → `h-11 w-11` | Size bump |
+  | **Pagination prev/next/ellipsis** (Angular) | `h-9` → `h-11` | Height bump |
+  | **Calendar day cells** (all frameworks) | `h-8 w-8` → `h-11 w-11` | Size bump |
+  | **Calendar nav buttons** (all frameworks) | `h-7 w-7` → `h-11 w-11` | Size bump |
+
+  Compliance matrix updated: all `9.2.5.5` entries flipped to ✅.  
+  3 items removed from Critical Outstanding Issues table.
+
+- **WCAG 2.2 SC 3.3.8 / EAA Article 4 — Accessible Authentication — new Auth Pattern Library**  
+  Four new patterns added across React, Vue 3, Svelte 5, and Angular 18:
+
+  | Pattern | Files | WCAG note |
+  |---------|-------|-----------|
+  | **`InputOTP`** (hardened) | `input-otp.{tsx,vue,svelte,ts}` | `autocomplete="one-time-code"` + single real `<input>` with `aria-label`; slots `aria-hidden` |
+  | **`MagicLink`** | `magic-link.{tsx,vue,svelte,ts}` | Password-free; `autocomplete="email"`; `role="status" aria-live="polite"` announces state changes |
+  | **`PasskeyButton`** | `passkey-button.{tsx,vue,svelte,ts}` | WebAuthn/biometric; `aria-busy`; live-region for success/error/unsupported fallback |
+  | **`HoneypotField`** | `honeypot-field.{tsx,vue,svelte,ts}` | CAPTCHA-free bot prevention; `aria-hidden`; `tabindex="-1"`; `autocomplete="off"` |
+
+  Tests: 22 new assertions in `auth-patterns.test.tsx` covering `autocomplete`, `aria-label`, `aria-live`, keyboard activation, and `tabindex`.  
+  Storybook: new category **"Auth Patterns / WCAG 3.3.8"** with 9 stories (`OTPInput`, `MagicLink` ×4 states, `PasskeyButton` ×4 states, `HoneypotField`).  
+  Compliance matrix: new **Auth Patterns** section with `9.3.3.8` entries all ✅.
+
+---
+
 ## [1.0.2] — 2026-04-23
 
 ### Fixed
