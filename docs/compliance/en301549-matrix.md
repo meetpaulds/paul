@@ -1,6 +1,6 @@
 # EN 301 549 v3.2.1 — Compliance Matrix
 
-> **Version:** 1.0.2  
+> **Version:** 1.0.3  
 > **Last updated:** 2026-04-24  
 > **Scope:** `@meetpaul/ui` · `@meetpaul/ui-vue` · `@meetpaul/ui-svelte` · `@meetpaul/ui-angular`  
 > **Standard:** EN 301 549 v3.2.1 (2021-03) → ETSI, applicable under the European Accessibility Act (EAA) from 28 June 2025  
@@ -24,12 +24,60 @@
 1. [Disclosure](#disclosure)
 2. [Feedback](#feedback)
 3. [Forms](#forms)
-4. [Navigation](#navigation)
-5. [Overlays](#overlays)
-6. [Layout](#layout)
-7. [Data Display](#data-display)
-8. [Media](#media)
-9. [Utilities](#utilities)
+4. [Auth Patterns](#auth-patterns)
+5. [Navigation](#navigation)
+6. [Overlays](#overlays)
+7. [Layout](#layout)
+8. [Data Display](#data-display)
+9. [Media](#media)
+10. [Utilities](#utilities)
+
+---
+
+## Auth Patterns
+
+> **Scope:** WCAG 2.2 SC 3.3.8 (Accessible Authentication, Minimum) / EAA Article 4  
+> **Requirement:** Authentication processes must not rely solely on a cognitive function test unless an alternative that does not rely on that test is also provided, or an object-recognition / personal-content mechanism is available.  
+> **Implementation strategy:** No CAPTCHA in any pattern. Bot prevention via Honeypot + server-side rate-limiting.
+
+### InputOTP
+
+| EN 301 549 | WCAG 2.2 | Status | Notes |
+|-----------|----------|--------|-------|
+| 9.1.3.5 Identify Input Purpose | 1.3.5 | ✅ | `autocomplete="one-time-code"` — OS autofill satisfies 3.3.8 |
+| 9.2.1.1 Keyboard | 2.1.1 | ✅ | Single hidden `<input>` receives all key events; slots are `aria-hidden` |
+| 9.2.4.7 Focus Visible | 2.4.7 | ✅ | Active slot ring `ring-2 ring-ring` |
+| 9.3.3.8 Accessible Authentication (Minimum) | 3.3.8 | ✅ | `autocomplete="one-time-code"` allows copy-paste / autofill without transcription |
+| 9.4.1.2 Name, Role, Value | 4.1.2 | ✅ | `aria-label="Enter one-time password, N digits"` on real input; slots `aria-hidden` |
+
+### MagicLink
+
+| EN 301 549 | WCAG 2.2 | Status | Notes |
+|-----------|----------|--------|-------|
+| 9.1.3.5 Identify Input Purpose | 1.3.5 | ✅ | `autocomplete="email"` |
+| 9.2.1.1 Keyboard | 2.1.1 | ✅ | Form submits on Enter; button is native `<button type="submit">` |
+| 9.3.3.1 Error Identification | 3.3.1 | ✅ | Error status announced via `aria-live="polite"` |
+| 9.3.3.2 Labels or Instructions | 3.3.2 | ✅ | `<label for="magic-link-email">` present |
+| 9.3.3.8 Accessible Authentication (Minimum) | 3.3.8 | ✅ | No password recall required; no cognitive test |
+| 9.4.1.3 Status Messages | 4.1.3 | ✅ | `role="status" aria-live="polite" aria-atomic="true"` announces send/error |
+
+### PasskeyButton (WebAuthn)
+
+| EN 301 549 | WCAG 2.2 | Status | Notes |
+|-----------|----------|--------|-------|
+| 9.2.1.1 Keyboard | 2.1.1 | ✅ | Native `<button>` is keyboard-activatable |
+| 9.2.4.7 Focus Visible | 2.4.7 | ✅ | `focus-visible:ring-2` |
+| 9.3.3.8 Accessible Authentication (Minimum) | 3.3.8 | ✅ | Biometric / hardware key; no cognitive challenge; `unsupported` fallback provided |
+| 9.4.1.2 Name, Role, Value | 4.1.2 | ✅ | `aria-busy` set during auth; `aria-describedby` → live region |
+| 9.4.1.3 Status Messages | 4.1.3 | ✅ | `role="status" aria-live="polite"` announces success/error/unsupported |
+
+### HoneypotField (CAPTCHA alternative)
+
+| EN 301 549 | WCAG 2.2 | Status | Notes |
+|-----------|----------|--------|-------|
+| 9.2.1.1 Keyboard | 2.1.1 | ✅ | `tabindex="-1"` — unreachable by keyboard |
+| 9.3.3.8 Accessible Authentication (Minimum) | 3.3.8 | ✅ | No cognitive test; bot-trap is invisible to users; server-side check required |
+| 9.4.1.2 Name, Role, Value | 4.1.2 | ✅ | Entire wrapper `aria-hidden="true"` — removed from accessibility tree |
 
 ---
 

@@ -59,6 +59,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Compliance matrix updated: all `9.2.5.5` entries flipped to ✅.  
   3 items removed from Critical Outstanding Issues table.
 
+- **WCAG 2.2 SC 3.3.8 / EAA Article 4 — Accessible Authentication — new Auth Pattern Library**  
+  Four new patterns added across React, Vue 3, Svelte 5, and Angular 18:
+
+  | Pattern | Files | WCAG note |
+  |---------|-------|-----------|
+  | **`InputOTP`** (hardened) | `input-otp.{tsx,vue,svelte,ts}` | `autocomplete="one-time-code"` + single real `<input>` with `aria-label`; slots `aria-hidden` |
+  | **`MagicLink`** | `magic-link.{tsx,vue,svelte,ts}` | Password-free; `autocomplete="email"`; `role="status" aria-live="polite"` announces state changes |
+  | **`PasskeyButton`** | `passkey-button.{tsx,vue,svelte,ts}` | WebAuthn/biometric; `aria-busy`; live-region for success/error/unsupported fallback |
+  | **`HoneypotField`** | `honeypot-field.{tsx,vue,svelte,ts}` | CAPTCHA-free bot prevention; `aria-hidden`; `tabindex="-1"`; `autocomplete="off"` |
+
+  Tests: 22 new assertions in `auth-patterns.test.tsx` covering `autocomplete`, `aria-label`, `aria-live`, keyboard activation, and `tabindex`.  
+  Storybook: new category **"Auth Patterns / WCAG 3.3.8"** with 9 stories (`OTPInput`, `MagicLink` ×4 states, `PasskeyButton` ×4 states, `HoneypotField`).  
+  Compliance matrix: new **Auth Patterns** section with `9.3.3.8` entries all ✅.
+
 ---
 
 ## [1.0.2] — 2026-04-23
