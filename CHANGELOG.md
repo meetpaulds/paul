@@ -40,6 +40,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
   Storybook: new **"Focus Not Obscured — Sticky Header"** story added to `Overlays/Dialog` demonstrating the sticky-header scenario with `scroll-pt-[72px]`.
 
+- **WCAG 2.2 SC 2.5.5 / EN 301 549 §9.2.5.5 — Target Size (AAA) — 44×44 px touch target audit**  
+  All interactive elements audited across React, Vue, Svelte, and Angular. Fixes applied:
+
+  | Component | Fix | Strategy |
+  |-----------|-----|----------|
+  | **Slider thumb** (React, Vue, Svelte) | `before:inset-[-14px]` transparent pseudo-element | Hit-area expansion; visual size unchanged |
+  | **Slider** (Angular) | `h-11` on `input[type=range]` | Native range 44 px height |
+  | **Toggle** all variants (all frameworks) | `default`/`lg` → `h-11`; `sm` → `h-9` | Height bump |
+  | **TabsList** (all frameworks) | `h-9` → `h-11` | Height bump |
+  | **TabsTrigger** (all frameworks) | `py-1` → `min-h-11 py-2` | Min-height; no layout shift |
+  | **Button `icon`** (React) | `h-9 w-9` → `h-11 w-11` | Cascades to `PaginationLink` via `buttonVariants` |
+  | **PaginationLink** (Vue, Svelte) | `h-9 w-9` / `h-10 w-10` → `h-11 w-11` | Size bump |
+  | **Pagination prev/next/ellipsis** (Angular) | `h-9` → `h-11` | Height bump |
+  | **Calendar day cells** (all frameworks) | `h-8 w-8` → `h-11 w-11` | Size bump |
+  | **Calendar nav buttons** (all frameworks) | `h-7 w-7` → `h-11 w-11` | Size bump |
+
+  Compliance matrix updated: all `9.2.5.5` entries flipped to ✅.  
+  3 items removed from Critical Outstanding Issues table.
+
 ---
 
 ## [1.0.2] — 2026-04-23

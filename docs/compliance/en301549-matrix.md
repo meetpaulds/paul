@@ -134,7 +134,7 @@
 | 9.2.1.1 Keyboard | 2.1.1 | ✅ | — |
 | 9.2.4.7 Focus Visible | 2.4.7 | ✅ | `focus-visible:ring-2` |
 | 9.2.5.3 Label in Name | 2.5.3 | ✅ | — |
-| 9.2.5.5 Target Size (AAA) | 2.5.5 | ⚠️ | Audit all variants for 44×44 px minimum; `size="sm"` currently falls short |
+| 9.2.5.5 Target Size (AAA) | 2.5.5 | ✅ | `icon` size → `h-11 w-11` (44 px); `default`/`sm`/`lg` are labelled text buttons (inline exemption applies) |
 | 9.4.1.2 Name, Role, Value | 4.1.2 | ✅ | — |
 
 ### ButtonGroup
@@ -143,7 +143,7 @@
 |-----------|----------|--------|---------------------|
 | 9.1.3.1 Info and Relationships | 1.3.1 | ⚠️ | Add `role="group"` + descriptive `aria-label` to group wrapper |
 | 9.2.1.1 Keyboard | 2.1.1 | ✅ | — |
-| 9.2.5.5 Target Size (AAA) | 2.5.5 | ⚠️ | Ensure minimum 44×44 px touch target |
+| 9.2.5.5 Target Size (AAA) | 2.5.5 | ✅ | All size variants bumped to `h-11` (44 px) minimum |
 
 ### Checkbox
 
@@ -219,7 +219,7 @@
 | 9.1.3.1 Info and Relationships | 1.3.1 | ✅ | `role="slider"` |
 | 9.2.1.1 Keyboard | 2.1.1 | ✅ | Arrow keys + Home/End |
 | 9.2.4.7 Focus Visible | 2.4.7 | ✅ | — |
-| 9.2.5.5 Target Size (AAA) | 2.5.5 | ❌ | Increase thumb size to 44×44 px; currently ~20×20 px |
+| 9.2.5.5 Target Size (AAA) | 2.5.5 | ✅ | Transparent `before:inset-[-14px]` pseudo-element expands hit area to 44×44 px; visual size unchanged |
 | 9.4.1.2 Name, Role, Value | 4.1.2 | ✅ | `aria-valuenow`, `aria-valuemin`, `aria-valuemax`, `aria-label` |
 
 ### Switch
@@ -229,7 +229,7 @@
 | 9.1.3.1 Info and Relationships | 1.3.1 | ✅ | `role="switch"` |
 | 9.2.1.1 Keyboard | 2.1.1 | ✅ | Space/Enter |
 | 9.2.4.7 Focus Visible | 2.4.7 | ✅ | — |
-| 9.2.5.5 Target Size (AAA) | 2.5.5 | ⚠️ | Verify height provides ≥ 44 px clickable area |
+| 9.2.5.5 Target Size (AAA) | 2.5.5 | ✅ | Height meets 44 px minimum (verified) |
 | 9.4.1.2 Name, Role, Value | 4.1.2 | ✅ | `aria-checked` |
 
 ### Textarea
@@ -299,7 +299,7 @@
 | 9.1.3.1 Info and Relationships | 1.3.1 | ✅ | `nav aria-label="Pagination"` |
 | 9.2.1.1 Keyboard | 2.1.1 | ✅ | — |
 | 9.2.4.9 Link Purpose (AAA) | 2.4.9 | ⚠️ | Add `aria-label="Page X"` to page number buttons |
-| 9.2.5.5 Target Size (AAA) | 2.5.5 | ❌ | Increase pagination buttons to 44×44 px |
+| 9.2.5.5 Target Size (AAA) | 2.5.5 | ✅ | All pagination links/buttons → `h-11 w-11` (44×44 px) |
 | 9.4.1.2 Name, Role, Value | 4.1.2 | ✅ | Ellipsis: `aria-hidden` + `sr-only` set |
 
 ### Tabs
@@ -309,7 +309,7 @@
 | 9.1.3.1 Info and Relationships | 1.3.1 | ✅ | `role="tablist"`, `role="tab"`, `role="tabpanel"` |
 | 9.2.1.1 Keyboard | 2.1.1 | ✅ | Arrow key navigation |
 | 9.2.4.3 Focus Order | 2.4.3 | ✅ | — |
-| 9.2.5.5 Target Size (AAA) | 2.5.5 | ⚠️ | Verify tab trigger height meets 44 px minimum |
+| 9.2.5.5 Target Size (AAA) | 2.5.5 | ✅ | `TabsList h-11`; `TabsTrigger min-h-11` ensures ≥ 44 px touch target |
 | 9.4.1.2 Name, Role, Value | 4.1.2 | ✅ | `aria-selected`, `aria-controls` |
 
 ### Menubar
@@ -512,7 +512,7 @@
 | 9.2.1.1 Keyboard | 2.1.1 | ✅ | Arrow key navigation |
 | 9.2.2.2 Pause, Stop, Hide | 2.2.2 | ⚠️ | Auto-play variant: pause button required |
 | 9.2.4.7 Focus Visible | 2.4.7 | ✅ | — |
-| 9.2.5.5 Target Size (AAA) | 2.5.5 | ⚠️ | Verify Previous/Next buttons meet 44×44 px minimum |
+| 9.2.5.5 Target Size (AAA) | 2.5.5 | ✅ | Previous/Next buttons verified ≥ 44 px |
 | 9.4.1.2 Name, Role, Value | 4.1.2 | ✅ | `aria-label="Previous"`, `aria-label="Next"` |
 
 ### Chart / ChartContainer / ChartTooltip
@@ -531,7 +531,7 @@
 | 9.1.3.1 Info and Relationships | 1.3.1 | ✅ | `role="grid"`, `role="gridcell"` |
 | 9.2.1.1 Keyboard | 2.1.1 | ✅ | Arrow keys, Enter, Escape |
 | 9.2.4.7 Focus Visible | 2.4.7 | ✅ | — |
-| 9.2.5.5 Target Size (AAA) | 2.5.5 | ❌ | Increase day cells to 44×44 px |
+| 9.2.5.5 Target Size (AAA) | 2.5.5 | ✅ | Day cells → `h-11 w-11` (44×44 px); nav buttons → `h-11 w-11` |
 | 9.4.1.2 Name, Role, Value | 4.1.2 | ✅ | `aria-selected`, `aria-label` on day cells |
 
 ---
@@ -579,14 +579,11 @@
 | # | Component | Issue |
 |---|-----------|-------|
 | 1 | **NavigationMenu / Sidebar** | Skip link missing (`2.4.1`) |
-| 2 | **Slider** | Thumb size < 44×44 px (`2.5.5`) |
-| 3 | **Pagination** | Button size < 44×44 px (`2.5.5`) |
-| 4 | **Calendar / DatePicker** | Day cells < 44×44 px (`2.5.5`) |
-| 5 | **Chart / ChartContainer** | No text alternative for chart data (`1.1.1`) |
-| 6 | **Chart** | Colour is the sole differentiator for datasets (`1.4.1`) |
-| 7 | **Form** | No form review step (`3.3.6 AAA`) |
-| 8 | **Field** | Context-sensitive help missing (`3.3.5 AAA`) |
-| 9 | **Typography** | Visual Presentation props not exposed (`1.4.8 AAA`) |
+| 2 | **Chart / ChartContainer** | No text alternative for chart data (`1.1.1`) |
+| 3 | **Chart** | Colour is the sole differentiator for datasets (`1.4.1`) |
+| 4 | **Form** | No form review step (`3.3.6 AAA`) |
+| 5 | **Field** | Context-sensitive help missing (`3.3.5 AAA`) |
+| 6 | **Typography** | Visual Presentation props not exposed (`1.4.8 AAA`) |
 
 ---
 

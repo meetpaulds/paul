@@ -43,7 +43,7 @@ export class SliderComponent implements ControlValueAccessor {
   private onTouched: () => void = () => {}
 
   get inputClass() {
-    return cn('w-full h-2 cursor-pointer appearance-none rounded-full bg-primary/20 accent-primary', this.class)
+    return cn('w-full h-11 cursor-pointer appearance-none rounded-full bg-primary/20 accent-primary', this.class)
   }
 
   onInput(e: Event) {
