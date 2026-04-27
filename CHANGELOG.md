@@ -9,6 +9,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed — RTL (Right-to-Left) Migration
+
+- **All physical-direction Tailwind CSS utilities migrated to logical properties** across React, Vue, Svelte, and Angular component libraries.
+
+  | Physical (removed) | Logical (replacement) | CSS equivalent |
+  |--------------------|----------------------|----------------|
+  | `ml-*` | `ms-*` | `margin-inline-start` |
+  | `mr-*` | `me-*` | `margin-inline-end` |
+  | `pl-*` | `ps-*` | `padding-inline-start` |
+  | `pr-*` | `pe-*` | `padding-inline-end` |
+  | `left-*` | `start-*` | `inset-inline-start` |
+  | `right-*` | `end-*` | `inset-inline-end` |
+  | `border-l` | `border-s` | `border-inline-start` |
+  | `border-r` | `border-e` | `border-inline-end` |
+  | `text-left` | `text-start` | `text-align: start` |
+  | `text-right` | `text-end` | `text-align: end` |
+  | `rounded-l-*` | `rounded-s-*` | `border-start-radius` |
+  | `rounded-r-*` | `rounded-e-*` | `border-end-radius` |
+  | `space-x-*` | `gap-x-*` | `column-gap` (in flex containers) |
+
+  > **No Tailwind v4 config changes** — logical utilities are built-in since Tailwind CSS v3.3+. All changes are strictly within component class strings (no framework/core modification).
+
+  > **Animation classes preserved** — `slide-in-from-left`, `data-[side=left]`, `slide-out-to-right`, etc. remain untouched as they describe physical movement.
+
+  > **No visual change in LTR mode** — `start`/`end` resolve identically to `left`/`right` when `dir="ltr"`.
+
+- **Storybook: `dir="rtl"` test toolbar** — global `dir` toggle added to all 4 Storybook previews (React, Vue, Svelte, Angular). Switch to **RTL** in the toolbar to live-test Arabic/Hebrew layouts without code changes.
+- **New `Foundation / RTL (ar-SA)` Storybook story** (React) — composite Arabic layout snapshot with Alert, Badge, Card, Input, Button, and Dialog. Chromatic mode `rtl` configured for automated visual regression testing in CI.
+- **CI: Chromatic RTL mode** — `chromatic: { modes: { rtl: { viewport: 1200, globals: { dir: 'rtl' } } } }` added to the RTL story; Chromatic captures a separate RTL snapshot on every CI run automatically.
+
+  > **Consumer impact:** If you previously overwrote `ml-`/`mr-` utilities via arbitrary class strings, verify your overrides resolve correctly under `dir="rtl"`. Prefer `ms-`/`me-` in custom styling going forward.
+
 ### Changed — ⚠️ Visual Breaking Change
 
 - **WCAG 2.2 SC 1.4.6 / EN 301 549 §9.1.4.6 — Contrast (Enhanced) token corrections**  

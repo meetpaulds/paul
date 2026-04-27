@@ -1,8 +1,24 @@
+import React from 'react'
 import type { Preview } from '@storybook/react-vite'
 import { withThemeByClassName } from '@storybook/addon-themes'
 import '@meetpaul/ui/styles/globals.css'
 
 const preview: Preview = {
+  globalTypes: {
+    dir: {
+      name: 'Text Direction',
+      description: 'Writing direction for RTL language testing',
+      defaultValue: 'ltr',
+      toolbar: {
+        icon: 'globe',
+        items: [
+          { value: 'ltr', right: 'LTR', title: 'Left-to-Right' },
+          { value: 'rtl', right: 'RTL', title: 'Right-to-Left (Arabic/Hebrew)' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
   parameters: {
     layout: 'centered',
     backgrounds: {
@@ -23,6 +39,12 @@ const preview: Preview = {
     },
   },
   decorators: [
+    (Story, context) => {
+      const dir = (context.globals as any).dir ?? 'ltr'
+      return React.createElement('div', { dir, style: { width: '100%', minHeight: '100%' } },
+        React.createElement(Story)
+      )
+    },
     withThemeByClassName({
       themes: {
         light: 'light',
