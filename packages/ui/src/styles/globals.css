@@ -54,3 +54,58 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
 }
+
+/* ── @media print — accessible print output ────────────────────────────────── */
+@media print {
+  /* 1. Show URLs after every link (except anchor-only and javascript:) */
+  a[href]:not([href^="#"]):not([href^="javascript:"])::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    word-break: break-all;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* 2. Force backgrounds and colours to print (grayscale-safe) */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 3. Remove decorative shadows and border-radius globally */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* 4. Ensure minimum contrast in grayscale (black text, visible borders) */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* 5. Keep screen-reader-only text hidden in print */
+  .sr-only,
+  [class*="sr-only"] {
+    display: none !important;
+  }
+
+  /* 6. Hide interactive navigation chrome */
+  [data-sidebar="sidebar"],
+  [data-sidebar="trigger"],
+  [role="tooltip"],
+  [role="navigation"],
+  nav[aria-label="pagination"],
+  [data-radix-popper-content-wrapper] {
+    display: none !important;
+  }
+
+  /* 7. Dialog / sheet / popover overlays are irrelevant on paper */
+  [data-state="open"][role="dialog"],
+  [data-state="open"][role="alertdialog"] {
+    position: static !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: 1px solid black !important;
+  }
+}
