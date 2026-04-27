@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms'
   template: `
     <div class="flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground">
       <div class="flex items-center border-b px-3">
-        <span class="mr-2 shrink-0 opacity-50">⌕</span>
+        <span class="me-2 shrink-0 opacity-50">⌕</span>
         <input [(ngModel)]="search" placeholder="Type a command or search..."
           class="flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50" />
       </div>

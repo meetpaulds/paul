@@ -14,4 +14,4 @@ import { cn } from '@/lib/utils'
 defineOptions({ name: 'InputGroup' })
 const props = defineProps<{ class?: string }>()
 </script>
-<template><div :class="cn('flex [&>*:not(:first-child)]:-ml-px [&>*:not(:last-child)]:rounded-r-none [&>*:not(:first-child)]:rounded-l-none', props.class)"><slot /></div></template>
+<template><div :class="cn('flex [&>*:not(:first-child)]:-ms-px [&>*:not(:last-child)]:rounded-e-none [&>*:not(:first-child)]:rounded-s-none', props.class)"><slot /></div></template>

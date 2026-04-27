@@ -30,7 +30,7 @@
 <div class={cn('flex flex-col gap-1.5', cls)}>
   {#if label}
     <label for={id} class="text-sm font-medium leading-none">
-      {label}{#if required}<span class="text-destructive-text ml-0.5" aria-hidden="true">*</span>{/if}
+      {label}{#if required}<span class="text-destructive-text ms-0.5" aria-hidden="true">*</span>{/if}
     </label>
   {/if}
   {#if input}

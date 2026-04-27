@@ -5,7 +5,7 @@
 
 <div class="flex h-full">
   {#if open}
-    <div class={['flex h-full w-[--sidebar-width,16rem] flex-col border-r bg-sidebar text-sidebar-foreground print:hidden', side === 'right' ? 'order-last border-l border-r-0' : '', className].join(' ')} {...props}>
+    <div class={['flex h-full w-[--sidebar-width,16rem] flex-col border-e bg-sidebar text-sidebar-foreground print:hidden', side === 'right' ? 'order-last border-s border-e-0' : '', className].join(' ')} {...props}>
         {@render children?.()}
     </div>
   {/if}

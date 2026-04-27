@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common'
   template: `
     <div class="relative inline-block" (mouseenter)="open = true" (mouseleave)="open = false">
       <ng-content select="[slot=trigger]" />
-      <div *ngIf="open" class="absolute left-0 top-full z-50 mt-2 w-64 rounded-md border bg-popover p-4 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95">
+      <div *ngIf="open" class="absolute start-0 top-full z-50 mt-2 w-64 rounded-md border bg-popover p-4 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95">
         <ng-content />
       </div>
     </div>

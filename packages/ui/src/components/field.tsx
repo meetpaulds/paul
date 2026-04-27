@@ -44,7 +44,7 @@ const Field = React.forwardRef<HTMLDivElement, FieldProps>(
         {label && (
           <Label htmlFor={id}>
             {label}
-            {required && <span className="text-destructive-text ml-1">*</span>}
+            {required && <span className="text-destructive-text ms-1">*</span>}
           </Label>
         )}
         {React.isValidElement(children) && React.cloneElement(children as React.ReactElement<{ id?: string }>, { id } as any)}

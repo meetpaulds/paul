@@ -39,7 +39,7 @@ function select(val: string) {
       class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
     >
       <span>{{ selectedLabel ?? props.placeholder ?? 'Select...' }}</span>
-      <svg class="ml-2 h-4 w-4 shrink-0 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+      <svg class="ms-2 h-4 w-4 shrink-0 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
     </button>
     <div v-if="open" class="absolute z-50 mt-1 w-full rounded-md border bg-popover text-popover-foreground shadow-md">
       <div class="p-1">
@@ -58,8 +58,8 @@ function select(val: string) {
           @click="select(opt.value)"
           class="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground"
         >
-          <svg v-if="modelValue === opt.value" class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
-          <span :class="modelValue !== opt.value ? 'pl-6' : ''">{{ opt.label }}</span>
+          <svg v-if="modelValue === opt.value" class="me-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+          <span :class="modelValue !== opt.value ? 'ps-6' : ''">{{ opt.label }}</span>
         </div>
         <div v-if="filtered.length === 0" class="py-6 text-center text-sm text-muted-foreground">No results found.</div>
       </div>

@@ -2,4 +2,4 @@
 import { cn } from '../lib/utils'
 const props = defineProps<{ class?: string }>()
 </script>
-<template><div :class="cn('grid gap-1.5 p-4 text-center sm:text-left', props.class)"><slot /></div></template>
+<template><div :class="cn('grid gap-1.5 p-4 text-center sm:text-start', props.class)"><slot /></div></template>

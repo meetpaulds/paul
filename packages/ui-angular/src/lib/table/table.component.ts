@@ -16,10 +16,10 @@ export class TableFooterComponent {}
 @Component({ selector: 'paul-table-row', standalone: true, template: `<tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted print:border-black"><ng-content /></tr>`, changeDetection: ChangeDetectionStrategy.OnPush })
 export class TableRowComponent {}
 
-@Component({ selector: 'paul-table-head', standalone: true, template: `<th class="h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"><ng-content /></th>`, changeDetection: ChangeDetectionStrategy.OnPush })
+@Component({ selector: 'paul-table-head', standalone: true, template: `<th class="h-10 px-2 text-start align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pe-0 [&>[role=checkbox]]:translate-y-[2px]"><ng-content /></th>`, changeDetection: ChangeDetectionStrategy.OnPush })
 export class TableHeadComponent {}
 
-@Component({ selector: 'paul-table-cell', standalone: true, template: `<td class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"><ng-content /></td>`, changeDetection: ChangeDetectionStrategy.OnPush })
+@Component({ selector: 'paul-table-cell', standalone: true, template: `<td class="p-2 align-middle [&:has([role=checkbox])]:pe-0 [&>[role=checkbox]]:translate-y-[2px]"><ng-content /></td>`, changeDetection: ChangeDetectionStrategy.OnPush })
 export class TableCellComponent {}
 
 @Component({ selector: 'paul-table-caption', standalone: true, template: `<caption class="mt-4 text-sm text-muted-foreground"><ng-content /></caption>`, changeDetection: ChangeDetectionStrategy.OnPush })

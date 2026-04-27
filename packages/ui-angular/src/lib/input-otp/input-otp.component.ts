@@ -37,9 +37,9 @@ export class InputOTPComponent {
   getSlotClass(idx: number) {
     const active = idx === this.value.length
     return [
-      'relative flex h-11 w-11 items-center justify-center border-y border-r border-input text-sm transition-all',
-      idx === 0 ? 'rounded-l-md border-l' : '',
-      idx === this.maxLength - 1 ? 'rounded-r-md' : '',
+      'relative flex h-11 w-11 items-center justify-center border-y border-e border-input text-sm transition-all',
+      idx === 0 ? 'rounded-s-md border-s' : '',
+      idx === this.maxLength - 1 ? 'rounded-e-md' : '',
       active ? 'z-10 ring-2 ring-ring ring-offset-background' : '',
     ].join(' ')
   }

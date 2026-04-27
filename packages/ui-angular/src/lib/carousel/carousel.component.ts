@@ -1,7 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy, ContentChildren, QueryList, AfterContentInit } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-@Component({ selector: 'paul-carousel-item', standalone: true, template: `<div class="min-w-0 shrink-0 grow-0 basis-full pl-4"><ng-content /></div>`, changeDetection: ChangeDetectionStrategy.OnPush })
+@Component({ selector: 'paul-carousel-item', standalone: true, template: `<div class="min-w-0 shrink-0 grow-0 basis-full ps-4"><ng-content /></div>`, changeDetection: ChangeDetectionStrategy.OnPush })
 export class CarouselItemComponent {}
 
 @Component({
@@ -11,12 +11,12 @@ export class CarouselItemComponent {}
   template: `
     <div class="relative">
       <div class="overflow-hidden">
-        <div class="flex -ml-4" [style.transform]="'translateX(-' + (current * 100) + '%)'">
+        <div class="flex -ms-4" [style.transform]="'translateX(-' + (current * 100) + '%)'">
           <ng-content />
         </div>
       </div>
-      <button (click)="prev()" class="absolute left-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full border bg-background shadow hover:bg-accent" type="button" aria-label="Previous">‹</button>
-      <button (click)="next()" class="absolute right-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full border bg-background shadow hover:bg-accent" type="button" aria-label="Next">›</button>
+      <button (click)="prev()" class="absolute start-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full border bg-background shadow hover:bg-accent" type="button" aria-label="Previous">‹</button>
+      <button (click)="next()" class="absolute end-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full border bg-background shadow hover:bg-accent" type="button" aria-label="Next">›</button>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

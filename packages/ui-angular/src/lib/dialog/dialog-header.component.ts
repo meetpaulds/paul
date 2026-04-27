@@ -5,5 +5,5 @@ import { cn } from '../../lib/utils'
 @Component({ selector: 'paul-dialog-header', standalone: true, template: `<ng-content />`, changeDetection: ChangeDetectionStrategy.OnPush })
 export class DialogHeaderComponent {
   @Input() class = ''
-  @HostBinding('class') get hostClass() { return cn('flex flex-col space-y-1.5 text-center sm:text-left', this.class) }
+  @HostBinding('class') get hostClass() { return cn('flex flex-col space-y-1.5 text-center sm:text-start', this.class) }
 }

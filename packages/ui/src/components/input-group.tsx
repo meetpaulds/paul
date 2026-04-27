@@ -59,7 +59,7 @@ const InputGroupText = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        'flex items-center px-3 text-sm text-muted-foreground bg-muted border-y border-l rounded-l-md',
+        'flex items-center px-3 text-sm text-muted-foreground bg-muted border-y border-s rounded-s-md',
         className
       )}
       {...props}

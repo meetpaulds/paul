@@ -63,6 +63,6 @@ describe('Sheet', () => {
     render(<DefaultSheet side="left" />)
     await user.click(screen.getByRole('button', { name: 'Open Sheet' }))
     const dialog = screen.getByRole('dialog')
-    expect(dialog.className).toContain('left-0')
+    expect(dialog.className).toContain('start-0')
   })
 })

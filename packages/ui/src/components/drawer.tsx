@@ -45,8 +45,8 @@ const drawerContentVariants = cva(
       direction: {
         bottom: 'inset-x-0 bottom-0 mt-24',
         top: 'inset-x-0 top-0 mb-24',
-        left: 'inset-y-0 left-0 mr-24',
-        right: 'inset-y-0 right-0 ml-24',
+        left: 'inset-y-0 start-0 me-24',
+        right: 'inset-y-0 end-0 ms-24',
       },
     },
     defaultVariants: {
@@ -86,7 +86,7 @@ const DrawerHeader = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn('grid gap-1.5 p-4 text-center sm:text-left', className)}
+    className={cn('grid gap-1.5 p-4 text-center sm:text-start', className)}
     {...props}
   />
 )

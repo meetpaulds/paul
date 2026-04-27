@@ -24,7 +24,7 @@ const id = useId()
 </script>
 <template>
   <div :class="cn('space-y-2', props.class)">
-    <label v-if="props.label" :for="id" class="text-sm font-medium leading-none">{{ props.label }}<span v-if="props.required" class="text-destructive-text ml-1">*</span></label>
+    <label v-if="props.label" :for="id" class="text-sm font-medium leading-none">{{ props.label }}<span v-if="props.required" class="text-destructive-text ms-1">*</span></label>
     <slot :id="id" />
     <p v-if="props.error" class="text-[0.8rem] font-medium text-destructive-text">{{ props.error }}</p>
     <p v-else-if="props.hint" class="text-[0.8rem] text-muted-foreground">{{ props.hint }}</p>

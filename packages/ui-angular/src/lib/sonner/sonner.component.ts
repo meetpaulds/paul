@@ -8,10 +8,10 @@ interface ToastItem { id: number; message: string }
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="fixed bottom-4 right-4 z-[100] flex flex-col gap-2 w-80">
+    <div class="fixed bottom-4 end-4 z-[100] flex flex-col gap-2 w-80">
       <div *ngFor="let t of toasts" class="flex items-center justify-between rounded-md border bg-background px-4 py-3 shadow-lg text-sm">
         <span>{{ t.message }}</span>
-        <button (click)="dismiss(t.id)" class="ml-4 text-muted-foreground hover:text-foreground">✕</button>
+        <button (click)="dismiss(t.id)" class="ms-4 text-muted-foreground hover:text-foreground">✕</button>
       </div>
     </div>
   `,

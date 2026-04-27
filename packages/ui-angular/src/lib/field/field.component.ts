@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common'
   template: `
     <div class="flex flex-col gap-1.5">
       <label *ngIf="label" [for]="fieldId" class="text-sm font-medium leading-none">
-        {{ label }}<span *ngIf="required" class="text-destructive-text ml-0.5" aria-hidden="true">*</span>
+        {{ label }}<span *ngIf="required" class="text-destructive-text ms-0.5" aria-hidden="true">*</span>
       </label>
       <ng-content />
       <p *ngIf="hint && !error" class="text-sm text-muted-foreground">{{ hint }}</p>

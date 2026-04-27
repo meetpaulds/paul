@@ -6,7 +6,7 @@ import { cn } from '../../lib/utils'
   selector: 'paul-toast-viewport',
   standalone: true,
   imports: [CommonModule],
-  template: `<div class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"><ng-content /></div>`,
+  template: `<div class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:end-0 sm:top-auto sm:flex-col md:max-w-[420px]"><ng-content /></div>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ToastViewportComponent {}
@@ -29,7 +29,7 @@ export class ToastComponent {
   @Input() class = ''
   get toastClass() {
     return cn(
-      'group pointer-events-auto relative flex w-full items-center justify-between space-x-2 overflow-hidden rounded-md border p-4 pr-6 shadow-lg transition-all',
+      'group pointer-events-auto relative flex w-full items-center justify-between gap-x-2 overflow-hidden rounded-md border p-4 pe-6 shadow-lg transition-all',
       this.variant === 'destructive' ? 'destructive border-destructive bg-destructive text-destructive-foreground' : 'border bg-background text-foreground',
       this.class
     )
