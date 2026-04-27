@@ -1,0 +1,6 @@
+services:
+  storybook:
+    image: ghcr.io/meetpaulds/paul-storybook:latest
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:6006:80"
