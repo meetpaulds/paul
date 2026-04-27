@@ -22,5 +22,5 @@ const props = defineProps<{ class?: string }>()
 </script>
 
 <template>
-  <div :class="cn('rounded-xl border bg-card text-card-foreground shadow', props.class)"><slot /></div>
+  <div :class="cn('rounded-xl border bg-card text-card-foreground shadow print:shadow-none print:rounded-none print:border-black print:text-black', props.class)"><slot /></div>
 </template>

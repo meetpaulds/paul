@@ -21,7 +21,7 @@ export class SidebarComponent {
   @Input() open = true
   @Input() side: 'left' | 'right' = 'left'
   get sideClass() {
-    return `flex flex-col h-full w-64 border-r bg-sidebar text-sidebar-foreground ${this.side === 'right' ? 'order-last border-l border-r-0' : ''}`
+    return `flex flex-col h-full w-64 border-r bg-sidebar text-sidebar-foreground print:hidden ${this.side === 'right' ? 'order-last border-l border-r-0' : ''}`
   }
 }
 

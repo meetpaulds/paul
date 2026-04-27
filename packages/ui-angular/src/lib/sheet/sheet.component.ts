@@ -12,7 +12,7 @@ import { A11yModule } from '@angular/cdk/a11y'
     <ng-template #tpl>
       <div class="fixed inset-0 z-50 bg-black/80" (click)="close()"></div>
       <div cdkTrapFocus [cdkTrapFocusAutoCapture]="true" role="dialog" aria-modal="true"
-        class="fixed inset-y-0 right-0 z-50 h-full w-3/4 max-w-sm border-l bg-background p-6 shadow-lg animate-in slide-in-from-right"
+        class="fixed inset-y-0 right-0 z-50 h-full w-3/4 max-w-sm border-l bg-background p-6 shadow-lg animate-in slide-in-from-right print:shadow-none print:rounded-none print:border-black print:text-black"
         (keydown.escape)="close()">
         <ng-content />
         <button (click)="close()" class="absolute right-4 top-4 rounded-sm opacity-70 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2" aria-label="Close">

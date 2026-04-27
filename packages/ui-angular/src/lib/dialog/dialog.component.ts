@@ -75,7 +75,7 @@ export class DialogComponent implements OnDestroy {
 
   get panelClass() {
     return cn(
-      'fixed left-1/2 top-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 border bg-background p-6 shadow-lg sm:rounded-lg animate-in fade-in-0 zoom-in-95',
+      'fixed left-1/2 top-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 border bg-background p-6 shadow-lg sm:rounded-lg animate-in fade-in-0 zoom-in-95 print:shadow-none print:rounded-none print:border-black print:text-black',
       this.class
     )
   }

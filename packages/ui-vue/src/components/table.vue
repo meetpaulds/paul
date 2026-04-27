@@ -5,7 +5,7 @@ const props = defineProps<{ class?: string }>()
 
 <template>
   <div class="relative w-full overflow-auto">
-    <table :class="cn('w-full caption-bottom text-sm', props.class)">
+    <table :class="cn('w-full caption-bottom text-sm print:border-black', props.class)">
       <slot />
     </table>
   </div>

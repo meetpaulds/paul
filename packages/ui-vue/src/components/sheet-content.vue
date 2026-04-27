@@ -23,7 +23,7 @@ const sideClasses: Record<string, string> = {
       <div
         v-if="open"
         role="dialog"
-        :class="cn('fixed z-50 gap-4 bg-background p-6 shadow-lg', sideClasses[props.side ?? 'right'], props.class)"
+        :class="cn('fixed z-50 gap-4 bg-background p-6 shadow-lg print:shadow-none print:rounded-none print:border-black print:text-black', sideClasses[props.side ?? 'right'], props.class)"
       >
         <button
           class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
