@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2024",
+    "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "lib": ["ES2024", "DOM", "DOM.Iterable"],
@@ -19,6 +19,7 @@
     "composite": true,
     "baseUrl": ".",
     "paths": {
+      "@meetpaul/ui": ["packages/ui/src/index.ts"],
       "@meetpaul/ui/*": ["packages/ui/src/*"]
     }
   },
