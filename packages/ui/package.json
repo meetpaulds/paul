@@ -1,6 +1,6 @@
 {
   "name": "@meetpaul/ui",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "paul — Pattern, Asset & UI Library. A complete design system built for teams who ship great products.",
   "license": "MIT",
   "author": "SirPauls <office@sirpauls.com>",
@@ -65,8 +65,12 @@
     "react-dom": ">=18.0.0 || >=19.0.0"
   },
   "peerDependenciesMeta": {
-    "react": { "optional": false },
-    "react-dom": { "optional": false }
+    "react": {
+      "optional": false
+    },
+    "react-dom": {
+      "optional": false
+    }
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
