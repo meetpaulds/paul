@@ -36,6 +36,7 @@ RUN pnpm --filter @meetpaul/tokens build && \
     pnpm --filter @meetpaul/ui-svelte build && \
     pnpm --filter @meetpaul/ui-vue build && \
     pnpm --filter @meetpaul/ui-angular build && \
+    export STORYBOOK_STATIC_DEPLOYMENT=true && \
     pnpm --filter paul build && \
     pnpm --filter paul-storybook-vue build && \
     pnpm --filter paul-storybook-svelte build && \
@@ -47,12 +48,13 @@ FROM nginx:1.27-alpine AS server
 RUN rm /etc/nginx/conf.d/default.conf
 
 COPY docker/nginx.conf /etc/nginx/conf.d/storybooks.conf
+COPY docker/index.html /usr/share/nginx/html/index.html
 
 COPY --from=builder /app/apps/storybook/storybook-static          /usr/share/nginx/storybook
 COPY --from=builder /app/apps/storybook-vue/storybook-static      /usr/share/nginx/storybook-vue
 COPY --from=builder /app/apps/storybook-svelte/storybook-static   /usr/share/nginx/storybook-svelte
 COPY --from=builder /app/apps/storybook-angular/storybook-static  /usr/share/nginx/storybook-angular
 
-EXPOSE 6006 6007 6008 6009
+EXPOSE 80 6006 6007 6008 6009
 
 CMD ["nginx", "-g", "daemon off;"]

@@ -1,8 +1,17 @@
-import { describe, it, expect } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from '../components/input-otp'
 
 describe('InputOTP', () => {
+  beforeEach(() => {
+    vi.useFakeTimers()
+  })
+
+  afterEach(() => {
+    vi.clearAllTimers()
+    vi.useRealTimers()
+  })
+
   it('renders OTP input', () => {
     render(
       <InputOTP maxLength={6}>

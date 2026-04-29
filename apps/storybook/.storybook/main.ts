@@ -7,6 +7,11 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const uiSrc = resolve(__dirname, '../../../packages/ui/src')
+const isStaticDeployment = process.env.STORYBOOK_STATIC_DEPLOYMENT === 'true'
+
+function getRefUrl(path: string, localUrl: string): string {
+  return isStaticDeployment ? path : localUrl
+}
 
 const config: StorybookConfig = {
   stories: [
@@ -25,17 +30,17 @@ const config: StorybookConfig = {
   refs: {
     vue: {
       title: 'Vue',
-      url: 'http://localhost:6007',
+      url: getRefUrl('/vue', 'http://localhost:6007'),
       expanded: false,
     },
     svelte: {
       title: 'Svelte',
-      url: 'http://localhost:6008',
+      url: getRefUrl('/svelte', 'http://localhost:6008'),
       expanded: false,
     },
     angular: {
       title: 'Angular',
-      url: 'http://localhost:6009',
+      url: getRefUrl('/angular', 'http://localhost:6009'),
       expanded: false,
     },
   },

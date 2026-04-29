@@ -4,6 +4,6 @@ export default create({
   base: 'light',
   brandTitle: 'paul',
   brandUrl: 'https://paul.sirpauls.com',
-  brandImage: '/logo.png',
+  brandImage: './logo.png',
   brandTarget: '_self',
 });
