@@ -1,4 +1,4 @@
-import { create } from 'storybook/theming';
+import { create } from 'storybook/theming'
 
 export default create({
   base: 'dark',
@@ -6,4 +6,4 @@ export default create({
   brandUrl: 'https://paul.sirpauls.com',
   brandImage: './logo.png',
   brandTarget: '_self',
-});
+})
