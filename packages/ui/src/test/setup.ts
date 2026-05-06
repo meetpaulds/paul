@@ -13,6 +13,11 @@ Element.prototype.setPointerCapture = Element.prototype.setPointerCapture ?? (()
 Element.prototype.releasePointerCapture = Element.prototype.releasePointerCapture ?? (() => {})
 Element.prototype.scrollIntoView = Element.prototype.scrollIntoView ?? (() => {})
 
+// input-otp uses document.elementFromPoint internally; jsdom doesn't implement it
+if (typeof document !== 'undefined' && !document.elementFromPoint) {
+  document.elementFromPoint = () => null
+}
+
 class IntersectionObserverMock {
   observe() {}
   unobserve() {}
