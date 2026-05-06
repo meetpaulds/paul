@@ -16,5 +16,6 @@
   const { class: cls = '', children }: Props = $props()
 </script>
 <div class={cn('relative overflow-hidden', cls)}>
-  <div class="h-full w-full overflow-auto scroll-py-1" role="region" tabindex="0">{@render children?.()}</div>
+  <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+  <div class="h-full w-full overflow-auto scroll-py-1" role="group" aria-label="Scrollable content" tabindex="0">{@render children?.()}</div>
 </div>

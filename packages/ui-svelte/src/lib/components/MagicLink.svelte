@@ -9,18 +9,21 @@
    */
   type Status = 'idle' | 'sending' | 'sent' | 'error'
 
+  interface Props {
+    status?: Status
+    statusMessage?: string
+    class?: string
+    onsubmit?: (email: string) => void
+    [key: string]: unknown
+  }
+
   let {
     status = 'idle' as Status,
     statusMessage = '',
     class: className = '',
     onsubmit: onsubmitProp,
     ...rest
-  } = $props<{
-    status?: Status
-    statusMessage?: string
-    class?: string
-    onsubmit?: (email: string) => void
-  }>()
+  }: Props = $props()
 
   let email = $state('')
 

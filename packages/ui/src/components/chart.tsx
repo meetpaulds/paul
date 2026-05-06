@@ -2,6 +2,17 @@ import * as React from 'react'
 import * as RechartsPrimitive from 'recharts'
 import { cn } from '@/lib/utils'
 
+type TooltipPayloadItem = {
+  name?: string | number
+  value?: string | number | (string | number)[]
+  color?: string
+} & Record<string, unknown>
+
+type LegendPayloadItem = {
+  value?: string | number
+  color?: string
+} & Record<string, unknown>
+
 const Chart = RechartsPrimitive.ResponsiveContainer
 
 /**
@@ -82,7 +93,7 @@ const ChartTooltipContent = React.forwardRef<
         {...props}
       >
         <div className="grid gap-1.5">
-          {payload.map((item: any, index: number) => (
+          {(payload as TooltipPayloadItem[]).map((item, index: number) => (
             <div key={index} className="flex items-center gap-2">
               {!hideIndicator && (
                 <div
@@ -139,7 +150,7 @@ const ChartLegendContent = React.forwardRef<
           className
         )}
       >
-        {payload.map((item: any) => (
+        {(payload as LegendPayloadItem[]).map((item) => (
           <div
             key={item.value}
             className="flex items-center gap-1.5"

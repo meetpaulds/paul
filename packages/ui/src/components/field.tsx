@@ -47,7 +47,7 @@ const Field = React.forwardRef<HTMLDivElement, FieldProps>(
             {required && <span className="text-destructive-text ml-1">*</span>}
           </Label>
         )}
-        {React.isValidElement(children) && React.cloneElement(children as React.ReactElement<{ id?: string }>, { id } as any)}
+        {React.isValidElement(children) && React.cloneElement(children as React.ReactElement<{ id?: string }>, { id })}
         {error && <p className="text-sm text-destructive-text">{error}</p>}
         {hint && !error && <p className="text-sm text-muted-foreground">{hint}</p>}
       </div>

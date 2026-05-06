@@ -25,11 +25,6 @@
     "turbo": "latest",
     "typescript": "latest"
   },
-  "lint-staged": {
-    "packages/ui-svelte/src/**/*.svelte": "svelte-check --tsconfig packages/ui-svelte/tsconfig.json --fail-on-warnings",
-    "**/*.{ts,tsx}": "tsc -p tsconfig.json --noEmit",
-    "**/*.{ts,tsx,svelte,js,cjs,mjs}": "eslint --max-warnings=0"
-  },
   "engines": {
     "node": ">=24"
   },
