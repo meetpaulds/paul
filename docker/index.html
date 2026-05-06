@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>paul - Design System</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f0f11;
+      color: #e4e4e7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    h1 span {
+      color: #71717a;
+      font-weight: 400;
+    }
+
+    p {
+      color: #71717a;
+      font-size: 0.95rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      width: min(100% - 2rem, 480px);
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 1.25rem 1.5rem;
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    a:hover {
+      border-color: #52525b;
+      background: #1f1f23;
+    }
+
+    .label {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .sub {
+      font-size: 0.8rem;
+      color: #52525b;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+    }
+
+    .react .dot { background: #61dafb; }
+    .vue .dot { background: #42b883; }
+    .angular .dot { background: #dd0031; }
+    .svelte .dot { background: #ff3e00; }
+
+    @media (max-width: 520px) {
+      body { padding: 2rem 0; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align:center">
+    <h1>paul <span>design system</span></h1>
+    <p>Choose a framework to open its Storybook</p>
+  </div>
+
+  <div class="grid">
+    <a href="/react/" class="react">
+      <div class="dot"></div>
+      <span class="label">React</span>
+      <span class="sub">/react/</span>
+    </a>
+    <a href="/vue/" class="vue">
+      <div class="dot"></div>
+      <span class="label">Vue</span>
+      <span class="sub">/vue/</span>
+    </a>
+    <a href="/angular/" class="angular">
+      <div class="dot"></div>
+      <span class="label">Angular</span>
+      <span class="sub">/angular/</span>
+    </a>
+    <a href="/svelte/" class="svelte">
+      <div class="dot"></div>
+      <span class="label">Svelte</span>
+      <span class="sub">/svelte/</span>
+    </a>
+  </div>
+</body>
+</html>

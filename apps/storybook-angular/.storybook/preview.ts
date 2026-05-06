@@ -4,7 +4,11 @@ import { withThemeByClassName } from '@storybook/addon-themes'
 const preview: Preview = {
   parameters: {
     backgrounds: {
-      disabled: true,
+      default: 'dark',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#09090b' },
+      ],
     },
     layout: 'centered',
     controls: {
@@ -27,7 +31,7 @@ const preview: Preview = {
         light: 'light',
         dark: 'dark',
       },
-      defaultTheme: 'light',
+      defaultTheme: 'dark',
     }) as any,
   ],
 }

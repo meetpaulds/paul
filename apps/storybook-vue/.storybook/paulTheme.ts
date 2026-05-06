@@ -1,9 +1,9 @@
-import { create } from 'storybook/theming';
+import { create } from 'storybook/theming'
 
 export default create({
-  base: 'light',
+  base: 'dark',
   brandTitle: 'paul',
   brandUrl: 'https://paul.sirpauls.com',
-  brandImage: '/logo.png',
+  brandImage: './logo.png',
   brandTarget: '_self',
-});
+})

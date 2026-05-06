@@ -3,4 +3,4 @@ import paulTheme from './paulTheme'
 
 addons.setConfig({
   theme: paulTheme,
-});
+})

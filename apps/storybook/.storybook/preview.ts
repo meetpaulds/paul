@@ -6,7 +6,11 @@ const preview: Preview = {
   parameters: {
     layout: 'centered',
     backgrounds: {
-      disabled: true,
+      default: 'dark',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#09090b' },
+      ],
     },
     controls: {
       matchers: {
@@ -28,7 +32,7 @@ const preview: Preview = {
         light: 'light',
         dark: 'dark',
       },
-      defaultTheme: 'light',
+      defaultTheme: 'dark',
     }) as any,
   ],
 }
