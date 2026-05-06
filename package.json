@@ -13,14 +13,17 @@
     "publish:ui": "pnpm --filter @meetpaul/ui publish --no-git-checks",
     "version:patch": "cd packages/ui && npm version patch",
     "version:minor": "cd packages/ui && npm version minor",
-    "version:major": "cd packages/ui && npm version major"
+    "version:major": "cd packages/ui && npm version major",
+    "prepare": "husky"
   },
   "devDependencies": {
     "concurrently": "^9.0.0",
-    "turbo": "latest",
-    "typescript": "latest",
     "eslint": "latest",
-    "prettier": "latest"
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "latest",
+    "turbo": "latest",
+    "typescript": "latest"
   },
   "engines": {
     "node": ">=24"

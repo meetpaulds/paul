@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react-vite'
+import type { Preview, Decorator } from '@storybook/react-vite'
 import { withThemeByClassName } from '@storybook/addon-themes'
 import '@meetpaul/ui/styles/globals.css'
 
@@ -33,7 +33,7 @@ const preview: Preview = {
         dark: 'dark',
       },
       defaultTheme: 'dark',
-    }) as any,
+    }) as Decorator,
   ],
 }
 
