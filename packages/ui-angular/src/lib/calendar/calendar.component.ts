@@ -8,9 +8,9 @@ import { CommonModule } from '@angular/common'
   template: `
     <div class="p-3">
       <div class="flex items-center justify-between mb-2">
-        <button (click)="prevMonth()" class="inline-flex items-center justify-center h-7 w-7 rounded-md border hover:bg-accent text-sm">‹</button>
+        <button (click)="prevMonth()" class="inline-flex items-center justify-center h-11 w-11 rounded-md border hover:bg-accent text-sm">‹</button>
         <span class="text-sm font-medium">{{ monthLabel }}</span>
-        <button (click)="nextMonth()" class="inline-flex items-center justify-center h-7 w-7 rounded-md border hover:bg-accent text-sm">›</button>
+        <button (click)="nextMonth()" class="inline-flex items-center justify-center h-11 w-11 rounded-md border hover:bg-accent text-sm">›</button>
       </div>
       <div class="grid grid-cols-7 gap-1 text-center text-xs text-muted-foreground mb-1">
         <span *ngFor="let d of dayNames">{{ d }}</span>
@@ -57,6 +57,6 @@ export class CalendarComponent {
     return this.selected && this.selected.getFullYear() === this.viewYear && this.selected.getMonth() === this.viewMonth && this.selected.getDate() === day
   }
   getDayClass(day: number) {
-    return `inline-flex h-8 w-8 items-center justify-center rounded-md text-sm hover:bg-accent ${this.isSelected(day) ? 'bg-primary text-primary-foreground hover:bg-primary/90' : ''}`
+    return `inline-flex h-11 w-11 items-center justify-center rounded-md text-sm hover:bg-accent ${this.isSelected(day) ? 'bg-primary text-primary-foreground hover:bg-primary/90' : ''}`
   }
 }

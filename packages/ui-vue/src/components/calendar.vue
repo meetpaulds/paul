@@ -49,11 +49,11 @@ function isToday(day: number | null) {
 <template>
   <div :class="cn('p-3 rounded-md border', props.class)">
     <div class="flex items-center justify-between mb-2">
-      <button @click="prevMonth" class="inline-flex items-center justify-center h-7 w-7 rounded-md border hover:bg-accent">
+      <button @click="prevMonth" class="inline-flex items-center justify-center h-11 w-11 rounded-md border hover:bg-accent">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
       </button>
       <span class="text-sm font-medium">{{ title }}</span>
-      <button @click="nextMonth" class="inline-flex items-center justify-center h-7 w-7 rounded-md border hover:bg-accent">
+      <button @click="nextMonth" class="inline-flex items-center justify-center h-11 w-11 rounded-md border hover:bg-accent">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
       </button>
     </div>
@@ -67,7 +67,7 @@ function isToday(day: number | null) {
         :disabled="!day"
         @click="select(day)"
         :class="cn(
-          'h-8 w-8 rounded-md text-sm flex items-center justify-center transition-colors',
+          'h-11 w-11 rounded-md text-sm flex items-center justify-center transition-colors',
           !day ? 'invisible' : '',
           isSelected(day) ? 'bg-primary text-primary-foreground hover:bg-primary/90' : '',
           isToday(day) && !isSelected(day) ? 'bg-accent text-accent-foreground' : '',

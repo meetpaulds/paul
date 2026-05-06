@@ -13,21 +13,23 @@ function onInput(e: Event) {
 }
 </script>
 <template>
-  <div :class="cn('flex items-center gap-2', props.class)" aria-label="One-time password">
+  <div :class="cn('flex items-center gap-2', props.class)" role="group" :aria-label="'One-time password'">
     <input
       type="text"
       inputmode="numeric"
+      autocomplete="one-time-code"
       :maxlength="maxLen"
       :value="modelValue"
       @input="onInput"
       class="sr-only"
+      :aria-label="'Enter one-time password, ' + maxLen + ' digits'"
     />
     <div class="flex items-center">
       <div
         v-for="i in maxLen"
         :key="i"
         :class="cn(
-          'relative flex h-10 w-10 items-center justify-center border-y border-r border-input text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md',
+          'relative flex h-11 w-11 items-center justify-center border-y border-r border-input text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md',
         )"
       >
         {{ modelValue[i - 1] ?? '' }}

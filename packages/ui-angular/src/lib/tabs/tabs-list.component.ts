@@ -6,7 +6,7 @@ import { cn } from '../../lib/utils'
 export class TabsListComponent {
   @Input() class = ''
   @HostBinding('class') get hostClass() {
-    return cn('inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground', this.class)
+    return cn('inline-flex h-11 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground', this.class)
   }
   @HostBinding('attr.role') role = 'tablist'
 }

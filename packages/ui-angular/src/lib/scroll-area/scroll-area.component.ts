@@ -16,7 +16,7 @@ import { cn } from '../../lib/utils'
   standalone: true,
   template: `
     <div class="relative overflow-hidden h-full w-full">
-      <div class="h-full w-full overflow-auto">
+      <div class="h-full w-full overflow-auto scroll-py-1" tabindex="0">
         <ng-content />
       </div>
     </div>

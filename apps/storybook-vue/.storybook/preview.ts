@@ -12,6 +12,19 @@ const preview: Preview = {
       ],
     },
     layout: 'centered',
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
+    },
+    a11y: {
+      config: {
+        rules: [
+          { id: 'aria-hidden-focus', enabled: false },
+        ],
+      },
+    },
   },
   decorators: [
     withThemeByClassName({

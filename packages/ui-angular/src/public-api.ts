@@ -143,6 +143,11 @@ export * from './lib/dropdown-menu/dropdown-menu.component'
 // Hover Card
 export * from './lib/hover-card/hover-card.component'
 
+// Auth Patterns (WCAG 3.3.8 / EAA Art. 4)
+export * from './lib/honeypot-field/honeypot-field.component'
+export * from './lib/magic-link/magic-link.component'
+export * from './lib/passkey-button/passkey-button.component'
+
 // Input OTP
 export * from './lib/input-otp/input-otp.component'
 

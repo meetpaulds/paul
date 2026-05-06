@@ -167,7 +167,10 @@ export { default as DrawerFooter } from './components/drawer-footer.vue'
 export { default as DrawerTitle } from './components/drawer-title.vue'
 export { default as DrawerDescription } from './components/drawer-description.vue'
 
+export { default as HoneypotField } from './components/honeypot-field.vue'
 export { default as InputOTP } from './components/input-otp.vue'
+export { default as MagicLink } from './components/magic-link.vue'
+export { default as PasskeyButton } from './components/passkey-button.vue'
 
 export { default as NavigationMenu } from './components/navigation-menu.vue'
 export { default as NavigationMenuList } from './components/navigation-menu-list.vue'

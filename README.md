@@ -67,6 +67,19 @@ pnpm dev
 
 ---
 
+## Accessibility
+
+paul targets **WCAG 2.2 Level AAA** and **EN 301 549 v3.2.1** compliance to meet the requirements of the **European Accessibility Act (EAA)**, enforceable since June 28, 2025.
+
+| Document | Description |
+|----------|-------------|
+| [Accessibility Statement](./docs/a11y-statement.md) | Conformance status, known issues, contact & enforcement — also a reusable template for consumers |
+| [EN 301 549 Compliance Matrix](./docs/compliance/en301549-matrix.md) | Per-component mapping of all 56 components to EN 301 549 clauses and WCAG 2.2 criteria |
+
+> **Consumers:** Copy `docs/a11y-statement.md` into your own product, replace all `<!-- PLACEHOLDER: … -->` markers, and publish it in a clearly accessible location (footer, imprint, or main navigation).
+
+---
+
 ## Contributing
 
 - [Open an issue](https://github.com/meetpaul/paul/issues)

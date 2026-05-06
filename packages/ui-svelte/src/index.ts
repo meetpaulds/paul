@@ -160,6 +160,11 @@ export { default as DropdownMenuSeparator } from './lib/components/DropdownMenuS
 // Hover Card
 export { default as HoverCard } from './lib/components/HoverCard.svelte'
 
+// Auth Patterns (WCAG 3.3.8 / EAA Art. 4)
+export { default as HoneypotField } from './lib/components/HoneypotField.svelte'
+export { default as MagicLink } from './lib/components/MagicLink.svelte'
+export { default as PasskeyButton } from './lib/components/PasskeyButton.svelte'
+
 // Input OTP
 export { default as InputOTP } from './lib/components/InputOTP.svelte'
 

@@ -2,19 +2,31 @@
   let { value = $bindable(''), maxLength = 6, class: className = '', ...props } = $props()
 
   let slots = $derived(Array.from({ length: maxLength }, (_, i) => value[i] ?? ''))
+  let inputEl: HTMLInputElement
 
-  function onkeydown(e: KeyboardEvent) {
-    if (e.key === 'Backspace') {
-      value = value.slice(0, -1)
-    } else if (e.key.length === 1 && /^\d$/.test(e.key) && value.length < maxLength) {
-      value = value + e.key
-    }
+  function oninput(e: Event) {
+    const v = (e.target as HTMLInputElement).value.replace(/\D/g, '').slice(0, maxLength)
+    value = v
   }
 </script>
 
-<div class={['flex items-center gap-2', className].join(' ')} {...props} tabindex="0" role="textbox" aria-label="OTP Input" {onkeydown}>
+<div class={['relative flex items-center gap-2', className].join(' ')} {...props} onclick={() => inputEl?.focus()}>
+  <input
+    bind:this={inputEl}
+    type="text"
+    inputmode="numeric"
+    autocomplete="one-time-code"
+    maxlength={maxLength}
+    value={value}
+    {oninput}
+    aria-label={'Enter one-time password, ' + maxLength + ' digits'}
+    class="sr-only"
+  />
   {#each slots as slot, i}
-    <div class={['relative flex h-10 w-10 items-center justify-center border-y border-r text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md', i === value.length ? 'ring-2 ring-ring ring-offset-background' : ''].join(' ')}>
+    <div
+      class={['relative flex h-11 w-11 items-center justify-center border-y border-r border-input text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md', i === value.length ? 'ring-2 ring-ring ring-offset-background z-10' : ''].join(' ')}
+      aria-hidden="true"
+    >
       {slot}
       {#if i === value.length}
         <div class="pointer-events-none absolute inset-0 flex items-center justify-center">

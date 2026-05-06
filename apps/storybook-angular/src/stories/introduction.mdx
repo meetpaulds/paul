@@ -44,7 +44,7 @@ import { Meta } from '@storybook/addon-docs/blocks'
     {[
       { label: 'v0.2.0', color: '#e8f5e9', text: '#2e7d32' },
       { label: 'WCAG AAA', color: '#e3f2fd', text: '#1565c0' },
-      { label: '56 Components', color: '#fce4ec', text: '#880e4f' },
+      { label: '59 Components', color: '#fce4ec', text: '#880e4f' },
       { label: 'MIT License', color: '#fff3e0', text: '#e65100' },
       { label: 'Angular 18', color: '#e8eaf6', text: '#283593' },
     ].map(({ label, color, text }) => (
@@ -102,6 +102,62 @@ import { Meta } from '@storybook/addon-docs/blocks'
 </section>
 
 <section style={{ marginBottom: '48px' }}>
+  <div style={{
+    background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)',
+    borderRadius: '16px',
+    padding: '32px',
+    color: '#fff',
+  }}>
+    <div style={{
+      display: 'inline-block',
+      padding: '4px 12px',
+      borderRadius: '999px',
+      fontSize: '11px',
+      fontWeight: '700',
+      letterSpacing: '0.1em',
+      textTransform: 'uppercase',
+      backgroundColor: 'rgba(255,255,255,0.12)',
+      color: '#ccc',
+      marginBottom: '16px',
+    }}>paul 🇪🇺</div>
+    <h2 style={{ fontSize: '24px', fontWeight: '800', margin: '0 0 16px', letterSpacing: '-0.01em', color: '#fff' }}>
+      The new European Standard for Inclusive Digital Products
+    </h2>
+    <p style={{ margin: '0 0 16px', color: '#bbb', lineHeight: '1.75' }}>
+      paul — Pattern, Asset &amp; UI Library — was conceived and built as an accessible, open-source design system
+      (MIT licensed) on top of React 19, TypeScript, and Tailwind CSS v4. Every component is strictly ARIA-conformant
+      and fully keyboard-navigable by design.
+    </p>
+    <p style={{ margin: '0 0 24px', color: '#bbb', lineHeight: '1.75' }}>
+      To scale this approach beyond its current environment, the system is being evolved into the{' '}
+      <strong style={{ color: '#fff' }}>paul Inclusive Design Standard (PIDS)</strong> — a framework-agnostic standard
+      that defines the requirements of WCAG 2.1 AA (and, going forward, WCAG 2.2 AAA) across platforms.
+      PIDS acts as a technical rulebook for universally integrating inclusive design principles and accessible
+      interaction patterns into diverse web architectures.
+    </p>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+      {[
+        { label: 'WCAG 2.2 AAA target', color: '#1e3a5f', text: '#90caf9' },
+        { label: 'EAA Article 4', color: '#1b3a2a', text: '#81c784' },
+        { label: 'Framework-agnostic', color: '#3e2a1a', text: '#ffcc80' },
+        { label: 'EN 301 549', color: '#2a1a3e', text: '#ce93d8' },
+        { label: 'PIDS', color: '#1a1a1a', text: '#ffffff' },
+      ].map(({ label, color, text }) => (
+        <span key={label} style={{
+          display: 'inline-block',
+          padding: '4px 12px',
+          borderRadius: '999px',
+          fontSize: '12px',
+          fontWeight: '600',
+          backgroundColor: color,
+          color: text,
+        }}>{label}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section style={{ marginBottom: '48px' }}>
   <h2 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '24px', letterSpacing: '-0.01em' }}>
     The values 💛
   </h2>
@@ -131,17 +187,18 @@ import { Meta } from '@storybook/addon-docs/blocks'
     What's inside 🏠
   </h2>
   <p style={{ margin: '0 0 20px', color: '#444' }}>
-    56 production-ready Angular 18 components built on Angular CDK primitives, styled with Tailwind CSS v4, fully typed with TypeScript, and documented right here in Storybook.
+    59 production-ready Angular 18 components built on Angular CDK primitives, styled with Tailwind CSS v4, fully typed with TypeScript, and documented right here in Storybook.
   </p>
   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
     {[
       'Accordion','Alert','AlertDialog','AspectRatio','Avatar','Badge','Button','ButtonGroup',
       'Calendar','Card','Carousel','Chart','Checkbox','Collapsible','Combobox','Command',
       'ContextMenu','DataTable','DatePicker','Dialog','Drawer','DropdownMenu','Empty','Field',
-      'Form','HoverCard','Input','InputGroup','InputOTP','Kbd','Label','Menubar',
-      'NavigationMenu','Pagination','Popover','Progress','RadioGroup','ResizablePanels',
-      'ScrollArea','Select','Separator','Sheet','Sidebar','Skeleton','Slider','Sonner',
-      'Switch','Table','Tabs','Textarea','Toast','Toggle','ToggleGroup','Tooltip','Typography',
+      'Form','HoneypotField','HoverCard','Input','InputGroup','InputOTP','Kbd','Label',
+      'MagicLink','Menubar','NavigationMenu','Pagination','PasskeyButton','Popover','Progress',
+      'RadioGroup','ResizablePanels','ScrollArea','Select','Separator','Sheet','Sidebar',
+      'Skeleton','Slider','Sonner','Switch','Table','Tabs','Textarea','Toast','Toggle',
+      'ToggleGroup','Tooltip','Typography',
     ].map((name) => (
       <span key={name} style={{
         display: 'inline-block',

@@ -49,7 +49,7 @@ function select(val: string) {
           placeholder="Search..."
         />
       </div>
-      <div class="max-h-48 overflow-auto p-1">
+      <div class="max-h-48 overflow-auto p-1 scroll-py-1">
         <div
           v-for="opt in filtered"
           :key="opt.value"

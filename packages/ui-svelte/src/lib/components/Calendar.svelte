@@ -30,11 +30,11 @@
 
 <div class={['p-3', className].join(' ')} {...props}>
   <div class="flex items-center justify-between mb-2">
-    <button onclick={prevMonth} aria-label="Go to previous month" class="inline-flex items-center justify-center h-7 w-7 rounded-md border border-input bg-background hover:bg-accent">
+    <button onclick={prevMonth} aria-label="Go to previous month" class="inline-flex items-center justify-center h-11 w-11 rounded-md border border-input bg-background hover:bg-accent">
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
     </button>
     <span class="text-sm font-medium">{monthLabel}</span>
-    <button onclick={nextMonth} aria-label="Go to next month" class="inline-flex items-center justify-center h-7 w-7 rounded-md border border-input bg-background hover:bg-accent">
+    <button onclick={nextMonth} aria-label="Go to next month" class="inline-flex items-center justify-center h-11 w-11 rounded-md border border-input bg-background hover:bg-accent">
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
     </button>
   </div>
@@ -49,7 +49,7 @@
     {/each}
     {#each Array(daysInMonth) as _, i}
       {@const d = i + 1}
-      <button onclick={() => selectDay(d)} class={['h-9 w-9 rounded-md text-sm text-center hover:bg-accent', isSame(d) ? 'bg-primary text-primary-foreground hover:bg-primary' : '', isToday(d) && !isSame(d) ? 'font-bold underline' : ''].join(' ')}>{d}</button>
+      <button onclick={() => selectDay(d)} class={['h-11 w-11 rounded-md text-sm text-center hover:bg-accent', isSame(d) ? 'bg-primary text-primary-foreground hover:bg-primary' : '', isToday(d) && !isSame(d) ? 'font-bold underline' : ''].join(' ')}>{d}</button>
     {/each}
   </div>
 </div>
