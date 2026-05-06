@@ -31,8 +31,8 @@
     error: 'Something went wrong. Please try again.',
   }
 
-  $derived: const message = statusMessage || messages[status] || ''
-  $derived: const isBusy = status === 'sending'
+  const message = $derived(statusMessage || messages[status] || '')
+  const isBusy = $derived(status === 'sending')
 
   function handleSubmit(e: SubmitEvent) {
     e.preventDefault()

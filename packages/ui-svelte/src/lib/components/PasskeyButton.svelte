@@ -31,9 +31,9 @@
     unsupported: 'Passkeys are not supported on this device.',
   }
 
-  $derived: const message = statusMessage || defaultMessages[status] || ''
-  $derived: const isPending = status === 'pending'
-  $derived: const isUnsupported = status === 'unsupported'
+  const message = $derived(statusMessage || defaultMessages[status] || '')
+  const isPending = $derived(status === 'pending')
+  const isUnsupported = $derived(status === 'unsupported')
 </script>
 
 <div class="flex flex-col items-start gap-2">
