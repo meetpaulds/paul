@@ -40,6 +40,7 @@
   "scripts": {
     "build": "ng-packagr -p ng-package.json",
     "dev": "ng-packagr -p ng-package.json --watch",
+    "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit -p tsconfig.lib.json"
   },
   "peerDependencies": {

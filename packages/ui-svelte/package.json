@@ -54,6 +54,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
+    "lint": "eslint src --ext .ts",
     "typecheck": "svelte-check --tsconfig ./tsconfig.json",
     "test": "vitest run"
   },
