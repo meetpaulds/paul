@@ -1,6 +1,6 @@
 {
   "name": "@meetpaul/ui-svelte",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "paul — Svelte 5 component library. The same design system as @meetpaul/ui, built natively for Svelte.",
   "license": "MIT",
   "author": "SirPauls <office@sirpauls.com>",

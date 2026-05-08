@@ -1,6 +1,6 @@
 {
   "name": "@meetpaul/ui-angular",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "paul — Angular component library. The same design system as @meetpaul/ui, built natively for Angular.",
   "license": "MIT",
   "author": "SirPauls <office@sirpauls.com>",
@@ -52,7 +52,9 @@
     "tailwind-merge": "^2.5.4"
   },
   "peerDependenciesMeta": {
-    "@meetpaul/tokens": { "optional": true }
+    "@meetpaul/tokens": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@angular/cdk": "^21.0.0",
