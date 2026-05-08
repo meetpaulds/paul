@@ -1,6 +1,6 @@
 {
   "name": "@meetpaul/tokens",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Design tokens for the paul design system — CSS custom properties, Tailwind v4 preset, and typed JS token object.",
   "license": "MIT",
   "author": "SirPauls <office@sirpauls.com>",
@@ -53,7 +53,9 @@
   },
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly --declaration --outDir dist",
-    "dev": "vite build --watch",    "lint": "eslint src --ext .ts",    "typecheck": "tsc --noEmit"
+    "dev": "vite build --watch",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "typescript": "^5.6.3",
