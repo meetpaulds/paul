@@ -1,13 +1,24 @@
-name: Publish to npm
+name: Publish npm Package
+
+run-name: Publish npm - ${{ inputs.version || github.ref_name }}
 
 on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Package version to publish, without the v prefix
+        required: true
+        type: string
 
 jobs:
   publish:
+    name: Publish @meetpaul/ui
     runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     permissions:
       contents: read
       id-token: write
@@ -18,9 +29,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Verify tag is on main
+      - name: Verify release ref is on main
         run: |
           git fetch origin main
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "$GITHUB_REF_NAME" != "main" ]; then
+            echo "Manual npm publishing must run from the main branch."
+            exit 1
+          fi
+
           git merge-base --is-ancestor "$GITHUB_SHA" origin/main
 
       - name: Verify CI passed for this commit
@@ -28,7 +45,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           ci_run_id=$(gh run list \
-            --workflow CI \
+            --workflow ci.yml \
             --branch main \
             --commit "$GITHUB_SHA" \
             --status success \
@@ -47,8 +64,14 @@ jobs:
           name=$(node -p "require('./packages/ui/package.json').name")
           version=$(node -p "require('./packages/ui/package.json').version")
           expected_tag="v$version"
+          requested_version="${{ inputs.version }}"
 
-          if [ "$GITHUB_REF_NAME" != "$expected_tag" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "$requested_version" != "$version" ]; then
+            echo "Workflow input version $requested_version does not match package version $version."
+            exit 1
+          fi
+
+          if [ "${{ github.event_name }}" = "push" ] && [ "$GITHUB_REF_NAME" != "$expected_tag" ]; then
             echo "Tag $GITHUB_REF_NAME does not match package version $version. Expected $expected_tag."
             exit 1
           fi
@@ -84,6 +107,11 @@ jobs:
       - name: Build package
         if: steps.package.outputs.published == 'false'
         run: pnpm --filter @meetpaul/ui build
+
+      - name: Pack package
+        if: steps.package.outputs.published == 'false'
+        run: npm pack --dry-run
+        working-directory: packages/ui
 
       - name: Publish to npm
         if: steps.package.outputs.published == 'false'

@@ -11,7 +11,7 @@ paul is a **Pattern, Asset & UI Library** — a modern, scalable design system m
 ```
 paul/
 ├── apps/
-│   └── storybook/          # Component documentation and visual testing
+│   └── storybook/          # Component documentation
 ├── packages/
 │   └── ui/                 # Core UI component library
 ├── .github/
