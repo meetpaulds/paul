@@ -204,7 +204,7 @@ Accessibility is verified automatically against all 177 stories with `@storybook
 
 ```bash
 # In a separate terminal, start Storybook first
-pnpm --filter paul dev
+pnpm --filter paul-storybook-react dev
 # Then run the a11y audit
 pnpm exec test-storybook --url http://localhost:6006
 ```
