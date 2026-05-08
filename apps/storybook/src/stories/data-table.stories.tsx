@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { ColumnDef } from '@tanstack/react-table'
-import { DataTable } from '@meetpaul/ui'
-import { Button } from '@meetpaul/ui'
+import { DataTable } from '@meetpaul/ui-react'
+import { Button } from '@meetpaul/ui-react'
 import { ArrowUpDown } from 'lucide-react'
 
 const meta = {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Typography } from '@meetpaul/ui'
+import { Typography } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Display/Typography',

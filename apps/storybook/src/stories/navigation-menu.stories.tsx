@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Navigation/NavigationMenu',

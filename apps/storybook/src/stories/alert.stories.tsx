@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import * as React from 'react'
 import { Terminal } from 'lucide-react'
-import { Alert, AlertDescription, AlertTitle } from '@meetpaul/ui'
+import { Alert, AlertDescription, AlertTitle } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Feedback/Alert',

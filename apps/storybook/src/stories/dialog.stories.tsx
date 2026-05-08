@@ -8,9 +8,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@meetpaul/ui'
-import { Button } from '@meetpaul/ui'
-import { Label, Input } from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
+import { Button } from '@meetpaul/ui-react'
+import { Label, Input } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Overlays/Dialog',

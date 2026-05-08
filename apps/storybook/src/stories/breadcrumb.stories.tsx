@@ -6,7 +6,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Navigation/Breadcrumb',

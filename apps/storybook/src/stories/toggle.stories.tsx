@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, userEvent, within } from 'storybook/test'
 import { Bold, Italic, Underline } from 'lucide-react'
-import { Toggle } from '@meetpaul/ui'
+import { Toggle } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Actions & Buttons/Toggle',

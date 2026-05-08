@@ -32,7 +32,7 @@ COPY . .
 # The ui-* packages export from ./dist/, so they must be compiled before the
 # Storybook apps that consume them.
 RUN pnpm --filter @meetpaul/tokens build && \
-    pnpm --filter @meetpaul/ui build && \
+    pnpm --filter @meetpaul/ui-react build && \
     pnpm --filter @meetpaul/ui-svelte build && \
     pnpm --filter @meetpaul/ui-vue build && \
     pnpm --filter @meetpaul/ui-angular build && \

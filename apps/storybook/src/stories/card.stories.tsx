@@ -6,8 +6,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@meetpaul/ui'
-import { Button, Input, Label } from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
+import { Button, Input, Label } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Display/Card',

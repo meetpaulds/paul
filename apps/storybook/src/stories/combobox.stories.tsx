@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import * as React from 'react'
 import { expect, userEvent, within } from 'storybook/test'
-import { Combobox } from '@meetpaul/ui'
+import { Combobox } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Entry & Forms/Combobox',

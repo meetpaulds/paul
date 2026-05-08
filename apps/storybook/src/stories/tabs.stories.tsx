@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, userEvent, within } from 'storybook/test'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@meetpaul/ui'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@meetpaul/ui'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@meetpaul/ui-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Navigation/Tabs',

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import * as React from 'react'
-import { Calendar } from '@meetpaul/ui'
+import { Calendar } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Date & Time/Calendar',

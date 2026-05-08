@@ -4,8 +4,8 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from '@meetpaul/ui'
-import { Button, Avatar, AvatarFallback, AvatarImage } from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
+import { Button, Avatar, AvatarFallback, AvatarImage } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Overlays/HoverCard',

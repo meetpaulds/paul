@@ -7,7 +7,7 @@ import {
   MagicLink,
   PasskeyButton,
   HoneypotField,
-} from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Auth Patterns / WCAG 3.3.8',

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, within } from 'storybook/test'
-import { Slider } from '@meetpaul/ui'
+import { Slider } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Entry & Forms/Slider',

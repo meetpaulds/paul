@@ -5,8 +5,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@meetpaul/ui'
-import { Card, CardContent } from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
+import { Card, CardContent } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Media/Carousel',

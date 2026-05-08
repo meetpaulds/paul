@@ -7,7 +7,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Navigation/Pagination',

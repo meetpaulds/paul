@@ -13,7 +13,7 @@ paul/
 ├── apps/
 │   └── storybook/          # Component documentation
 ├── packages/
-│   └── ui/                 # Core UI component library
+│   └── ui-react/                 # Core UI component library for React
 ├── .github/
 │   └── workflows/            # CI/CD automation
 ├── turbo.json              # Build pipeline orchestration
@@ -68,12 +68,22 @@ pnpm dev
 
 ## Releasing to npm
 
-The npm publish workflow publishes `@meetpaul/ui` when a `v*` tag is pushed, or when the workflow is run manually from `main` with the package version input.
+The npm publish workflow uses lockstep versioning across all packages. The packages published are `@meetpaul/tokens`, `@meetpaul/ui-react`, `@meetpaul/ui-angular`, `@meetpaul/ui-svelte`, and `@meetpaul/ui-vue`. 
+
+*Note: `@meetpaul/ui` is deprecated in favor of `@meetpaul/ui-react`.*
+
+When a `v*` tag is pushed, or when the `publish-npm` workflow is run manually from `main` with a package version, GitHub Actions will build all packages and publish them using Trusted Publishing via OpenID Connect (no `NPM_TOKEN` required). Packages that are already on npm with the given version will be gracefully skipped.
 
 ```bash
+# Bump all package versions to the next patch version
 pnpm version:patch # or version:minor / version:major
+
+# Commit the exact version bump and tag it
+git add .
+git commit -m "chore(release): update package versions to X.Y.Z"
+git tag vX.Y.Z
 git push origin main
-git push origin v1.0.8 # use the tag created by the version command after CI is green
+git push origin vX.Y.Z # This tag push triggers the publish job
 ```
 
 ---

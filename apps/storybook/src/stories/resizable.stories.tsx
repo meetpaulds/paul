@@ -3,7 +3,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Layout/Resizable',

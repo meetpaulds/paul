@@ -1,6 +1,6 @@
 import type { Preview, Decorator } from '@storybook/react-vite'
 import { withThemeByClassName } from '@storybook/addon-themes'
-import '@meetpaul/ui/styles/globals.css'
+import "@meetpaul/ui-react/styles/globals.css";
 
 const preview: Preview = {
   parameters: {

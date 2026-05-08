@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import * as React from 'react'
-import { DatePicker } from '@meetpaul/ui'
+import { DatePicker } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Entry & Forms/DatePicker',

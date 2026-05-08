@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, userEvent, within } from 'storybook/test'
-import { Popover, PopoverContent, PopoverTrigger } from '@meetpaul/ui'
-import { Button } from '@meetpaul/ui'
-import { Input, Label } from '@meetpaul/ui'
+import { Popover, PopoverContent, PopoverTrigger } from '@meetpaul/ui-react'
+import { Button } from '@meetpaul/ui-react'
+import { Input, Label } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Overlays/Popover',

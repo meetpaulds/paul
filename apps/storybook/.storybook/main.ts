@@ -51,7 +51,7 @@ const config: StorybookConfig = {
       : Object.entries((config.resolve.alias as Record<string, string>) ?? {}).map(([find, replacement]) => ({ find, replacement }))
     config.resolve.alias = [
       ...existingAlias,
-      { find: '@meetpaul/ui/styles', replacement: resolve(uiSrc, 'styles/globals.css') },
+      { find: '@meetpaul/ui-react/styles', replacement: resolve(uiSrc, 'styles/globals.css') },
       { find: '@meetpaul/ui', replacement: uiSrc },
       { find: '@', replacement: uiSrc },
     ]

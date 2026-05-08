@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@meetpaul/ui'
+import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Entry & Forms/InputOTP',

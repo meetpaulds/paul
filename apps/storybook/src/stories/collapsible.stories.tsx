@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import * as React from 'react'
 import { expect, userEvent, within } from 'storybook/test'
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@meetpaul/ui'
-import { Button } from '@meetpaul/ui'
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@meetpaul/ui-react'
+import { Button } from '@meetpaul/ui-react'
 import { ChevronDown } from 'lucide-react'
 
 const meta = {

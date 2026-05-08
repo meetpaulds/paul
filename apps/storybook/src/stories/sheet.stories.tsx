@@ -9,10 +9,10 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@meetpaul/ui'
-import { Button } from '@meetpaul/ui'
-import { Input } from '@meetpaul/ui'
-import { Label } from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
+import { Button } from '@meetpaul/ui-react'
+import { Input } from '@meetpaul/ui-react'
+import { Label } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Overlays/Sheet',

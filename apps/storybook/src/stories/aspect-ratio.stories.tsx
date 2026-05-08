@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import * as React from 'react'
-import { AspectRatio } from '@meetpaul/ui'
+import { AspectRatio } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Layout/AspectRatio',

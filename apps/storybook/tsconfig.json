@@ -3,9 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["../../packages/ui/src/*"],
-      "@meetpaul/ui": ["../../packages/ui/src/index.ts"],
-      "@meetpaul/ui/*": ["../../packages/ui/src/*"]
+      "@/*": ["../../packages/ui-react/src/*"],
+      "@meetpaul/ui-react": ["../../packages/ui-react/src/index.ts"],
+      "@meetpaul/ui-react/*": ["../../packages/ui-react/src/*"]
     },
     "types": ["node"],
     "composite": false,

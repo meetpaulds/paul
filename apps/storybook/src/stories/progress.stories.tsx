@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Progress } from '@meetpaul/ui'
+import { Progress } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Feedback/Progress',

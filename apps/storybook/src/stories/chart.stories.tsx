@@ -10,7 +10,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts'
-import { ChartContainer, ChartTooltipContent } from '@meetpaul/ui'
+import { ChartContainer, ChartTooltipContent } from '@meetpaul/ui-react'
 
 const data = [
   { name: 'Jan', value: 400 },

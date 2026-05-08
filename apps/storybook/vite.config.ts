@@ -4,15 +4,15 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
 const root = path.resolve(__dirname, '../..')
-const uiSrc = path.resolve(root, 'packages/ui/src')
+const uiSrc = path.resolve(root, 'packages/ui-react/src')
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       '@': uiSrc,
-      '@meetpaul/ui': uiSrc,
-      '@meetpaul/ui/styles': path.resolve(uiSrc, 'styles/globals.css'),
+      '@meetpaul/ui-react': uiSrc,
+      '@meetpaul/ui-react/styles': path.resolve(uiSrc, 'styles/globals.css'),
     },
   },
   server: {

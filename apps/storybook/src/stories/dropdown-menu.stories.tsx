@@ -7,8 +7,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@meetpaul/ui'
-import { Button } from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
+import { Button } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Overlays/DropdownMenu',

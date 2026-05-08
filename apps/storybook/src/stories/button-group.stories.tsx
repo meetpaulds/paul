@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Button } from '@meetpaul/ui'
-import { ButtonGroup } from '@meetpaul/ui'
+import { Button } from '@meetpaul/ui-react'
+import { ButtonGroup } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Actions & Buttons/ButtonGroup',

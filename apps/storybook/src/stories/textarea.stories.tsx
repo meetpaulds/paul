@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Textarea } from '@meetpaul/ui'
+import { Textarea } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Entry & Forms/Textarea',

@@ -10,8 +10,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@meetpaul/ui'
-import { Button } from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
+import { Button } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Feedback/AlertDialog',

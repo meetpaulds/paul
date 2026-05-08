@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { InputGroup, InputGroupText } from '@meetpaul/ui'
-import { Input } from '@meetpaul/ui'
+import { InputGroup, InputGroupText } from '@meetpaul/ui-react'
+import { Input } from '@meetpaul/ui-react'
 import { DollarSign, AtSign, Lock } from 'lucide-react'
 
 const meta = {

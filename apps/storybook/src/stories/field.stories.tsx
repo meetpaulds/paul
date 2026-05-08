@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Field } from '@meetpaul/ui'
-import { Input } from '@meetpaul/ui'
+import { Field } from '@meetpaul/ui-react'
+import { Input } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Entry & Forms/Field',

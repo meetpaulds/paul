@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import * as React from 'react'
 import { Bold, Italic, Underline } from 'lucide-react'
-import { ToggleGroup, ToggleGroupItem } from '@meetpaul/ui'
+import { ToggleGroup, ToggleGroupItem } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Actions & Buttons/ToggleGroup',

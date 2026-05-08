@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, userEvent, within } from 'storybook/test'
-import { RadioGroup, RadioGroupItem } from '@meetpaul/ui'
-import { Label } from '@meetpaul/ui'
+import { RadioGroup, RadioGroupItem } from '@meetpaul/ui-react'
+import { Label } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Entry & Forms/RadioGroup',

@@ -10,7 +10,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
-} from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
 import { Home, Settings, User } from 'lucide-react'
 
 const meta = {

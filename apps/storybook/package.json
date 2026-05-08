@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@meetpaul/ui": "workspace:*",
+    "@meetpaul/ui-react": "workspace:*",
     "@tanstack/react-table": "^8.20.5",
     "lucide-react": "^0.454.0",
     "react": "^19.0.0",

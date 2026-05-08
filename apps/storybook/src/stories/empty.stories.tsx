@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { FolderOpen, Search, FileX } from 'lucide-react'
-import { Empty } from '@meetpaul/ui'
-import { Button } from '@meetpaul/ui'
+import { Empty } from '@meetpaul/ui-react'
+import { Button } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Display/Empty',

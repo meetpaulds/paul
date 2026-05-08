@@ -8,7 +8,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from '@meetpaul/ui'
+} from '@meetpaul/ui-react'
 import { Calculator, Calendar, CreditCard, Settings, Smile, User } from 'lucide-react'
 
 const meta = {

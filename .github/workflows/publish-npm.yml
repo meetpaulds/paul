@@ -15,7 +15,7 @@ on:
 
 jobs:
   publish:
-    name: Publish @meetpaul/ui
+    name: Publish npm packages
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -59,8 +59,8 @@ jobs:
       - name: Read package version
         id: package
         run: |
-          name=$(node -p "require('./packages/ui/package.json').name")
-          version=$(node -p "require('./packages/ui/package.json').version")
+          name=$(node -p "require('./packages/ui-react/package.json').name")
+          version=$(node -p "require('./packages/ui-react/package.json').version")
           expected_tag="v$version"
           requested_version="${{ inputs.version }}"
 
@@ -74,24 +74,15 @@ jobs:
             exit 1
           fi
 
-          if npm view "$name@$version" version >/dev/null 2>&1; then
-            published=true
-          else
-            published=false
-          fi
-
           echo "name=$name" >> "$GITHUB_OUTPUT"
           echo "version=$version" >> "$GITHUB_OUTPUT"
-          echo "published=$published" >> "$GITHUB_OUTPUT"
 
       - name: Setup pnpm
-        if: steps.package.outputs.published == 'false'
         uses: pnpm/action-setup@v3
         with:
           version: 9
 
       - name: Setup Node.js
-        if: steps.package.outputs.published == 'false'
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
@@ -99,23 +90,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        if: steps.package.outputs.published == 'false'
         run: pnpm install --frozen-lockfile
 
-      - name: Build package
-        if: steps.package.outputs.published == 'false'
-        run: pnpm --filter @meetpaul/ui build
+      - name: Build packages
+        run: pnpm build
 
-      - name: Pack package
-        if: steps.package.outputs.published == 'false'
-        run: npm pack --dry-run
-        working-directory: packages/ui
-
-      - name: Publish to npm
-        if: steps.package.outputs.published == 'false'
-        run: npm publish --provenance --access public
-        working-directory: packages/ui
-
-      - name: Skip already published version
-        if: steps.package.outputs.published == 'true'
-        run: echo "${{ steps.package.outputs.name }}@${{ steps.package.outputs.version }} is already published."
+      - name: Publish all public packages
+        run: pnpm -r publish --access public --no-git-checks --provenance --filter="./packages/*"

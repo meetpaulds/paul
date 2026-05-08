@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Separator } from '@meetpaul/ui'
+import { Separator } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Display/Separator',

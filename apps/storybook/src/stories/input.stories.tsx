@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import * as React from 'react'
 import { expect, userEvent, within } from 'storybook/test'
-import { Input } from '@meetpaul/ui'
-import { Label } from '@meetpaul/ui'
+import { Input } from '@meetpaul/ui-react'
+import { Label } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Entry & Forms/Input',

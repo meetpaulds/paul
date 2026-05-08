@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Skeleton } from '@meetpaul/ui'
+import { Skeleton } from '@meetpaul/ui-react'
 
 const meta = {
   title: 'Data Display/Skeleton',
