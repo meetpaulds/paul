@@ -64,6 +64,17 @@ pnpm dev
 | `pnpm lint` | Run ESLint across all packages |
 | `pnpm typecheck` | Run TypeScript type checking |
 | `pnpm clean` | Clean all build artifacts and node_modules |
+---
+
+## Releasing to npm
+
+The npm publish workflow publishes `@meetpaul/ui` when a `v*` tag is pushed, or when the workflow is run manually from `main` with the package version input.
+
+```bash
+pnpm version:patch # or version:minor / version:major
+git push origin main
+git push origin v1.0.8 # use the tag created by the version command after CI is green
+```
 
 ---
 
