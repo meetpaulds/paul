@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import Useparator from '../../components/separator.vue'
+import Useparator from '../components/separator.vue'
 
 describe('Useparator', () => {
   it('renders without errors', () => {

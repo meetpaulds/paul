@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import Udrawer from '../../components/drawer.vue'
+import Udrawer from '../components/drawer.vue'
 
 describe('Udrawer', () => {
   it('renders without errors', () => {
