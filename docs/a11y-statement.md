@@ -16,9 +16,9 @@
 <!-- PLACEHOLDER: Name of your organisation -->
 **Publisher:** SirPauls, Graz, Austria  
 <!-- PLACEHOLDER: Date of last review in YYYY-MM-DD format -->
-**Date of last review:** 2026-04-24  
+**Date of last review:** 2026-05-11  
 <!-- PLACEHOLDER: Version of the product -->
-**Version:** 1.0.2
+**Version:** 1.0.0
 
 ---
 
@@ -172,7 +172,7 @@ The accessibility of this library has been assessed using the following tools:
 <!-- PLACEHOLDER: Define which parts of your product are covered by this statement and which are explicitly excluded. -->
 
 **Covered by this statement:**
-- All 56 components in the `@meetpaul/ui` (React), `@meetpaul/ui-vue`, `@meetpaul/ui-svelte`, and `@meetpaul/ui-angular` packages at version 1.0.2
+- All 56 components in the `@meetpaul/ui` (React), `@meetpaul/ui-vue`, `@meetpaul/ui-svelte`, and `@meetpaul/ui-angular` packages at version 1.0.0
 - The Storybook documentation at [https://meetpaulds.github.io/paul](https://meetpaulds.github.io/paul)
 
 **Not covered (explicitly excluded):**
@@ -185,7 +185,7 @@ The accessibility of this library has been assessed using the following tools:
 
 <!-- PLACEHOLDER: Update this date on every material review or change. -->
 
-This statement was last reviewed and updated on **24 April 2026**.  
+This statement was last reviewed and updated on **11 May 2026**.  
 It is updated at least **once a year** and at every major or minor release.
 
 ---
