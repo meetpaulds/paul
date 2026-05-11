@@ -10,11 +10,11 @@
 
 /**
  * Parse an APCA Lc string into a numeric value
- * 
+ *
  * @param lcString - String in format "Lc XX.X" or "Lc -XX.X"
  * @returns Numeric Lc value
  * @throws Error if string format is invalid or value is out of range
- * 
+ *
  * @example
  * parse("Lc 75.3") // returns 75.3
  * parse("Lc -60.2") // returns -60.2
@@ -35,7 +35,7 @@ export function parse(lcString: string): number {
   // Validate range
   if (value < -108.3 || value > 108.3) {
     throw new Error(
-      `Lc value out of range: ${value}. Must be between -108.3 and 108.3`
+      `Lc value out of range in "${lcString}": ${value}. Must be between -108.3 and 108.3`
     );
   }
   
@@ -65,3 +65,12 @@ export function print(lcValue: number): string {
   // Format to one decimal place
   return `Lc ${lcValue.toFixed(1)}`;
 }
+
+/**
+ * APCAParser class interface for type-safe Lc parsing and printing.
+ * Wraps the standalone parse/print functions for object-oriented usage.
+ */
+export const APCAParser = {
+  parse,
+  print,
+};
