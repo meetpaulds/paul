@@ -127,8 +127,8 @@
   --destructive:           0 62.8% 30.6%;
   /* Lc -96.3 on --destructive */
   --destructive-foreground:0 0% 100%;
-  /* Lc -48.0 on --background, Lc -48.0 on --card */
-  --destructive-text:      0 90% 70%;
+  /* Lc -60.3 on --background, Lc -60.3 on --card */
+  --destructive-text:      0 90% 78.5%;
 
   /* --- Form --- */
   --border:                240 3.7% 15.9%;

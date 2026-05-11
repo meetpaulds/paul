@@ -69,7 +69,7 @@ function determineUseCase(tokenName: string): UseCase {
     'foreground',
     'card-foreground',
     'popover-foreground',
-    'destructive-text',
+    'muted-foreground',
   ];
   
   if (bodyTextTokens.includes(tokenName)) {
@@ -77,6 +77,8 @@ function determineUseCase(tokenName: string): UseCase {
   }
   
   // All other foreground tokens are large text or UI components (Lc 60, AA equivalent)
+  // Note: destructive-text is used for small error messages (text-sm) and UI elements (asterisks)
+  // and is classified as large-text/UI component rather than body-text
   return 'large-text';
 }
 
