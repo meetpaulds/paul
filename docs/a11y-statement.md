@@ -18,7 +18,7 @@
 <!-- PLACEHOLDER: Date of last review in YYYY-MM-DD format -->
 **Date of last review:** 2026-05-11  
 <!-- PLACEHOLDER: Version of the product -->
-**Version:** 1.0.0
+**Version:** 1.0.3
 
 ---
 
@@ -172,7 +172,7 @@ The accessibility of this library has been assessed using the following tools:
 <!-- PLACEHOLDER: Define which parts of your product are covered by this statement and which are explicitly excluded. -->
 
 **Covered by this statement:**
-- All 56 components in the `@meetpaul/ui` (React), `@meetpaul/ui-vue`, `@meetpaul/ui-svelte`, and `@meetpaul/ui-angular` packages at version 1.0.0
+- All 56 components in the `@meetpaul/ui` (React), `@meetpaul/ui-vue`, `@meetpaul/ui-svelte`, and `@meetpaul/ui-angular` packages at version 1.0.3
 - The Storybook documentation at [https://meetpaulds.github.io/paul](https://meetpaulds.github.io/paul)
 
 **Not covered (explicitly excluded):**
