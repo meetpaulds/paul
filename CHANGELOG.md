@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [1.0.3] — 2026-05-11
+
 ### Changed — ⚠️ Visual Breaking Change
 
 - **APCA (WCAG 3.0 draft) Migration — Perceptual Contrast Compliance**  
@@ -114,7 +118,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.2] — 2026-04-23
+## [1.0.2] — 2026-05-11
 
 ### Fixed
 
@@ -134,7 +138,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.1] — 2026-04-21
+## [1.0.1] — 2026-05-11
 
 ### Added
 
@@ -156,7 +160,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.0] — 2026-04-21
+## [1.0.0] — 2026-05-11
 
 ### Added
 
