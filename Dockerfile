@@ -11,11 +11,11 @@ WORKDIR /app
 # from source changes.
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./
 COPY packages/tokens/package.json      packages/tokens/package.json
-COPY packages/ui/package.json          packages/ui/package.json
+COPY packages/ui-react/package.json    packages/ui-react/package.json
 COPY packages/ui-angular/package.json  packages/ui-angular/package.json
 COPY packages/ui-svelte/package.json   packages/ui-svelte/package.json
 COPY packages/ui-vue/package.json      packages/ui-vue/package.json
-COPY apps/storybook/package.json          apps/storybook/package.json
+COPY apps/storybook-react/package.json    apps/storybook-react/package.json
 COPY apps/storybook-angular/package.json  apps/storybook-angular/package.json
 COPY apps/storybook-svelte/package.json   apps/storybook-svelte/package.json
 COPY apps/storybook-vue/package.json      apps/storybook-vue/package.json
@@ -32,12 +32,12 @@ COPY . .
 # The ui-* packages export from ./dist/, so they must be compiled before the
 # Storybook apps that consume them.
 RUN pnpm --filter @meetpaul/tokens build && \
-    pnpm --filter @meetpaul/ui build && \
+    pnpm --filter @meetpaul/ui-react build && \
     pnpm --filter @meetpaul/ui-svelte build && \
     pnpm --filter @meetpaul/ui-vue build && \
     pnpm --filter @meetpaul/ui-angular build && \
     export STORYBOOK_STATIC_DEPLOYMENT=true && \
-    pnpm --filter paul build && \
+    pnpm --filter paul-storybook-react build && \
     pnpm --filter paul-storybook-vue build && \
     pnpm --filter paul-storybook-svelte build && \
     pnpm --filter paul-storybook-angular build
@@ -50,7 +50,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY docker/nginx.conf /etc/nginx/conf.d/storybooks.conf
 COPY docker/index.html /usr/share/nginx/html/index.html
 
-COPY --from=builder /app/apps/storybook/storybook-static          /usr/share/nginx/storybook
+COPY --from=builder /app/apps/storybook-react/storybook-static    /usr/share/nginx/storybook
 COPY --from=builder /app/apps/storybook-vue/storybook-static      /usr/share/nginx/storybook-vue
 COPY --from=builder /app/apps/storybook-svelte/storybook-static   /usr/share/nginx/storybook-svelte
 COPY --from=builder /app/apps/storybook-angular/storybook-static  /usr/share/nginx/storybook-angular

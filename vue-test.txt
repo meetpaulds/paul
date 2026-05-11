@@ -1,0 +1,1579 @@
+
+> @meetpaul/ui-vue@0.0.13 test /home/chris/repositories/sirpauls-internal/paul/packages/ui-vue
+> vitest run
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+ RUN  v3.2.4 /home/chris/repositories/sirpauls-internal/paul/packages/ui-vue
+
+stderr | src/test/collapsible-content.test.ts > UcollapsibleUcontent > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  inheritAttrs: [33mfalse[39m,
+  __name: [32m'CollapsibleContent'[39m,
+  props: {
+    forceMount: { type: [36m[Function: Boolean][39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: {}
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <CollapsibleContent class="overflow-hidden" > 
+  at <CollapsibleContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/collapsible-content.test.ts (1 test | 1 failed) 56ms
+   × UcollapsibleUcontent > renders without errors 48ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(CollapsibleR…' was thrown
+stderr | src/test/carousel-item.test.ts > UcarouselUitem > renders without errors
+[Vue warn]: injection "carousel-register" not found. 
+  at <CarouselItem ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/carousel-item.test.ts (1 test | 1 failed) 80ms
+   × UcarouselUitem > renders without errors 77ms
+     → expected [Function] to not throw an error but 'TypeError: register is not a function' was thrown
+stderr | src/test/accordion.test.ts > Uaccordion > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'AccordionRoot'[39m,
+  props: {
+    collapsible: { type: [36m[Function: Boolean][39m, default: [33mfalse[39m },
+    disabled: { type: [36m[Function: Boolean][39m, default: [33mfalse[39m },
+    dir: {},
+    orientation: { default: [32m'vertical'[39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: {},
+    type: {},
+    modelValue: {},
+    defaultValue: {}
+  },
+  emits: [ [32m'update:modelValue'[39m ],
+  setup: [36m[Function: setup][39m
+} 
+  at <AccordionRoot class="" > 
+  at <Accordion ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/accordion.test.ts (1 test | 1 failed) 69ms
+   × Uaccordion > renders without errors 68ms
+     → expected [Function] to not throw an error but 'Error: Either the `type` or the `valu…' was thrown
+stderr | src/test/select-trigger.test.ts > UselectUtrigger > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'SelectTrigger'[39m,
+  props: {
+    disabled: { type: [36m[Function: Boolean][39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: { default: [32m'button'[39m }
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <SelectTrigger placeholder=undefined class="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50" > 
+  at <SelectTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+stderr | src/test/select-item.test.ts > UselectUitem > renders without errors
+[Vue warn]: Missing required prop: "value" 
+  at <SelectItem ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'SelectItem'[39m,
+  props: {
+    value: {},
+    disabled: { type: [36m[Function: Boolean][39m },
+    textValue: {},
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: {}
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <SelectItem disabled=false value=undefined textValue=undefined  ... > 
+  at <SelectItem ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/select-trigger.test.ts (1 test | 1 failed) 51ms
+   × UselectUtrigger > renders without errors 47ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(SelectRootCo…' was thrown
+ ❯ src/test/select-item.test.ts (1 test | 1 failed) 59ms
+   × UselectUitem > renders without errors 58ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(SelectRootCo…' was thrown
+stderr | src/test/dropdown-menu-item.test.ts > UdropdownUmenuUitem > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'MenuItem'[39m,
+  props: {
+    disabled: { type: [36m[Function: Boolean][39m },
+    textValue: {},
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: {}
+  },
+  emits: [ [32m'select'[39m ],
+  setup: [36m[Function: setup][39m
+} 
+  at <MenuItem disabled=false asChild=false textValue=undefined  ... > 
+  at <DropdownMenuItem inset=false class="relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50" > 
+  at <DropdownMenuItem ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/dropdown-menu-item.test.ts (1 test | 1 failed) 75ms
+   × UdropdownUmenuUitem > renders without errors 73ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(MenuRootCont…' was thrown
+stderr | src/test/tabs-list.test.ts > UtabsUlist > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'TabsList'[39m,
+  props: {
+    loop: { type: [36m[Function: Boolean][39m, default: [33mtrue[39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: {}
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <TabsList class="inline-flex h-11 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground" > 
+  at <TabsList ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/tabs-list.test.ts (1 test | 1 failed) 70ms
+   × UtabsUlist > renders without errors 66ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(TabsRootCont…' was thrown
+stderr | src/test/accordion-item.test.ts > UaccordionUitem > renders without errors
+[Vue warn]: Missing required prop: "value" 
+  at <AccordionItem ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'AccordionItem'[39m,
+  props: {
+    disabled: { type: [36m[Function: Boolean][39m },
+    value: {},
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: {}
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <AccordionItem disabled=false value=undefined class="border-b" > 
+  at <AccordionItem ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/accordion-item.test.ts (1 test | 1 failed) 41ms
+   × UaccordionUitem > renders without errors 40ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(AccordionRoo…' was thrown
+stderr | src/test/tabs-trigger.test.ts > UtabsUtrigger > renders without errors
+[Vue warn]: Missing required prop: "value" 
+  at <TabsTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'TabsTrigger'[39m,
+  props: {
+    value: {},
+    disabled: { type: [36m[Function: Boolean][39m, default: [33mfalse[39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: { default: [32m'button'[39m }
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <TabsTrigger disabled=false value=undefined class="inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow" > 
+  at <TabsTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+stderr | src/test/menubar-item.test.ts > UmenubarUitem > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'MenuItem'[39m,
+  props: {
+    disabled: { type: [36m[Function: Boolean][39m },
+    textValue: {},
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: {}
+  },
+  emits: [ [32m'select'[39m ],
+  setup: [36m[Function: setup][39m
+} 
+  at <MenuItem disabled=false asChild=false textValue=undefined  ... > 
+  at <MenubarItem inset=false class="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50" > 
+  at <MenubarItem ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/tabs-trigger.test.ts (1 test | 1 failed) 51ms
+   × UtabsUtrigger > renders without errors 49ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(TabsRootCont…' was thrown
+ ❯ src/test/menubar-item.test.ts (1 test | 1 failed) 56ms
+   × UmenubarUitem > renders without errors 54ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(MenuRootCont…' was thrown
+stderr | src/test/radio-group-item.test.ts > UradioUgroupUitem > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  inheritAttrs: [33mfalse[39m,
+  __name: [32m'RadioGroupItem'[39m,
+  props: {
+    id: {},
+    value: {},
+    disabled: { type: [36m[Function: Boolean][39m, default: [33mfalse[39m },
+    required: { type: [36m[Function: Boolean][39m },
+    name: {},
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: { default: [32m'button'[39m }
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <RadioGroupItem class="aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50" > 
+  at <RadioGroupItem ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/radio-group-item.test.ts (1 test | 1 failed) 53ms
+   × UradioUgroupUitem > renders without errors 51ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(RadioGroupRo…' was thrown
+stderr | src/test/dialog-title.test.ts > UdialogUtitle > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'DialogTitle'[39m,
+  props: { asChild: { type: [36m[Function: Boolean][39m }, as: { default: [32m'h2'[39m } },
+  setup: [36m[Function: setup][39m
+} 
+  at <DialogTitle class="text-lg font-semibold leading-none tracking-tight" > 
+  at <DialogTitle ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/dialog-title.test.ts (1 test | 1 failed) 85ms
+   × UdialogUtitle > renders without errors 83ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(DialogRootCo…' was thrown
+stderr | src/test/hover-card-trigger.test.ts > UhoverUcardUtrigger > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'HoverCardTrigger'[39m,
+  props: { asChild: { type: [36m[Function: Boolean][39m }, as: { default: [32m'a'[39m } },
+  setup: [36m[Function: setup][39m
+} 
+  at <HoverCardTrigger as-child="" > 
+  at <HoverCardTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/hover-card-trigger.test.ts (1 test | 1 failed) 70ms
+   × UhoverUcardUtrigger > renders without errors 67ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(HoverCardRoo…' was thrown
+stderr | src/test/context-menu-item.test.ts > UcontextUmenuUitem > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'MenuItem'[39m,
+  props: {
+    disabled: { type: [36m[Function: Boolean][39m },
+    textValue: {},
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: {}
+  },
+  emits: [ [32m'select'[39m ],
+  setup: [36m[Function: setup][39m
+} 
+  at <MenuItem disabled=false asChild=false textValue=undefined  ... > 
+  at <ContextMenuItem inset=false class="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50" > 
+  at <ContextMenuItem ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/context-menu-item.test.ts (1 test | 1 failed) 87ms
+   × UcontextUmenuUitem > renders without errors 86ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(MenuRootCont…' was thrown
+stderr | src/test/dialog-description.test.ts > UdialogUdescription > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'DialogDescription'[39m,
+  props: { asChild: { type: [36m[Function: Boolean][39m }, as: { default: [32m'p'[39m } },
+  setup: [36m[Function: setup][39m
+} 
+  at <DialogDescription class="text-sm text-muted-foreground" > 
+  at <DialogDescription ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/dialog-description.test.ts (1 test | 1 failed) 51ms
+   × UdialogUdescription > renders without errors 50ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(DialogRootCo…' was thrown
+stderr | src/test/tabs-content.test.ts > UtabsUcontent > renders without errors
+[Vue warn]: Missing required prop: "value" 
+  at <TabsContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'TabsContent'[39m,
+  props: {
+    value: {},
+    forceMount: { type: [36m[Function: Boolean][39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: {}
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <TabsContent forceMount=false value=undefined class="mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" > 
+  at <TabsContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/tabs-content.test.ts (1 test | 1 failed) 85ms
+   × UtabsUcontent > renders without errors 83ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(TabsRootCont…' was thrown
+stderr | src/test/menubar-menu.test.ts > UmenubarUmenu > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'MenubarMenu'[39m,
+  props: { value: {} },
+  setup: [36m[Function: setup][39m
+} 
+  at <MenubarMenu > 
+  at <MenubarMenu ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+stderr | src/test/avatar-image.test.ts > UavatarUimage > renders without errors
+[Vue warn]: Missing required prop: "src" 
+  at <AvatarImage ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'AvatarImage'[39m,
+  props: {
+    src: {},
+    referrerPolicy: {},
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: { default: [32m'img'[39m }
+  },
+  emits: [ [32m'loadingStatusChange'[39m ],
+  setup: [36m[Function: setup][39m
+} 
+  at <AvatarImage src=undefined class="aspect-square h-full w-full" > 
+  at <AvatarImage ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/menubar-menu.test.ts (1 test | 1 failed) 39ms
+   × UmenubarUmenu > renders without errors 38ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(MenubarRootC…' was thrown
+ ❯ src/test/avatar-image.test.ts (1 test | 1 failed) 54ms
+   × UavatarUimage > renders without errors 53ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(AvatarRootCo…' was thrown
+stderr | src/test/toggle-group-item.test.ts > UtoggleUgroupUitem > renders without errors
+[Vue warn]: Missing required prop: "value" 
+  at <ToggleGroupItem ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'ToggleGroupItem'[39m,
+  props: {
+    value: {},
+    disabled: { type: [36m[Function: Boolean][39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: { default: [32m'button'[39m }
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <ToggleGroupItem disabled=false value=undefined class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-muted disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground h-9 px-3" > 
+  at <ToggleGroupItem ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+stderr | src/test/accordion-content.test.ts > UaccordionUcontent > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'AccordionContent'[39m,
+  props: {
+    forceMount: { type: [36m[Function: Boolean][39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: {}
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <AccordionContent class="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down" > 
+  at <AccordionContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/toggle-group-item.test.ts (1 test | 1 failed) 47ms
+   × UtoggleUgroupUitem > renders without errors 45ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(ToggleGroupR…' was thrown
+ ❯ src/test/accordion-content.test.ts (1 test | 1 failed) 36ms
+   × UaccordionUcontent > renders without errors 35ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(AccordionRoo…' was thrown
+stderr | src/test/dropdown-menu-trigger.test.ts > UdropdownUmenuUtrigger > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'DropdownMenuTrigger'[39m,
+  props: {
+    disabled: { type: [36m[Function: Boolean][39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: { default: [32m'button'[39m }
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <DropdownMenuTrigger as-child="" > 
+  at <DropdownMenuTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/dropdown-menu-trigger.test.ts (1 test | 1 failed) 55ms
+   × UdropdownUmenuUtrigger > renders without errors 53ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(DropdownMenu…' was thrown
+stderr | src/test/menubar-trigger.test.ts > UmenubarUtrigger > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'MenubarTrigger'[39m,
+  props: {
+    disabled: { type: [36m[Function: Boolean][39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: { default: [32m'button'[39m }
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <MenubarTrigger class="flex cursor-default select-none items-center rounded-sm px-3 py-1 text-sm font-medium outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground" > 
+  at <MenubarTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/menubar-trigger.test.ts (1 test | 1 failed) 64ms
+   × UmenubarUtrigger > renders without errors 62ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(MenubarRootC…' was thrown
+stderr | src/test/context-menu-trigger.test.ts > UcontextUmenuUtrigger > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  inheritAttrs: [33mfalse[39m,
+  __name: [32m'ContextMenuTrigger'[39m,
+  props: {
+    disabled: { type: [36m[Function: Boolean][39m, default: [33mfalse[39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: { default: [32m'span'[39m }
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <ContextMenuTrigger> 
+  at <ContextMenuTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+stderr | src/test/toggle-group.test.ts > UtoggleUgroup > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'ToggleGroupRoot'[39m,
+  props: {
+    rovingFocus: { type: [36m[Function: Boolean][39m, default: [33mtrue[39m },
+    disabled: { type: [36m[Function: Boolean][39m, default: [33mfalse[39m },
+    orientation: {},
+    dir: {},
+    loop: { type: [36m[Function: Boolean][39m, default: [33mtrue[39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: {},
+    type: {},
+    modelValue: {},
+    defaultValue: {}
+  },
+  emits: [ [32m'update:modelValue'[39m ],
+  setup: [36m[Function: setup][39m
+} 
+  at <ToggleGroupRoot class="flex items-center justify-center gap-1" > 
+  at <ToggleGroup ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/context-menu-trigger.test.ts (1 test | 1 failed) 43ms
+   × UcontextUmenuUtrigger > renders without errors 40ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(ContextMenuR…' was thrown
+ ❯ src/test/toggle-group.test.ts (1 test | 1 failed) 54ms
+   × UtoggleUgroup > renders without errors 53ms
+     → expected [Function] to not throw an error but 'Error: Either the `type` or the `valu…' was thrown
+stderr | src/test/avatar-fallback.test.ts > UavatarUfallback > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'AvatarFallback'[39m,
+  props: {
+    delayMs: { default: [33m0[39m },
+    asChild: { type: [36m[Function: Boolean][39m },
+    as: { default: [32m'span'[39m }
+  },
+  setup: [36m[Function: setup][39m
+} 
+  at <AvatarFallback class="flex h-full w-full items-center justify-center rounded-full bg-muted" > 
+  at <AvatarFallback ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/avatar-fallback.test.ts (1 test | 1 failed) 55ms
+   × UavatarUfallback > renders without errors 52ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(AvatarRootCo…' was thrown
+stderr | src/test/popover-trigger.test.ts > UpopoverUtrigger > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'PopoverTrigger'[39m,
+  props: { asChild: { type: [36m[Function: Boolean][39m }, as: { default: [32m'button'[39m } },
+  setup: [36m[Function: setup][39m
+} 
+  at <PopoverTrigger as-child="" > 
+  at <PopoverTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/popover-trigger.test.ts (1 test | 1 failed) 71ms
+   × UpopoverUtrigger > renders without errors 69ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(PopoverRootC…' was thrown
+stderr | src/test/collapsible-trigger.test.ts > UcollapsibleUtrigger > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'CollapsibleTrigger'[39m,
+  props: { asChild: { type: [36m[Function: Boolean][39m }, as: { default: [32m'button'[39m } },
+  setup: [36m[Function: setup][39m
+} 
+  at <CollapsibleTrigger> 
+  at <CollapsibleTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/collapsible-trigger.test.ts (1 test | 1 failed) 55ms
+   × UcollapsibleUtrigger > renders without errors 54ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(CollapsibleR…' was thrown
+stderr | src/test/dialog-trigger.test.ts > UdialogUtrigger > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'DialogTrigger'[39m,
+  props: { asChild: { type: [36m[Function: Boolean][39m }, as: { default: [32m'button'[39m } },
+  setup: [36m[Function: setup][39m
+} 
+  at <DialogTrigger as-child="" > 
+  at <DialogTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/dialog-trigger.test.ts (1 test | 1 failed) 72ms
+   × UdialogUtrigger > renders without errors 61ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(DialogRootCo…' was thrown
+ ✓ src/test/switch.test.ts (1 test) 98ms
+stderr | src/test/accordion-trigger.test.ts > UaccordionUtrigger > renders without errors
+[Vue warn]: Component is missing template or render function:  {
+  __name: [32m'AccordionHeader'[39m,
+  props: { asChild: { type: [36m[Function: Boolean][39m }, as: { default: [32m'h3'[39m } },
+  setup: [36m[Function: setup][39m
+} 
+  at <AccordionHeader class="flex" > 
+  at <AccordionTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ❯ src/test/accordion-trigger.test.ts (1 test | 1 failed) 42ms
+   × UaccordionUtrigger > renders without errors 41ms
+     → expected [Function] to not throw an error but 'Error: Injection `Symbol(AccordionRoo…' was thrown
+ ✓ src/test/slider.test.ts (1 test) 100ms
+ ✓ src/test/spinner.test.ts (1 test) 53ms
+stderr | src/test/carousel-content.test.ts > UcarouselUcontent > renders without errors
+[Vue warn]: injection "carousel-current" not found. 
+  at <CarouselContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/carousel-content.test.ts (1 test) 90ms
+stderr | src/test/alert-dialog-action.test.ts > UalertUdialogUaction > renders without errors
+[Vue warn]: injection "alert-dialog-close" not found. 
+  at <AlertDialogAction ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/alert-dialog-action.test.ts (1 test) 52ms
+ ✓ src/test/select.test.ts (1 test) 73ms
+ ✓ src/test/command.test.ts (1 test) 42ms
+ ✓ src/test/dialog-footer.test.ts (1 test) 42ms
+ ✓ src/test/sidebar-footer.test.ts (1 test) 59ms
+stderr | src/test/carousel-next.test.ts > UcarouselUnext > renders without errors
+[Vue warn]: injection "carousel-next" not found. 
+  at <CarouselNext ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/carousel-next.test.ts (1 test) 91ms
+ ✓ src/test/input-otp.test.ts (1 test) 61ms
+stderr | src/test/sidebar-trigger.test.ts > UsidebarUtrigger > renders without errors
+[Vue warn]: injection "sidebar-toggle" not found. 
+  at <SidebarTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/sidebar-trigger.test.ts (1 test) 57ms
+stderr | src/test/menubar-content.test.ts > UmenubarUcontent > renders without errors
+[Vue warn]: Unhandled error during execution of setup function 
+  at <MenubarContent class="z-50 min-w-[12rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out" > 
+  at <Teleport to=undefined disabled=false forceMount=false > 
+  at <MenuPortal disabled=false forceMount=false to=undefined > 
+  at <MenubarPortal> 
+  at <MenubarContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Unhandled error during execution of component update 
+  at <Teleport to=undefined disabled=false forceMount=false > 
+  at <MenuPortal disabled=false forceMount=false to=undefined > 
+  at <MenubarPortal> 
+  at <MenubarContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/menubar-content.test.ts (1 test) 76ms
+ ✓ src/test/sidebar-menu.test.ts (1 test) 86ms
+ ✓ src/test/checkbox.test.ts (1 test) 82ms
+ ✓ src/test/chart-container.test.ts (1 test) 86ms
+ ✓ src/test/navigation-menu-link.test.ts (1 test) 49ms
+ ✓ src/test/alert-dialog-description.test.ts (1 test) 39ms
+ ✓ src/test/scroll-area.test.ts (1 test) 80ms
+ ✓ src/test/breadcrumb-link.test.ts (1 test) 83ms
+ ✓ src/test/breadcrumb-page.test.ts (1 test) 75ms
+ ✓ src/test/table-head.test.ts (1 test) 64ms
+ ✓ src/test/calendar.test.ts (1 test) 104ms
+stderr | src/test/popover-content.test.ts > UpopoverUcontent > renders without errors
+[Vue warn]: Unhandled error during execution of setup function 
+  at <PopoverContent class="z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out" > 
+  at <Teleport disabled=false forceMount=false to=undefined > 
+  at <PopoverPortal> 
+  at <PopoverContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Unhandled error during execution of component update 
+  at <Teleport disabled=false forceMount=false to=undefined > 
+  at <PopoverPortal> 
+  at <PopoverContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/popover-content.test.ts (1 test) 72ms
+stderr | src/test/alert-dialog-cancel.test.ts > UalertUdialogUcancel > renders without errors
+[Vue warn]: injection "alert-dialog-close" not found. 
+  at <AlertDialogCancel ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/alert-dialog-cancel.test.ts (1 test) 70ms
+ ✓ src/test/drawer-title.test.ts (1 test) 85ms
+ ✓ src/test/command-list.test.ts (1 test) 88ms
+ ✓ src/test/chart-tooltip.test.ts (1 test) 40ms
+stderr | src/test/command-input.test.ts > UcommandUinput > renders without errors
+[Vue warn]: injection "command-search" not found. 
+  at <CommandInput ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/command-input.test.ts (1 test) 69ms
+ ✓ src/test/alert-title.test.ts (1 test) 58ms
+stderr | src/test/sheet-close.test.ts > UsheetUclose > renders without errors
+[Vue warn]: injection "sheet-close" not found. 
+  at <SheetClose ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/sheet-close.test.ts (1 test) 30ms
+ ✓ src/test/sidebar-group.test.ts (1 test) 77ms
+ ✓ src/test/alert-dialog-header.test.ts (1 test) 60ms
+ ✓ src/test/label.test.ts (1 test) 61ms
+stderr | src/test/dropdown-menu-content.test.ts > UdropdownUmenuUcontent > renders without errors
+[Vue warn]: Unhandled error during execution of setup function 
+  at <DropdownMenuContent class="z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out" > 
+  at <Teleport to=undefined disabled=false forceMount=false > 
+  at <MenuPortal disabled=false forceMount=false to=undefined > 
+  at <DropdownMenuPortal> 
+  at <DropdownMenuContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Unhandled error during execution of component update 
+  at <Teleport to=undefined disabled=false forceMount=false > 
+  at <MenuPortal disabled=false forceMount=false to=undefined > 
+  at <DropdownMenuPortal> 
+  at <DropdownMenuContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/dropdown-menu-content.test.ts (1 test) 62ms
+ ✓ src/test/date-picker.test.ts (1 test) 125ms
+stderr | src/test/tooltip.test.ts > Utooltip > renders without errors
+[Vue warn]: Missing required prop: "content" 
+  at <Tooltip ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/tooltip.test.ts (1 test) 113ms
+stderr | src/test/sidebar.test.ts > Usidebar > renders without errors
+[Vue warn]: injection "sidebar-open" not found. 
+  at <Sidebar ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/sidebar.test.ts (1 test) 50ms
+ ✓ src/test/radio-group.test.ts (1 test) 62ms
+ ✓ src/test/toaster.test.ts (1 test) 73ms
+ ✓ src/test/carousel.test.ts (1 test) 40ms
+ ✓ src/test/button.test.ts (1 test) 89ms
+ ✓ src/test/pagination-previous.test.ts (1 test) 64ms
+ ✓ src/test/card-footer.test.ts (1 test) 44ms
+stderr | src/test/sheet-content.test.ts > UsheetUcontent > renders without errors
+[Vue warn]: injection "sheet-open" not found. 
+  at <SheetContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: injection "sheet-close" not found. 
+  at <SheetContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/sheet-content.test.ts (1 test) 111ms
+stderr | src/test/carousel-previous.test.ts > UcarouselUprevious > renders without errors
+[Vue warn]: injection "carousel-prev" not found. 
+  at <CarouselPrevious ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/carousel-previous.test.ts (1 test) 98ms
+ ✓ src/test/drawer-header.test.ts (1 test) 82ms
+ ✓ src/test/combobox.test.ts (1 test) 86ms
+ ✓ src/test/textarea.test.ts (1 test) 68ms
+ ✓ src/test/pagination-content.test.ts (1 test) 43ms
+stderr | src/test/context-menu-content.test.ts > UcontextUmenuUcontent > renders without errors
+[Vue warn]: Unhandled error during execution of setup function 
+  at <ContextMenuContent class="z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in fade-in-80" > 
+  at <Teleport to=undefined disabled=false forceMount=false > 
+  at <MenuPortal disabled=false forceMount=false to=undefined > 
+  at <ContextMenuPortal> 
+  at <ContextMenuContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Unhandled error during execution of component update 
+  at <Teleport to=undefined disabled=false forceMount=false > 
+  at <MenuPortal disabled=false forceMount=false to=undefined > 
+  at <ContextMenuPortal> 
+  at <ContextMenuContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/context-menu-content.test.ts (1 test) 59ms
+ ✓ src/test/pagination-next.test.ts (1 test) 51ms
+ ✓ src/test/breadcrumb-list.test.ts (1 test) 41ms
+ ✓ src/test/toast-close.test.ts (1 test) 50ms
+ ✓ src/test/progress.test.ts (1 test) 57ms
+ ✓ src/test/card.test.ts (1 test) 49ms
+ ✓ src/test/menubar.test.ts (1 test) 70ms
+ ✓ src/test/alert-dialog-footer.test.ts (1 test) 45ms
+stderr | src/test/drawer-content.test.ts > UdrawerUcontent > renders without errors
+[Vue warn]: injection "drawer-open" not found. 
+  at <DrawerContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: injection "drawer-close" not found. 
+  at <DrawerContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/drawer-content.test.ts (1 test) 83ms
+ ✓ src/test/sheet-description.test.ts (1 test) 61ms
+ ✓ src/test/table-footer.test.ts (1 test) 72ms
+ ✓ src/test/navigation-menu-item.test.ts (1 test) 20ms
+ ✓ src/test/drawer-description.test.ts (1 test) 85ms
+ ✓ src/test/command-empty.test.ts (1 test) 47ms
+ ✓ src/test/breadcrumb.test.ts (1 test) 41ms
+ ✓ src/test/drawer-footer.test.ts (1 test) 70ms
+ ✓ src/test/dropdown-menu.test.ts (1 test) 27ms
+ ✓ src/test/alert-description.test.ts (1 test) 58ms
+stderr | src/test/navigation-menu-trigger.test.ts > UnavigationUmenuUtrigger > renders without errors
+[Vue warn]: injection "nav-item-toggle" not found. 
+  at <NavigationMenuTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/navigation-menu-trigger.test.ts (1 test) 89ms
+ ✓ src/test/card-description.test.ts (1 test) 37ms
+stderr | src/test/alert-dialog-content.test.ts > UalertUdialogUcontent > renders without errors
+[Vue warn]: injection "alert-dialog-open" not found. 
+  at <AlertDialogContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/alert-dialog-content.test.ts (1 test) 46ms
+ ✓ src/test/sidebar-header.test.ts (1 test) 72ms
+ ✓ src/test/sidebar-menu-item.test.ts (1 test) 47ms
+ ✓ src/test/select-label.test.ts (1 test) 51ms
+ ✓ src/test/sidebar-menu-button.test.ts (1 test) 72ms
+ ✓ src/test/drawer.test.ts (1 test) 52ms
+ ✓ src/test/pagination-link.test.ts (1 test) 51ms
+ ✓ src/test/data-table.test.ts (1 test) 49ms
+stderr | src/test/command-item.test.ts > UcommandUitem > renders without errors
+[Vue warn]: injection "command-search" not found. 
+  at <CommandItem ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/command-item.test.ts (1 test) 36ms
+ ✓ src/test/resizable-panel.test.ts (1 test) 41ms
+ ✓ src/test/card-header.test.ts (1 test) 64ms
+stderr | src/test/dialog-content.test.ts > UdialogUcontent > renders without errors
+[Vue warn]: Unhandled error during execution of setup function 
+  at <DialogOverlay class="fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" > 
+  at <Teleport disabled=false forceMount=false to=undefined > 
+  at <DialogPortal> 
+  at <DialogContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Unhandled error during execution of component update 
+  at <Teleport disabled=false forceMount=false to=undefined > 
+  at <DialogPortal> 
+  at <DialogContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/dialog-content.test.ts (1 test) 89ms
+ ✓ src/test/pagination-ellipsis.test.ts (1 test) 115ms
+stderr | src/test/hover-card-content.test.ts > UhoverUcardUcontent > renders without errors
+[Vue warn]: Unhandled error during execution of setup function 
+  at <HoverCardContent class="z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out" > 
+  at <Teleport disabled=false forceMount=false to=undefined > 
+  at <HoverCardPortal> 
+  at <HoverCardContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Unhandled error during execution of component update 
+  at <Teleport disabled=false forceMount=false to=undefined > 
+  at <HoverCardPortal> 
+  at <HoverCardContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/hover-card-content.test.ts (1 test) 63ms
+ ✓ src/test/breadcrumb-separator.test.ts (1 test) 33ms
+ ✓ src/test/command-group.test.ts (1 test) 41ms
+ ✓ src/test/sidebar-content.test.ts (1 test) 53ms
+ ✓ src/test/input.test.ts (1 test) 40ms
+stderr | src/test/alert-dialog-trigger.test.ts > UalertUdialogUtrigger > renders without errors
+[Vue warn]: injection "alert-dialog-toggle" not found. 
+  at <AlertDialogTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/alert-dialog-trigger.test.ts (1 test) 41ms
+ ✓ src/test/toast-action.test.ts (1 test) 59ms
+ ✓ src/test/separator.test.ts (1 test) 44ms
+stderr | src/test/sheet-trigger.test.ts > UsheetUtrigger > renders without errors
+[Vue warn]: injection "sheet-toggle" not found. 
+  at <SheetTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/sheet-trigger.test.ts (1 test) 41ms
+stderr | src/test/select-content.test.ts > UselectUcontent > renders without errors
+[Vue warn]: Unhandled error during execution of setup function 
+  at <SelectContent class="relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out" > 
+  at <Teleport disabled=false forceMount=false to=undefined > 
+  at <SelectPortal> 
+  at <SelectContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+[Vue warn]: Unhandled error during execution of component update 
+  at <Teleport disabled=false forceMount=false to=undefined > 
+  at <SelectPortal> 
+  at <SelectContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/select-content.test.ts (1 test) 77ms
+ ✓ src/test/alert-dialog-title.test.ts (1 test) 52ms
+ ✓ src/test/table-body.test.ts (1 test) 44ms
+ ✓ src/test/sheet-header.test.ts (1 test) 77ms
+ ✓ src/test/dropdown-menu-label.test.ts (1 test) 47ms
+ ✓ src/test/resizable-panel-group.test.ts (1 test) 44ms
+ ✓ src/test/sheet.test.ts (1 test) 36ms
+ ✓ src/test/toast-title.test.ts (1 test) 46ms
+stderr | src/test/drawer-trigger.test.ts > UdrawerUtrigger > renders without errors
+[Vue warn]: injection "drawer-toggle" not found. 
+  at <DrawerTrigger ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/drawer-trigger.test.ts (1 test) 31ms
+ ✓ src/test/command-separator.test.ts (1 test) 38ms
+ ✓ src/test/badge.test.ts (1 test) 42ms
+ ✓ src/test/typography.test.ts (1 test) 50ms
+ ✓ src/test/skeleton.test.ts (1 test) 55ms
+ ✓ src/test/table.test.ts (1 test) 42ms
+ ✓ src/test/resizable-handle.test.ts (1 test) 28ms
+ ✓ src/test/table-caption.test.ts (1 test) 62ms
+ ✓ src/test/toast-description.test.ts (1 test) 37ms
+ ✓ src/test/pagination-item.test.ts (1 test) 46ms
+ ✓ src/test/menubar-separator.test.ts (1 test) 53ms
+ ✓ src/test/empty.test.ts (1 test) 36ms
+ ✓ src/test/navigation-menu-list.test.ts (1 test) 52ms
+ ✓ src/test/kbd.test.ts (1 test) 78ms
+ ✓ src/test/pagination.test.ts (1 test) 48ms
+ ✓ src/test/navigation-menu.test.ts (1 test) 39ms
+ ✓ src/test/tabs.test.ts (1 test) 34ms
+ ✓ src/test/toast-viewport.test.ts (1 test) 68ms
+ ✓ src/test/table-cell.test.ts (1 test) 39ms
+ ✓ src/test/sheet-title.test.ts (1 test) 82ms
+ ✓ src/test/table-row.test.ts (1 test) 40ms
+ ✓ src/test/avatar.test.ts (1 test) 90ms
+ ✓ src/test/select-separator.test.ts (1 test) 51ms
+ ✓ src/test/field.test.ts (1 test) 61ms
+ ✓ src/test/button-group.test.ts (1 test) 45ms
+ ✓ src/test/input-group-text.test.ts (1 test) 53ms
+ ✓ src/test/card-title.test.ts (1 test) 65ms
+ ✓ src/test/input-group.test.ts (1 test) 60ms
+ ✓ src/test/alert.test.ts (1 test) 61ms
+ ✓ src/test/dialog-header.test.ts (1 test) 44ms
+ ✓ src/test/aspect-ratio.test.ts (1 test) 48ms
+ ✓ src/test/sidebar-provider.test.ts (1 test) 31ms
+ ✓ src/test/popover.test.ts (1 test) 34ms
+ ✓ src/test/hover-card.test.ts (1 test) 24ms
+ ✓ src/test/card-content.test.ts (1 test) 60ms
+ ✓ src/test/table-header.test.ts (1 test) 51ms
+ ✓ src/test/sheet-footer.test.ts (1 test) 39ms
+ ✓ src/test/breadcrumb-item.test.ts (1 test) 46ms
+ ✓ src/test/dropdown-menu-separator.test.ts (1 test) 53ms
+ ✓ src/test/toast.test.ts (1 test) 64ms
+ ✓ src/test/toggle.test.ts (1 test) 46ms
+ ✓ src/test/context-menu.test.ts (1 test) 27ms
+ ✓ src/test/collapsible.test.ts (1 test) 44ms
+stderr | src/test/navigation-menu-content.test.ts > UnavigationUmenuUcontent > renders without errors
+[Vue warn]: injection "nav-item-open" not found. 
+  at <NavigationMenuContent ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/test/navigation-menu-content.test.ts (1 test) 25ms
+ ✓ src/test/alert-dialog.test.ts (1 test) 36ms
+ ✓ src/test/toast-provider.test.ts (1 test) 22ms
+ ✓ src/test/dialog.test.ts (1 test) 26ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 29 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/test/accordion-content.test.ts > UaccordionUcontent > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(AccordionRoo…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(AccordionRootContext)` not found. Component must be used within `AccordionRoot`"
+
+ ❯ src/test/accordion-content.test.ts:7:49
+      5| describe('UaccordionUcontent', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UaccordionUcontent)).not.toThrow()
+       |                                                 ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/29]⎯
+
+ FAIL  src/test/accordion-item.test.ts > UaccordionUitem > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(AccordionRoo…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(AccordionRootContext)` not found. Component must be used within `AccordionRoot`"
+
+ ❯ src/test/accordion-item.test.ts:7:46
+      5| describe('UaccordionUitem', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UaccordionUitem)).not.toThrow()
+       |                                              ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/29]⎯
+
+ FAIL  src/test/accordion-trigger.test.ts > UaccordionUtrigger > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(AccordionRoo…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(AccordionRootContext)` not found. Component must be used within `AccordionRoot`"
+
+ ❯ src/test/accordion-trigger.test.ts:7:49
+      5| describe('UaccordionUtrigger', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UaccordionUtrigger)).not.toThrow()
+       |                                                 ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/29]⎯
+
+ FAIL  src/test/accordion.test.ts > Uaccordion > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Either the `type` or the `valu…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Either the `type` or the `value` or `default-value` prop must be defined."
+
+ ❯ src/test/accordion.test.ts:7:41
+      5| describe('Uaccordion', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(Uaccordion)).not.toThrow()
+       |                                         ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/29]⎯
+
+ FAIL  src/test/avatar-fallback.test.ts > UavatarUfallback > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(AvatarRootCo…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(AvatarRootContext)` not found. Component must be used within `AvatarRoot`"
+
+ ❯ src/test/avatar-fallback.test.ts:7:47
+      5| describe('UavatarUfallback', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UavatarUfallback)).not.toThrow()
+       |                                               ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/29]⎯
+
+ FAIL  src/test/avatar-image.test.ts > UavatarUimage > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(AvatarRootCo…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(AvatarRootContext)` not found. Component must be used within `AvatarRoot`"
+
+ ❯ src/test/avatar-image.test.ts:7:44
+      5| describe('UavatarUimage', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UavatarUimage)).not.toThrow()
+       |                                            ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/29]⎯
+
+ FAIL  src/test/carousel-item.test.ts > UcarouselUitem > renders without errors
+AssertionError: expected [Function] to not throw an error but 'TypeError: register is not a function' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"TypeError: register is not a function"
+
+ ❯ src/test/carousel-item.test.ts:7:45
+      5| describe('UcarouselUitem', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UcarouselUitem)).not.toThrow()
+       |                                             ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/29]⎯
+
+ FAIL  src/test/collapsible-content.test.ts > UcollapsibleUcontent > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(CollapsibleR…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(CollapsibleRootContext)` not found. Component must be used within `CollapsibleRoot`"
+
+ ❯ src/test/collapsible-content.test.ts:7:51
+      5| describe('UcollapsibleUcontent', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UcollapsibleUcontent)).not.toThrow()
+       |                                                   ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/29]⎯
+
+ FAIL  src/test/collapsible-trigger.test.ts > UcollapsibleUtrigger > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(CollapsibleR…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(CollapsibleRootContext)` not found. Component must be used within `CollapsibleRoot`"
+
+ ❯ src/test/collapsible-trigger.test.ts:7:51
+      5| describe('UcollapsibleUtrigger', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UcollapsibleUtrigger)).not.toThrow()
+       |                                                   ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/29]⎯
+
+ FAIL  src/test/context-menu-item.test.ts > UcontextUmenuUitem > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(MenuRootCont…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(MenuRootContext)` not found. Component must be used within `MenuRoot`"
+
+ ❯ src/test/context-menu-item.test.ts:7:49
+      5| describe('UcontextUmenuUitem', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UcontextUmenuUitem)).not.toThrow()
+       |                                                 ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/29]⎯
+
+ FAIL  src/test/context-menu-trigger.test.ts > UcontextUmenuUtrigger > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(ContextMenuR…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(ContextMenuRootContext)` not found. Component must be used within `ContextMenuRoot`"
+
+ ❯ src/test/context-menu-trigger.test.ts:7:52
+      5| describe('UcontextUmenuUtrigger', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UcontextUmenuUtrigger)).not.toThrow()
+       |                                                    ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/29]⎯
+
+ FAIL  src/test/dialog-description.test.ts > UdialogUdescription > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(DialogRootCo…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(DialogRootContext)` not found. Component must be used within `DialogRoot`"
+
+ ❯ src/test/dialog-description.test.ts:7:50
+      5| describe('UdialogUdescription', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UdialogUdescription)).not.toThrow()
+       |                                                  ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/29]⎯
+
+ FAIL  src/test/dialog-title.test.ts > UdialogUtitle > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(DialogRootCo…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(DialogRootContext)` not found. Component must be used within `DialogRoot`"
+
+ ❯ src/test/dialog-title.test.ts:7:44
+      5| describe('UdialogUtitle', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UdialogUtitle)).not.toThrow()
+       |                                            ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/29]⎯
+
+ FAIL  src/test/dialog-trigger.test.ts > UdialogUtrigger > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(DialogRootCo…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(DialogRootContext)` not found. Component must be used within `DialogRoot`"
+
+ ❯ src/test/dialog-trigger.test.ts:7:46
+      5| describe('UdialogUtrigger', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UdialogUtrigger)).not.toThrow()
+       |                                              ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/29]⎯
+
+ FAIL  src/test/dropdown-menu-item.test.ts > UdropdownUmenuUitem > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(MenuRootCont…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(MenuRootContext)` not found. Component must be used within `MenuRoot`"
+
+ ❯ src/test/dropdown-menu-item.test.ts:7:50
+      5| describe('UdropdownUmenuUitem', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UdropdownUmenuUitem)).not.toThrow()
+       |                                                  ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/29]⎯
+
+ FAIL  src/test/dropdown-menu-trigger.test.ts > UdropdownUmenuUtrigger > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(DropdownMenu…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(DropdownMenuRootContext)` not found. Component must be used within `DropdownMenuRoot`"
+
+ ❯ src/test/dropdown-menu-trigger.test.ts:7:53
+      5| describe('UdropdownUmenuUtrigger', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UdropdownUmenuUtrigger)).not.toThrow()
+       |                                                     ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/29]⎯
+
+ FAIL  src/test/hover-card-trigger.test.ts > UhoverUcardUtrigger > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(HoverCardRoo…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(HoverCardRootContext)` not found. Component must be used within `HoverCardRoot`"
+
+ ❯ src/test/hover-card-trigger.test.ts:7:50
+      5| describe('UhoverUcardUtrigger', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UhoverUcardUtrigger)).not.toThrow()
+       |                                                  ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/29]⎯
+
+ FAIL  src/test/menubar-item.test.ts > UmenubarUitem > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(MenuRootCont…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(MenuRootContext)` not found. Component must be used within `MenuRoot`"
+
+ ❯ src/test/menubar-item.test.ts:7:44
+      5| describe('UmenubarUitem', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UmenubarUitem)).not.toThrow()
+       |                                            ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/29]⎯
+
+ FAIL  src/test/menubar-menu.test.ts > UmenubarUmenu > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(MenubarRootC…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(MenubarRootContext)` not found. Component must be used within `MenubarRoot`"
+
+ ❯ src/test/menubar-menu.test.ts:7:44
+      5| describe('UmenubarUmenu', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UmenubarUmenu)).not.toThrow()
+       |                                            ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/29]⎯
+
+ FAIL  src/test/menubar-trigger.test.ts > UmenubarUtrigger > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(MenubarRootC…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(MenubarRootContext)` not found. Component must be used within `MenubarRoot`"
+
+ ❯ src/test/menubar-trigger.test.ts:7:47
+      5| describe('UmenubarUtrigger', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UmenubarUtrigger)).not.toThrow()
+       |                                               ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/29]⎯
+
+ FAIL  src/test/popover-trigger.test.ts > UpopoverUtrigger > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(PopoverRootC…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(PopoverRootContext)` not found. Component must be used within `PopoverRoot`"
+
+ ❯ src/test/popover-trigger.test.ts:7:47
+      5| describe('UpopoverUtrigger', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UpopoverUtrigger)).not.toThrow()
+       |                                               ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/29]⎯
+
+ FAIL  src/test/radio-group-item.test.ts > UradioUgroupUitem > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(RadioGroupRo…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(RadioGroupRootContext)` not found. Component must be used within `RadioGroupRoot`"
+
+ ❯ src/test/radio-group-item.test.ts:7:48
+      5| describe('UradioUgroupUitem', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UradioUgroupUitem)).not.toThrow()
+       |                                                ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/29]⎯
+
+ FAIL  src/test/select-item.test.ts > UselectUitem > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(SelectRootCo…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(SelectRootContext)` not found. Component must be used within `SelectRoot`"
+
+ ❯ src/test/select-item.test.ts:7:43
+      5| describe('UselectUitem', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UselectUitem)).not.toThrow()
+       |                                           ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/29]⎯
+
+ FAIL  src/test/select-trigger.test.ts > UselectUtrigger > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(SelectRootCo…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(SelectRootContext)` not found. Component must be used within `SelectRoot`"
+
+ ❯ src/test/select-trigger.test.ts:7:46
+      5| describe('UselectUtrigger', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UselectUtrigger)).not.toThrow()
+       |                                              ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/29]⎯
+
+ FAIL  src/test/tabs-content.test.ts > UtabsUcontent > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(TabsRootCont…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(TabsRootContext)` not found. Component must be used within `TabsRoot`"
+
+ ❯ src/test/tabs-content.test.ts:7:44
+      5| describe('UtabsUcontent', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UtabsUcontent)).not.toThrow()
+       |                                            ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/29]⎯
+
+ FAIL  src/test/tabs-list.test.ts > UtabsUlist > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(TabsRootCont…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(TabsRootContext)` not found. Component must be used within `TabsRoot`"
+
+ ❯ src/test/tabs-list.test.ts:7:41
+      5| describe('UtabsUlist', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UtabsUlist)).not.toThrow()
+       |                                         ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/29]⎯
+
+ FAIL  src/test/tabs-trigger.test.ts > UtabsUtrigger > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(TabsRootCont…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(TabsRootContext)` not found. Component must be used within `TabsRoot`"
+
+ ❯ src/test/tabs-trigger.test.ts:7:44
+      5| describe('UtabsUtrigger', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UtabsUtrigger)).not.toThrow()
+       |                                            ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/29]⎯
+
+ FAIL  src/test/toggle-group-item.test.ts > UtoggleUgroupUitem > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Injection `Symbol(ToggleGroupR…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Injection `Symbol(ToggleGroupRootContext)` not found. Component must be used within `ToggleGroupRoot`"
+
+ ❯ src/test/toggle-group-item.test.ts:7:49
+      5| describe('UtoggleUgroupUitem', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UtoggleUgroupUitem)).not.toThrow()
+       |                                                 ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/29]⎯
+
+ FAIL  src/test/toggle-group.test.ts > UtoggleUgroup > renders without errors
+AssertionError: expected [Function] to not throw an error but 'Error: Either the `type` or the `valu…' was thrown
+
+[32m- Expected:[39m 
+undefined
+
+[31m+ Received:[39m 
+"Error: Either the `type` or the `value` or `default-value` prop must be defined."
+
+ ❯ src/test/toggle-group.test.ts:7:44
+      5| describe('UtoggleUgroup', () => {
+      6|   it('renders without errors', () => {
+      7|     expect(() => mount(UtoggleUgroup)).not.toThrow()
+       |                                            ^
+      8|   })
+      9| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/29]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 7 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: Injection `Symbol(MenubarRootContext)` not found. Component must be used within `MenubarRoot`
+ ❯ ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:13:11
+     11|     if (i || i === null)
+     12|       return i;
+     13|     throw new Error(
+       |           ^
+     14|       `Injection \`${n.toString()}\` not found. Component must be used…
+     15|         ", "
+ ❯ setup ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:10404:15
+ ❯ callWithErrorHandling ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:200:19
+ ❯ setupStatefulComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8066:25
+ ❯ setupComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8028:36
+ ❯ mountComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5953:7
+ ❯ processComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5919:9
+ ❯ patch ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5429:11
+ ❯ mountChildren ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5680:7
+ ❯ processFragment ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5862:7
+
+This error originated in "src/test/menubar-content.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: Injection `Symbol(PopoverRootContext)` not found. Component must be used within `PopoverRoot`
+ ❯ ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:13:11
+     11|     if (i || i === null)
+     12|       return i;
+     13|     throw new Error(
+       |           ^
+     14|       `Injection \`${n.toString()}\` not found. Component must be used…
+     15|         ", "
+ ❯ setup ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:12368:29
+ ❯ callWithErrorHandling ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:200:19
+ ❯ setupStatefulComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8066:25
+ ❯ setupComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8028:36
+ ❯ mountComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5953:7
+ ❯ processComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5919:9
+ ❯ patch ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5429:11
+ ❯ mountChildren ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5680:7
+ ❯ processFragment ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5862:7
+
+This error originated in "src/test/popover-content.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: Injection `Symbol(DropdownMenuRootContext)` not found. Component must be used within `DropdownMenuRoot`
+ ❯ ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:13:11
+     11|     if (i || i === null)
+     12|       return i;
+     13|     throw new Error(
+       |           ^
+     14|       `Injection \`${n.toString()}\` not found. Component must be used…
+     15|         ", "
+ ❯ setup ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:8392:15
+ ❯ callWithErrorHandling ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:200:19
+ ❯ setupStatefulComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8066:25
+ ❯ setupComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8028:36
+ ❯ mountComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5953:7
+ ❯ processComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5919:9
+ ❯ patch ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5429:11
+ ❯ mountChildren ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5680:7
+ ❯ processFragment ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5862:7
+
+This error originated in "src/test/dropdown-menu-content.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: Injection `Symbol(ContextMenuRootContext)` not found. Component must be used within `ContextMenuRoot`
+ ❯ ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:13:11
+     11|     if (i || i === null)
+     12|       return i;
+     13|     throw new Error(
+       |           ^
+     14|       `Injection \`${n.toString()}\` not found. Component must be used…
+     15|         ", "
+ ❯ setup ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:6135:15
+ ❯ callWithErrorHandling ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:200:19
+ ❯ setupStatefulComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8066:25
+ ❯ setupComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8028:36
+ ❯ mountComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5953:7
+ ❯ processComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5919:9
+ ❯ patch ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5429:11
+ ❯ mountChildren ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5680:7
+ ❯ processFragment ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5862:7
+
+This error originated in "src/test/context-menu-content.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: Injection `Symbol(DialogRootContext)` not found. Component must be used within `DialogRoot`
+ ❯ ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:13:11
+     11|     if (i || i === null)
+     12|       return i;
+     13|     throw new Error(
+       |           ^
+     14|       `Injection \`${n.toString()}\` not found. Component must be used…
+     15|         ", "
+ ❯ setup ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:2709:15
+ ❯ callWithErrorHandling ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:200:19
+ ❯ setupStatefulComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8066:25
+ ❯ setupComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8028:36
+ ❯ mountComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5953:7
+ ❯ processComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5919:9
+ ❯ patch ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5429:11
+ ❯ mountChildren ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5680:7
+ ❯ processFragment ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5862:7
+
+This error originated in "src/test/dialog-content.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: Injection `Symbol(HoverCardRootContext)` not found. Component must be used within `HoverCardRoot`
+ ❯ ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:13:11
+     11|     if (i || i === null)
+     12|       return i;
+     13|     throw new Error(
+       |           ^
+     14|       `Injection \`${n.toString()}\` not found. Component must be used…
+     15|         ", "
+ ❯ setup ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:9174:54
+ ❯ callWithErrorHandling ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:200:19
+ ❯ setupStatefulComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8066:25
+ ❯ setupComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8028:36
+ ❯ mountComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5953:7
+ ❯ processComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5919:9
+ ❯ patch ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5429:11
+ ❯ mountChildren ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5680:7
+ ❯ processFragment ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5862:7
+
+This error originated in "src/test/hover-card-content.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: Injection `Symbol(SelectRootContext)` not found. Component must be used within `SelectRoot`
+ ❯ ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:13:11
+     11|     if (i || i === null)
+     12|       return i;
+     13|     throw new Error(
+       |           ^
+     14|       `Injection \`${n.toString()}\` not found. Component must be used…
+     15|         ", "
+ ❯ setup ../../node_modules/.pnpm/radix-vue@1.9.17_vue@3.5.32_typescript@5.9.3_/node_modules/radix-vue/dist/index.js:14563:36
+ ❯ callWithErrorHandling ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:200:19
+ ❯ setupStatefulComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8066:25
+ ❯ setupComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:8028:36
+ ❯ mountComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5953:7
+ ❯ processComponent ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5919:9
+ ❯ patch ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5429:11
+ ❯ mountChildren ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5680:7
+ ❯ processFragment ../../node_modules/.pnpm/@vue+runtime-core@3.5.32/node_modules/@vue/runtime-core/dist/runtime-core.cjs.js:5862:7
+
+This error originated in "src/test/select-content.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  29 failed | 147 passed (176)
+      Tests  29 failed | 147 passed (176)
+     Errors  7 errors
+   Start at  16:03:38
+   Duration  32.52s (transform 6.61s, setup 19.73s, collect 60.32s, tests 10.23s, environment 162.06s, prepare 32.12s)
+
+/home/chris/repositories/sirpauls-internal/paul/packages/ui-vue:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @meetpaul/ui-vue@0.0.13 test: `vitest run`
+Exit status 1

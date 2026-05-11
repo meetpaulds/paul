@@ -112,7 +112,7 @@ export const dark: ModeTokens = {
   secondary:                 '240 3.7% 15.9%',
   secondaryForeground:       '0 0% 98%',
   muted:                     '240 3.7% 15.9%',
-  mutedForeground:           '240 5% 71%',
+  mutedForeground:           '240 5% 82.7%',
   accent:                    '240 3.7% 15.9%',
   accentForeground:          '0 0% 98%',
   destructive:               '0 62.8% 30.6%',

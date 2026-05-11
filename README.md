@@ -11,9 +11,9 @@ paul is a **Pattern, Asset & UI Library** — a modern, scalable design system m
 ```
 paul/
 ├── apps/
-│   └── storybook/          # Component documentation and visual testing
+│   └── storybook/          # Component documentation
 ├── packages/
-│   └── ui/                 # Core UI component library
+│   └── ui-react/                 # Core UI component library for React
 ├── .github/
 │   └── workflows/            # CI/CD automation
 ├── turbo.json              # Build pipeline orchestration
@@ -64,17 +64,48 @@ pnpm dev
 | `pnpm lint` | Run ESLint across all packages |
 | `pnpm typecheck` | Run TypeScript type checking |
 | `pnpm clean` | Clean all build artifacts and node_modules |
+---
+
+## Releasing to npm
+
+The npm publish workflow uses lockstep versioning across all packages. The packages published are `@meetpaul/tokens`, `@meetpaul/ui-react`, `@meetpaul/ui-angular`, `@meetpaul/ui-svelte`, and `@meetpaul/ui-vue`. 
+
+*Note: `@meetpaul/ui` is deprecated in favor of `@meetpaul/ui-react`.*
+
+When a `v*` tag is pushed, or when the `publish-npm` workflow is run manually from `main` with a package version, GitHub Actions will build all packages and publish them using Trusted Publishing via OpenID Connect (no `NPM_TOKEN` required). Packages that are already on npm with the given version will be gracefully skipped.
+
+```bash
+# Bump all package versions to the next patch version
+pnpm version:patch # or version:minor / version:major
+
+# Commit the exact version bump and tag it
+git add .
+git commit -m "chore(release): update package versions to X.Y.Z"
+git tag vX.Y.Z
+git push origin main
+git push origin vX.Y.Z # This tag push triggers the publish job
+```
 
 ---
 
 ## Accessibility
 
-paul targets **WCAG 2.2 Level AAA** and **EN 301 549 v3.2.1** compliance to meet the requirements of the **European Accessibility Act (EAA)**, enforceable since June 28, 2025.
+paul targets **APCA (WCAG 3.0 draft)** compliance alongside **WCAG 2.2 Level AAA** and **EN 301 549 v3.2.1** to meet the requirements of the **European Accessibility Act (EAA)**, enforceable since June 28, 2025.
+
+### Contrast Methodology
+
+paul uses the **Accessible Perceptual Contrast Algorithm (APCA)** from the WCAG 3.0 working draft for color contrast validation. APCA provides more accurate perceptual contrast measurements than WCAG 2.x relative luminance ratios:
+
+- **Body text**: Lc 75 (≈ WCAG 2.x 7:1 / AAA)
+- **Large text & UI components**: Lc 60 (≈ WCAG 2.x 4.5:1 / AA)
+
+> **Note**: WCAG 3.0 is currently a working draft and not yet a stable W3C recommendation. paul maintains backward compatibility with WCAG 2.2 Level AAA standards during this transition period.
 
 | Document | Description |
 |----------|-------------|
 | [Accessibility Statement](./docs/a11y-statement.md) | Conformance status, known issues, contact & enforcement — also a reusable template for consumers |
 | [EN 301 549 Compliance Matrix](./docs/compliance/en301549-matrix.md) | Per-component mapping of all 56 components to EN 301 549 clauses and WCAG 2.2 criteria |
+| [APCA Migration Guide](./docs/migration/apca-migration.md) | Details on the APCA migration, token changes, and visual impact |
 
 > **Consumers:** Copy `docs/a11y-statement.md` into your own product, replace all `<!-- PLACEHOLDER: … -->` markers, and publish it in a clearly accessible location (footer, imprint, or main navigation).
 

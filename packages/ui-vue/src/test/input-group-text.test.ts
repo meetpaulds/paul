@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import UinputUgroupUtext from '../../components/input-group-text.vue'
+import UinputUgroupUtext from '../components/input-group-text.vue'
 
 describe('UinputUgroupUtext', () => {
   it('renders without errors', () => {

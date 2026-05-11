@@ -1,15 +1,17 @@
-name: Publish to npm
+name: Publish npm Package
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   publish:
+    name: Publish npm packages
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       id-token: write
       actions: read
     steps:
@@ -18,59 +20,55 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Verify tag is on main
+      - name: Read package version
+        id: check_version
         run: |
-          git fetch origin main
-          git merge-base --is-ancestor "$GITHUB_SHA" origin/main
+          LOCAL_VERSION=$(node -p "require('./packages/ui-react/package.json').version")
+          NPM_VERSION=$(npm view @meetpaul/ui-react version 2>/dev/null || echo "0.0.0")
+          
+          if [ "$LOCAL_VERSION" = "$NPM_VERSION" ]; then
+            echo "Version $LOCAL_VERSION is already published. Skipping publish."
+            echo "should_publish=false" >> $GITHUB_OUTPUT
+          else
+            echo "Version $LOCAL_VERSION is new! Proceeding to publish."
+            echo "should_publish=true" >> $GITHUB_OUTPUT
+            echo "version=$LOCAL_VERSION" >> $GITHUB_OUTPUT
+          fi
 
-      - name: Verify CI passed for this commit
+      - name: Await CI checks
+        if: steps.check_version.outputs.should_publish == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          ci_run_id=$(gh run list \
-            --workflow CI \
-            --branch main \
-            --commit "$GITHUB_SHA" \
-            --status success \
-            --limit 1 \
-            --json databaseId \
-            --jq '.[0].databaseId')
-
-          if [ -z "$ci_run_id" ]; then
-            echo "No successful CI run found on main for $GITHUB_SHA."
-            exit 1
-          fi
-
-      - name: Read package version
-        id: package
-        run: |
-          name=$(node -p "require('./packages/ui/package.json').name")
-          version=$(node -p "require('./packages/ui/package.json').version")
-          expected_tag="v$version"
-
-          if [ "$GITHUB_REF_NAME" != "$expected_tag" ]; then
-            echo "Tag $GITHUB_REF_NAME does not match package version $version. Expected $expected_tag."
-            exit 1
-          fi
-
-          if npm view "$name@$version" version >/dev/null 2>&1; then
-            published=true
-          else
-            published=false
-          fi
-
-          echo "name=$name" >> "$GITHUB_OUTPUT"
-          echo "version=$version" >> "$GITHUB_OUTPUT"
-          echo "published=$published" >> "$GITHUB_OUTPUT"
+          echo "Waiting for CI workflow on $GITHUB_SHA to complete..."
+          # Wait up to 10 minutes for CI to turn 'success'
+          for i in {1..20}; do
+            STATUS=$(gh run list --workflow ci.yml --branch main --commit "$GITHUB_SHA" --json conclusion,status -q '.[0]')
+            RUN_STATUS=$(echo "$STATUS" | jq -r '.status')
+            RUN_CONCLUSION=$(echo "$STATUS" | jq -r '.conclusion')
+            
+            if [ "$RUN_STATUS" = "completed" ]; then
+              if [ "$RUN_CONCLUSION" = "success" ]; then
+                echo "CI completed successfully!"
+                break
+              else
+                echo "CI failed. Aborting publish."
+                exit 1
+              fi
+            fi
+            
+            echo "CI is still running... waiting 30 seconds."
+            sleep 30
+          done
 
       - name: Setup pnpm
-        if: steps.package.outputs.published == 'false'
+        if: steps.check_version.outputs.should_publish == 'true'
         uses: pnpm/action-setup@v3
         with:
           version: 9
 
       - name: Setup Node.js
-        if: steps.package.outputs.published == 'false'
+        if: steps.check_version.outputs.should_publish == 'true'
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
@@ -78,18 +76,21 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        if: steps.package.outputs.published == 'false'
+        if: steps.check_version.outputs.should_publish == 'true'
         run: pnpm install --frozen-lockfile
 
-      - name: Build package
-        if: steps.package.outputs.published == 'false'
-        run: pnpm --filter @meetpaul/ui build
+      - name: Build packages
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: pnpm build
 
-      - name: Publish to npm
-        if: steps.package.outputs.published == 'false'
-        run: npm publish --provenance --access public
-        working-directory: packages/ui
+      - name: Publish all public packages
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: pnpm -r publish --access public --no-git-checks --provenance --filter="./packages/*"
 
-      - name: Skip already published version
-        if: steps.package.outputs.published == 'true'
-        run: echo "${{ steps.package.outputs.name }}@${{ steps.package.outputs.version }} is already published."
+      - name: Create and Push Git Tag
+        if: steps.check_version.outputs.should_publish == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag v${{ steps.check_version.outputs.version }}
+          git push origin v${{ steps.check_version.outputs.version }}

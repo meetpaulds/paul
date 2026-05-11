@@ -54,3 +54,6 @@ storybook-static/
 playwright-report/
 test-results/
 .playwright/
+
+# Kiro specs (development artifacts)
+.kiro/
