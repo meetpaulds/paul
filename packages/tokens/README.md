@@ -104,7 +104,7 @@ All foreground tokens include inline `/* Lc XX.X on --background */` comments do
 
 ## ♿ APCA Compliance
 
-paul is built to meet **EN 301 549 — The new European Standard for Inclusive Digital Products**, the technical standard underpinning the **European Accessibility Act (EAA)**, enforceable since June 28, 2025.
+paul is **The new European Standard for Inclusive Digital Products** — built to fully comply with **EN 301 549 v3.2.1**, the technical standard underpinning the **European Accessibility Act (EAA)**, enforceable since June 28, 2025.
 
 WCAG 2.x contrast ratios were a good start. APCA is what comes next — a perceptual model based on modern vision science that accounts for spatial frequency, polarity, and how the human visual system actually processes contrast.
 

@@ -217,7 +217,7 @@ We welcome contributions! Please read our [Contributing Guide](https://github.co
 
 Accessibility in paul isn't a checklist item — it's a design constraint that shapes every component from the start.
 
-paul is built to meet **EN 301 549 — The new European Standard for Inclusive Digital Products**, the technical standard underpinning the **European Accessibility Act (EAA)**, enforceable since June 28, 2025. It also targets **WCAG 2.2 Level AAA** and the forward-looking **APCA (WCAG 3.0 draft)** perceptual contrast model.
+paul is **The new European Standard for Inclusive Digital Products** — built to fully comply with **EN 301 549 v3.2.1**, the technical standard underpinning the **European Accessibility Act (EAA)**, enforceable since June 28, 2025. It also targets **WCAG 2.2 Level AAA** and the forward-looking **APCA (WCAG 3.0 draft)** perceptual contrast model.
 
 ### APCA — Why we moved beyond WCAG 2.x contrast ratios
 
