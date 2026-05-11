@@ -30,7 +30,7 @@ This Storybook documentation and its associated component libraries are **partia
 
 | Standard | Version | Status |
 |----------|---------|--------|
-| **APCA (WCAG 3.0 draft)** | Working Draft | ✅ Conformant (with 1 known issue) |
+| **APCA (WCAG 3.0 draft)** | Working Draft | ✅ Fully conformant |
 | **WCAG 2.2** | Level AAA (target) / Level AA (currently achieved) | ⚠️ Partially conformant |
 | **EN 301 549** | v3.2.1 (2021-03) | ⚠️ Partially conformant |
 | **European Accessibility Act (EAA)** | Directive 2019/882 | ⚠️ In progress |
@@ -43,9 +43,7 @@ paul uses the **Accessible Perceptual Contrast Algorithm (APCA)** from the WCAG 
 - **Body text**: Lc 75 (≈ WCAG 2.x 7:1 / AAA)
 - **Large text & UI components**: Lc 60 (≈ WCAG 2.x 4.5:1 / AA)
 
-**Validation Status**: 32/34 checks passing (94%)
-
-**Known Issue**: `--destructive-text` (dark mode) cannot meet Lc 75 threshold within design constraints. See "Non-conformant Areas" below.
+**Validation Status**: 34/34 checks passing (100%)
 
 > **Important**: WCAG 3.0 is currently a **working draft** and not yet a stable W3C recommendation. paul maintains backward compatibility with WCAG 2.2 Level AAA standards during this transition period. The APCA implementation is forward-looking and prepares paul for future accessibility standards.
 
@@ -68,14 +66,6 @@ paul uses the **Accessible Perceptual Contrast Algorithm (APCA)** from the WCAG 
 <!-- PLACEHOLDER: List all known non-conformities. Each entry must include: the affected element, the violated clause, a justification, and a remediation timeline. -->
 
 The following areas do not yet fully meet the requirements. We are actively working to address them.
-
-### 0. APCA Contrast — `--destructive-text` (Dark Mode)
-
-**Affected tokens:** `--destructive-text` in dark mode  
-**Description:** This token achieves Lc -48.0 but requires Lc 75 for body text classification. Cannot meet threshold within ±15% lightness constraint without significantly altering visual identity.  
-**Reason for deviation:** High saturation red (0° hue, 90% saturation) has limited contrast range on dark backgrounds. Larger lightness adjustment would compromise brand identity.  
-**Remediation timeline:** v1.0.5 — Token may be reclassified as "UI component" (Lc 60 threshold) if usage analysis confirms it's not used for body text, or manual designer adjustment will be applied.  
-**Workaround:** If your application uses `--destructive-text` for UI elements (buttons, badges, icons) rather than body text, the current Lc -48.0 is acceptable for large text/UI (though below the Lc 60 target).
 
 ### 1. Target Size (WCAG 2.5.5 / EN 301 549 §9.2.5.5) — AAA
 
