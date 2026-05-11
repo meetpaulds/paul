@@ -13,8 +13,8 @@ describe('APCAParser', () => {
     it('should preserve Lc values through parse/print cycle', () => {
       fc.assert(
         fc.property(
-          // Generate random Lc values in valid range
-          fc.double({ min: -108.3, max: 108.3 }),
+          // Generate random Lc values in valid range — exclude NaN/Infinity
+          fc.double({ min: -108.3, max: 108.3, noNaN: true }),
           (lc: number) => {
             const printed = APCAParser.print(lc);
             const parsed = APCAParser.parse(printed);
