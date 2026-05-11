@@ -11,6 +11,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed — ⚠️ Visual Breaking Change
 
+- **APCA (WCAG 3.0 draft) Migration — Perceptual Contrast Compliance**  
+  paul now uses the **Accessible Perceptual Contrast Algorithm (APCA)** from WCAG 3.0 working draft for color contrast validation. APCA provides more accurate perceptual contrast measurements than WCAG 2.x relative luminance ratios.
+
+  **One design token adjusted** to meet APCA Lc 75 threshold (body text):
+
+  | Token | Mode | Before | After | Lc before | Lc after | Background |
+  |-------|------|--------|-------|-----------|----------|------------|
+  | `--muted-foreground` | Dark | `240 5% 71%` | `240 5% 82.7%` | Lc 57.1 | Lc 75.5 | `--muted` |
+
+  **APCA Thresholds Applied**:
+  - **Body text**: Lc 75 (≈ WCAG 2.x 7:1 / AAA)
+  - **Large text & UI components**: Lc 60 (≈ WCAG 2.x 4.5:1 / AA)
+
+  **Inline Lc Comments**: All foreground tokens now include inline comments documenting their APCA Lc values on each background (e.g., `/* Lc 105.9 on --background */`).
+
+  **Known Issue**: `--destructive-text` (dark mode) cannot meet Lc 75 threshold within ±15% lightness constraint and is flagged for manual review. Current Lc: -48.0 (needs Lc 75 for body text).
+
+  Affected files: `packages/tokens/src/tokens.css`, `packages/tokens/src/tokens.ts`  
+  Migration guide: [`docs/migration/apca-migration.md`](docs/migration/apca-migration.md)  
+  Full audit: [`docs/compliance/contrast-audit.md`](docs/compliance/contrast-audit.md)
+
+  > **Note**: WCAG 3.0 is currently a working draft and not yet a stable W3C recommendation. paul maintains backward compatibility with WCAG 2.2 Level AAA standards during this transition period.
+
+  > Chromatic snapshots for any story rendering `muted-foreground` in dark mode will show a diff — accept these as the new baseline.
+
+### Added
+
+- **APCA Validation Tooling** — new scripts in `packages/tokens`:
+  - `pnpm run validate:apca` — validates all tokens against APCA thresholds (exit code 0 for pass, 1 for fail)
+  - `pnpm run validate:apca:json` — outputs JSON validation report
+  - `pnpm run recalculate:tokens` — recalculates tokens to meet APCA thresholds
+  - `pnpm run recalculate:tokens:dry-run` — preview token changes without modifying files
+- **CI Integration** — APCA validation now runs in CI pipeline; failures block merges; JSON report uploaded as artifact
+
+### Changed — ⚠️ Visual Breaking Change
+
 - **WCAG 2.2 SC 1.4.6 / EN 301 549 §9.1.4.6 — Contrast (Enhanced) token corrections**  
   Four design tokens were below the 7:1 AAA threshold and have been adjusted (lightness only; hue and saturation unchanged):
 

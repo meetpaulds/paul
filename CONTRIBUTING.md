@@ -58,6 +58,29 @@ Before submitting your pull request, ensure the following pass:
 - [ ] `pnpm lint` passes with no errors
 - [ ] `pnpm typecheck` passes with no TypeScript errors
 - [ ] `pnpm build` completes successfully
+- [ ] `pnpm run validate:apca` passes (if modifying color tokens)
+
+## APCA Validation (Color Tokens)
+
+If your PR modifies color tokens in `packages/tokens/src/tokens.css`, you must validate APCA compliance:
+
+```bash
+cd packages/tokens
+pnpm run validate:apca
+```
+
+**APCA Thresholds**:
+- **Body text** (Lc 75): `foreground`, `card-foreground`, `popover-foreground`, `muted-foreground`, `destructive-text`
+- **Large text & UI components** (Lc 60): All other foreground tokens
+
+The validation tool checks all foreground-background pairs defined in the token usage map. If validation fails:
+
+1. Review the failure details (token name, mode, Lc value, threshold)
+2. Use `pnpm run recalculate:tokens:dry-run` to preview automatic adjustments
+3. Run `pnpm run recalculate:tokens` to apply adjustments
+4. Re-run `pnpm run validate:apca` to confirm compliance
+
+**Note**: Lightness adjustments are constrained to ±15% to preserve visual identity. Tokens that cannot meet thresholds within this constraint require manual review.
 
 ## Code Standards
 

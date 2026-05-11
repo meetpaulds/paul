@@ -69,12 +69,22 @@ pnpm dev
 
 ## Accessibility
 
-paul targets **WCAG 2.2 Level AAA** and **EN 301 549 v3.2.1** compliance to meet the requirements of the **European Accessibility Act (EAA)**, enforceable since June 28, 2025.
+paul targets **APCA (WCAG 3.0 draft)** compliance alongside **WCAG 2.2 Level AAA** and **EN 301 549 v3.2.1** to meet the requirements of the **European Accessibility Act (EAA)**, enforceable since June 28, 2025.
+
+### Contrast Methodology
+
+paul uses the **Accessible Perceptual Contrast Algorithm (APCA)** from the WCAG 3.0 working draft for color contrast validation. APCA provides more accurate perceptual contrast measurements than WCAG 2.x relative luminance ratios:
+
+- **Body text**: Lc 75 (≈ WCAG 2.x 7:1 / AAA)
+- **Large text & UI components**: Lc 60 (≈ WCAG 2.x 4.5:1 / AA)
+
+> **Note**: WCAG 3.0 is currently a working draft and not yet a stable W3C recommendation. paul maintains backward compatibility with WCAG 2.2 Level AAA standards during this transition period.
 
 | Document | Description |
 |----------|-------------|
 | [Accessibility Statement](./docs/a11y-statement.md) | Conformance status, known issues, contact & enforcement — also a reusable template for consumers |
 | [EN 301 549 Compliance Matrix](./docs/compliance/en301549-matrix.md) | Per-component mapping of all 56 components to EN 301 549 clauses and WCAG 2.2 criteria |
+| [APCA Migration Guide](./docs/migration/apca-migration.md) | Details on the APCA migration, token changes, and visual impact |
 
 > **Consumers:** Copy `docs/a11y-statement.md` into your own product, replace all `<!-- PLACEHOLDER: … -->` markers, and publish it in a clearly accessible location (footer, imprint, or main navigation).
 
