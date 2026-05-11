@@ -1,32 +1,123 @@
-# Contrast Audit — WCAG 2.2 §1.4.6 Contrast (Enhanced)
+# Contrast Audit — APCA (WCAG 3.0) & WCAG 2.2 §1.4.6
 
-> **Criterion:** WCAG 2.2 SC 1.4.6 / EN 301 549 §9.1.4.6  
-> **Requirement:** Minimum contrast ratio of **7:1** for normal text (AAA)  
-> **Scope:** `--muted-foreground`, `--secondary-foreground`, `--destructive-text`, `--sidebar-foreground` design tokens  
-> **Audit date:** 2026-04-24  
-> **Tool:** WCAG relative luminance formula (IEC 61966-2-1 / WCAG 2.x definition), verified programmatically  
+> **Primary Criterion:** APCA (WCAG 3.0 draft) Lc thresholds  
+> **Secondary Criterion:** WCAG 2.2 SC 1.4.6 / EN 301 549 §9.1.4.6  
+> **APCA Requirement:** Lc 75 for body text, Lc 60 for large text/UI  
+> **WCAG 2.x Requirement:** Minimum contrast ratio of **7:1** for normal text (AAA)  
+> **Scope:** All foreground design tokens  
+> **Audit date:** 2025-01-XX (APCA), 2026-04-24 (WCAG 2.x)  
+> **Tools:** `apca-w3` npm package, WCAG relative luminance formula  
 
 ---
 
 ## Methodology
 
-Contrast ratios were calculated using the WCAG 2.x relative luminance formula:
+### APCA (Current Standard)
+
+paul now uses the **Accessible Perceptual Contrast Algorithm (APCA)** from WCAG 3.0 working draft. APCA provides perceptually uniform contrast measurements using Lc (Lightness contrast) values:
+
+```typescript
+import { APCAcontrast } from 'apca-w3';
+
+// Calculate Lc value
+const lc = APCAcontrast(foregroundRGB, backgroundRGB);
+// Returns: Lc value from -108.3 to +108.3
+// Positive: light-on-dark
+// Negative: dark-on-light
+```
+
+**APCA Thresholds**:
+- **Body text**: Lc 75 (≈ WCAG 2.x 7:1 / AAA)
+- **Large text**: Lc 60 (≈ WCAG 2.x 4.5:1 / AA)
+- **UI components**: Lc 60 (≈ WCAG 2.x 4.5:1 / AA)
+
+**Token Classification**:
+- **Body text** (Lc 75): `foreground`, `card-foreground`, `popover-foreground`, `muted-foreground`, `destructive-text`
+- **UI components** (Lc 60): All other foreground tokens
+
+### WCAG 2.x (Historical Reference)
+
+Previous audits used the WCAG 2.x relative luminance formula:
 
 ```
 L = 0.2126 × R_lin + 0.7152 × G_lin + 0.0722 × B_lin
 contrast = (L_lighter + 0.05) / (L_darker + 0.05)
 ```
 
-Each foreground token was tested against **every background it appears on** in practice:
-
-- `--muted-foreground` → `--background` and `--muted`
-- `--secondary-foreground` → `--secondary`
-- `--destructive-text` → `--background` (used as inline error/warning text on page backgrounds)
-- `--sidebar-foreground` → `--sidebar`
+This methodology is preserved below for historical reference and backward compatibility verification.
 
 ---
 
-## Audit Results
+## APCA Audit Results (Current)
+
+### APCA Lc Values - All Tokens
+
+The following table shows APCA Lc values for all foreground tokens on their respective backgrounds. Values are extracted from inline comments in `tokens.css`.
+
+#### Light Mode
+
+| Token | Foreground HSL | Background | Lc Value | Threshold | Status |
+|-------|---------------|------------|----------|-----------|--------|
+| `--foreground` | `240 10% 3.9%` | `--background` | Lc 105.9 | 75 | ✅ Pass |
+| `--foreground` | `240 10% 3.9%` | `--card` | Lc 105.9 | 75 | ✅ Pass |
+| `--foreground` | `240 10% 3.9%` | `--popover` | Lc 105.9 | 75 | ✅ Pass |
+| `--card-foreground` | `240 10% 3.9%` | `--card` | Lc 105.9 | 75 | ✅ Pass |
+| `--popover-foreground` | `240 10% 3.9%` | `--popover` | Lc 105.9 | 75 | ✅ Pass |
+| `--primary-foreground` | `0 0% 98%` | `--primary` | Lc -103.4 | 60 | ✅ Pass |
+| `--secondary-foreground` | `240 5.9% 10%` | `--secondary` | Lc 98.0 | 60 | ✅ Pass |
+| `--muted-foreground` | `240 5% 33%` | `--background` | Lc 87.7 | 75 | ✅ Pass |
+| `--muted-foreground` | `240 5% 33%` | `--card` | Lc 87.7 | 75 | ✅ Pass |
+| `--muted-foreground` | `240 5% 33%` | `--muted` | Lc 81.2 | 75 | ✅ Pass |
+| `--accent-foreground` | `240 5.9% 10%` | `--accent` | Lc 98.0 | 60 | ✅ Pass |
+| `--destructive-foreground` | `0 0% 100%` | `--destructive` | Lc -74.4 | 60 | ✅ Pass |
+| `--destructive-text` | `0 72% 39%` | `--background` | Lc 83.3 | 75 | ✅ Pass |
+| `--destructive-text` | `0 72% 39%` | `--card` | Lc 83.3 | 75 | ✅ Pass |
+| `--sidebar-foreground` | `240 5.3% 26.1%` | `--sidebar` | Lc 91.3 | 60 | ✅ Pass |
+| `--sidebar-primary-foreground` | `0 0% 98%` | `--sidebar-primary` | Lc -103.4 | 60 | ✅ Pass |
+| `--sidebar-accent-foreground` | `240 5.9% 10%` | `--sidebar-accent` | Lc 98.0 | 60 | ✅ Pass |
+
+#### Dark Mode
+
+| Token | Foreground HSL | Background | Lc Value | Threshold | Status |
+|-------|---------------|------------|----------|-----------|--------|
+| `--foreground` | `0 0% 98%` | `--background` | Lc -104.5 | 75 | ✅ Pass |
+| `--foreground` | `0 0% 98%` | `--card` | Lc -104.5 | 75 | ✅ Pass |
+| `--foreground` | `0 0% 98%` | `--popover` | Lc -104.5 | 75 | ✅ Pass |
+| `--card-foreground` | `0 0% 98%` | `--card` | Lc -104.5 | 75 | ✅ Pass |
+| `--popover-foreground` | `0 0% 98%` | `--popover` | Lc -104.5 | 75 | ✅ Pass |
+| `--primary-foreground` | `240 5.9% 10%` | `--primary` | Lc 101.5 | 60 | ✅ Pass |
+| `--secondary-foreground` | `0 0% 98%` | `--secondary` | Lc -101.3 | 60 | ✅ Pass |
+| `--muted-foreground` | `240 5% 82.7%` | `--background` | Lc -78.7 | 75 | ✅ Pass |
+| `--muted-foreground` | `240 5% 82.7%` | `--card` | Lc -78.7 | 75 | ✅ Pass |
+| `--muted-foreground` | `240 5% 82.7%` | `--muted` | Lc -75.5 | 75 | ✅ Pass |
+| `--accent-foreground` | `0 0% 98%` | `--accent` | Lc -101.3 | 60 | ✅ Pass |
+| `--destructive-foreground` | `0 0% 100%` | `--destructive` | Lc -96.3 | 60 | ✅ Pass |
+| `--destructive-text` | `0 90% 70%` | `--background` | Lc -48.0 | 75 | ❌ Fail |
+| `--destructive-text` | `0 90% 70%` | `--card` | Lc -48.0 | 75 | ❌ Fail |
+| `--sidebar-foreground` | `240 4.8% 95.9%` | `--sidebar` | Lc -99.5 | 60 | ✅ Pass |
+| `--sidebar-primary-foreground` | `0 0% 100%` | `--sidebar-primary` | Lc -87.2 | 60 | ✅ Pass |
+| `--sidebar-accent-foreground` | `240 4.8% 95.9%` | `--sidebar-accent` | Lc -97.4 | 60 | ✅ Pass |
+
+### APCA Token Changes (v1.0.4)
+
+| Token | Mode | Before | After | Lc Before | Lc After | Background | Change |
+|-------|------|--------|-------|-----------|----------|------------|--------|
+| `--muted-foreground` | Dark | `240 5% 71%` | `240 5% 82.7%` | Lc -57.1 | Lc -75.5 | `--muted` | +11.7% lightness |
+
+**Hue and Saturation**: Preserved (240°, 5%)  
+**Constraint**: ±15% lightness adjustment maximum
+
+### Known Issues
+
+**`--destructive-text` (Dark Mode)**:
+- **Current Lc**: -48.0 (needs Lc 75 for body text)
+- **Status**: Flagged for manual review
+- **Issue**: Cannot meet Lc 75 threshold within ±15% lightness constraint
+- **Workaround**: May be reclassified as UI component (Lc 60 threshold) in future update
+
+---
+
+## WCAG 2.x Audit Results (Historical Reference)
 
 ### Light Mode
 
@@ -96,3 +187,35 @@ All changes are to lightness only; hue and saturation are preserved.
 
 *Audit performed against EN 301 549 v3.2.1 §9.1.4.6 · WCAG 2.2 SC 1.4.6*  
 *Files changed: `packages/tokens/src/tokens.css`, `packages/tokens/src/tokens.ts`*
+
+---
+
+## APCA to WCAG 2.x Equivalence Mapping
+
+The following table provides **approximate** equivalences between APCA Lc values and WCAG 2.x contrast ratios. These are not direct conversions due to different perceptual models.
+
+| APCA Lc | Approximate WCAG 2.x Ratio | WCAG 2.x Level | Use Case |
+|---------|----------------------------|----------------|----------|
+| Lc 90 | ~10:1 | AAA+ | Preferred for body text |
+| **Lc 75** | **~7:1** | **AAA** | **Body text (paul standard)** |
+| **Lc 60** | **~4.5:1** | **AA** | **Large text / UI (paul standard)** |
+| Lc 45 | ~3:1 | AA (large text) | Large text minimum |
+| Lc 30 | ~2:1 | Fail | Below minimum |
+
+> **Disclaimer**: APCA and WCAG 2.x use fundamentally different perceptual models. APCA accounts for spatial frequency, polarity, and human vision characteristics that WCAG 2.x does not. The equivalences shown are approximations for reference only and should not be used for compliance decisions.
+
+### Why APCA is More Accurate
+
+| Limitation | WCAG 2.x | APCA |
+|------------|----------|------|
+| **Perceptual uniformity** | Not perceptually uniform across luminance range | Perceptually uniform |
+| **Polarity** | Not preserved (light-on-dark = dark-on-light) | Preserved (+ for light-on-dark, - for dark-on-light) |
+| **Spatial frequency** | Not considered | Accounts for text size and weight |
+| **Color appearance** | Relative luminance only | Considers human vision characteristics |
+| **Scientific basis** | 1990s research | Modern vision science (2020s) |
+
+---
+
+*APCA audit performed 2025-01-XX using `apca-w3@0.1.9`*  
+*WCAG 2.x audit performed 2026-04-24 using relative luminance formula*  
+*Files: `packages/tokens/src/tokens.css`, `packages/tokens/src/tokens.ts`*
