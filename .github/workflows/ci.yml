@@ -60,6 +60,23 @@ jobs:
       - name: Run unit tests
         run: pnpm test
 
+      - name: Validate APCA compliance
+        run: pnpm run validate:apca
+        working-directory: packages/tokens
+
+      - name: Upload APCA validation report
+        if: always()
+        run: pnpm run validate:apca:json
+        working-directory: packages/tokens
+
+      - name: Upload APCA report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apca-validation-report
+          path: packages/tokens/apca-report.json
+          retention-days: 30
+
       - name: Build storybook
         run: pnpm build:storybook
 
