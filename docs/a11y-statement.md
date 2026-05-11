@@ -91,8 +91,7 @@ The following areas do not yet fully meet the requirements. We are actively work
 
 If you encounter barriers in our Storybook documentation or component libraries, please get in touch:
 
-**Email (direct):** [paul@sirpauls.com](mailto:paul@sirpauls.com)  
-**Email (general):** [office@sirpauls.com](mailto:office@sirpauls.com)  
+**Email:** [paul@sirpauls.com](mailto:paul@sirpauls.com)  
 **GitHub Issues:** [https://github.com/meetpaulds/paul/issues](https://github.com/meetpaulds/paul/issues) *(label: `accessibility`)*  
 **GitHub Discussions:** [https://github.com/meetpaulds/paul/discussions](https://github.com/meetpaulds/paul/discussions)
 
