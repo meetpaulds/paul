@@ -8,20 +8,11 @@ const __dirname = dirname(__filename)
 
 export default defineConfig({
   plugins: [
-    {
-      name: 'svelte-vitest-workaround',
-      configureServer(server: any) {
-        if (!server.environments) {
-          server.environments = { ssr: { config: server.config } }
-        }
-      },
-    },
     svelte({ compilerOptions: { hmr: false } }),
   ],
   test: {
     environment: 'jsdom',
     globals: true,
-    setupFiles: ['./src/test/setup.ts'],
   },
   resolve: {
     alias: {

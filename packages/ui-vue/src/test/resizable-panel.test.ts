@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import UresizableUpanel from '../../components/resizable-panel.vue'
+import UresizableUpanel from '../components/resizable-panel.vue'
 
 describe('UresizableUpanel', () => {
   it('renders without errors', () => {

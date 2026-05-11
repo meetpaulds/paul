@@ -1,0 +1,394 @@
+
+> paul@0.0.13 test /home/chris/repositories/sirpauls-internal/paul
+> pnpm --filter "./packages/*" test
+
+Scope: 5 of 10 workspace projects
+packages/ui-svelte test$ vitest run
+packages/ui-svelte test:  RUN  v2.1.9 /home/chris/repositories/sirpauls-internal/paul/packages/ui-svelte
+packages/ui-svelte test:  ✓ src/test/dummy.test.ts (1 test) 2ms
+packages/ui-svelte test:  Test Files  1 passed (1)
+packages/ui-svelte test:       Tests  1 passed (1)
+packages/ui-svelte test:    Start at  16:15:41
+packages/ui-svelte test:    Duration  966ms (transform 32ms, setup 0ms, collect 20ms, tests 2ms, environment 506ms, prepare 137ms)
+packages/ui-svelte test: Done
+packages/ui-react test$ vitest run
+packages/ui-vue test$ vitest run
+packages/ui-react test: ▲ [WARNING] The condition "types" here will never be used as it comes after both "import" and "require" [package.json]
+packages/ui-react test:     package.json:38:6:
+packages/ui-react test:       38 │       "types": "./dist/index.d.ts"
+packages/ui-react test:          ╵       ~~~~~~~
+packages/ui-react test:   The "import" condition comes earlier and will be used for all "import" statements:
+packages/ui-react test:     package.json:36:6:
+packages/ui-react test:       36 │       "import": "./dist/index.js",
+packages/ui-react test:          ╵       ~~~~~~~~
+packages/ui-react test:   The "require" condition comes earlier and will be used for all "require" calls:
+packages/ui-react test:     package.json:37:6:
+packages/ui-react test:       37 │       "require": "./dist/index.cjs",
+packages/ui-react test:          ╵       ~~~~~~~~~
+packages/ui-vue test: ▲ [WARNING] The condition "types" here will never be used as it comes after both "import" and "require" [package.json]
+packages/ui-vue test:     package.json:38:6:
+packages/ui-vue test:       38 │       "types": "./dist/index.d.ts"
+packages/ui-vue test:          ╵       ~~~~~~~
+packages/ui-vue test:   The "import" condition comes earlier and will be used for all "import" statements:
+packages/ui-vue test:     package.json:36:6:
+packages/ui-vue test:       36 │       "import": "./dist/index.js",
+packages/ui-vue test:          ╵       ~~~~~~~~
+packages/ui-vue test:   The "require" condition comes earlier and will be used for all "require" calls:
+packages/ui-vue test:     package.json:37:6:
+packages/ui-vue test:       37 │       "require": "./dist/index.cjs",
+packages/ui-vue test:          ╵       ~~~~~~~~~
+packages/ui-vue test: [33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+packages/ui-react test: [vite:react-babel] We recommend switching to `@vitejs/plugin-react-oxc` for improved performance. More information at https://vite.dev/rolldown
+packages/ui-react test:  RUN  v3.2.4 /home/chris/repositories/sirpauls-internal/paul/packages/ui-react
+packages/ui-vue test:  RUN  v3.2.4 /home/chris/repositories/sirpauls-internal/paul/packages/ui-vue
+packages/ui-vue test:  ✓ src/test/data-table.test.ts (1 test) 68ms
+packages/ui-vue test:  ✓ src/test/breadcrumb-link.test.ts (1 test) 55ms
+packages/ui-vue test:  ✓ src/test/skeleton.test.ts (1 test) 45ms
+packages/ui-vue test:  ✓ src/test/navigation-menu-link.test.ts (1 test) 86ms
+packages/ui-vue test:  ✓ src/test/pagination-ellipsis.test.ts (1 test) 120ms
+packages/ui-vue test:  ✓ src/test/table-head.test.ts (1 test) 133ms
+packages/ui-vue test:  ✓ src/test/navigation-menu-list.test.ts (1 test) 134ms
+packages/ui-vue test:  ✓ src/test/progress.test.ts (1 test) 58ms
+packages/ui-vue test: stderr | src/test/tooltip.test.ts > Utooltip > renders without errors
+packages/ui-vue test: [Vue warn]: Missing required prop: "content" 
+packages/ui-vue test:   at <Tooltip ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/menubar.test.ts (1 test) 79ms
+packages/ui-vue test:  ✓ src/test/tooltip.test.ts (1 test) 106ms
+packages/ui-vue test:  ✓ src/test/slider.test.ts (1 test) 177ms
+packages/ui-react test:  ✓ src/test/popover.test.tsx (3 tests) 949ms
+packages/ui-react test:    ✓ Popover > renders trigger  547ms
+packages/ui-react test:    ✓ Popover > shows content on trigger click  357ms
+packages/ui-react test:  ✓ src/test/select.test.tsx (4 tests) 1132ms
+packages/ui-react test:    ✓ Select > opens dropdown on click  371ms
+packages/ui-react test:    ✓ Select > selects an option  311ms
+packages/ui-react test:  ✓ src/test/alert-dialog.test.tsx (6 tests) 1378ms
+packages/ui-react test:    ✓ AlertDialog > renders trigger button  469ms
+packages/ui-react test:    ✓ AlertDialog > calls action handler and closes  302ms
+packages/ui-react test:  ✓ src/test/dialog.test.tsx (5 tests) 1336ms
+packages/ui-react test:    ✓ Dialog > renders trigger button  435ms
+packages/ui-react test:    ✓ Dialog > opens dialog on trigger click  354ms
+packages/ui-react test:  ✓ src/test/dropdown-menu.test.tsx (4 tests) 1244ms
+packages/ui-react test:    ✓ DropdownMenu > renders trigger button  463ms
+packages/ui-react test:    ✓ DropdownMenu > opens menu on trigger click  505ms
+packages/ui-react test:  ✓ src/test/sheet.test.tsx (6 tests) 1417ms
+packages/ui-react test:    ✓ Sheet > renders trigger button  496ms
+packages/ui-react test:    ✓ Sheet > opens sheet on trigger click  317ms
+packages/ui-react test:  ✓ src/test/menubar.test.tsx (5 tests) 1469ms
+packages/ui-react test:    ✓ Menubar > renders menu triggers  548ms
+packages/ui-react test:    ✓ Menubar > opens menu on trigger click  391ms
+packages/ui-react test:  ✓ src/test/combobox.test.tsx (6 tests) 1326ms
+packages/ui-react test:    ✓ Combobox > opens dropdown on click  393ms
+packages/ui-react test:    ✓ Combobox > shows empty message when no match  310ms
+packages/ui-react test:  ✓ src/test/auth-patterns.test.tsx (24 tests) 1839ms
+packages/ui-react test:    ✓ InputOTP — WCAG 3.3.8 accessibility > has autocomplete="one-time-code" (WCAG 3.3.8)  520ms
+packages/ui-vue test:  ✓ src/test/breadcrumb-separator.test.ts (1 test) 88ms
+packages/ui-vue test: stderr | src/test/alert-dialog-cancel.test.ts > UalertUdialogUcancel > renders without errors
+packages/ui-vue test: [Vue warn]: injection "alert-dialog-close" not found. 
+packages/ui-vue test:   at <AlertDialogCancel ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/alert-dialog-cancel.test.ts (1 test) 104ms
+packages/ui-vue test:  ✓ src/test/alert-description.test.ts (1 test) 147ms
+packages/ui-vue test:  ✓ src/test/combobox.test.ts (1 test) 168ms
+packages/ui-vue test:  ✓ src/test/calendar.test.ts (1 test) 214ms
+packages/ui-vue test:  ✓ src/test/breadcrumb-list.test.ts (1 test) 178ms
+packages/ui-vue test:  ✓ src/test/card-footer.test.ts (1 test) 173ms
+packages/ui-vue test: stderr | src/test/drawer-content.test.ts > UdrawerUcontent > renders without errors
+packages/ui-vue test: [Vue warn]: injection "drawer-open" not found. 
+packages/ui-vue test:   at <DrawerContent ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test: [Vue warn]: injection "drawer-close" not found. 
+packages/ui-vue test:   at <DrawerContent ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/drawer-content.test.ts (1 test) 173ms
+packages/ui-vue test:  ✓ src/test/alert-dialog-title.test.ts (1 test) 159ms
+packages/ui-react test:  ✓ src/test/calendar.test.tsx (5 tests) 2664ms
+packages/ui-react test:    ✓ Calendar > renders a grid  714ms
+packages/ui-react test:    ✓ Calendar > renders day cells  425ms
+packages/ui-react test:    ✓ Calendar > calls onSelect when a day is clicked  621ms
+packages/ui-react test:    ✓ Calendar > navigates to next month  633ms
+packages/ui-vue test:  ✓ src/test/checkbox.test.ts (1 test) 117ms
+packages/ui-vue test:  ✓ src/test/card-content.test.ts (1 test) 88ms
+packages/ui-react test:  ✓ src/test/date-picker.test.tsx (5 tests) 2563ms
+packages/ui-react test:    ✓ DatePicker > opens calendar on trigger click  1040ms
+packages/ui-react test:    ✓ DatePicker > calls onSelect when a day is clicked  1203ms
+packages/ui-react test:  ✓ src/test/drawer.test.tsx (4 tests) 883ms
+packages/ui-react test:    ✓ Drawer > renders trigger button  354ms
+packages/ui-react test:    ✓ Drawer > opens drawer on trigger click  336ms
+packages/ui-react test:  ✓ src/test/checkbox.test.tsx (6 tests) 929ms
+packages/ui-react test:    ✓ Checkbox > renders a checkbox  457ms
+packages/ui-react test:  ✓ src/test/accordion.test.tsx (5 tests) 1443ms
+packages/ui-react test:    ✓ Accordion > renders triggers  571ms
+packages/ui-react test:    ✓ Accordion > opens content on trigger click  400ms
+packages/ui-react test:    ✓ Accordion > closes open item when another is clicked (single type)  329ms
+packages/ui-react test:  ✓ src/test/hover-card.test.tsx (3 tests) 979ms
+packages/ui-react test:    ✓ HoverCard > renders trigger  492ms
+packages/ui-react test:    ✓ HoverCard > shows content on hover  451ms
+packages/ui-react test:  ✓ src/test/switch.test.tsx (6 tests) 832ms
+packages/ui-react test:    ✓ Switch > renders a switch  370ms
+packages/ui-react test:  ✓ src/test/context-menu.test.tsx (4 tests) 1041ms
+packages/ui-react test:    ✓ ContextMenu > opens on right-click  557ms
+packages/ui-react test:    ✓ ContextMenu > renders label when open  302ms
+packages/ui-react test:  ✓ src/test/radio-group.test.tsx (4 tests) 881ms
+packages/ui-react test:    ✓ RadioGroup > renders radio buttons  449ms
+packages/ui-react test:  ✓ src/test/navigation-menu.test.tsx (4 tests) 1110ms
+packages/ui-react test:    ✓ NavigationMenu > renders navigation triggers  629ms
+packages/ui-react test:    ✓ NavigationMenu > opens dropdown on trigger click  361ms
+packages/ui-react test:  ✓ src/test/tabs.test.tsx (5 tests) 878ms
+packages/ui-react test:    ✓ Tabs > renders tab triggers  502ms
+packages/ui-vue test:  ✓ src/test/pagination.test.ts (1 test) 106ms
+packages/ui-vue test: stderr | src/test/carousel-previous.test.ts > UcarouselUprevious > renders without errors
+packages/ui-vue test: [Vue warn]: injection "carousel-prev" not found. 
+packages/ui-vue test:   at <CarouselPrevious ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/carousel-previous.test.ts (1 test) 99ms
+packages/ui-vue test:  ✓ src/test/switch.test.ts (1 test) 154ms
+packages/ui-vue test:  ✓ src/test/input-group-text.test.ts (1 test) 107ms
+packages/ui-vue test: stderr | src/test/command-item.test.ts > UcommandUitem > renders without errors
+packages/ui-vue test: [Vue warn]: injection "command-search" not found. 
+packages/ui-vue test:   at <CommandItem ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/scroll-area.test.ts (1 test) 183ms
+packages/ui-vue test:  ✓ src/test/command-item.test.ts (1 test) 232ms
+packages/ui-vue test:  ✓ src/test/input.test.ts (1 test) 158ms
+packages/ui-vue test: stderr | src/test/sheet-content.test.ts > UsheetUcontent > renders without errors
+packages/ui-vue test: [Vue warn]: injection "sheet-open" not found. 
+packages/ui-vue test:   at <SheetContent ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test: [Vue warn]: injection "sheet-close" not found. 
+packages/ui-vue test:   at <SheetContent ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/sheet-content.test.ts (1 test) 151ms
+packages/ui-vue test:  ✓ src/test/select.test.ts (1 test) 143ms
+packages/ui-vue test: stderr | src/test/carousel-next.test.ts > UcarouselUnext > renders without errors
+packages/ui-vue test: [Vue warn]: injection "carousel-next" not found. 
+packages/ui-vue test:   at <CarouselNext ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/carousel-next.test.ts (1 test) 168ms
+packages/ui-vue test:  ✓ src/test/resizable-panel.test.ts (1 test) 114ms
+packages/ui-react test:  ✓ src/test/input.test.tsx (6 tests) 513ms
+packages/ui-react test:  ✓ src/test/textarea.test.tsx (5 tests) 714ms
+packages/ui-react test:    ✓ Textarea > renders a textarea  335ms
+packages/ui-vue test:  ✓ src/test/card.test.ts (1 test) 112ms
+packages/ui-react test:  ✓ src/test/toggle.test.tsx (7 tests) 665ms
+packages/ui-react test:    ✓ Toggle > renders a toggle button  386ms
+packages/ui-vue test:  ✓ src/test/carousel.test.ts (1 test) 52ms
+packages/ui-react test:  ✓ src/test/slider.test.tsx (5 tests) 415ms
+packages/ui-react test:    ✓ Slider > renders a slider  311ms
+packages/ui-react test:  ✓ src/test/carousel.test.tsx (5 tests) 1006ms
+packages/ui-react test:    ✓ Carousel > renders slide content  585ms
+packages/ui-vue test:  ✓ src/test/table-header.test.ts (1 test) 117ms
+packages/ui-react test:  ✓ src/test/data-table.test.tsx (5 tests) 606ms
+packages/ui-react test:    ✓ DataTable > renders column headers  368ms
+packages/ui-react test:  ✓ src/test/command.test.tsx (4 tests) 1048ms
+packages/ui-react test:    ✓ Command > renders command input  407ms
+packages/ui-react test:    ✓ Command > filters items on input  436ms
+packages/ui-react test:  ✓ src/test/toast.test.tsx (5 tests) 736ms
+packages/ui-react test:    ✓ Toast > renders toast title  380ms
+packages/ui-vue test:  ✓ src/test/resizable-panel-group.test.ts (1 test) 124ms
+packages/ui-react test:  ✓ src/test/button.test.tsx (8 tests) 553ms
+packages/ui-react test:  ✓ src/test/toggle-group.test.tsx (4 tests) 925ms
+packages/ui-react test:    ✓ ToggleGroup > selects item on click (single)  468ms
+packages/ui-vue test:  ✓ src/test/kbd.test.ts (1 test) 95ms
+packages/ui-react test:  ✓ src/test/input-otp.test.tsx (3 tests) 850ms
+packages/ui-react test:    ✓ InputOTP > renders OTP input  701ms
+packages/ui-vue test: stderr | src/test/alert-dialog-content.test.ts > UalertUdialogUcontent > renders without errors
+packages/ui-vue test: [Vue warn]: injection "alert-dialog-open" not found. 
+packages/ui-vue test:   at <AlertDialogContent ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test: stderr | src/test/alert-dialog-action.test.ts > UalertUdialogUaction > renders without errors
+packages/ui-vue test: [Vue warn]: injection "alert-dialog-close" not found. 
+packages/ui-vue test:   at <AlertDialogAction ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/alert-dialog-content.test.ts (1 test) 205ms
+packages/ui-vue test:  ✓ src/test/alert-dialog-action.test.ts (1 test) 146ms
+packages/ui-vue test:  ✓ src/test/command-separator.test.ts (1 test) 156ms
+packages/ui-vue test:  ✓ src/test/table-cell.test.ts (1 test) 173ms
+packages/ui-vue test:  ✓ src/test/separator.test.ts (1 test) 183ms
+packages/ui-react test:  ✓ src/test/button-group.test.tsx (4 tests) 409ms
+packages/ui-react test:    ✓ ButtonGroup > renders children buttons  364ms
+packages/ui-react test:  ✓ src/test/resizable.test.tsx (3 tests) 475ms
+packages/ui-react test:    ✓ Resizable > renders panel group  351ms
+packages/ui-vue test:  ✓ src/test/toast.test.ts (1 test) 113ms
+packages/ui-vue test:  ✓ src/test/avatar.test.ts (1 test) 139ms
+packages/ui-react test:  ✓ src/test/card.test.tsx (5 tests) 381ms
+packages/ui-vue test:  ✓ src/test/alert-dialog-footer.test.ts (1 test) 172ms
+packages/ui-react test:  ✓ src/test/field.test.tsx (7 tests) 518ms
+packages/ui-react test:    ✓ Field > renders children  365ms
+packages/ui-vue test:  ✓ src/test/sidebar-footer.test.ts (1 test) 178ms
+packages/ui-react test:  ✓ src/test/pagination.test.tsx (5 tests) 611ms
+packages/ui-react test:    ✓ Pagination > renders navigation element  354ms
+packages/ui-vue test:  ✓ src/test/select-label.test.ts (1 test) 152ms
+packages/ui-vue test:  ✓ src/test/pagination-item.test.ts (1 test) 302ms
+packages/ui-vue test:  ✓ src/test/card-header.test.ts (1 test) 161ms
+packages/ui-vue test:  ✓ src/test/breadcrumb-item.test.ts (1 test) 248ms
+packages/ui-react test:  ✓ src/test/table.test.tsx (5 tests) 800ms
+packages/ui-react test:    ✓ Table > renders a table  451ms
+packages/ui-react test:  ✓ src/test/collapsible.test.tsx (3 tests) 1306ms
+packages/ui-react test:    ✓ Collapsible > renders trigger  797ms
+packages/ui-react test:    ✓ Collapsible > reveals content on trigger click  370ms
+packages/ui-react test:  ✓ src/test/empty.test.tsx (7 tests) 507ms
+packages/ui-react test:  ✓ src/test/typography.test.tsx (6 tests) 894ms
+packages/ui-react test:    ✓ Typography > renders as p by default  322ms
+packages/ui-react test:    ✓ Typography > renders as h1 when variant is h1  433ms
+packages/ui-react test:  ✓ src/test/breadcrumb.test.tsx (5 tests) 930ms
+packages/ui-react test:    ✓ Breadcrumb > renders nav with aria-label breadcrumb  668ms
+packages/ui-vue test: stderr | src/test/command-input.test.ts > UcommandUinput > renders without errors
+packages/ui-vue test: [Vue warn]: injection "command-search" not found. 
+packages/ui-vue test:   at <CommandInput ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/command-input.test.ts (1 test) 316ms
+packages/ui-vue test:    ✓ UcommandUinput > renders without errors  308ms
+packages/ui-vue test:  ✓ src/test/spinner.test.ts (1 test) 100ms
+packages/ui-vue test:  ✓ src/test/dialog-header.test.ts (1 test) 147ms
+packages/ui-vue test:  ✓ src/test/alert-dialog-description.test.ts (1 test) 123ms
+packages/ui-vue test:  ✓ src/test/textarea.test.ts (1 test) 220ms
+packages/ui-react test:  ✓ src/test/tooltip.test.tsx (2 tests) 1337ms
+packages/ui-react test:    ✓ Tooltip > renders trigger  870ms
+packages/ui-react test:    ✓ Tooltip > shows tooltip content when open  451ms
+packages/ui-react test:  ✓ src/test/input-group.test.tsx (7 tests) 586ms
+packages/ui-react test:    ✓ InputGroup > renders children  411ms
+packages/ui-react test:  ✓ src/test/progress.test.tsx (4 tests) 487ms
+packages/ui-react test:    ✓ Progress > renders a progressbar  346ms
+packages/ui-vue test:  ✓ src/test/command-empty.test.ts (1 test) 125ms
+packages/ui-react test:  ✓ src/test/alert.test.tsx (6 tests) 390ms
+packages/ui-react test:  ✓ src/test/avatar.test.tsx (5 tests) 201ms
+packages/ui-vue test:  ✓ src/test/collapsible.test.ts (1 test) 71ms
+packages/ui-vue test:  ✓ src/test/sheet-description.test.ts (1 test) 113ms
+packages/ui-vue test:  ✓ src/test/pagination-previous.test.ts (1 test) 117ms
+packages/ui-vue test:  ✓ src/test/pagination-next.test.ts (1 test) 82ms
+packages/ui-vue test:  ✓ src/test/resizable-handle.test.ts (1 test) 99ms
+packages/ui-react test:  ✓ src/test/badge.test.tsx (6 tests) 158ms
+packages/ui-vue test:  ✓ src/test/table-footer.test.ts (1 test) 92ms
+packages/ui-vue test:  ✓ src/test/badge.test.ts (1 test) 121ms
+packages/ui-react test:  ✓ src/test/scroll-area.test.tsx (4 tests) 525ms
+packages/ui-vue test:  ✓ src/test/alert-dialog-header.test.ts (1 test) 67ms
+packages/ui-react test:  ✓ src/test/skeleton.test.tsx (4 tests) 238ms
+packages/ui-react test:  ✓ src/test/label.test.tsx (4 tests) 222ms
+packages/ui-react test:  ✓ src/test/kbd.test.tsx (4 tests) 263ms
+packages/ui-vue test: stderr | src/test/sidebar-trigger.test.ts > UsidebarUtrigger > renders without errors
+packages/ui-vue test: [Vue warn]: injection "sidebar-toggle" not found. 
+packages/ui-vue test:   at <SidebarTrigger ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/sidebar-trigger.test.ts (1 test) 179ms
+packages/ui-vue test: stderr | src/test/sheet-close.test.ts > UsheetUclose > renders without errors
+packages/ui-vue test: [Vue warn]: injection "sheet-close" not found. 
+packages/ui-vue test:   at <SheetClose ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/sheet-close.test.ts (1 test) 144ms
+packages/ui-react test:  ✓ src/test/sonner.test.tsx (2 tests) 320ms
+packages/ui-react test:  ✓ src/test/spinner.test.tsx (7 tests) 200ms
+packages/ui-react test:  ✓ src/test/aspect-ratio.test.tsx (2 tests) 428ms
+packages/ui-react test:    ✓ AspectRatio > renders children  393ms
+packages/ui-react test:  ✓ src/test/separator.test.tsx (4 tests) 99ms
+packages/ui-vue test:  ✓ src/test/sidebar-menu-button.test.ts (1 test) 38ms
+packages/ui-react test:  Test Files  55 passed (55)
+packages/ui-react test:       Tests  282 passed (282)
+packages/ui-react test:    Start at  16:15:42
+packages/ui-react test:    Duration  32.28s (transform 9.32s, setup 13.62s, collect 79.78s, tests 46.61s, environment 119.65s, prepare 25.32s)
+packages/ui-vue test:  ✓ src/test/command.test.ts (1 test) 47ms
+packages/ui-vue test:  ✓ src/test/date-picker.test.ts (1 test) 149ms
+packages/ui-vue test:  ✓ src/test/toggle.test.ts (1 test) 45ms
+packages/ui-react test: Done
+packages/ui-vue test:  ✓ src/test/radio-group.test.ts (1 test) 69ms
+packages/ui-vue test:  ✓ src/test/input-otp.test.ts (1 test) 56ms
+packages/ui-vue test:  ✓ src/test/navigation-menu.test.ts (1 test) 45ms
+packages/ui-vue test:  ✓ src/test/toast-description.test.ts (1 test) 73ms
+packages/ui-vue test: stderr | src/test/sidebar.test.ts > Usidebar > renders without errors
+packages/ui-vue test: [Vue warn]: injection "sidebar-open" not found. 
+packages/ui-vue test:   at <Sidebar ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/sidebar.test.ts (1 test) 67ms
+packages/ui-vue test: stderr | src/test/carousel-content.test.ts > UcarouselUcontent > renders without errors
+packages/ui-vue test: [Vue warn]: injection "carousel-current" not found. 
+packages/ui-vue test:   at <CarouselContent ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/carousel-content.test.ts (1 test) 63ms
+packages/ui-vue test:  ✓ src/test/breadcrumb.test.ts (1 test) 112ms
+packages/ui-vue test:  ✓ src/test/input-group.test.ts (1 test) 36ms
+packages/ui-vue test:  ✓ src/test/drawer-title.test.ts (1 test) 80ms
+packages/ui-vue test:  ✓ src/test/sheet-footer.test.ts (1 test) 59ms
+packages/ui-vue test:  ✓ src/test/card-description.test.ts (1 test) 67ms
+packages/ui-vue test:  ✓ src/test/chart-container.test.ts (1 test) 73ms
+packages/ui-vue test:  ✓ src/test/toaster.test.ts (1 test) 41ms
+packages/ui-vue test:  ✓ src/test/sidebar-header.test.ts (1 test) 69ms
+packages/ui-vue test:  ✓ src/test/sheet.test.ts (1 test) 21ms
+packages/ui-vue test:  ✓ src/test/menubar-separator.test.ts (1 test) 63ms
+packages/ui-vue test:  ✓ src/test/drawer-footer.test.ts (1 test) 64ms
+packages/ui-vue test:  ✓ src/test/table-row.test.ts (1 test) 68ms
+packages/ui-vue test:  ✓ src/test/card-title.test.ts (1 test) 59ms
+packages/ui-vue test:  ✓ src/test/aspect-ratio.test.ts (1 test) 31ms
+packages/ui-vue test:  ✓ src/test/command-group.test.ts (1 test) 95ms
+packages/ui-vue test:  ✓ src/test/sheet-header.test.ts (1 test) 78ms
+packages/ui-vue test: stderr | src/test/navigation-menu-trigger.test.ts > UnavigationUmenuUtrigger > renders without errors
+packages/ui-vue test: [Vue warn]: injection "nav-item-toggle" not found. 
+packages/ui-vue test:   at <NavigationMenuTrigger ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/navigation-menu-trigger.test.ts (1 test) 55ms
+packages/ui-vue test:  ✓ src/test/table-body.test.ts (1 test) 56ms
+packages/ui-vue test:  ✓ src/test/pagination-content.test.ts (1 test) 59ms
+packages/ui-vue test:  ✓ src/test/dropdown-menu-label.test.ts (1 test) 59ms
+packages/ui-vue test:  ✓ src/test/toast-title.test.ts (1 test) 38ms
+packages/ui-vue test:  ✓ src/test/table-caption.test.ts (1 test) 28ms
+packages/ui-vue test:  ✓ src/test/label.test.ts (1 test) 38ms
+packages/ui-vue test:  ✓ src/test/dialog-footer.test.ts (1 test) 61ms
+packages/ui-vue test:  ✓ src/test/typography.test.ts (1 test) 37ms
+packages/ui-vue test:  ✓ src/test/sidebar-content.test.ts (1 test) 39ms
+packages/ui-vue test:  ✓ src/test/drawer-description.test.ts (1 test) 35ms
+packages/ui-vue test:  ✓ src/test/button.test.ts (1 test) 83ms
+packages/ui-vue test:  ✓ src/test/alert-title.test.ts (1 test) 42ms
+packages/ui-vue test:  ✓ src/test/tabs.test.ts (1 test) 35ms
+packages/ui-vue test:  ✓ src/test/pagination-link.test.ts (1 test) 68ms
+packages/ui-vue test:  ✓ src/test/field.test.ts (1 test) 33ms
+packages/ui-vue test:  ✓ src/test/dropdown-menu-separator.test.ts (1 test) 37ms
+packages/ui-vue test:  ✓ src/test/sidebar-menu.test.ts (1 test) 49ms
+packages/ui-vue test:  ✓ src/test/breadcrumb-page.test.ts (1 test) 52ms
+packages/ui-vue test:  ✓ src/test/button-group.test.ts (1 test) 123ms
+packages/ui-vue test:  ✓ src/test/toast-viewport.test.ts (1 test) 73ms
+packages/ui-vue test:  ✓ src/test/toast-close.test.ts (1 test) 76ms
+packages/ui-vue test: stderr | src/test/drawer-trigger.test.ts > UdrawerUtrigger > renders without errors
+packages/ui-vue test: [Vue warn]: injection "drawer-toggle" not found. 
+packages/ui-vue test:   at <DrawerTrigger ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/drawer-trigger.test.ts (1 test) 42ms
+packages/ui-vue test:  ✓ src/test/navigation-menu-item.test.ts (1 test) 79ms
+packages/ui-vue test:  ✓ src/test/select-separator.test.ts (1 test) 83ms
+packages/ui-vue test:  ✓ src/test/alert.test.ts (1 test) 95ms
+packages/ui-vue test:  ✓ src/test/toast-action.test.ts (1 test) 44ms
+packages/ui-vue test:  ✓ src/test/command-list.test.ts (1 test) 74ms
+packages/ui-vue test:  ✓ src/test/drawer.test.ts (1 test) 35ms
+packages/ui-vue test:  ✓ src/test/chart-tooltip.test.ts (1 test) 69ms
+packages/ui-vue test:  ✓ src/test/table.test.ts (1 test) 35ms
+packages/ui-vue test:  ✓ src/test/sidebar-menu-item.test.ts (1 test) 35ms
+packages/ui-vue test: stderr | src/test/sheet-trigger.test.ts > UsheetUtrigger > renders without errors
+packages/ui-vue test: [Vue warn]: injection "sheet-toggle" not found. 
+packages/ui-vue test:   at <SheetTrigger ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test: stderr | src/test/alert-dialog-trigger.test.ts > UalertUdialogUtrigger > renders without errors
+packages/ui-vue test: [Vue warn]: injection "alert-dialog-toggle" not found. 
+packages/ui-vue test:   at <AlertDialogTrigger ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/sheet-trigger.test.ts (1 test) 45ms
+packages/ui-vue test:  ✓ src/test/alert-dialog-trigger.test.ts (1 test) 37ms
+packages/ui-vue test:  ✓ src/test/drawer-header.test.ts (1 test) 57ms
+packages/ui-vue test:  ✓ src/test/sidebar-group.test.ts (1 test) 43ms
+packages/ui-vue test:  ✓ src/test/sheet-title.test.ts (1 test) 103ms
+packages/ui-vue test:  ✓ src/test/empty.test.ts (1 test) 34ms
+packages/ui-vue test:  ✓ src/test/dialog.test.ts (1 test) 31ms
+packages/ui-vue test:  ✓ src/test/dropdown-menu.test.ts (1 test) 43ms
+packages/ui-vue test: stderr | src/test/navigation-menu-content.test.ts > UnavigationUmenuUcontent > renders without errors
+packages/ui-vue test: [Vue warn]: injection "nav-item-open" not found. 
+packages/ui-vue test:   at <NavigationMenuContent ref="VTU_COMPONENT" > 
+packages/ui-vue test:   at <VTUROOT>
+packages/ui-vue test:  ✓ src/test/navigation-menu-content.test.ts (1 test) 34ms
+packages/ui-vue test:  ✓ src/test/context-menu.test.ts (1 test) 41ms
+packages/ui-vue test:  ✓ src/test/toast-provider.test.ts (1 test) 28ms
+packages/ui-vue test:  ✓ src/test/sidebar-provider.test.ts (1 test) 26ms
+packages/ui-vue test:  ✓ src/test/alert-dialog.test.ts (1 test) 39ms
+packages/ui-vue test:  ✓ src/test/popover.test.ts (1 test) 31ms
+packages/ui-vue test:  ✓ src/test/hover-card.test.ts (1 test) 24ms
+packages/ui-vue test:  Test Files  140 passed (140)
+packages/ui-vue test:       Tests  140 passed (140)
+packages/ui-vue test:    Start at  16:15:42
+packages/ui-vue test:    Duration  44.18s (transform 12.86s, setup 24.60s, collect 83.42s, tests 13.27s, environment 219.00s, prepare 42.64s)
+packages/ui-vue test: Done

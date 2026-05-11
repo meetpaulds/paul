@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms'
         type="text"
         inputmode="numeric"
         autocomplete="one-time-code"
-        [maxlength]="maxLength"
+        [attr.maxlength]="maxLength"
         [value]="value"
         (input)="onRealInput($event)"
         [attr.aria-label]="'Enter one-time password, ' + maxLength + ' digits'"

@@ -1,6 +1,6 @@
 {
   "name": "@meetpaul/ui-svelte",
-  "version": "1.0.3",
+  "version": "0.0.14",
   "description": "paul — Svelte 5 component library. The same design system as @meetpaul/ui, built natively for Svelte.",
   "license": "MIT",
   "author": "SirPauls <office@sirpauls.com>",
@@ -54,6 +54,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
+    "lint": "eslint src --ext .ts",
     "typecheck": "svelte-check --tsconfig ./tsconfig.json",
     "test": "vitest run"
   },
@@ -67,15 +68,15 @@
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "@sveltejs/vite-plugin-svelte": "^4.0.4",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/svelte": "^5.3.1",
     "jsdom": "^26.1.0",
     "svelte": "^5.55.0",
     "svelte-check": "^4.4.6",
     "typescript": "^5.9.3",
-    "vite": "^8.0.8",
+    "vite": "^5.4.21",
     "vite-plugin-dts": "^4.3.0",
-    "vitest": "^3.1.2"
+    "vitest": "^2.1.9"
   }
 }
