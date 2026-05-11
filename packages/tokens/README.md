@@ -1,13 +1,22 @@
 # @meetpaul/tokens
 
-Design tokens for the [paul design system](https://meetpaulds.github.io/paul).  
-Framework-agnostic — works with React, Vue, Angular, Svelte, Laravel, or plain HTML.
+> *"Never build this button again."* — A sticky note on a monitor in Graz, Austria
+
+Design tokens for the [paul design system](https://meetpaulds.github.io/paul) — framework-agnostic, works with React, Vue, Angular, Svelte, Laravel, or plain HTML.
+
+paul started with a simple frustration: every project rebuilt the same colors, the same spacing, the same dark mode — slightly differently, with slightly different contrast, slightly different accessibility. So we extracted the decisions into tokens. One set of values, validated once, applied everywhere.
+
+As of v1.0.1, all tokens are validated against **APCA (WCAG 3.0 draft)** — the most accurate perceptual contrast model available. Not because a checkbox said so, but because the people using your product deserve text they can actually read.
+
+---
 
 ## Install
 
 ```sh
 npm install @meetpaul/tokens
 ```
+
+---
 
 ## Usage
 
@@ -17,8 +26,7 @@ npm install @meetpaul/tokens
 @import "@meetpaul/tokens/tokens.css";
 ```
 
-All tokens are available as CSS custom properties using the HSL channel convention,
-so you can compose arbitrary alpha values:
+All tokens are CSS custom properties using the HSL channel convention — compose arbitrary alpha values:
 
 ```css
 .my-button {
@@ -62,18 +70,20 @@ export default {
 ```ts
 import { tokens, light, dark } from '@meetpaul/tokens'
 
-// Access a specific token
-console.log(light.primary)         // '240 5.9% 10%'
+console.log(light.primary)          // '240 5.9% 10%'
 console.log(`hsl(${dark.primary})`) // 'hsl(0 0% 98%)'
 
-// Runtime theming
 function applyTheme(mode: 'light' | 'dark') {
   const t = tokens[mode]
   document.documentElement.style.setProperty('--primary', t.primary)
 }
 ```
 
+---
+
 ## Token reference
+
+All foreground tokens include inline `/* Lc XX.X on --background */` comments documenting their APCA contrast values directly in the CSS.
 
 | Token | Light | Dark |
 |---|---|---|
@@ -82,13 +92,43 @@ function applyTheme(mode: 'light' | 'dark') {
 | `--primary` | `240 5.9% 10%` | `0 0% 98%` |
 | `--secondary` | `240 4.8% 95.9%` | `240 3.7% 15.9%` |
 | `--muted` | `240 4.8% 95.9%` | `240 3.7% 15.9%` |
+| `--muted-foreground` | `240 5% 33%` | `240 5% 82.7%` |
 | `--accent` | `240 4.8% 95.9%` | `240 3.7% 15.9%` |
 | `--destructive` | `0 84.2% 50%` | `0 62.8% 30.6%` |
-| `--destructive-text` | `0 72% 44%` | `0 90% 65%` |
+| `--destructive-text` | `0 72% 39%` | `0 90% 78.5%` |
 | `--border` | `240 5.9% 90%` | `240 3.7% 15.9%` |
 | `--ring` | `240 5.9% 10%` | `240 4.9% 83.9%` |
 | `--radius` | `0.5rem` | `0.5rem` |
 
+---
+
+## ♿ APCA Compliance
+
+WCAG 2.x contrast ratios were a good start. APCA is what comes next — a perceptual model based on modern vision science that accounts for spatial frequency, polarity, and how the human visual system actually processes contrast.
+
+paul was one of the first design systems to adopt APCA in production. Every token pair is validated automatically in CI.
+
+| Threshold | Use case | Equivalent |
+|-----------|----------|------------|
+| **Lc 75** | Body text | ≈ WCAG 2.x AAA (7:1) |
+| **Lc 60** | Large text & UI components | ≈ WCAG 2.x AA (4.5:1) |
+
+**34/34 token pairs passing — 100% compliant**
+
+```bash
+# Validate all tokens against APCA thresholds
+pnpm run validate:apca
+
+# Generate a JSON report
+pnpm run validate:apca:json
+```
+
+> WCAG 3.0 is a working draft. paul maintains backward compatibility with WCAG 2.2 Level AAA during the transition period.
+
+Full details: [APCA Migration Guide](https://github.com/meetpaulds/paul/blob/main/docs/migration/apca-migration.md) · [Contrast Audit](https://github.com/meetpaulds/paul/blob/main/docs/compliance/contrast-audit.md)
+
+---
+
 ## License
 
-MIT © [SirPauls](https://github.com/meetpaulds)
+MIT — built with care (and too much coffee) in Graz by [@SirPauls](https://github.com/sirpauls)
