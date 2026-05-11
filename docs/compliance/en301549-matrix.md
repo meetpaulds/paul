@@ -1,7 +1,7 @@
 # EN 301 549 v3.2.1 — Compliance Matrix
 
 > **Version:** 1.0.3  
-> **Last updated:** 2026-04-24  
+> **Last updated:** 2026-05-11  
 > **Scope:** `@meetpaul/ui` · `@meetpaul/ui-vue` · `@meetpaul/ui-svelte` · `@meetpaul/ui-angular`  
 > **Standard:** EN 301 549 v3.2.1 (2021-03) → ETSI, applicable under the European Accessibility Act (EAA) from 28 June 2025  
 >
@@ -639,6 +639,8 @@
 
 | Version | Date | Change |
 |---------|------|--------|
+| 1.0.3 | 2026-05-11 | Aligned to v1.0.3 release — APCA compliance, EN 301 549 positioning |
+| 1.0.0 | 2026-05-11 | Aligned to v1.0.0 release — APCA compliance, EN 301 549 positioning |
 | 1.0.2 | 2026-04-24 | Initial release of the Compliance Matrix |
 
 ---
