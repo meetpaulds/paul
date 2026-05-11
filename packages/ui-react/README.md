@@ -40,7 +40,7 @@ export default function App() {
 
 ---
 
-## Component Library (58 Components)
+## Component Library (62 Components)
 
 ### Actions & Buttons
 | Component | Description |
@@ -62,6 +62,13 @@ export default function App() {
 | **Skeleton** | Loading placeholder for content that hasn't loaded yet |
 | **Spinner** | Loading indicator with size variants |
 | **Typography** | Text hierarchy components (heading levels and body text) |
+
+### Accessibility
+| Component | Description |
+|-----------|-------------|
+| **SkipLink** | Visually hidden anchor visible on focus — allows keyboard users to bypass navigation (WCAG 2.4.1) |
+| **ChartDataTable** | Accessible data table alternative for charts with optional `srOnly` mode (WCAG 1.1.1) |
+| **FieldHelp** | Context-sensitive help for form fields with info icon and optional external link (WCAG 3.3.5) |
 
 ### Data Entry & Forms
 | Component | Description |

@@ -18,6 +18,7 @@ const typographyVariants = cva('text-foreground', {
       small: 'text-sm font-medium leading-none',
       muted: 'text-sm text-muted-foreground',
       list: 'my-6 ml-6 list-disc [&>li]:mt-2',
+      prose: 'max-w-prose leading-7 [&:not(:first-child)]:mt-6 text-base tracking-normal',
     },
   },
   defaultVariants: {
@@ -38,11 +39,12 @@ const variantElementMap: Record<string, React.ElementType> = {
   small: 'small',
   muted: 'p',
   list: 'ul',
+  prose: 'p',
 }
 
 type TypographyProps = {
   /** Visual/semantic style variant to apply. @default 'p' */
-  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'blockquote' | 'code' | 'lead' | 'large' | 'small' | 'muted' | 'list'
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'blockquote' | 'code' | 'lead' | 'large' | 'small' | 'muted' | 'list' | 'prose'
   /** When true, renders the child element as the root via Radix Slot. */
   asChild?: boolean
 } & React.HTMLAttributes<HTMLElement> &

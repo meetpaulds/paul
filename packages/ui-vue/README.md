@@ -46,6 +46,14 @@ import { Button, Input, Card, CardHeader, CardTitle, CardContent } from '@meetpa
 
 ## Component Library
 
+### Accessibility
+
+| Component | Description |
+|-----------|-------------|
+| **SkipLink** | Visually hidden anchor visible on focus — allows keyboard users to bypass navigation (WCAG 2.4.1) |
+| **ChartDataTable** | Accessible data table alternative for charts with optional `srOnly` mode (WCAG 1.1.1) |
+| **FieldHelp** | Context-sensitive help for form fields with info icon and optional external link (WCAG 3.3.5) |
+
 ### Actions & Buttons
 
 | Component | Description |

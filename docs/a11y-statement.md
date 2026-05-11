@@ -12,7 +12,7 @@
 **URL:** https://meetpaulds.github.io/paul  
 **Publisher:** SirPauls, Graz, Austria  
 **Date of last review:** 2026-05-11  
-**Version:** 1.0.3
+**Version:** 1.1.0
 
 ---
 
@@ -58,31 +58,18 @@ paul uses the **Accessible Perceptual Contrast Algorithm (APCA)** from the WCAG 
 
 The following areas do not yet fully meet the requirements. We are actively working to address them.
 
-### 1. Chart — Text Alternative & Use of Colour (WCAG 1.1.1, 1.4.1 / EN 301 549 §9.1.1.1, §9.1.4.1)
+### 1. Chart — Use of Colour (WCAG 1.4.1 / EN 301 549 §9.1.4.1)
 
 **Affected components:** `ChartContainer`, `ChartTooltip`  
-**Description:** Charts currently have no programmatically accessible text alternative (e.g. a data table). Datasets are differentiated by colour alone, without supplementary patterns or symbols.  
-**Reason for deviation:** Dependency on the Recharts library; alternative text API is under development.  
-**Remediation timeline:** v1.1.0 (planned Q3 2026)
+**Description:** Datasets are differentiated by colour alone, without supplementary patterns or symbols. A `ChartDataTable` component is now available as a text alternative (added v1.1.0), but colour-only differentiation within the chart itself remains.  
+**Reason for deviation:** Dependency on the Recharts library; pattern/symbol API is under development.  
+**Remediation timeline:** v1.2.0 (planned Q3 2026)
 
-### 2. NavigationMenu / Sidebar — Skip Link (WCAG 2.4.1 / EN 301 549 §9.2.4.1)
+### 2. Form — Error Prevention All (WCAG 3.3.6 / EN 301 549 §9.3.3.6) — AAA
 
-**Affected components:** `NavigationMenu`, `Sidebar`  
-**Description:** A skip link component that allows users to bypass repeated navigation blocks is not currently included in the library.  
-**Reason for deviation:** Architectural decision; skip links are page-specific and must be implemented by consumers of the library.  
-**Remediation timeline:** v1.1.0 — a `SkipLink` component will be provided as a standalone component.
-
-### 3. Field / Form — Context-sensitive Help (WCAG 3.3.5 / EN 301 549 §9.3.3.5) — AAA
-
-**Affected components:** `Field`, `Form`  
-**Description:** Context-sensitive help (e.g. linked explanations on form fields) is not yet supported as a built-in component feature.  
-**Remediation timeline:** v1.1.0 — `Field.Help` sub-component planned.
-
-### 4. Typography — Visual Presentation (WCAG 1.4.8 / EN 301 549 §9.1.4.8) — AAA
-
-**Affected components:** `Typography`  
-**Description:** Body text blocks exceed the recommended line width of 80 characters in certain viewports. Customisation of line spacing, letter spacing, and font size by consumers is not yet fully exposed via props.  
-**Remediation timeline:** v1.1.0 — a `prose` variant with WCAG-conformant defaults is planned.
+**Affected components:** `Form`  
+**Description:** A form review step or confirmation dialog for critical form submissions is not yet available as a built-in pattern.  
+**Remediation timeline:** v1.2.0 — a form review pattern is planned.
 
 ---
 
@@ -147,7 +134,7 @@ The accessibility of this library has been assessed using the following tools:
 
 
 **Covered by this statement:**
-- All 56 components in the `@meetpaul/ui` (React), `@meetpaul/ui-vue`, `@meetpaul/ui-svelte`, and `@meetpaul/ui-angular` packages at version 1.0.3
+- All 60 components in the `@meetpaul/ui` (React), `@meetpaul/ui-vue`, `@meetpaul/ui-svelte`, and `@meetpaul/ui-angular` packages at version 1.1.0
 - The Storybook documentation at [https://meetpaulds.github.io/paul](https://meetpaulds.github.io/paul)
 
 **Not covered (explicitly excluded):**
