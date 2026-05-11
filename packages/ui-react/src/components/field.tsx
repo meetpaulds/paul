@@ -56,4 +56,76 @@ const Field = React.forwardRef<HTMLDivElement, FieldProps>(
 )
 Field.displayName = 'Field'
 
-export { Field }
+export interface FieldHelpProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** URL to link to for more detailed help. */
+  href?: string
+  /** Link text when href is provided. @default 'Learn more' */
+  linkText?: string
+}
+
+/**
+ * FieldHelp — context-sensitive help for a form field.
+ *
+ * Renders an info icon with descriptive help text and an optional link to
+ * more detailed documentation. Use inside a `Field` component below the input.
+ *
+ * @example
+ * ```tsx
+ * <Field label="Password" required>
+ *   <Input type="password" />
+ *   <FieldHelp href="/docs/password-requirements" linkText="View requirements">
+ *     Must be at least 8 characters with one uppercase letter and one number.
+ *   </FieldHelp>
+ * </Field>
+ * ```
+ *
+ * @accessibility Satisfies WCAG 3.3.5 / EN 301 549 §9.3.3.5 — Help.
+ */
+const FieldHelp = React.forwardRef<HTMLDivElement, FieldHelpProps>(
+  ({ className, href, linkText = 'Learn more', children, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn('flex items-start gap-2 text-sm text-muted-foreground', className)}
+        {...props}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="mt-0.5 shrink-0"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 16v-4" />
+          <path d="M12 8h.01" />
+        </svg>
+        <span>
+          {children}
+          {href && (
+            <>
+              {' '}
+              <a
+                href={href}
+                className="font-medium text-foreground underline underline-offset-4 hover:text-foreground/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {linkText}
+              </a>
+            </>
+          )}
+        </span>
+      </div>
+    )
+  }
+)
+FieldHelp.displayName = 'FieldHelp'
+
+export { Field, FieldHelp }

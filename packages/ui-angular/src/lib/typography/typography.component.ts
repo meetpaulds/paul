@@ -17,6 +17,7 @@ const typographyVariants = cva('', {
       small: 'text-sm font-medium leading-none',
       muted: 'text-sm text-muted-foreground',
       list: 'my-6 ml-6 list-disc [&>li]:mt-2',
+      prose: 'max-w-prose leading-7 [&:not(:first-child)]:mt-6 text-base tracking-normal',
     },
   },
   defaultVariants: { variant: 'p' },
@@ -37,7 +38,7 @@ const typographyVariants = cva('', {
   standalone: true,
 })
 export class TypographyDirective {
-  @Input() variant: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'blockquote' | 'code' | 'lead' | 'large' | 'small' | 'muted' | 'list' = 'p'
+  @Input() variant: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'blockquote' | 'code' | 'lead' | 'large' | 'small' | 'muted' | 'list' | 'prose' = 'p'
   @Input() class = ''
   @HostBinding('class') get hostClass() {
     return cn(typographyVariants({ variant: this.variant }), this.class)
