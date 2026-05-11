@@ -54,10 +54,18 @@
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly --declaration --outDir dist",
     "dev": "vite build --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "recalculate:tokens": "tsx scripts/recalculate-tokens.ts --input=src/tokens.css --output=src/tokens.css",
+    "recalculate:tokens:dry-run": "tsx scripts/recalculate-tokens.ts --dry-run --input=src/tokens.css --output=src/tokens.css",
+    "validate:apca": "tsx scripts/validate-apca.ts",
+    "validate:apca:json": "tsx scripts/validate-apca.ts --json=apca-report.json"
   },
   "devDependencies": {
+    "apca-w3": "^0.1.9",
+    "tsx": "^4.21.0",
     "typescript": "^5.6.3",
-    "vite": "^5.4.14"
+    "vite": "^5.4.14",
+    "vitest": "^3.1.2"
   }
 }

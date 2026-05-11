@@ -14,35 +14,44 @@
 :root {
   /* --- Surfaces --- */
   --background:            0 0% 100%;
+  /* Lc 105.9 on --background, Lc 105.9 on --card, Lc 105.9 on --popover */
   --foreground:            240 10% 3.9%;
 
   /* --- Card --- */
   --card:                  0 0% 100%;
+  /* Lc 105.9 on --card */
   --card-foreground:       240 10% 3.9%;
 
   /* --- Popover --- */
   --popover:               0 0% 100%;
+  /* Lc 105.9 on --popover */
   --popover-foreground:    240 10% 3.9%;
 
   /* --- Brand --- */
   --primary:               240 5.9% 10%;
+  /* Lc -103.4 on --primary */
   --primary-foreground:    0 0% 98%;
 
   /* --- Secondary --- */
   --secondary:             240 4.8% 95.9%;
+  /* Lc 98.0 on --secondary */
   --secondary-foreground:  240 5.9% 10%;
 
   /* --- Muted --- */
   --muted:                 240 4.8% 95.9%;
+  /* Lc 87.7 on --background, Lc 87.7 on --card, Lc 81.2 on --muted */
   --muted-foreground:      240 5% 33%;
 
   /* --- Accent --- */
   --accent:                240 4.8% 95.9%;
+  /* Lc 98.0 on --accent */
   --accent-foreground:     240 5.9% 10%;
 
   /* --- Destructive --- */
   --destructive:           0 84.2% 50%;
+  /* Lc -74.4 on --destructive */
   --destructive-foreground:0 0% 100%;
+  /* Lc 83.3 on --background, Lc 83.3 on --card */
   --destructive-text:      0 72% 39%;
 
   /* --- Form --- */
@@ -62,10 +71,13 @@
 
   /* --- Sidebar --- */
   --sidebar:               0 0% 98%;
+  /* Lc 91.3 on --sidebar */
   --sidebar-foreground:    240 5.3% 26.1%;
   --sidebar-primary:       240 5.9% 10%;
+  /* Lc -103.4 on --sidebar-primary */
   --sidebar-primary-foreground: 0 0% 98%;
   --sidebar-accent:        240 4.8% 95.9%;
+  /* Lc 98.0 on --sidebar-accent */
   --sidebar-accent-foreground: 240 5.9% 10%;
   --sidebar-border:        220 13% 91%;
   --sidebar-ring:          240 5.9% 10%;
@@ -78,35 +90,44 @@
 .dark {
   /* --- Surfaces --- */
   --background:            240 10% 3.9%;
+  /* Lc -104.5 on --background, Lc -104.5 on --card, Lc -104.5 on --popover */
   --foreground:            0 0% 98%;
 
   /* --- Card --- */
   --card:                  240 10% 3.9%;
+  /* Lc -104.5 on --card */
   --card-foreground:       0 0% 98%;
 
   /* --- Popover --- */
   --popover:               240 10% 3.9%;
+  /* Lc -104.5 on --popover */
   --popover-foreground:    0 0% 98%;
 
   /* --- Brand --- */
   --primary:               0 0% 98%;
+  /* Lc 101.5 on --primary */
   --primary-foreground:    240 5.9% 10%;
 
   /* --- Secondary --- */
   --secondary:             240 3.7% 15.9%;
+  /* Lc -101.3 on --secondary */
   --secondary-foreground:  0 0% 98%;
 
   /* --- Muted --- */
   --muted:                 240 3.7% 15.9%;
-  --muted-foreground:      240 5% 71%;
+  /* Lc -78.7 on --background, Lc -78.7 on --card, Lc -75.5 on --muted */
+  --muted-foreground:      240 5% 82.7%;
 
   /* --- Accent --- */
   --accent:                240 3.7% 15.9%;
+  /* Lc -101.3 on --accent */
   --accent-foreground:     0 0% 98%;
 
   /* --- Destructive --- */
   --destructive:           0 62.8% 30.6%;
+  /* Lc -96.3 on --destructive */
   --destructive-foreground:0 0% 100%;
+  /* Lc -48.0 on --background, Lc -48.0 on --card */
   --destructive-text:      0 90% 70%;
 
   /* --- Form --- */
@@ -123,10 +144,13 @@
 
   /* --- Sidebar --- */
   --sidebar:               240 5.9% 10%;
+  /* Lc -99.5 on --sidebar */
   --sidebar-foreground:    240 4.8% 95.9%;
   --sidebar-primary:       224.3 76.3% 48%;
+  /* Lc -87.2 on --sidebar-primary */
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent:        240 3.7% 15.9%;
+  /* Lc -97.4 on --sidebar-accent */
   --sidebar-accent-foreground: 240 4.8% 95.9%;
   --sidebar-border:        240 3.7% 15.9%;
   --sidebar-ring:          240 4.9% 83.9%;
