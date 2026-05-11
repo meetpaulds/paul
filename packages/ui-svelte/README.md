@@ -264,6 +264,24 @@ paul validates every foreground-background token pair against APCA thresholds in
 
 ---
 
+## Accessibility
+
+Accessibility in paul isn't a checklist item — it's a design constraint that shapes every component from the start.
+
+paul is built to meet **EN 301 549 — The new European Standard for Inclusive Digital Products**, the technical standard underpinning the **European Accessibility Act (EAA)**, enforceable since June 28, 2025. It also targets **WCAG 2.2 Level AAA** and the forward-looking **APCA (WCAG 3.0 draft)** perceptual contrast model.
+
+- **EN 301 549 v3.2.1** — full compliance matrix across all 56 components
+- All color tokens validated against APCA thresholds (Lc 75 body text, Lc 60 UI components) — 34/34 passing
+- Full keyboard navigation, ARIA roles, and screen reader support (NVDA + VoiceOver)
+- Touch targets audited to 44×44 px (WCAG 2.5.5 AAA)
+- Automated axe-playwright audit on every CI run
+
+| Document | Description |
+|----------|-------------|
+| [Accessibility Statement](https://github.com/meetpaulds/paul/blob/main/docs/a11y-statement.md) | Conformance status, known issues, contact & enforcement |
+| [EN 301 549 Compliance Matrix](https://github.com/meetpaulds/paul/blob/main/docs/compliance/en301549-matrix.md) | Per-component mapping to EN 301 549 clauses |
+| [APCA Migration Guide](https://github.com/meetpaulds/paul/blob/main/docs/migration/apca-migration.md) | Token changes, thresholds, and visual impact |
+
 ## License
 
 MIT — Copyright (c) 2026 SirPauls
