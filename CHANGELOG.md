@@ -11,6 +11,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] — 2026-05-11
+
+### Added
+
+- **`SkipLink`** — new component across React, Vue 3, Svelte 5, and Angular 18. Visually hidden anchor that becomes visible on focus, allowing keyboard and screen reader users to bypass repeated navigation blocks. Satisfies **WCAG 2.4.1 / EN 301 549 §9.2.4.1**. Storybook stories added for all four frameworks under `Accessibility/SkipLink`.
+
+- **`ChartDataTable`** — new component across all four frameworks. Accessible data table alternative for charts; supports `srOnly` prop to hide visually while remaining in the accessibility tree. Satisfies **WCAG 1.1.1 / EN 301 549 §9.1.1.1** (Non-text Content).
+
+- **`FieldHelp`** — new component across all four frameworks. Context-sensitive help for form fields with an info icon, descriptive text, and optional external link. Satisfies **WCAG 3.3.5 / EN 301 549 §9.3.3.5** (Help, AAA).
+
+- **`Typography` `prose` variant** — new variant across all four frameworks. Applies `max-w-prose` line width with WCAG-conformant defaults for body text. Satisfies **WCAG 1.4.8 / EN 301 549 §9.1.4.8** (Visual Presentation, AAA).
+
+### Changed
+
+- **EN 301 549 Compliance Matrix** — updated to v1.1.0; 4 critical issues resolved (`2.4.1`, `1.1.1`, `3.3.5`, `1.4.8`); `SkipLink`, `ChartDataTable`, `FieldHelp` entries added.
+- **Accessibility Statement** — updated to v1.1.0; resolved non-conformances removed; component count updated to 60.
+
+---
+
 ## [1.0.3] — 2026-05-11
 
 ### Changed — ⚠️ Visual Breaking Change
