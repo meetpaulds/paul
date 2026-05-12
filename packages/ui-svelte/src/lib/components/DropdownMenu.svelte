@@ -7,7 +7,7 @@
   {@render trigger?.({ toggle: () => (open = !open) })}
   {#if open}
     <div class="fixed inset-0 z-40" role="presentation" onclick={() => (open = false)} onkeydown={(e) => e.key === 'Escape' && (open = false)}></div>
-    <div class={['absolute left-0 z-50 mt-1 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md', className].join(' ')} {...props}>
+    <div class={['absolute start-0 z-50 mt-1 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md', className].join(' ')} {...props}>
       {@render children?.()}
     </div>
   {/if}

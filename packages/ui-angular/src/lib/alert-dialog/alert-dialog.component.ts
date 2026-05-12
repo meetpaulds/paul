@@ -12,7 +12,7 @@ import { A11yModule } from '@angular/cdk/a11y'
     <ng-template #tpl>
       <div class="fixed inset-0 z-50 bg-black/80" (click)="close()"></div>
       <div cdkTrapFocus [cdkTrapFocusAutoCapture]="true" role="alertdialog" aria-modal="true"
-        class="fixed left-1/2 top-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 border bg-background p-6 shadow-lg sm:rounded-lg"
+        class="fixed start-1/2 top-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 border bg-background p-6 shadow-lg sm:rounded-lg"
         (keydown.escape)="close()">
         <ng-content />
       </div>

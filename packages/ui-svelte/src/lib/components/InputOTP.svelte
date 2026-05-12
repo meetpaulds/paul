@@ -24,7 +24,7 @@
   />
   {#each slots as slot, i}
     <div
-      class={['relative flex h-11 w-11 items-center justify-center border-y border-r border-input text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md', i === value.length ? 'ring-2 ring-ring ring-offset-background z-10' : ''].join(' ')}
+      class={['relative flex h-11 w-11 items-center justify-center border-y border-e border-input text-sm transition-all first:rounded-s-md first:border-s last:rounded-e-md', i === value.length ? 'ring-2 ring-ring ring-offset-background z-10' : ''].join(' ')}
       aria-hidden="true"
     >
       {slot}

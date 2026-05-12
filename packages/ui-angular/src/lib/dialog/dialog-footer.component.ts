@@ -5,5 +5,5 @@ import { cn } from '../../lib/utils'
 @Component({ selector: 'paul-dialog-footer', standalone: true, template: `<ng-content />`, changeDetection: ChangeDetectionStrategy.OnPush })
 export class DialogFooterComponent {
   @Input() class = ''
-  @HostBinding('class') get hostClass() { return cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', this.class) }
+  @HostBinding('class') get hostClass() { return cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:gap-x-2', this.class) }
 }

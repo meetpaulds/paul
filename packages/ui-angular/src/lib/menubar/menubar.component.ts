@@ -2,7 +2,7 @@ import { Component, Input, ChangeDetectionStrategy, HostBinding } from '@angular
 import { CommonModule } from '@angular/common'
 import { cn } from '../../lib/utils'
 
-@Component({ selector: 'paul-menubar', standalone: true, template: `<div class="flex h-9 items-center space-x-1 rounded-md border bg-background p-1 shadow-sm"><ng-content /></div>`, changeDetection: ChangeDetectionStrategy.OnPush })
+@Component({ selector: 'paul-menubar', standalone: true, template: `<div class="flex h-9 items-center gap-x-1 rounded-md border bg-background p-1 shadow-sm"><ng-content /></div>`, changeDetection: ChangeDetectionStrategy.OnPush })
 export class MenubarComponent {}
 
 @Component({
@@ -12,7 +12,7 @@ export class MenubarComponent {}
   template: `
     <div class="relative">
       <ng-content select="paul-menubar-trigger" />
-      <div *ngIf="open" class="absolute left-0 top-full z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 shadow-md">
+      <div *ngIf="open" class="absolute start-0 top-full z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 shadow-md">
         <ng-content />
       </div>
     </div>

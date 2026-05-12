@@ -35,7 +35,7 @@ describe('ContextMenu', () => {
     expect(screen.queryByText('Open')).not.toBeInTheDocument()
   })
 
-  it('opens on right-click', async () => {
+  it('opens on end-click', async () => {
     const user = userEvent.setup()
     render(<DefaultContextMenu />)
     await user.pointer({ target: screen.getByTestId('trigger-area'), keys: '[MouseRight]' })

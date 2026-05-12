@@ -1,8 +1,24 @@
 import type { Preview } from '@storybook/svelte-vite'
 import { withThemeByClassName } from '@storybook/addon-themes'
 import '../src/styles/globals.css'
+import Wrapper from './Wrapper.svelte'
 
 const preview: Preview = {
+  globalTypes: {
+    dir: {
+      name: 'Text Direction',
+      description: 'Writing direction for RTL language testing',
+      defaultValue: 'ltr',
+      toolbar: {
+        icon: 'globe',
+        items: [
+          { value: 'ltr', right: 'LTR', title: 'Left-to-Right' },
+          { value: 'rtl', right: 'RTL', title: 'Right-to-Left (Arabic/Hebrew)' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
   parameters: {
     backgrounds: {
       default: 'dark',

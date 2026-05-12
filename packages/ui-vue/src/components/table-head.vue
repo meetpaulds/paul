@@ -4,5 +4,5 @@ const props = defineProps<{ class?: string }>()
 </script>
 
 <template>
-  <th :class="cn('h-10 px-2 text-left align-middle font-medium text-muted-foreground', props.class)"><slot /></th>
+  <th :class="cn('h-10 px-2 text-start align-middle font-medium text-muted-foreground', props.class)"><slot /></th>
 </template>

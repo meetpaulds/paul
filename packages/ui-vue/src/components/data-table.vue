@@ -35,7 +35,7 @@ const rows = computed(() => {
       <table class="w-full caption-bottom text-sm">
         <thead class="[&_tr]:border-b">
           <tr class="border-b transition-colors hover:bg-muted/50">
-            <th v-for="col in cols" :key="col.key" class="h-10 px-2 text-left align-middle font-medium text-muted-foreground">
+            <th v-for="col in cols" :key="col.key" class="h-10 px-2 text-start align-middle font-medium text-muted-foreground">
               {{ col.header }}
             </th>
           </tr>

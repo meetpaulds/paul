@@ -35,7 +35,7 @@ export class TooltipDirective implements OnDestroy {
       scrollStrategy: this.overlay.scrollStrategies.reposition(),
     })
     const el = document.createElement('div')
-    el.className = cn('z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-xs text-primary-foreground animate-in fade-in-0 zoom-in-95')
+    el.className = cn('z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-xs text-primary-foreground animate-in fade-in-0 zoom-in-95 print:hidden')
     el.textContent = this.content
     el.setAttribute('role', 'tooltip')
     this.overlayRef.overlayElement.appendChild(el)
