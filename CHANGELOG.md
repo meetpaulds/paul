@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased]
+## [1.2.0] — 2026-05-12
 
-### Added — RTL (Right-to-Left) Support
+### Added — RTL Support, Auth Patterns, and i18n Localization (European Accessibility Differentiation)
+
+This release focuses on **European Accessibility Act (EAA)** and **EN 301 549** compliance, introducing full Right-to-Left (RTL) support, a new library of accessible authentication patterns, and comprehensive internationalization for date-based components.
 
 - **All physical-direction Tailwind CSS utilities migrated to logical properties** across React, Vue, Svelte, and Angular component libraries.
 
@@ -37,6 +39,104 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Print styles** — `@media print` modifiers applied across all four framework component libraries for accessible printed output.
 
 ---
+
+## [1.1.0] — 2026-05-11
+
+### Added
+
+- **`SkipLink`** — new component across React, Vue 3, Svelte 5, and Angular 18. Visually hidden anchor that becomes visible on focus, allowing keyboard and screen reader users to bypass repeated navigation blocks. Satisfies **WCAG 2.4.1 / EN 301 549 §9.2.4.1**. Storybook stories added for all four frameworks under `Accessibility/SkipLink`.
+
+- **`ChartDataTable`** — new component across all four frameworks. Accessible data table alternative for charts; supports `srOnly` prop to hide visually while remaining in the accessibility tree. Satisfies **WCAG 1.1.1 / EN 301 549 §9.1.1.1** (Non-text Content).
+
+- **`FieldHelp`** — new component across all four frameworks. Context-sensitive help for form fields with an info icon, descriptive text, and optional external link. Satisfies **WCAG 3.3.5 / EN 301 549 §9.3.3.5** (Help, AAA).
+
+- **`Typography` `prose` variant** — new variant across all four frameworks. Applies `max-w-prose` line width with WCAG-conformant defaults for body text. Satisfies **WCAG 1.4.8 / EN 301 549 §9.1.4.8** (Visual Presentation, AAA).
+
+### Changed
+
+- **EN 301 549 Compliance Matrix** — updated to v1.1.0; 4 critical issues resolved (`2.4.1`, `1.1.1`, `3.3.5`, `1.4.8`); `SkipLink`, `ChartDataTable`, `FieldHelp` entries added.
+- **Accessibility Statement** — updated to v1.1.0; resolved non-conformances removed; component count updated to 60.
+
+---
+
+## [1.0.3] — 2026-05-11
+
+### Changed — ⚠️ Visual Breaking Change
+
+- **APCA (WCAG 3.0 draft) Migration — Perceptual Contrast Compliance**  
+  paul now uses the **Accessible Perceptual Contrast Algorithm (APCA)** from WCAG 3.0 working draft for color contrast validation. APCA provides more accurate perceptual contrast measurements than WCAG 2.x relative luminance ratios.
+
+  **Two design tokens adjusted** to meet APCA thresholds:
+
+  | Token | Mode | Before | After | Lc before | Lc after | Background |
+  |-------|------|--------|-------|-----------|----------|------------|
+  | `--muted-foreground` | Dark | `240 5% 71%` | `240 5% 82.7%` | Lc 57.1 | Lc 75.5 | `--muted` |
+  | `--destructive-text` | Dark | `0 90% 70%` | `0 90% 78.5%` | Lc 48.0 | Lc 60.3 | `--background` |
+
+  **APCA Thresholds Applied**:
+  - **Body text**: Lc 75 (≈ WCAG 2.x 7:1 / AAA)
+  - **Large text & UI components**: Lc 60 (≈ WCAG 2.x 4.5:1 / AA)
+
+  **Inline Lc Comments**: All foreground tokens now include inline comments documenting their APCA Lc values on each background (e.g., `/* Lc 105.9 on --background */`).
+
+  **Classification Change**: `--destructive-text` reclassified from body text (Lc 75) to UI component (Lc 60) based on actual usage in small error messages (text-sm) and UI elements.
+
+  **Validation Status**: 34/34 checks passing (100% APCA compliance)
+
+  Affected files: `packages/tokens/src/tokens.css`, `packages/tokens/src/tokens.ts`  
+  Migration guide: [`docs/migration/apca-migration.md`](docs/migration/apca-migration.md)  
+  Full audit: [`docs/compliance/contrast-audit.md`](docs/compliance/contrast-audit.md)
+
+  > **Note**: WCAG 3.0 is currently a working draft and not yet a stable W3C recommendation. paul maintains backward compatibility with WCAG 2.2 Level AAA standards during this transition period.
+
+  > Chromatic snapshots for any story rendering `muted-foreground` in dark mode will show a diff — accept these as the new baseline.
+
+### Added
+
+- **APCA Validation Tooling** — new scripts in `packages/tokens`:
+  - `pnpm run validate:apca` — validates all tokens against APCA thresholds (exit code 0 for pass, 1 for fail)
+  - `pnpm run validate:apca:json` — outputs JSON validation report
+  - `pnpm run recalculate:tokens` — recalculates tokens to meet APCA thresholds
+  - `pnpm run recalculate:tokens:dry-run` — preview token changes without modifying files
+- **CI Integration** — APCA validation now runs in CI pipeline; failures block merges; JSON report uploaded as artifact
+
+### Changed — ⚠️ Visual Breaking Change
+
+- **WCAG 2.2 SC 1.4.6 / EN 301 549 §9.1.4.6 — Contrast (Enhanced) token corrections**  
+  Four design tokens were below the 7:1 AAA threshold and have been adjusted (lightness only; hue and saturation unchanged):
+
+  | Token | Mode | Before | After | Ratio before | Ratio after |
+  |-------|------|--------|-------|-------------|-------------|
+  | `--muted-foreground` | Light | `240 5% 38%` | `240 5% 33%` | 6.01–6.61:1 | 7.27–7.99:1 |
+  | `--muted-foreground` | Dark | `240 5% 64.9%` | `240 5% 71%` | 5.81–7.77:1 | 7.01–9.38:1 |
+  | `--destructive-text` | Light | `0 72% 44%` | `0 72% 39%` | 6.02:1 | 7.21:1 |
+  | `--destructive-text` | Dark | `0 90% 65%` | `0 90% 70%` | 6.03:1 | 7.02:1 |
+
+  Affected files: `packages/tokens/src/tokens.css`, `packages/tokens/src/tokens.ts`  
+  Full audit: [`docs/compliance/contrast-audit.md`](docs/compliance/contrast-audit.md)
+
+  > Chromatic snapshots for any story rendering `muted-foreground` or `destructive-text` will show a diff — accept these as the new baseline.
+
+- **WCAG 2.2 SC 2.4.13 / EN 301 549 §9.2.4.13 — Focus Not Obscured (AAA) — overlay & scroll fixes**  
+  Focused elements inside overlay components and scroll containers are now guaranteed to remain visible:
+
+  | Fix | Components affected |
+  |-----|-------------------|
+  | `SelectTrigger`: upgraded `focus:ring-1` → `focus:ring-2 focus:ring-offset-2` | `@meetpaul/ui` `select.tsx` |
+  | `scroll-py-1` added to `SelectViewport` | `@meetpaul/ui` `select.tsx` |
+  | `scroll-py-1` added to Vue `SelectViewport` | `@meetpaul/ui-vue` `select-content.vue` |
+  | `scroll-py-1` added to Vue `Combobox` option list | `@meetpaul/ui-vue` `combobox.vue` |
+  | `scroll-py-1` + `tabindex="0"` added to Svelte `ScrollArea` viewport | `@meetpaul/ui-svelte` `ScrollArea.svelte` |
+  | `scroll-py-1` + `tabindex="0"` added to Angular `ScrollArea` viewport | `@meetpaul/ui-angular` `scroll-area.component.ts` |
+
+  Storybook: new **"Focus Not Obscured — Sticky Header"** story added to `Overlays/Dialog` demonstrating the sticky-header scenario with `scroll-pt-[72px]`.
+
+- **WCAG 2.2 SC 2.5.5 / EN 301 549 §9.2.5.5 — Target Size (AAA) — 44×44 px touch target audit**  
+  All interactive elements audited across React, Vue, Svelte, and Angular. Fixes applied:
+
+  | Component | Fix | Strategy |
+  |-----------|-----|----------|
+  | **Slider thumb** (React, Vue, Svelte) | `before:inset-[-14px]` transparent pseudo-element | Hit-area expansion; visual size unchanged |
   | **Slider** (Angular) | `h-11` on `input[type=range]` | Native range 44 px height |
   | **Toggle** all variants (all frameworks) | `default`/`lg` → `h-11`; `sm` → `h-9` | Height bump |
   | **TabsList** (all frameworks) | `h-9` → `h-11` | Height bump |
@@ -63,22 +163,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Tests: 22 new assertions in `auth-patterns.test.tsx` covering `autocomplete`, `aria-label`, `aria-live`, keyboard activation, and `tabindex`.  
   Storybook: new category **"Auth Patterns / WCAG 3.3.8"** with 9 stories (`OTPInput`, `MagicLink` ×4 states, `PasskeyButton` ×4 states, `HoneypotField`).  
   Compliance matrix: new **Auth Patterns** section with `9.3.3.8` entries all ✅.
-
-- **Calendar & DatePicker — full i18n / l10n via native `Intl` API**  
-  Replaced hard-coded English month/weekday labels and `date-fns/format` with zero-dependency `Intl.DateTimeFormat` helpers in a shared `calendar-locale.ts` module.
-
-  | Feature | Implementation |
-  |---------|---------------|
-  | Month names | `Intl.DateTimeFormat(locale, { month: 'long' })` |
-  | Weekday headers | `Intl.DateTimeFormat(locale, { weekday: 'short' })` |
-  | Date trigger label | `Intl.DateTimeFormat(locale, { day:'numeric', month:'long', year:'numeric' })` |
-  | Week-start day | `Intl.Locale(locale).weekInfo.firstDay` + ISO-normalised fallback table |
-
-  Supported locales verified: `de-DE`, `fr-FR`, `it-IT`, `es-ES`, `ar-SA` (RTL), `en-US`.  
-  `locale` prop added to **Calendar** and **DatePicker** in React, Vue, Svelte, Angular.  
-  New **Svelte `DatePicker`** and **Angular `DatePicker`** components created.  
-  Storybook: **"Date & Time / Calendar"** expanded with per-locale stories + interactive locale switcher (6 locales).  
-  Tests: 28 assertions in `calendar-locale.test.ts` covering week-start, weekday ordering, month names, date formatting, and day-grid generation.
 
 ---
 
@@ -235,6 +319,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ESLint `no-undef` error on `IntersectionObserver` in test setup (`packages/ui/src/test/setup.ts`)
 - Storybook a11y test runner now merges per-story rule overrides with global suppressions
 
+[1.2.0]: https://github.com/meetpaulds/paul/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/meetpaulds/paul/compare/v1.0.3...v1.1.0
+[1.0.3]: https://github.com/meetpaulds/paul/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/meetpaulds/paul/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/meetpaulds/paul/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/meetpaulds/paul/compare/v0.4.0...v1.0.0

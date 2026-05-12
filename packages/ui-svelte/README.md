@@ -101,6 +101,22 @@ Use components directly — all are tree-shakeable named exports:
 | `Switch` | Toggle switch backed by Melt UI. Use `bind:checked`. |
 | `Textarea` | Multi-line text input. Use `bind:value`. |
 
+### Auth Patterns (WCAG 3.3.8)
+
+| Component | Description |
+|-----------|-------------|
+| `InputOTP` | Hardened one-time password input with automatic focus handling and accessible slots. |
+| `MagicLink` | Password-free authentication with screen-reader friendly state announcements. |
+| `PasskeyButton` | WebAuthn/Biometric login login button with built-in accessibility fallbacks. |
+| `HoneypotField` | CAPTCHA-free bot prevention that remains hidden from keyboard and screen readers. |
+
+### Date & Time
+
+| Component | Description |
+|-----------|-------------|
+| `Calendar` | Month-view calendar with full i18n support via `locale` prop. |
+| `DatePicker` | Date selection component with localized calendar popup. |
+
 ### Feedback
 
 | Component | Description |
@@ -124,8 +140,8 @@ Use components directly — all are tree-shakeable named exports:
 | `Accordion` | Collapsible sections root backed by Melt UI. |
 | `AccordionItem` | A single accordion section. Requires `value`. |
 | `AccordionTrigger` | Clickable header that toggles the section. Requires `value`. |
-| `AccordionContent` | Content panel. Requires `value` matching its `AccordionItem`. |
-| `Collapsible` | Expand/collapse region backed by Melt UI. Use `bind:open`. |
+| `AccordionContent` | Collapsible content panel. |
+| `Collapsible` | Single expand/collapse region. |
 | `CollapsibleTrigger` | Toggle trigger for Collapsible. |
 | `CollapsibleContent` | Hidden content area of Collapsible. |
 | `Dialog` | Modal dialog backed by Melt UI with focus trapping. Use `bind:open`. |
@@ -223,6 +239,17 @@ Melt UI components expose state via Svelte 5's `bind:` directive:
 ```bash
 npm install svelte @melt-ui/svelte class-variance-authority clsx tailwind-merge
 ```
+
+## European Localization & RTL Support
+
+This version introduces comprehensive support for European locales and Right-to-Left (RTL) layouts, satisfying **EN 301 549** and **EAA (European Accessibility Act)** requirements:
+
+- **RTL Support**: All components migrated to CSS logical properties (`ms-*`, `me-*`, `ps-*`, `pe-*`). Full support for Arabic, Hebrew, and other RTL languages via `dir="rtl"`.
+- **Intl-based i18n**: `Calendar` and `DatePicker` now use the native `Intl` API. Pass a `locale` prop (e.g., `de-DE`, `fr-FR`, `ar-SA`) to automatically localize month names, weekday headers, and week-start days.
+- **Auth Patterns (WCAG 3.3.8)**: New accessible authentication components including `InputOTP`, `MagicLink`, `PasskeyButton`, and `HoneypotField`.
+- **Print Optimization**: Built-in `@media print` styles for accessible physical output.
+
+---
 
 ## Tech Stack
 

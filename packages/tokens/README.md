@@ -85,6 +85,14 @@ function applyTheme(mode: 'light' | 'dark') {
 
 All foreground tokens include inline `/* Lc XX.X on --background */` comments documenting their APCA contrast values directly in the CSS.
 
+## European Localization & RTL Support (v1.2.0)
+
+As of v1.2.0, all layout-related design tokens and components have been migrated to **CSS Logical Properties** to support Right-to-Left (RTL) layouts natively.
+
+- **Spacing & Insets**: Switched from physical (`left`, `right`) to logical (`start`, `end`) properties.
+- **Borders**: Logical border properties (`border-inline-start`, `border-inline-end`) ensure correct visual direction in both LTR and RTL modes.
+- **Typography**: Text alignment tokens use `text-start` and `text-end` for automatic alignment based on document direction.
+
 | Token | Light | Dark |
 |---|---|---|
 | `--background` | `0 0% 100%` | `240 10% 3.9%` |
