@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/angular'
+import { withThemeByClassName } from '@storybook/addon-themes'
 
 const preview: Preview = {
   globalTypes: {
@@ -18,23 +19,35 @@ const preview: Preview = {
   },
   parameters: {
     backgrounds: {
-      default: 'light',
+      default: 'dark',
       values: [
         { name: 'light', value: '#ffffff' },
         { name: 'dark', value: '#09090b' },
       ],
     },
     layout: 'centered',
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
+    },
+    a11y: {
+      config: {
+        rules: [
+          { id: 'aria-hidden-focus', enabled: false },
+        ],
+      },
+    },
   },
   decorators: [
-    (storyFn: any, context: any) => {
-      const dir = context.globals?.dir ?? 'ltr'
-      const story = storyFn()
-      return {
-        ...story,
-        template: `<div dir="${dir}" style="width:100%;min-height:100%">${story.template ?? ''}</div>`,
-      }
-    },
+    withThemeByClassName({
+      themes: {
+        light: 'light',
+        dark: 'dark',
+      },
+      defaultTheme: 'dark',
+    }) as any,
   ],
 }
 

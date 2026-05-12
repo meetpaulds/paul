@@ -10,20 +10,21 @@ const typographyVariants = cva('', {
       h3: 'scroll-m-20 text-2xl font-semibold tracking-tight',
       h4: 'scroll-m-20 text-xl font-semibold tracking-tight',
       p: 'leading-7 [&:not(:first-child)]:mt-6',
-      blockquote: 'mt-6 border-s-2 ps-6 italic',
+      blockquote: 'mt-6 border-l-2 pl-6 italic',
       code: 'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold',
       lead: 'text-xl text-muted-foreground',
       large: 'text-lg font-semibold',
       small: 'text-sm font-medium leading-none',
       muted: 'text-sm text-muted-foreground',
-      list: 'my-6 ms-6 list-disc [&>li]:mt-2',
+      list: 'my-6 ml-6 list-disc [&>li]:mt-2',
+      prose: 'max-w-prose leading-7 [&:not(:first-child)]:mt-6 text-base tracking-normal',
     },
   },
   defaultVariants: { variant: 'p' },
 })
-const tagMap = { h1:'h1', h2:'h2', h3:'h3', h4:'h4', p:'p', blockquote:'blockquote', code:'code', lead:'p', large:'p', small:'small', muted:'p', list:'ul' } as const
+const tagMap = { h1:'h1', h2:'h2', h3:'h3', h4:'h4', p:'p', blockquote:'blockquote', code:'code', lead:'p', large:'p', small:'small', muted:'p', list:'ul', prose:'p' } as const
 interface TypographyProps {
-  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'blockquote' | 'code' | 'lead' | 'large' | 'small' | 'muted' | 'list'
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'blockquote' | 'code' | 'lead' | 'large' | 'small' | 'muted' | 'list' | 'prose'
   class?: string
 }
 /**

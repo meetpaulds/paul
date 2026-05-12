@@ -19,13 +19,13 @@
 
   let weekStart = $derived(getWeekStart(resolveLocale()))
 
-  let dayNames = $derived(() => {
+  let dayNames = $derived((() => {
     const loc = resolveLocale()
     const fmt = new Intl.DateTimeFormat(loc, { weekday: 'short' })
     const ws = weekStart
     const sunBased = Array.from({ length: 7 }, (_, i) => fmt.format(new Date(2024, 0, 7 + i)))
     return [...sunBased.slice(ws), ...sunBased.slice(0, ws)]
-  })()
+  })())
 
   let daysInMonth = $derived(new Date(viewing.getFullYear(), viewing.getMonth() + 1, 0).getDate())
   let firstDow = $derived(new Date(viewing.getFullYear(), viewing.getMonth(), 1).getDay())

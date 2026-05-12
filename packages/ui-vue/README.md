@@ -46,6 +46,14 @@ import { Button, Input, Card, CardHeader, CardTitle, CardContent } from '@meetpa
 
 ## Component Library
 
+### Accessibility
+
+| Component | Description |
+|-----------|-------------|
+| **SkipLink** | Visually hidden anchor visible on focus — allows keyboard users to bypass navigation (WCAG 2.4.1) |
+| **ChartDataTable** | Accessible data table alternative for charts with optional `srOnly` mode (WCAG 1.1.1) |
+| **FieldHelp** | Context-sensitive help for form fields with info icon and optional external link (WCAG 3.3.5) |
+
 ### Actions & Buttons
 
 | Component | Description |
@@ -222,6 +230,63 @@ Every component accepts a `class` prop for ad-hoc style overrides, merged via `c
 ```vue
 <Button class="w-full mt-4">Full width</Button>
 ```
+
+## Accessibility
+
+Accessibility in paul isn't a checklist item — it's a design constraint that shapes every component from the start.
+
+paul targets **APCA (WCAG 3.0 draft)** compliance alongside **WCAG 2.2 Level AAA** and **EN 301 549 v3.2.1** to meet the requirements of the **European Accessibility Act (EAA)**, enforceable since June 28, 2025.
+
+### APCA — Why we moved beyond WCAG 2.x contrast ratios
+
+WCAG 2.x contrast ratios were a good start. But they treat all color pairs the same — a ratio of 4.5:1 passes whether the text is tiny body copy or a large heading, whether it's dark-on-light or light-on-dark. APCA fixes this. It's a perceptual model based on modern vision science that accounts for spatial frequency, polarity, and how the human visual system actually processes contrast.
+
+paul validates every foreground-background token pair against APCA thresholds in CI. If a token fails, the build fails.
+
+| Threshold | Use case | Equivalent |
+|-----------|----------|------------|
+| **Lc 75** | Body text | ≈ WCAG 2.x AAA (7:1) |
+| **Lc 60** | Large text & UI components | ≈ WCAG 2.x AA (4.5:1) |
+
+**34/34 token pairs passing — 100% compliant**
+
+> WCAG 3.0 is a working draft. paul maintains backward compatibility with WCAG 2.2 Level AAA during the transition period.
+
+### What's covered
+
+- All color tokens validated against APCA thresholds — automated in CI, failures block merges
+- 56 components with full keyboard navigation, ARIA roles, and screen reader support
+- Touch targets audited to 44×44 px (WCAG 2.5.5 AAA) across all four frameworks
+- Accessible authentication patterns: `InputOTP`, `MagicLink`, `PasskeyButton`, `HoneypotField`
+- Automated axe-playwright audit on every CI run
+
+### Docs
+
+| Document | Description |
+|----------|-------------|
+| [Accessibility Statement](https://github.com/meetpaulds/paul/blob/main/docs/a11y-statement.md) | Conformance status, known issues, contact & enforcement — also a reusable template for your own product |
+| [EN 301 549 Compliance Matrix](https://github.com/meetpaulds/paul/blob/main/docs/compliance/en301549-matrix.md) | Per-component mapping to EN 301 549 clauses and WCAG 2.2 criteria |
+| [APCA Migration Guide](https://github.com/meetpaulds/paul/blob/main/docs/migration/apca-migration.md) | Token changes, thresholds, and visual impact |
+
+---
+
+## Accessibility
+
+Accessibility in paul isn't a checklist item — it's a design constraint that shapes every component from the start.
+
+paul is **The new European Standard for Inclusive Digital Products** — built to fully comply with **EN 301 549 v3.2.1**, the technical standard underpinning the **European Accessibility Act (EAA)**, enforceable since June 28, 2025. It also targets **WCAG 2.2 Level AAA** and the forward-looking **APCA (WCAG 3.0 draft)** perceptual contrast model.
+
+- **EN 301 549 v3.2.1** — full compliance matrix across all 56 components
+- All color tokens validated against APCA thresholds (Lc 75 body text, Lc 60 UI components) — 34/34 passing
+- Full keyboard navigation, ARIA roles, and screen reader support (NVDA + VoiceOver)
+- Touch targets audited to 44×44 px (WCAG 2.5.5 AAA)
+- Automated axe-playwright audit on every CI run
+
+| Document | Description |
+|----------|-------------|
+| [Accessibility Statement](https://github.com/meetpaulds/paul/blob/main/docs/a11y-statement.md) | Conformance status, known issues, contact & enforcement |
+| [EN 301 549 Compliance Matrix](https://github.com/meetpaulds/paul/blob/main/docs/compliance/en301549-matrix.md) | Per-component mapping to EN 301 549 clauses |
+| [APCA Migration Guide](https://github.com/meetpaulds/paul/blob/main/docs/migration/apca-migration.md) | Token changes, thresholds, and visual impact |
 
 ## License
 

@@ -1,7 +1,7 @@
 # EN 301 549 v3.2.1 — Compliance Matrix
 
-> **Version:** 1.0.3  
-> **Last updated:** 2026-04-24  
+> **Version:** 1.1.0  
+> **Last updated:** 2026-05-11  
 > **Scope:** `@meetpaul/ui` · `@meetpaul/ui-vue` · `@meetpaul/ui-svelte` · `@meetpaul/ui-angular`  
 > **Standard:** EN 301 549 v3.2.1 (2021-03) → ETSI, applicable under the European Accessibility Act (EAA) from 28 June 2025  
 >
@@ -308,7 +308,15 @@
 | 9.3.3.1 Error Identification | 3.3.1 | ⚠️ | Wire `aria-invalid` + `aria-errormessage` |
 | 9.3.3.2 Labels or Instructions | 3.3.2 | ✅ | — |
 | 9.3.3.3 Error Suggestion | 3.3.3 | ⚠️ | Error message text must include concrete correction guidance |
-| 9.3.3.5 Help (AAA) | 3.3.5 | ❌ | Context-sensitive help (`Field.Help` sub-component) not yet implemented |
+| 9.3.3.5 Help (AAA) | 3.3.5 | ✅ | `FieldHelp` sub-component added in v1.1.0 |
+
+### FieldHelp
+
+| EN 301 549 | WCAG 2.2 | Status | Outstanding Actions |
+|-----------|----------|--------|---------------------|
+| 9.3.3.5 Help (AAA) | 3.3.5 | ✅ | Info icon + help text + optional external link |
+| 9.2.1.1 Keyboard | 2.1.1 | ✅ | Optional link is keyboard-accessible |
+| 9.2.4.7 Focus Visible | 2.4.7 | ✅ | `focus-visible:ring-2` on optional link |
 
 ### Form
 
@@ -336,9 +344,17 @@
 |-----------|----------|--------|---------------------|
 | 9.1.3.1 Info and Relationships | 1.3.1 | ✅ | `role="navigation"` |
 | 9.2.1.1 Keyboard | 2.1.1 | ✅ | — |
-| 9.2.4.1 Bypass Blocks | 2.4.1 | ❌ | Skip link component missing — must precede NavigationMenu |
+| 9.2.4.1 Bypass Blocks | 2.4.1 | ✅ | `SkipLink` component added in v1.1.0 — place before NavigationMenu in layout |
 | 9.2.4.3 Focus Order | 2.4.3 | ✅ | — |
 | 9.4.1.2 Name, Role, Value | 4.1.2 | ✅ | — |
+
+### SkipLink
+
+| EN 301 549 | WCAG 2.2 | Status | Outstanding Actions |
+|-----------|----------|--------|---------------------|
+| 9.2.4.1 Bypass Blocks | 2.4.1 | ✅ | Visually hidden anchor, visible on focus, skips to `#main-content` |
+| 9.2.1.1 Keyboard | 2.1.1 | ✅ | Native `<a>` element, keyboard-activatable |
+| 9.2.4.7 Focus Visible | 2.4.7 | ✅ | `focus:ring-2 focus:ring-ring` |
 
 ### Pagination
 
@@ -375,7 +391,7 @@
 |-----------|----------|--------|---------------------|
 | 9.1.3.1 Info and Relationships | 1.3.1 | ⚠️ | Verify `nav aria-label` present on each sidebar instance |
 | 9.2.1.1 Keyboard | 2.1.1 | ✅ | — |
-| 9.2.4.1 Bypass Blocks | 2.4.1 | ❌ | Skip link must allow sidebar to be bypassed |
+| 9.2.4.1 Bypass Blocks | 2.4.1 | ✅ | `SkipLink` component added in v1.1.0 — place before Sidebar in layout |
 | 9.2.4.7 Focus Visible | 2.4.7 | ✅ | — |
 
 ---
@@ -545,7 +561,7 @@
 | 9.1.3.1 Info and Relationships | 1.3.1 | ✅ | Semantic HTML elements per variant |
 | 9.1.4.3 Contrast (Minimum) | 1.4.3 | ✅ | — |
 | 9.1.4.6 Contrast (Enhanced) (AAA) | 1.4.6 | ⚠️ | Verify 7:1 ratio for `muted` variant |
-| 9.1.4.8 Visual Presentation (AAA) | 1.4.8 | ❌ | Expose line width, line spacing, and letter spacing as consumer props |
+| 9.1.4.8 Visual Presentation (AAA) | 1.4.8 | ✅ | `prose` variant added in v1.1.0 — `max-w-prose` line width, WCAG-conformant defaults |
 | 9.2.4.10 Section Headings (AAA) | 2.4.10 | ✅ | `h1`–`h6` via variant map |
 
 ---
@@ -567,10 +583,18 @@
 
 | EN 301 549 | WCAG 2.2 | Status | Outstanding Actions |
 |-----------|----------|--------|---------------------|
-| 9.1.1.1 Non-text Content | 1.1.1 | ❌ | Provide text alternative for chart data (data table or `aria-label` with summary) |
+| 9.1.1.1 Non-text Content | 1.1.1 | ✅ | `ChartDataTable` component added in v1.1.0 — use alongside ChartContainer with `srOnly` |
 | 9.1.4.1 Use of Colour | 1.4.1 | ❌ | Colour is the sole differentiator for datasets; add patterns or symbols |
 | 9.1.4.3 Contrast (Minimum) | 1.4.3 | ⚠️ | Verify chart colours meet 3:1 ratio for graphical objects |
-| 9.4.1.2 Name, Role, Value | 4.1.2 | ❌ | Add `role="img"` + `aria-describedby` with data summary |
+| 9.4.1.2 Name, Role, Value | 4.1.2 | ⚠️ | Add `role="img"` + `aria-describedby` with data summary |
+
+### ChartDataTable
+
+| EN 301 549 | WCAG 2.2 | Status | Outstanding Actions |
+|-----------|----------|--------|---------------------|
+| 9.1.1.1 Non-text Content | 1.1.1 | ✅ | Accessible table alternative for chart data; `srOnly` prop hides visually while remaining in accessibility tree |
+| 9.1.3.1 Info and Relationships | 1.3.1 | ✅ | `scope="col"` on headers, `<caption>` required |
+| 9.2.1.1 Keyboard | 2.1.1 | ✅ | Standard table — keyboard-navigable |
 
 ### Calendar / DatePicker
 
@@ -626,12 +650,10 @@
 
 | # | Component | Issue |
 |---|-----------|-------|
-| 1 | **NavigationMenu / Sidebar** | Skip link missing (`2.4.1`) |
-| 2 | **Chart / ChartContainer** | No text alternative for chart data (`1.1.1`) |
-| 3 | **Chart** | Colour is the sole differentiator for datasets (`1.4.1`) |
-| 4 | **Form** | No form review step (`3.3.6 AAA`) |
-| 5 | **Field** | Context-sensitive help missing (`3.3.5 AAA`) |
-| 6 | **Typography** | Visual Presentation props not exposed (`1.4.8 AAA`) |
+| 1 | **Chart** | Colour is the sole differentiator for datasets (`1.4.1`) — patterns/symbols not yet added |
+| 2 | **Form** | No form review step (`3.3.6 AAA`) |
+
+> **Resolved in v1.1.0:** SkipLink (`2.4.1`), ChartDataTable text alternative (`1.1.1`), FieldHelp (`3.3.5`), Typography prose variant (`1.4.8`)
 
 ---
 
@@ -639,6 +661,9 @@
 
 | Version | Date | Change |
 |---------|------|--------|
+| 1.1.0 | 2026-05-11 | v1.1.0 — SkipLink, ChartDataTable, FieldHelp, Typography prose variant added; 4 critical issues resolved |
+| 1.0.3 | 2026-05-11 | Aligned to v1.0.3 release — APCA compliance, EN 301 549 positioning |
+| 1.0.0 | 2026-05-11 | Aligned to v1.0.0 release — APCA compliance, EN 301 549 positioning |
 | 1.0.2 | 2026-04-24 | Initial release of the Compliance Matrix |
 
 ---

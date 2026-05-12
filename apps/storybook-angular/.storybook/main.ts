@@ -13,6 +13,7 @@ const config: StorybookConfig = {
     '../src/stories/**/*.mdx',
     '../src/stories/**/*.stories.@(js|ts)',
   ],
+  staticDirs: ['../public'],
   addons: [
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@storybook/addon-themes'),

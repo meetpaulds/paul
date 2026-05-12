@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed — RTL (Right-to-Left) Migration
+### Added — RTL (Right-to-Left) Support
 
 - **All physical-direction Tailwind CSS utilities migrated to logical properties** across React, Vue, Svelte, and Angular component libraries.
 
@@ -29,55 +29,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   | `rounded-r-*` | `rounded-e-*` | `border-end-radius` |
   | `space-x-*` | `gap-x-*` | `column-gap` (in flex containers) |
 
-  > **No Tailwind v4 config changes** — logical utilities are built-in since Tailwind CSS v3.3+. All changes are strictly within component class strings (no framework/core modification).
-
-  > **Animation classes preserved** — `slide-in-from-left`, `data-[side=left]`, `slide-out-to-right`, etc. remain untouched as they describe physical movement.
-
   > **No visual change in LTR mode** — `start`/`end` resolve identically to `left`/`right` when `dir="ltr"`.
 
-- **Storybook: `dir="rtl"` test toolbar** — global `dir` toggle added to all 4 Storybook previews (React, Vue, Svelte, Angular). Switch to **RTL** in the toolbar to live-test Arabic/Hebrew layouts without code changes.
-- **New `Foundation / RTL (ar-SA)` Storybook story** (React) — composite Arabic layout snapshot with Alert, Badge, Card, Input, Button, and Dialog. Chromatic mode `rtl` configured for automated visual regression testing in CI.
-- **CI: Chromatic RTL mode** — `chromatic: { modes: { rtl: { viewport: 1200, globals: { dir: 'rtl' } } } }` added to the RTL story; Chromatic captures a separate RTL snapshot on every CI run automatically.
+- **Storybook: `dir="rtl"` test toolbar** — global `dir` toggle added to all 4 Storybook previews. Switch to **RTL** in the toolbar to live-test Arabic/Hebrew layouts.
+- **New `Foundation / RTL (ar-SA)` Storybook story** — composite Arabic layout snapshot with Alert, Badge, Card, Input, Button, and Dialog.
+- **Intl-based localization for Calendar & DatePicker** — `locale` prop accepts any BCP 47 locale string (`en-US`, `de-DE`, `fr-FR`, `ar-SA`, etc.); month names, weekday headers, and week-start day adapt automatically via `Intl.DateTimeFormat`.
+- **Print styles** — `@media print` modifiers applied across all four framework component libraries for accessible printed output.
 
-  > **Consumer impact:** If you previously overwrote `ml-`/`mr-` utilities via arbitrary class strings, verify your overrides resolve correctly under `dir="rtl"`. Prefer `ms-`/`me-` in custom styling going forward.
-
-### Changed — ⚠️ Visual Breaking Change
-
-- **WCAG 2.2 SC 1.4.6 / EN 301 549 §9.1.4.6 — Contrast (Enhanced) token corrections**  
-  Four design tokens were below the 7:1 AAA threshold and have been adjusted (lightness only; hue and saturation unchanged):
-
-  | Token | Mode | Before | After | Ratio before | Ratio after |
-  |-------|------|--------|-------|-------------|-------------|
-  | `--muted-foreground` | Light | `240 5% 38%` | `240 5% 33%` | 6.01–6.61:1 | 7.27–7.99:1 |
-  | `--muted-foreground` | Dark | `240 5% 64.9%` | `240 5% 71%` | 5.81–7.77:1 | 7.01–9.38:1 |
-  | `--destructive-text` | Light | `0 72% 44%` | `0 72% 39%` | 6.02:1 | 7.21:1 |
-  | `--destructive-text` | Dark | `0 90% 65%` | `0 90% 70%` | 6.03:1 | 7.02:1 |
-
-  Affected files: `packages/tokens/src/tokens.css`, `packages/tokens/src/tokens.ts`  
-  Full audit: [`docs/compliance/contrast-audit.md`](docs/compliance/contrast-audit.md)
-
-  > Chromatic snapshots for any story rendering `muted-foreground` or `destructive-text` will show a diff — accept these as the new baseline.
-
-- **WCAG 2.2 SC 2.4.13 / EN 301 549 §9.2.4.13 — Focus Not Obscured (AAA) — overlay & scroll fixes**  
-  Focused elements inside overlay components and scroll containers are now guaranteed to remain visible:
-
-  | Fix | Components affected |
-  |-----|-------------------|
-  | `SelectTrigger`: upgraded `focus:ring-1` → `focus:ring-2 focus:ring-offset-2` | `@meetpaul/ui` `select.tsx` |
-  | `scroll-py-1` added to `SelectViewport` | `@meetpaul/ui` `select.tsx` |
-  | `scroll-py-1` added to Vue `SelectViewport` | `@meetpaul/ui-vue` `select-content.vue` |
-  | `scroll-py-1` added to Vue `Combobox` option list | `@meetpaul/ui-vue` `combobox.vue` |
-  | `scroll-py-1` + `tabindex="0"` added to Svelte `ScrollArea` viewport | `@meetpaul/ui-svelte` `ScrollArea.svelte` |
-  | `scroll-py-1` + `tabindex="0"` added to Angular `ScrollArea` viewport | `@meetpaul/ui-angular` `scroll-area.component.ts` |
-
-  Storybook: new **"Focus Not Obscured — Sticky Header"** story added to `Overlays/Dialog` demonstrating the sticky-header scenario with `scroll-pt-[72px]`.
-
-- **WCAG 2.2 SC 2.5.5 / EN 301 549 §9.2.5.5 — Target Size (AAA) — 44×44 px touch target audit**  
-  All interactive elements audited across React, Vue, Svelte, and Angular. Fixes applied:
-
-  | Component | Fix | Strategy |
-  |-----------|-----|----------|
-  | **Slider thumb** (React, Vue, Svelte) | `before:inset-[-14px]` transparent pseudo-element | Hit-area expansion; visual size unchanged |
+---
   | **Slider** (Angular) | `h-11` on `input[type=range]` | Native range 44 px height |
   | **Toggle** all variants (all frameworks) | `default`/`lg` → `h-11`; `sm` → `h-9` | Height bump |
   | **TabsList** (all frameworks) | `h-9` → `h-11` | Height bump |

@@ -1,26 +1,32 @@
 {
   "name": "paul",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter paul dev",
-    "dev:storybook": "pnpm --filter @meetpaul/tokens build && concurrently \"pnpm --filter paul dev\" \"pnpm --filter paul-storybook-vue dev\" \"pnpm --filter paul-storybook-svelte dev\" \"pnpm --filter paul-storybook-angular dev\"",
-    "build": "pnpm --filter @meetpaul/ui build",
-    "build:storybook": "pnpm --filter @meetpaul/tokens build && pnpm --filter paul build && pnpm --filter paul-storybook-vue build && pnpm --filter paul-storybook-svelte build && pnpm --filter paul-storybook-angular build",
+    "dev": "pnpm --filter paul-storybook-react dev",
+    "dev:storybook": "pnpm --filter @meetpaul/tokens build && concurrently \"pnpm --filter paul-storybook-react dev\" \"pnpm --filter paul-storybook-vue dev\" \"pnpm --filter paul-storybook-svelte dev\" \"pnpm --filter paul-storybook-angular dev\"",
+    "build": "pnpm --filter \"./packages/*\" build",
+    "build:storybook": "pnpm --filter @meetpaul/tokens build && pnpm --filter paul-storybook-react build && pnpm --filter paul-storybook-vue build && pnpm --filter paul-storybook-svelte build && pnpm --filter paul-storybook-angular build",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck",
-    "test": "pnpm --filter @meetpaul/ui test",
+    "test": "pnpm --filter \"./packages/*\" test",
     "clean": "turbo run clean && rm -rf node_modules",
-    "publish:ui": "pnpm --filter @meetpaul/ui publish --no-git-checks",
-    "version:patch": "cd packages/ui && npm version patch",
-    "version:minor": "cd packages/ui && npm version minor",
-    "version:major": "cd packages/ui && npm version major"
+    "version:patch": "pnpm -r --filter \"./packages/*\" exec npm version patch --no-git-tag-version && npm version patch --no-git-tag-version",
+    "version:minor": "pnpm -r --filter \"./packages/*\" exec npm version minor --no-git-tag-version && npm version minor --no-git-tag-version",
+    "version:major": "pnpm -r --filter \"./packages/*\" exec npm version major --no-git-tag-version && npm version major --no-git-tag-version",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.58.2",
+    "@typescript-eslint/parser": "^8.58.2",
     "concurrently": "^9.0.0",
-    "turbo": "latest",
-    "typescript": "latest",
     "eslint": "latest",
-    "prettier": "latest"
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "latest",
+    "turbo": "latest",
+    "typescript": "latest"
   },
   "engines": {
     "node": ">=24"

@@ -187,3 +187,12 @@ export * from './lib/toast/toast.component'
 
 // Toggle Group
 export * from './lib/toggle-group/toggle-group.component'
+
+// Skip Link (WCAG 2.4.1)
+export * from './lib/skip-link/skip-link.component'
+
+// Chart Data Table (WCAG 1.1.1)
+export * from './lib/chart-data-table/chart-data-table.component'
+
+// Field Help (WCAG 3.3.5)
+export * from './lib/field-help/field-help.component'

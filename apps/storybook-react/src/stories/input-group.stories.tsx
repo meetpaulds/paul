@@ -1,0 +1,76 @@
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { InputGroup, InputGroupText } from '@meetpaul/ui-react'
+import { Input } from '@meetpaul/ui-react'
+import { DollarSign, AtSign, Lock } from 'lucide-react'
+
+const meta = {
+  title: 'Data Entry & Forms/InputGroup',
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+} satisfies Meta
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const WithTextPrefix: Story = {
+  render: () => (
+    <InputGroup>
+      <InputGroupText>https://</InputGroupText>
+      <Input aria-label="Website URL" placeholder="example.com" />
+    </InputGroup>
+  ),
+}
+
+export const WithIcon: Story = {
+  render: () => (
+    <InputGroup>
+      <InputGroupText>
+        <DollarSign className="h-4 w-4" />
+      </InputGroupText>
+      <Input type="number" placeholder="0.00" />
+    </InputGroup>
+  ),
+}
+
+export const WithAtSign: Story = {
+  render: () => (
+    <InputGroup>
+      <InputGroupText>
+        <AtSign className="h-4 w-4" aria-hidden="true" />
+      </InputGroupText>
+      <Input aria-label="Username" placeholder="username" />
+      <InputGroupText>@example.com</InputGroupText>
+    </InputGroup>
+  ),
+}
+
+export const WithPassword: Story = {
+  render: () => (
+    <InputGroup>
+      <InputGroupText>
+        <Lock className="h-4 w-4" />
+      </InputGroupText>
+      <Input type="password" placeholder="Password" />
+    </InputGroup>
+  ),
+}
+
+export const Dark: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4 w-80">
+      <InputGroup>
+        <InputGroupText>https://</InputGroupText>
+        <Input placeholder="example.com" />
+      </InputGroup>
+      <InputGroup>
+        <InputGroupText>
+          <DollarSign className="h-4 w-4" />
+        </InputGroupText>
+        <Input type="number" placeholder="0.00" />
+      </InputGroup>
+    </div>
+  ),
+  globals: { theme: 'dark' },
+}

@@ -54,6 +54,7 @@ export { default as DropdownMenuLabel } from './components/dropdown-menu-label.v
 export { default as Empty } from './components/empty.vue'
 
 export { default as Field } from './components/field.vue'
+export { default as FieldHelp } from './components/field-help.vue'
 
 export { default as HoverCard } from './components/hover-card.vue'
 export { default as HoverCardTrigger } from './components/hover-card-trigger.vue'
@@ -95,6 +96,8 @@ export { default as SelectSeparator } from './components/select-separator.vue'
 export { default as Separator } from './components/separator.vue'
 
 export { default as Skeleton } from './components/skeleton.vue'
+
+export { default as SkipLink } from './components/skip-link.vue'
 
 export { default as Slider } from './components/slider.vue'
 
@@ -138,6 +141,7 @@ export { default as Calendar } from './components/calendar.vue'
 
 export { default as ChartContainer } from './components/chart-container.vue'
 export { default as ChartTooltip } from './components/chart-tooltip.vue'
+export { default as ChartDataTable } from './components/chart-data-table.vue'
 
 export { default as Carousel } from './components/carousel.vue'
 export { default as CarouselContent } from './components/carousel-content.vue'

@@ -67,8 +67,12 @@ export class DialogComponent implements OnDestroy {
 
   private _open = false
   @Input() set open(val: boolean) {
-    this._open = val
-    val ? this.show() : this.hide()
+    this._open = val;
+    if (val) {
+      this.show();
+    } else {
+      this.hide();
+    }
   }
   get open() { return this._open }
   @Output() openChange = new EventEmitter<boolean>()

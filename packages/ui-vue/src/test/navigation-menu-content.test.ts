@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import UnavigationUmenuUcontent from '../../components/navigation-menu-content.vue'
+import UnavigationUmenuUcontent from '../components/navigation-menu-content.vue'
 
 describe('UnavigationUmenuUcontent', () => {
   it('renders without errors', () => {

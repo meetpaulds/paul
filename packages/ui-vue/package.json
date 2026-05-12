@@ -1,6 +1,6 @@
 {
   "name": "@meetpaul/ui-vue",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "paul — Vue 3 component library. The same design system as @meetpaul/ui, built natively for Vue.",
   "license": "MIT",
   "author": "SirPauls <office@sirpauls.com>",
@@ -51,6 +51,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
+    "lint": "eslint src --ext .ts",
     "typecheck": "vue-tsc --noEmit",
     "test": "vitest run"
   },

@@ -59,6 +59,9 @@ export { default as Empty } from './lib/components/Empty.svelte'
 // Field
 export { default as Field } from './lib/components/Field.svelte'
 
+// Field Help (WCAG 3.3.5)
+export { default as FieldHelp } from './lib/components/FieldHelp.svelte'
+
 // Input
 export { default as Input } from './lib/components/Input.svelte'
 export { default as InputGroup } from './lib/components/InputGroup.svelte'
@@ -140,6 +143,9 @@ export { default as CarouselItem } from './lib/components/CarouselItem.svelte'
 export { default as ChartContainer } from './lib/components/ChartContainer.svelte'
 export { default as ChartTooltip } from './lib/components/ChartTooltip.svelte'
 
+// Chart Data Table (WCAG 1.1.1)
+export { default as ChartDataTable } from './lib/components/ChartDataTable.svelte'
+
 // Command
 export { default as Command } from './lib/components/Command.svelte'
 export { default as CommandGroup } from './lib/components/CommandGroup.svelte'
@@ -165,6 +171,9 @@ export { default as HoverCard } from './lib/components/HoverCard.svelte'
 export { default as HoneypotField } from './lib/components/HoneypotField.svelte'
 export { default as MagicLink } from './lib/components/MagicLink.svelte'
 export { default as PasskeyButton } from './lib/components/PasskeyButton.svelte'
+
+// Skip Link (WCAG 2.4.1)
+export { default as SkipLink } from './lib/components/SkipLink.svelte'
 
 // Input OTP
 export { default as InputOTP } from './lib/components/InputOTP.svelte'
