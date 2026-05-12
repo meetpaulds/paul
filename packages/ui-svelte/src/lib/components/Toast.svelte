@@ -4,7 +4,7 @@
 </script>
 
 {#if open}
-  <div class={['group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all', variant === 'destructive' ? 'destructive border-destructive bg-destructive text-destructive-foreground' : 'border bg-background text-foreground', className].join(' ')} {...props}>
+  <div class={['group pointer-events-auto relative flex w-full items-center justify-between gap-x-4 overflow-hidden rounded-md border p-6 pe-8 shadow-lg transition-all', variant === 'destructive' ? 'destructive border-destructive bg-destructive text-destructive-foreground' : 'border bg-background text-foreground', className].join(' ')} {...props}>
     {@render children?.()}
   </div>
 {/if}

@@ -6,11 +6,11 @@ import { Label } from '../components/label'
 
 const DefaultRadioGroup = () => (
   <RadioGroup defaultValue="option-a">
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center gap-x-2">
       <RadioGroupItem value="option-a" id="option-a" />
       <Label htmlFor="option-a">Option A</Label>
     </div>
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center gap-x-2">
       <RadioGroupItem value="option-b" id="option-b" />
       <Label htmlFor="option-b">Option B</Label>
     </div>

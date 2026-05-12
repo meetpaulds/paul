@@ -29,7 +29,7 @@ function onInput(e: Event) {
         v-for="i in maxLen"
         :key="i"
         :class="cn(
-          'relative flex h-11 w-11 items-center justify-center border-y border-r border-input text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md',
+          'relative flex h-11 w-11 items-center justify-center border-y border-e border-input text-sm transition-all first:rounded-s-md first:border-s last:rounded-e-md',
         )"
       >
         {{ modelValue[i - 1] ?? '' }}

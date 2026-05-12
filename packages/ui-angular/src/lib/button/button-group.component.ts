@@ -22,6 +22,6 @@ import { cn } from '../../lib/utils'
 export class ButtonGroupComponent {
   @Input() class = ''
   @HostBinding('class') get hostClass() {
-    return cn('flex [&>*:not(:first-child)]:-ml-px [&>*:not(:first-child)]:rounded-l-none [&>*:not(:last-child)]:rounded-r-none', this.class)
+    return cn('flex [&>*:not(:first-child)]:-ms-px [&>*:not(:first-child)]:rounded-s-none [&>*:not(:last-child)]:rounded-e-none', this.class)
   }
 }

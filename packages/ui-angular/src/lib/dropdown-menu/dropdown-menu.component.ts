@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common'
       <div (click)="open = !open">
         <ng-content select="[slot=trigger]" />
       </div>
-      <div *ngIf="open" class="absolute left-0 top-full z-50 mt-1 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 shadow-md animate-in fade-in-0 zoom-in-95">
+      <div *ngIf="open" class="absolute start-0 top-full z-50 mt-1 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 shadow-md animate-in fade-in-0 zoom-in-95">
         <ng-content />
       </div>
     </div>

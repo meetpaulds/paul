@@ -15,6 +15,6 @@
   interface Props { class?: string; children?: import('svelte').Snippet }
   const { class: cls = '', children }: Props = $props()
 </script>
-<div class={cn('flex [&>*:not(:first-child)]:-ml-px [&>*:not(:first-child)]:rounded-l-none [&>*:not(:last-child)]:rounded-r-none', cls)}>
+<div class={cn('flex [&>*:not(:first-child)]:-ms-px [&>*:not(:first-child)]:rounded-s-none [&>*:not(:last-child)]:rounded-e-none', cls)}>
   {@render children?.()}
 </div>

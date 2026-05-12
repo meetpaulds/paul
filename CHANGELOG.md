@@ -7,7 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased]
+## [1.2.0] — 2026-05-12
+
+### Added — RTL Support, Auth Patterns, and i18n Localization (European Accessibility Differentiation)
+
+This release focuses on **European Accessibility Act (EAA)** and **EN 301 549** compliance, introducing full Right-to-Left (RTL) support, a new library of accessible authentication patterns, and comprehensive internationalization for date-based components.
+
+- **All physical-direction Tailwind CSS utilities migrated to logical properties** across React, Vue, Svelte, and Angular component libraries.
+
+  | Physical (removed) | Logical (replacement) | CSS equivalent |
+  |--------------------|----------------------|----------------|
+  | `ml-*` | `ms-*` | `margin-inline-start` |
+  | `mr-*` | `me-*` | `margin-inline-end` |
+  | `pl-*` | `ps-*` | `padding-inline-start` |
+  | `pr-*` | `pe-*` | `padding-inline-end` |
+  | `left-*` | `start-*` | `inset-inline-start` |
+  | `right-*` | `end-*` | `inset-inline-end` |
+  | `border-l` | `border-s` | `border-inline-start` |
+  | `border-r` | `border-e` | `border-inline-end` |
+  | `text-left` | `text-start` | `text-align: start` |
+  | `text-right` | `text-end` | `text-align: end` |
+  | `rounded-l-*` | `rounded-s-*` | `border-start-radius` |
+  | `rounded-r-*` | `rounded-e-*` | `border-end-radius` |
+  | `space-x-*` | `gap-x-*` | `column-gap` (in flex containers) |
+
+  > **No visual change in LTR mode** — `start`/`end` resolve identically to `left`/`right` when `dir="ltr"`.
+
+- **Storybook: `dir="rtl"` test toolbar** — global `dir` toggle added to all 4 Storybook previews. Switch to **RTL** in the toolbar to live-test Arabic/Hebrew layouts.
+- **New `Foundation / RTL (ar-SA)` Storybook story** — composite Arabic layout snapshot with Alert, Badge, Card, Input, Button, and Dialog.
+- **Intl-based localization for Calendar & DatePicker** — `locale` prop accepts any BCP 47 locale string (`en-US`, `de-DE`, `fr-FR`, `ar-SA`, etc.); month names, weekday headers, and week-start day adapt automatically via `Intl.DateTimeFormat`.
+- **Print styles** — `@media print` modifiers applied across all four framework component libraries for accessible printed output.
 
 ---
 
@@ -137,7 +166,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.2] — 2026-05-11
+## [1.0.2] — 2026-04-23
 
 ### Fixed
 
@@ -157,7 +186,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.1] — 2026-05-11
+## [1.0.1] — 2026-04-21
 
 ### Added
 
@@ -179,7 +208,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.0] — 2026-05-11
+## [1.0.0] — 2026-04-21
 
 ### Added
 
@@ -290,6 +319,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ESLint `no-undef` error on `IntersectionObserver` in test setup (`packages/ui/src/test/setup.ts`)
 - Storybook a11y test runner now merges per-story rule overrides with global suppressions
 
+[1.2.0]: https://github.com/meetpaulds/paul/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/meetpaulds/paul/compare/v1.0.3...v1.1.0
+[1.0.3]: https://github.com/meetpaulds/paul/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/meetpaulds/paul/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/meetpaulds/paul/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/meetpaulds/paul/compare/v0.4.0...v1.0.0

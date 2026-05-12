@@ -24,7 +24,7 @@ describe('Calendar', () => {
   it('calls onSelect when a day is clicked', async () => {
     const user = userEvent.setup()
     let selected: Date | undefined
-    render(<Calendar mode="single" onSelect={(d) => { selected = d }} />)
+    render(<Calendar mode="single" onSelect={(d: Date | undefined) => { selected = d }} {...({} as any)} />)
     const enabledCells = screen.getAllByRole('gridcell').filter(
       (el) => el.getAttribute('aria-disabled') !== 'true' && el.textContent?.match(/^\d+$/)
     )

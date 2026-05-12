@@ -98,11 +98,22 @@ export class AppComponent {}
 | `paul-input-group` | `InputGroupComponent` | Input with prefix/suffix addons |
 | `paul-input-group-text` | `InputGroupTextComponent` | Static text addon for InputGroup |
 | `label[paul-label]` | `LabelComponent` | Accessible form label |
+| `paul-input-otp` | `InputOTPComponent` | Hardened one-time password input with automatic focus handling and accessible slots |
+| `paul-magic-link` | `MagicLinkComponent` | Password-free authentication with screen-reader friendly state announcements |
+| `paul-passkey-button` | `PasskeyButtonComponent` | WebAuthn/Biometric login button with built-in accessibility fallbacks |
+| `paul-honeypot-field` | `HoneypotFieldComponent` | CAPTCHA-free bot prevention that remains hidden from keyboard and screen readers |
 | `paul-radio-group` | `RadioGroupComponent` | Single-selection control, implements `ControlValueAccessor` |
 | `paul-radio-group-item` | `RadioGroupItemComponent` | Individual radio button |
 | `paul-slider` | `SliderComponent` | Range value selector, implements `ControlValueAccessor` |
 | `paul-switch` | `SwitchComponent` | Toggle switch, implements `ControlValueAccessor` |
 | `textarea[paul-textarea]` | `TextareaComponent` | Multi-line text input, implements `ControlValueAccessor` |
+
+### Date & Time
+
+| Selector | Export | Description |
+|----------|--------|-------------|
+| `paul-calendar` | `CalendarComponent` | Month-view calendar with full i18n support via `locale` input |
+| `paul-date-picker` | `DatePickerComponent` | Date selection component with localized calendar popup |
 
 ### Feedback
 
@@ -128,10 +139,23 @@ export class AppComponent {}
 | `paul-accordion-item` | `AccordionItemComponent` | A single accordion section |
 | `paul-accordion-trigger` | `AccordionTriggerComponent` | Clickable header |
 | `paul-accordion-content` | `AccordionContentComponent` | Collapsible content panel |
-| `paul-collapsible` | `CollapsibleComponent` | Expand/collapse region |
-| `paul-collapsible-trigger` | `CollapsibleTriggerComponent` | Toggle trigger |
+| `paul-collapsible` | `CollapsibleComponent` | Expand/collapse region | `paul-collapsible-trigger` | `CollapsibleTriggerComponent` | Toggle trigger |
 | `paul-collapsible-content` | `CollapsibleContentComponent` | Hidden content area |
-| `paul-dialog` | `DialogComponent` | CDK Overlay modal with focus trap |
+
+---
+
+## European Localization & RTL Support
+
+This version introduces comprehensive support for European locales and Right-to-Left (RTL) layouts, satisfying **EN 301 549** and **EAA (European Accessibility Act)** requirements:
+
+- **RTL Support**: All components migrated to CSS logical properties (`ms-*`, `me-*`, `ps-*`, `pe-*`). Full support for Arabic, Hebrew, and other RTL languages via `dir="rtl"`.
+- **Intl-based i18n**: `Calendar` and `DatePicker` now use the native `Intl` API. Pass a `locale` input (e.g., `de-DE`, `fr-FR`, `ar-SA`) to automatically localize month names, weekday headers, and week-start days.
+- **Auth Patterns (WCAG 3.3.8)**: New accessible authentication components including `InputOTP`, `MagicLink`, `PasskeyButton`, and `HoneypotField`.
+- **Print Optimization**: Built-in `@media print` styles for accessible physical output.
+
+---
+
+## Tech Stack`paul-dialog` | `DialogComponent` | CDK Overlay modal with focus trap |
 | `paul-dialog-header` | `DialogHeaderComponent` | Dialog top section |
 | `paul-dialog-footer` | `DialogFooterComponent` | Dialog bottom section |
 | `paul-dialog-title` | `DialogTitleComponent` | Accessible dialog title |

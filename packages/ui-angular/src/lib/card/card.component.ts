@@ -25,6 +25,6 @@ import { cn } from '../../lib/utils'
 export class CardComponent {
   @Input() class = ''
   @HostBinding('class') get hostClass() {
-    return cn('rounded-xl border bg-card text-card-foreground shadow', this.class)
+    return cn('rounded-xl border bg-card text-card-foreground shadow print:shadow-none print:rounded-none print:border-black print:text-black', this.class)
   }
 }

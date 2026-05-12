@@ -107,6 +107,22 @@ import { Button, Input, Card, CardHeader, CardTitle, CardContent } from '@meetpa
 | **Switch** | Toggle switch for binary on/off settings |
 | **Textarea** | Multi-line text input |
 
+### Auth Patterns (WCAG 3.3.8)
+
+| Component | Description |
+|-----------|-------------|
+| **InputOTP** | Hardened one-time password input with automatic focus handling and accessible slots |
+| **MagicLink** | Password-free authentication with screen-reader friendly state announcements |
+| **PasskeyButton** | WebAuthn/Biometric login login button with built-in accessibility fallbacks |
+| **HoneypotField** | CAPTCHA-free bot prevention that remains hidden from keyboard and screen readers |
+
+### Date & Time
+
+| Component | Description |
+|-----------|-------------|
+| **Calendar** | Month-view calendar with full i18n support via `locale` prop |
+| **DatePicker** | Date selection component with localized calendar popup |
+
 ### Feedback
 
 | Component | Description |
@@ -183,6 +199,17 @@ import { Button, Input, Card, CardHeader, CardTitle, CardContent } from '@meetpa
 | **ContextMenuTrigger** | Element that opens the ContextMenu |
 | **ContextMenuContent** | Floating panel with menu items |
 | **ContextMenuItem** | Single selectable item in a ContextMenu |
+
+---
+
+## European Localization & RTL Support
+
+This version introduces comprehensive support for European locales and Right-to-Left (RTL) layouts, satisfying **EN 301 549** and **EAA (European Accessibility Act)** requirements:
+
+- **RTL Support**: All components migrated to CSS logical properties (`ms-*`, `me-*`, `ps-*`, `pe-*`). Full support for Arabic, Hebrew, and other RTL languages via `dir="rtl"`.
+- **Intl-based i18n**: `Calendar` and `DatePicker` now use the native `Intl` API. Pass a `locale` prop (e.g., `de-DE`, `fr-FR`, `ar-SA`) to automatically localize month names, weekday headers, and week-start days.
+- **Auth Patterns (WCAG 3.3.8)**: New accessible authentication components including `InputOTP`, `MagicLink`, `PasskeyButton`, and `HoneypotField`.
+- **Print Optimization**: Built-in `@media print` styles for accessible physical output.
 
 ---
 

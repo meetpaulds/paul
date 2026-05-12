@@ -16,6 +16,6 @@ import { cn } from '../../lib/utils'
 export class InputGroupComponent {
   @Input() class = ''
   @HostBinding('class') get hostClass() {
-    return cn('flex [&>input]:rounded-none [&>input:first-child]:rounded-l-md [&>input:last-child]:rounded-r-md', this.class)
+    return cn('flex [&>input]:rounded-none [&>input:first-child]:rounded-s-md [&>input:last-child]:rounded-e-md', this.class)
   }
 }

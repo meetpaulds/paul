@@ -133,6 +133,7 @@ export { default as BreadcrumbSeparator } from './lib/components/BreadcrumbSepar
 
 // Calendar
 export { default as Calendar } from './lib/components/Calendar.svelte'
+export { default as DatePicker } from './lib/components/DatePicker.svelte'
 
 // Carousel
 export { default as Carousel } from './lib/components/Carousel.svelte'

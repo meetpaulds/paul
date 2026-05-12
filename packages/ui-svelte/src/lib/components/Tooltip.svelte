@@ -24,7 +24,7 @@
 </script>
 <span use:melt={trigger}>{@render children?.()}</span>
 {#if $open}
-  <div use:melt={tooltipContent} class={cn('z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-xs text-primary-foreground animate-in fade-in-0 zoom-in-95', cls)}>
+  <div use:melt={tooltipContent} class={cn('z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-xs text-primary-foreground animate-in fade-in-0 zoom-in-95 print:hidden', cls)}>
     {content}
     <div use:melt={arrow}></div>
   </div>
