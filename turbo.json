@@ -4,17 +4,21 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", "build/**"]
+      "outputs": ["dist/**", "build/**"],
+      "cache": true
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
     "lint": {
-      "dependsOn": ["^build"]
+      "cache": true
     },
     "typecheck": {
-      "dependsOn": ["^build"]
+      "cache": true
+    },
+    "test": {
+      "cache": true
     },
     "clean": {
       "cache": false

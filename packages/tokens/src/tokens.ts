@@ -95,8 +95,8 @@ export const light: ModeTokens = {
   sidebarAccentForeground:   '240 5.9% 10%',
   sidebarBorder:             '220 13% 91%',
   sidebarRing:               '240 5.9% 10%',
-  fontSans:                  "'Montserrat', ui-sans-serif, system-ui, sans-serif",
-  fontMono:                  'ui-monospace, monospace',
+  fontSans:                  "'Geist', ui-sans-serif, system-ui, sans-serif",
+  fontMono:                  "'Geist Mono', ui-monospace, monospace",
 }
 
 /** Dark mode design tokens. */
@@ -135,8 +135,8 @@ export const dark: ModeTokens = {
   sidebarAccentForeground:   '240 4.8% 95.9%',
   sidebarBorder:             '240 3.7% 15.9%',
   sidebarRing:               '240 4.9% 83.9%',
-  fontSans:                  "'Montserrat', ui-sans-serif, system-ui, sans-serif",
-  fontMono:                  'ui-monospace, monospace',
+  fontSans:                  "'Geist', ui-sans-serif, system-ui, sans-serif",
+  fontMono:                  "'Geist Mono', ui-monospace, monospace",
 }
 
 /** All tokens keyed by mode. */
