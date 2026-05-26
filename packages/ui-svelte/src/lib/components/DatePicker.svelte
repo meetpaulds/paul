@@ -20,10 +20,6 @@
       : null
   )
 
-  function onSelect(date: Date | undefined) {
-    selected = date
-    open = false
-  }
 </script>
 
 <div class={['relative inline-block', className].filter(Boolean).join(' ')}>

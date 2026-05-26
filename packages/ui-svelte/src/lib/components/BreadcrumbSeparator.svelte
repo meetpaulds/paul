@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte'
+import type { Snippet } from 'svelte'
   let { class: className = '', children, ...props }: { class?: string; children?: Snippet; [key: string]: unknown } = $props()
 </script>
 <li role="presentation" aria-hidden="true" class={['[&>svg]:size-3.5', className].join(' ')} {...props}>

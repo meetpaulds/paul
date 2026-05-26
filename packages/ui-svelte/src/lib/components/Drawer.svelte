@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte'
+import type { Snippet } from 'svelte'
   let { open = $bindable(false), class: className = '', children, ...props }: { open?: boolean; class?: string; children?: Snippet; [key: string]: unknown } = $props()
 </script>
 
