@@ -49,7 +49,7 @@
     </tr>
   </thead>
   <tbody>
-    {#each rows as row, rowIndex}
+    {#each rows as row}
       <tr class="border-b last:border-0">
         {#each row as cell}
           <td class="px-3 py-2 text-foreground">{cell}</td>

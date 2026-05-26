@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { Snippet } from 'svelte'
   let { heading = '', class: className = '', children, ...props} = $props()
 </script>
 <div class={['overflow-hidden p-1 text-foreground', className].join(' ')} {...props}>

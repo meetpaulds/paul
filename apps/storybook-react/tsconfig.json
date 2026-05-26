@@ -9,7 +9,8 @@
     },
     "types": ["node"],
     "composite": false,
-    "noEmit": true
+    "noEmit": true,
+    "ignoreDeprecations": "5.0"
   },
   "include": [".storybook/**/*", "src/**/*"]
 }
