@@ -57,3 +57,7 @@ test-results/
 
 # Kiro specs (development artifacts)
 .kiro/
+
+# Test output files
+*-test.txt
+test-output.txt
