@@ -207,7 +207,7 @@ import '@meetpaul/ui/styles/globals.css'
 The styles include:
 - Tailwind CSS v4 with utility classes
 - CSS custom properties for colors, spacing, and typography
-- Google Fonts (Montserrat) integration
+- Google Fonts (Geist) integration
 
 ## Documentation
 
