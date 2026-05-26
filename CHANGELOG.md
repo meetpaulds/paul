@@ -303,7 +303,7 @@ This release focuses on **European Accessibility Act (EAA)** and **EN 301 549** 
 - **Automated a11y audit** via `@storybook/test-runner` + `axe-playwright` — 177/177 stories passing
 - **Unit tests** for all 53 testable components via Vitest + Testing Library
 - **CSS design tokens** (`globals.css`) with light and dark mode via Tailwind CSS v4 `@theme`
-- **Montserrat** as the default sans-serif font
+- **Geist** as the default sans-serif font
 
 ### Accessibility fixes
 
