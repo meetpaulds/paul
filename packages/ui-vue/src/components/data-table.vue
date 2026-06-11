@@ -4,10 +4,12 @@ import { cn } from '../lib/utils'
 
 interface Column { key: string; header: string }
 const props = defineProps<{
+  as?: string | any
   columns?: Column[]
   data?: Record<string, unknown>[]
   class?: string
 }>()
+const tag = props.as || 'div'
 
 const filterValue = ref('')
 const cols = computed(() => props.columns ?? [])
@@ -23,7 +25,7 @@ const rows = computed(() => {
 </script>
 
 <template>
-  <div :class="cn('w-full', props.class)">
+  <component :is="tag" :class="cn('w-full', props.class)">
     <div class="flex items-center py-4">
       <input
         v-model="filterValue"
@@ -55,5 +57,5 @@ const rows = computed(() => {
     <div class="flex items-center justify-end py-4 text-sm text-muted-foreground">
       {{ rows.length }} row(s)
     </div>
-  </div>
+  </component>
 </template>

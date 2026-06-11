@@ -4,9 +4,13 @@ import { cn } from '@/lib/utils'
 
 /** Image element inside an Avatar. Shows the fallback if the image fails to load. */
 defineOptions({ name: 'AvatarImage' })
-const props = defineProps<{ src: string; class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  src: string
+  class?: string
+}>()
+const tag = props.as || AvatarImage
 </script>
-
 <template>
-  <AvatarImage v-bind="props" :class="cn('aspect-square h-full w-full', props.class)" />
+  <component :is="tag" v-bind="props" :class="cn('aspect-square h-full w-full', props.class)" />
 </template>

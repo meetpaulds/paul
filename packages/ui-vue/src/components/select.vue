@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { SelectRoot, type SelectRootProps } from 'radix-vue'
+import { cn } from '@/lib/utils'
 /**
  * Select — dropdown selection backed by Radix Vue.
  *
@@ -17,6 +18,10 @@ import { SelectRoot, type SelectRootProps } from 'radix-vue'
  * @accessibility Keyboard-navigable with Arrow keys. Escape closes. Search by typing.
  */
 defineOptions({ name: 'Select' })
-const props = defineProps<{}>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || SelectRoot
 </script>
-<template><SelectRoot v-bind="props"><slot /></SelectRoot></template>
+<template><component :is="tag" v-bind="props" :class="cn(props.class)"><slot /></component></template>

@@ -2,11 +2,14 @@
 import { cn } from '../lib/utils'
 
 defineOptions({ inheritAttrs: false })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || 'nav'
 </script>
-
 <template>
-  <nav aria-label="breadcrumb" v-bind="$attrs" :class="cn('', props.class)">
+  <component :is="tag" aria-label="breadcrumb" v-bind="$attrs" :class="cn('', props.class)">
     <slot />
-  </nav>
+  </component>
 </template>

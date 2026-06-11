@@ -20,17 +20,21 @@ import { cn } from '@/lib/utils'
 defineOptions({ name: 'SkipLink' })
 
 const props = withDefaults(defineProps<{
+  as?: string | any
   /** The id of the main content element to skip to. @default 'main-content' */
   targetId?: string
   class?: string
 }>(), {
   targetId: 'main-content',
 })
+
+const tag = props.as || 'a'
 </script>
 
 <template>
-  <a
-    :href="`#${props.targetId}`"
+  <component
+    :is="tag"
+    :href="tag === 'a' ? `#${props.targetId}` : undefined"
     :class="cn(
       'sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[9999]',
       'focus:inline-flex focus:items-center focus:rounded-md focus:bg-background',
@@ -41,5 +45,5 @@ const props = withDefaults(defineProps<{
     )"
   >
     <slot>Skip to main content</slot>
-  </a>
+  </component>
 </template>

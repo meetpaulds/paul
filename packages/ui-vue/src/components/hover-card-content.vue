@@ -3,10 +3,14 @@ import { HoverCardPortal, HoverCardContent, type HoverCardContentProps } from 'r
 import { cn } from '@/lib/utils'
 /** Floating card content panel. Renders in a portal and positions itself relative to the trigger. */
 defineOptions({ name: 'HoverCardContent' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || HoverCardContent
 </script>
 <template>
   <HoverCardPortal>
-    <HoverCardContent v-bind="props" :class="cn('z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out', props.class)"><slot /></HoverCardContent>
+    <component :is="tag" v-bind="props" :class="cn('z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out', props.class)"><slot /></component>
   </HoverCardPortal>
 </template>

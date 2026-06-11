@@ -12,6 +12,13 @@ import { CollapsibleRoot, type CollapsibleRootProps } from 'radix-vue'
  * ```
  */
 defineOptions({ name: 'Collapsible' })
-const props = defineProps<{}>()
+const props = defineProps<{
+  as?: string | any
+}>()
+const tag = props.as || CollapsibleRoot
 </script>
-<template><CollapsibleRoot v-bind="props"><slot /></CollapsibleRoot></template>
+<template>
+  <component :is="tag" v-bind="props">
+    <slot />
+  </component>
+</template>

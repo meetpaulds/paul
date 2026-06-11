@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { cn } from '../lib/utils'
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || 'div'
 </script>
-<template><div :class="cn('grid gap-1.5 p-4 text-center sm:text-start', props.class)"><slot /></div></template>
+<template><component :is="tag" :class="cn('grid gap-1.5 p-4 text-center sm:text-start', props.class)"><slot /></component></template>

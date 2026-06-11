@@ -17,10 +17,24 @@ export const Default: Story = {
   }),
 }
 
+export const WithProps: Story = {
+  render: () => ({
+    components: { Alert },
+    template: `<Alert class="max-w-md" title="Heads up!" description="You can add components to your app using the cli." />`,
+  }),
+}
+
 export const Destructive: Story = {
   render: () => ({
     components: { Alert, AlertTitle, AlertDescription },
     template: `<Alert variant="destructive" class="max-w-md"><AlertTitle>Error</AlertTitle><AlertDescription>Your session has expired. Please log in again.</AlertDescription></Alert>`,
+  }),
+}
+
+export const DestructiveWithProps: Story = {
+  render: () => ({
+    components: { Alert },
+    template: `<Alert variant="destructive" class="max-w-md" title="Error" description="Your session has expired. Please log in again." />`,
   }),
 }
 

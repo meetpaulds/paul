@@ -2,7 +2,12 @@
 import { inject, Ref, computed } from 'vue'
 import { cn } from '../lib/utils'
 
-const props = defineProps<{ value?: string; class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  value?: string
+  class?: string
+}>()
+const tag = props.as || 'div'
 const emit = defineEmits(['select'])
 const search = inject<Ref<string>>('command-search')!
 
@@ -11,11 +16,11 @@ const visible = computed(() =>
 )
 </script>
 <template>
-  <div
+  <component :is="tag"
     v-if="visible"
     @click="emit('select', props.value)"
     :class="cn('relative flex cursor-pointer select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground', props.class)"
   >
     <slot />
-  </div>
+  </component>
 </template>

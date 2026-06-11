@@ -14,10 +14,14 @@ import { cn } from '@/lib/utils'
  * @accessibility Fully keyboard-navigable. Supports indeterminate state via `checked="indeterminate"`.
  */
 defineOptions({ name: 'Checkbox' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || CheckboxRoot
 </script>
 <template>
-  <CheckboxRoot v-bind="props" :class="cn('peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground', props.class)">
+  <component :is="tag" v-bind="props" :class="cn('peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground', props.class)">
     <CheckboxIndicator class="flex items-center justify-center text-current"><Check class="h-4 w-4" /></CheckboxIndicator>
-  </CheckboxRoot>
+  </component>
 </template>

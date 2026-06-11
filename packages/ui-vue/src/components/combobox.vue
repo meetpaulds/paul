@@ -4,10 +4,12 @@ import { cn } from '../lib/utils'
 
 interface Option { value: string; label: string }
 const props = defineProps<{
+  as?: string | any
   options?: Option[]
   placeholder?: string
   class?: string
 }>()
+const tag = props.as || 'div'
 const modelValue = defineModel<string>({ default: '' })
 
 const open = ref(false)
@@ -31,7 +33,7 @@ function select(val: string) {
 </script>
 
 <template>
-  <div :class="cn('relative w-48', props.class)">
+  <component :is="tag" :class="cn('relative w-48', props.class)">
     <button
       role="combobox"
       :aria-expanded="open"
@@ -64,5 +66,5 @@ function select(val: string) {
         <div v-if="filtered.length === 0" class="py-6 text-center text-sm text-muted-foreground">No results found.</div>
       </div>
     </div>
-  </div>
+  </component>
 </template>

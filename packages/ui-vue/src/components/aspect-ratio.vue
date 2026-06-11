@@ -11,6 +11,14 @@ import { AspectRatio, type AspectRatioProps } from 'radix-vue'
  * ```
  */
 defineOptions({ name: 'AspectRatio' })
-const props = defineProps<{}>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || AspectRatio
 </script>
-<template><AspectRatio v-bind="props"><slot /></AspectRatio></template>
+<template>
+  <component :is="tag" v-bind="props">
+    <slot />
+  </component>
+</template>

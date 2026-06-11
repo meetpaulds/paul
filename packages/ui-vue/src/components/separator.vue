@@ -13,6 +13,14 @@ import { cn } from '@/lib/utils'
  * @accessibility Renders as `role="separator"` or `role="none"` based on the `decorative` prop.
  */
 defineOptions({ name: 'Separator' })
-const props = defineProps<{ orientation?: 'horizontal' | 'vertical'; decorative?: boolean; class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  orientation?: 'horizontal' | 'vertical'
+  decorative?: boolean
+  class?: string
+}>()
+const tag = props.as || SeparatorRoot
 </script>
-<template><SeparatorRoot v-bind="props" :class="cn('shrink-0 bg-border', props.orientation === 'vertical' ? 'h-full w-[1px]' : 'h-[1px] w-full', props.class)" /></template>
+<template>
+  <component :is="tag" v-bind="props" :class="cn('shrink-0 bg-border', props.orientation === 'vertical' ? 'h-full w-[1px]' : 'h-[1px] w-full', props.class)" />
+</template>

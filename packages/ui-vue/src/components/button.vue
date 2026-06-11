@@ -27,11 +27,13 @@ const buttonVariants = cva(
   }
 )
 interface ButtonProps {
+  as?: string | any
   variant?: 'default' | 'destructive' | 'destructive-outline' | 'destructive-ghost' | 'outline' | 'secondary' | 'ghost' | 'link'
   size?: 'default' | 'sm' | 'lg' | 'icon'
   disabled?: boolean
   type?: 'button' | 'submit' | 'reset'
   class?: string
+  label?: string
 }
 /**
  * Button — the primary interactive element for triggering actions.
@@ -43,6 +45,8 @@ interface ButtonProps {
  * <Button>Save</Button>
  * <Button variant="destructive" size="sm">Delete</Button>
  * <Button variant="outline" :disabled="loading">Cancel</Button>
+ * <Button as="router-link" to="/about">About</Button>
+ * <Button label="Button" />
  * ```
  *
  * @accessibility Always provide a descriptive label. For icon-only buttons, add `aria-label`.
@@ -50,14 +54,16 @@ interface ButtonProps {
  */
 defineOptions({ name: 'Button' })
 const props = defineProps<ButtonProps>()
+const tag = props.as || 'button'
 </script>
 
 <template>
-  <button
-    :type="props.type ?? 'button'"
-    :disabled="props.disabled"
+  <component
+    :is="tag"
+    :type="tag === 'button' ? (props.type ?? 'button') : undefined"
+    :disabled="tag === 'button' ? props.disabled : undefined"
     :class="cn(buttonVariants({ variant: props.variant, size: props.size }), props.class)"
   >
-    <slot />
-  </button>
+    <slot>{{ props.label }}</slot>
+  </component>
 </template>

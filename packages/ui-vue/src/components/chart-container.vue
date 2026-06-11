@@ -3,11 +3,13 @@ import { computed } from 'vue'
 import { cn } from '@/lib/utils'
 
 const props = withDefaults(defineProps<{
+  as?: string | any
   class?: string
   config?: Record<string, { label: string; color: string }>
 }>(), {
   config: () => ({}),
 })
+const tag = props.as || 'div'
 
 const cssVars = computed(() =>
   Object.entries(props.config)
@@ -17,10 +19,11 @@ const cssVars = computed(() =>
 </script>
 
 <template>
-  <div
+  <component
+    :is="tag"
     :class="cn('flex aspect-video justify-center text-xs', props.class)"
     :style="cssVars"
   >
     <slot />
-  </div>
+  </component>
 </template>

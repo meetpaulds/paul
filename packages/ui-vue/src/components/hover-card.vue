@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { HoverCardRoot, type HoverCardRootProps } from 'radix-vue'
+import { cn } from '@/lib/utils'
 /**
  * HoverCard — rich tooltip-style card that appears when hovering a trigger element.
  *
@@ -14,6 +15,10 @@ import { HoverCardRoot, type HoverCardRootProps } from 'radix-vue'
  * ```
  */
 defineOptions({ name: 'HoverCard' })
-const props = defineProps<{}>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || HoverCardRoot
 </script>
-<template><HoverCardRoot v-bind="props"><slot /></HoverCardRoot></template>
+<template><component :is="tag" v-bind="props" :class="cn(props.class)"><slot /></component></template>

@@ -2,7 +2,12 @@
 import { ref, computed } from 'vue'
 import { cn } from '../lib/utils'
 
-const props = defineProps<{ class?: string; locale?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+  locale?: string
+}>()
+const tag = props.as || 'div'
 const modelValue = defineModel<Date | undefined>()
 
 const today = new Date()
@@ -73,7 +78,7 @@ function isToday(day: number | null) {
 </script>
 
 <template>
-  <div :class="cn('p-3 rounded-md border', props.class)">
+  <component :is="tag" :class="cn('p-3 rounded-md border', props.class)">
     <div class="flex items-center justify-between mb-2">
       <button @click="prevMonth" class="inline-flex items-center justify-center h-11 w-11 rounded-md border hover:bg-accent">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
@@ -103,5 +108,5 @@ function isToday(day: number | null) {
         {{ day }}
       </button>
     </div>
-  </div>
+  </component>
 </template>

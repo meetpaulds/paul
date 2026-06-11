@@ -13,10 +13,16 @@ import { cn } from '@/lib/utils'
  * `aria-valuenow` automatically.
  */
 defineOptions({ name: 'Progress' })
-const props = defineProps<{ modelValue?: number; max?: number; class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  modelValue?: number
+  max?: number
+  class?: string
+}>()
+const tag = props.as || ProgressRoot
 </script>
 <template>
-  <ProgressRoot v-bind="props" :class="cn('relative h-2 w-full overflow-hidden rounded-full bg-primary/20', props.class)">
+  <component :is="tag" v-bind="props" :class="cn('relative h-2 w-full overflow-hidden rounded-full bg-primary/20', props.class)">
     <ProgressIndicator class="h-full w-full flex-1 bg-primary transition-all" :style="{ transform: `translateX(-${100 - (props.modelValue ?? 0)}%)` }" />
-  </ProgressRoot>
+  </component>
 </template>

@@ -2,7 +2,11 @@
 import { ref } from 'vue'
 import { cn } from '../lib/utils'
 
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || 'div'
 
 interface ToastItem { id: number; message: string; type?: 'default' | 'success' | 'error' }
 const toasts = ref<ToastItem[]>([])
@@ -18,7 +22,7 @@ defineExpose({ show })
 </script>
 
 <template>
-  <div :class="cn('fixed bottom-4 end-4 z-[100] flex flex-col gap-2 w-80', props.class)">
+  <component :is="tag" :class="cn('fixed bottom-4 end-4 z-[100] flex flex-col gap-2 w-80', props.class)">
     <TransitionGroup name="toast">
       <div
         v-for="t in toasts"
@@ -31,7 +35,7 @@ defineExpose({ show })
         {{ t.message }}
       </div>
     </TransitionGroup>
-  </div>
+  </component>
 </template>
 
 <style scoped>

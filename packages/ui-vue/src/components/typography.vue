@@ -24,6 +24,7 @@ const typographyVariants = cva('', {
 })
 const tagMap = { h1:'h1', h2:'h2', h3:'h3', h4:'h4', p:'p', blockquote:'blockquote', code:'code', lead:'p', large:'p', small:'small', muted:'p', list:'ul', prose:'p' } as const
 interface TypographyProps {
+  as?: string | any
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'blockquote' | 'code' | 'lead' | 'large' | 'small' | 'muted' | 'list' | 'prose'
   class?: string
 }
@@ -40,6 +41,8 @@ interface TypographyProps {
  */
 defineOptions({ name: 'Typography' })
 const props = defineProps<TypographyProps>()
-const tag = computed(() => tagMap[props.variant ?? 'p'] ?? 'p')
+const tag = computed(() => props.as || (tagMap[props.variant ?? 'p'] ?? 'p'))
 </script>
-<template><component :is="tag" :class="cn(typographyVariants({ variant: props.variant }), props.class)"><slot /></component></template>
+<template>
+  <component :is="tag" :class="cn(typographyVariants({ variant: props.variant }), props.class)"><slot /></component>
+</template>

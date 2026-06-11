@@ -19,14 +19,22 @@ import { cn } from '@/lib/utils'
  * Error messages use `text-destructive-text` and should also be linked via `aria-describedby`.
  */
 defineOptions({ name: 'Field' })
-const props = defineProps<{ label?: string; error?: string; hint?: string; required?: boolean; class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  label?: string
+  error?: string
+  hint?: string
+  required?: boolean
+  class?: string
+}>()
 const id = useId()
+const tag = props.as || 'div'
 </script>
 <template>
-  <div :class="cn('space-y-2', props.class)">
+  <component :is="tag" :class="cn('space-y-2', props.class)">
     <label v-if="props.label" :for="id" class="text-sm font-medium leading-none">{{ props.label }}<span v-if="props.required" class="text-destructive-text ms-1">*</span></label>
     <slot :id="id" />
     <p v-if="props.error" class="text-[0.8rem] font-medium text-destructive-text">{{ props.error }}</p>
     <p v-else-if="props.hint" class="text-[0.8rem] text-muted-foreground">{{ props.hint }}</p>
-  </div>
+  </component>
 </template>

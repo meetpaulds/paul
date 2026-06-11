@@ -24,6 +24,7 @@ import { cn } from '@/lib/utils'
 defineOptions({ name: 'FieldHelp' })
 
 const props = withDefaults(defineProps<{
+  as?: string | any
   /** URL to link to for more detailed help. */
   href?: string
   /** Link text when href is provided. @default 'Learn more' */
@@ -32,10 +33,12 @@ const props = withDefaults(defineProps<{
 }>(), {
   linkText: 'Learn more',
 })
+
+const tag = props.as || 'div'
 </script>
 
 <template>
-  <div :class="cn('flex items-start gap-2 text-sm text-muted-foreground', props.class)">
+  <component :is="tag" :class="cn('flex items-start gap-2 text-sm text-muted-foreground', props.class)">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="14"
@@ -65,5 +68,5 @@ const props = withDefaults(defineProps<{
         >{{ props.linkText }}</a>
       </template>
     </span>
-  </div>
+  </component>
 </template>

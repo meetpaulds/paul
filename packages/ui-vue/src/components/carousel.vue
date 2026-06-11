@@ -2,7 +2,11 @@
 import { ref, provide } from 'vue'
 import { cn } from '../lib/utils'
 
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || 'div'
 const current = ref(0)
 const count = ref(0)
 
@@ -14,7 +18,7 @@ provide('carousel-register', () => { count.value++ })
 </script>
 
 <template>
-  <div :class="cn('relative', props.class)">
+  <component :is="tag" :class="cn('relative', props.class)">
     <slot />
-  </div>
+  </component>
 </template>

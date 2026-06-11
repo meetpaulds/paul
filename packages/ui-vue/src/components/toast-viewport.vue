@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { cn } from '../lib/utils'
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || 'div'
 </script>
 <template>
-  <div :class="cn('fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:end-0 sm:top-auto sm:flex-col md:max-w-[420px]', props.class)">
+  <component :is="tag" :class="cn('fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:end-0 sm:top-auto sm:flex-col md:max-w-[420px]', props.class)">
     <slot />
-  </div>
+  </component>
 </template>

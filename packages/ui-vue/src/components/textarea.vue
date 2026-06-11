@@ -11,7 +11,21 @@ import { cn } from '@/lib/utils'
  * @accessibility Always associate with a `<label>` or use inside `<Field>`.
  */
 defineOptions({ name: 'Textarea' })
-const props = defineProps<{ class?: string; disabled?: boolean; placeholder?: string; rows?: number }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+  disabled?: boolean
+  placeholder?: string
+  rows?: number
+}>()
+const tag = props.as || 'textarea'
 const model = defineModel<string>()
 </script>
-<template><textarea v-bind="props" v-model="model" :class="cn('flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50', props.class)" /></template>
+<template>
+  <component
+    :is="tag"
+    v-bind="props"
+    v-model="model"
+    :class="cn('flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50', props.class)"
+  />
+</template>

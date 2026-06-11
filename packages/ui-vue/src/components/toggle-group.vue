@@ -14,6 +14,10 @@ import { cn } from '@/lib/utils'
  * ```
  */
 defineOptions({ name: 'ToggleGroup' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || ToggleGroupRoot
 </script>
-<template><ToggleGroupRoot v-bind="props" :class="cn('flex items-center justify-center gap-1', props.class)"><slot /></ToggleGroupRoot></template>
+<template><component :is="tag" v-bind="props" :class="cn('flex items-center justify-center gap-1', props.class)"><slot /></component></template>

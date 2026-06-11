@@ -13,6 +13,13 @@ import { cn } from '@/lib/utils'
  * ```
  */
 defineOptions({ name: 'Label' })
-const props = defineProps<{ for?: string; class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  for?: string
+  class?: string
+}>()
+const tag = props.as || LabelRoot
 </script>
-<template><LabelRoot v-bind="props" :class="cn('text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70', props.class)"><slot /></LabelRoot></template>
+<template>
+  <component :is="tag" v-bind="props" :class="cn('text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70', props.class)"><slot /></component>
+</template>

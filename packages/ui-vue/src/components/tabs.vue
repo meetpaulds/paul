@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { TabsRoot, type TabsRootProps } from 'radix-vue'
+import { cn } from '@/lib/utils'
 /**
  * Tabs — tabbed interface for switching between related content panels.
  *
@@ -18,6 +19,10 @@ import { TabsRoot, type TabsRootProps } from 'radix-vue'
  * @accessibility Arrow keys move between tabs. Panels are associated via `aria-controls`/`aria-labelledby`.
  */
 defineOptions({ name: 'Tabs' })
-const props = defineProps<{}>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || TabsRoot
 </script>
-<template><TabsRoot v-bind="props"><slot /></TabsRoot></template>
+<template><component :is="tag" v-bind="props" :class="cn(props.class)"><slot /></component></template>

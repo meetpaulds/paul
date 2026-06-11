@@ -29,4 +29,21 @@ export const Default: Story = {
   }),
 }
 
+export const WithProps: Story = {
+  render: () => ({
+    components: { Card, Button },
+    template: `
+      <Card class="w-80" title="Card with Props" description="This card uses title and description props, plus footer slot.">
+        <p class="text-sm">Card content area.</p>
+        <template #footer>
+          <div class="flex justify-between w-full">
+            <Button variant="outline">Cancel</Button>
+            <Button>Save</Button>
+          </div>
+        </template>
+      </Card>
+    `,
+  }),
+}
+
 export const Dark: Story = { ...Default, globals: { theme: 'dark' } }

@@ -13,11 +13,15 @@ import { cn } from '@/lib/utils'
  * ```
  */
 defineOptions({ name: 'ButtonGroup' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || 'div'
 </script>
 
 <template>
-  <div :class="cn('flex [&>*:not(:first-child)]:-ms-px [&>*:not(:first-child)]:rounded-s-none [&>*:not(:last-child)]:rounded-e-none', props.class)">
+  <component :is="tag" :class="cn('flex [&>*:not(:first-child)]:-ms-px [&>*:not(:first-child)]:rounded-s-none [&>*:not(:last-child)]:rounded-e-none', props.class)">
     <slot />
-  </div>
+  </component>
 </template>

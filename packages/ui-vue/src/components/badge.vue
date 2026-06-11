@@ -3,7 +3,7 @@ import { type VariantProps, cva } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const badgeVariants = cva(
-  'inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 print:shadow-none print:border-black print:text-black',
+  'inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus:ring-offset-2 print:shadow-none print:border-black print:text-black',
   {
     variants: {
       variant: {
@@ -17,8 +17,10 @@ const badgeVariants = cva(
   }
 )
 interface BadgeProps {
+  as?: string | any
   variant?: 'default' | 'secondary' | 'destructive' | 'outline'
   class?: string
+  label?: string
 }
 /**
  * Badge — a small inline label used to highlight status, category, or metadata.
@@ -28,6 +30,8 @@ interface BadgeProps {
  * <Badge>New</Badge>
  * <Badge variant="destructive">Error</Badge>
  * <Badge variant="outline">Draft</Badge>
+ * <Badge as="span" variant="secondary">Label</Badge>
+ * <Badge label="Label" />
  * ```
  *
  * @accessibility Badges are rendered as `<div>` elements. If the badge conveys
@@ -35,8 +39,11 @@ interface BadgeProps {
  */
 defineOptions({ name: 'Badge' })
 const props = defineProps<BadgeProps>()
+const tag = props.as || 'div'
 </script>
 
 <template>
-  <div :class="cn(badgeVariants({ variant: props.variant }), props.class)"><slot /></div>
+  <component :is="tag" :class="cn(badgeVariants({ variant: props.variant }), props.class)">
+    <slot>{{ props.label }}</slot>
+  </component>
 </template>

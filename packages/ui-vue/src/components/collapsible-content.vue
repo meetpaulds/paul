@@ -3,6 +3,14 @@ import { CollapsibleContent } from 'radix-vue'
 import { cn } from '@/lib/utils'
 /** Animatable content area of a Collapsible. Hidden when closed. */
 defineOptions({ name: 'CollapsibleContent' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || CollapsibleContent
 </script>
-<template><CollapsibleContent :class="cn('overflow-hidden', props.class)"><slot /></CollapsibleContent></template>
+<template>
+  <component :is="tag" :class="cn('overflow-hidden', props.class)">
+    <slot />
+  </component>
+</template>

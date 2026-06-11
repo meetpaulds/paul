@@ -27,6 +27,7 @@ import { cn } from '@/lib/utils'
 defineOptions({ name: 'ChartDataTable' })
 
 const props = withDefaults(defineProps<{
+  as?: string | any
   /** Column headers for the data table. */
   headers: string[]
   /** Row data — each row is an array of cell values matching the headers. */
@@ -39,10 +40,11 @@ const props = withDefaults(defineProps<{
 }>(), {
   srOnly: false,
 })
+const tag = props.as || 'table'
 </script>
 
 <template>
-  <table :class="cn(props.srOnly ? 'sr-only' : 'w-full text-sm', props.class)">
+  <component :is="tag" :class="cn(props.srOnly ? 'sr-only' : 'w-full text-sm', props.class)">
     <caption :class="cn('mb-2 text-left text-sm font-medium text-foreground', props.srOnly && 'sr-only')">
       {{ props.caption }}
     </caption>
@@ -73,5 +75,5 @@ const props = withDefaults(defineProps<{
         </td>
       </tr>
     </tbody>
-  </table>
+  </component>
 </template>

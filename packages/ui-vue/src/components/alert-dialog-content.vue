@@ -1,8 +1,17 @@
 <script setup lang="ts">
 import { inject, Ref } from 'vue'
 import { cn } from '../lib/utils'
+import AlertDialogHeader from './alert-dialog-header.vue'
+import AlertDialogTitle from './alert-dialog-title.vue'
+import AlertDialogDescription from './alert-dialog-description.vue'
+import AlertDialogFooter from './alert-dialog-footer.vue'
+
 const open = inject<Ref<boolean>>('alert-dialog-open')!
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  class?: string
+  title?: string
+  description?: string
+}>()
 </script>
 <template>
   <Teleport to="body">
@@ -16,7 +25,20 @@ const props = defineProps<{ class?: string }>()
         aria-modal="true"
         :class="cn('fixed start-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg sm:rounded-lg', props.class)"
       >
+        <slot name="header">
+          <AlertDialogHeader v-if="props.title || props.description || $slots.title || $slots.description">
+            <slot name="title">
+              <AlertDialogTitle v-if="props.title">{{ props.title }}</AlertDialogTitle>
+            </slot>
+            <slot name="description">
+              <AlertDialogDescription v-if="props.description">{{ props.description }}</AlertDialogDescription>
+            </slot>
+          </AlertDialogHeader>
+        </slot>
         <slot />
+        <AlertDialogFooter v-if="$slots.footer">
+          <slot name="footer" />
+        </AlertDialogFooter>
       </div>
     </Transition>
   </Teleport>

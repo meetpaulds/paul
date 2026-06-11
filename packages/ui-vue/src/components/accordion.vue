@@ -1,13 +1,8 @@
 <script setup lang="ts">
 import {
   AccordionRoot,
-  AccordionItem,
-  AccordionHeader,
-  AccordionTrigger,
-  AccordionContent,
   type AccordionRootProps,
 } from 'radix-vue'
-import { ChevronDown } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 
 /**
@@ -26,11 +21,15 @@ import { cn } from '@/lib/utils'
  * @accessibility Built on Radix Vue AccordionRoot. Keyboard-navigable with Arrow keys.
  */
 defineOptions({ name: 'Accordion' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || AccordionRoot
 </script>
 
 <template>
-  <AccordionRoot v-bind="props" :class="cn(props.class)">
+  <component :is="tag" v-bind="props" :class="cn(props.class)">
     <slot />
-  </AccordionRoot>
+  </component>
 </template>

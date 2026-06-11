@@ -1,8 +1,19 @@
 <script setup lang="ts">
 import { inject, Ref } from 'vue'
 import { cn } from '../lib/utils'
+import SheetHeader from './sheet-header.vue'
+import SheetTitle from './sheet-title.vue'
+import SheetDescription from './sheet-description.vue'
+import SheetFooter from './sheet-footer.vue'
 
-const props = defineProps<{ side?: 'top' | 'bottom' | 'left' | 'right'; class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  side?: 'top' | 'bottom' | 'left' | 'right'
+  class?: string
+  title?: string
+  description?: string
+}>()
+const tag = props.as || 'div'
 const open = inject<Ref<boolean>>('sheet-open')!
 const close = inject<() => void>('sheet-close')!
 
@@ -20,11 +31,26 @@ const sideClasses: Record<string, string> = {
       <div v-if="open" class="fixed inset-0 z-50 bg-black/80" @click="close" />
     </Transition>
     <Transition :name="`sheet-slide-${props.side ?? 'right'}`">
-      <div
+      <component
         v-if="open"
+        :is="tag"
         role="dialog"
         :class="cn('fixed z-50 gap-4 bg-background p-6 shadow-lg print:shadow-none print:rounded-none print:border-black print:text-black', sideClasses[props.side ?? 'right'], props.class)"
       >
+        <slot name="header">
+          <SheetHeader v-if="props.title || props.description || $slots.title || $slots.description">
+            <slot name="title">
+              <SheetTitle v-if="props.title">{{ props.title }}</SheetTitle>
+            </slot>
+            <slot name="description">
+              <SheetDescription v-if="props.description">{{ props.description }}</SheetDescription>
+            </slot>
+          </SheetHeader>
+        </slot>
+        <slot />
+        <SheetFooter v-if="$slots.footer">
+          <slot name="footer" />
+        </SheetFooter>
         <button
           class="absolute end-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
           @click="close"
@@ -32,8 +58,7 @@ const sideClasses: Record<string, string> = {
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
           <span class="sr-only">Close</span>
         </button>
-        <slot />
-      </div>
+      </component>
     </Transition>
   </Teleport>
 </template>

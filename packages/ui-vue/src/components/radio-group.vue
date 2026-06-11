@@ -21,6 +21,10 @@ import { cn } from '@/lib/utils'
  * @accessibility Arrow keys cycle through items. Each item should have an associated Label.
  */
 defineOptions({ name: 'RadioGroup' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || RadioGroupRoot
 </script>
-<template><RadioGroupRoot v-bind="props" :class="cn('grid gap-2', props.class)"><slot /></RadioGroupRoot></template>
+<template><component :is="tag" v-bind="props" :class="cn('grid gap-2', props.class)"><slot /></component></template>

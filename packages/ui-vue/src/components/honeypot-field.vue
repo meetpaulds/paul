@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { cn } from '../lib/utils'
 /**
  * Honeypot Field — invisible bot-trap as CAPTCHA-free spam prevention.
  *
@@ -9,13 +10,20 @@
  *
  * Server side: reject any submission where this field is non-empty.
  */
-const props = defineProps<{ name?: string }>()
+const props = defineProps<{
+  as?: string | any
+  name?: string
+  class?: string
+}>()
+const tag = props.as || 'div'
 defineOptions({ name: 'HoneypotField' })
 </script>
 
 <template>
-  <div
+  <component
+    :is="tag"
     aria-hidden="true"
+    :class="cn(props.class)"
     style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none"
   >
     <label :for="'hp-' + (props.name ?? 'website')">Leave this field empty</label>
@@ -27,5 +35,5 @@ defineOptions({ name: 'HoneypotField' })
       autocomplete="off"
       value=""
     />
-  </div>
+  </component>
 </template>

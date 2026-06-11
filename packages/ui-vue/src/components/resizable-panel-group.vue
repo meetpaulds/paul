@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { cn } from '../lib/utils'
-const props = defineProps<{ direction?: 'horizontal' | 'vertical'; class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  direction?: 'horizontal' | 'vertical'
+  class?: string
+}>()
+const tag = props.as || 'div'
 </script>
 <template>
-  <div :class="cn('flex h-full w-full', props.direction === 'vertical' ? 'flex-col' : '', props.class)">
+  <component :is="tag" :class="cn('flex h-full w-full', props.direction === 'vertical' ? 'flex-col' : '', props.class)">
     <slot />
-  </div>
+  </component>
 </template>

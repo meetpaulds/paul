@@ -2,10 +2,15 @@
 import { ref, computed } from 'vue'
 import { cn } from '../lib/utils'
 
-const props = defineProps<{ maxLength?: number; class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  maxLength?: number
+  class?: string
+}>()
 const emit = defineEmits<{ (e: 'update:modelValue', v: string): void }>()
 const modelValue = defineModel<string>({ default: '' })
 const maxLen = computed(() => props.maxLength ?? 6)
+const tag = props.as || 'div'
 
 function onInput(e: Event) {
   const val = (e.target as HTMLInputElement).value.replace(/\D/g, '').slice(0, maxLen.value)
@@ -13,7 +18,7 @@ function onInput(e: Event) {
 }
 </script>
 <template>
-  <div :class="cn('flex items-center gap-2', props.class)" role="group" :aria-label="'One-time password'">
+  <component :is="tag" :class="cn('flex items-center gap-2', props.class)" role="group" :aria-label="'One-time password'">
     <input
       type="text"
       inputmode="numeric"
@@ -38,5 +43,5 @@ function onInput(e: Event) {
         </div>
       </div>
     </div>
-  </div>
+  </component>
 </template>

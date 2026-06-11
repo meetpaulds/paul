@@ -11,11 +11,13 @@ import { cn } from '../lib/utils'
  * - Falls back gracefully when WebAuthn is unsupported.
  */
 const props = defineProps<{
+  as?: string | any
   status?: 'idle' | 'pending' | 'success' | 'unsupported' | 'error'
   statusMessage?: string
   label?: string
   class?: string
 }>()
+const tag = props.as || 'div'
 const emit = defineEmits<{ (e: 'click'): void }>()
 
 const isPending = computed(() => props.status === 'pending')
@@ -34,7 +36,7 @@ defineOptions({ name: 'PasskeyButton' })
 </script>
 
 <template>
-  <div class="flex flex-col items-start gap-2">
+  <component :is="tag" class="flex flex-col items-start gap-2">
     <button
       type="button"
       :disabled="isPending || isUnsupported"
@@ -67,5 +69,5 @@ defineOptions({ name: 'PasskeyButton' })
     >
       {{ message }}
     </div>
-  </div>
+  </component>
 </template>

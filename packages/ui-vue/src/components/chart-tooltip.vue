@@ -2,12 +2,14 @@
 import { cn } from '@/lib/utils'
 
 const props = defineProps<{
+  as?: string | any
   class?: string
 }>()
+const tag = props.as || 'div'
 </script>
 
 <template>
-  <div :class="cn('rounded-lg border bg-background px-3 py-2 shadow-md text-xs', props.class)">
+  <component :is="tag" :class="cn('rounded-lg border bg-background px-3 py-2 shadow-md text-xs', props.class)">
     <slot />
-  </div>
+  </component>
 </template>

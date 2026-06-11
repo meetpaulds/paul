@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { cn } from '../lib/utils'
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || 'li'
 </script>
-
 <template>
-  <li :class="cn('', props.class)"><slot /></li>
+  <component :is="tag" :class="cn('', props.class)"><slot /></component>
 </template>

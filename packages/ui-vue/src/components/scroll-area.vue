@@ -12,10 +12,15 @@ import { cn } from '@/lib/utils'
  * ```
  */
 defineOptions({ name: 'ScrollArea' })
-const props = defineProps<{ class?: string; orientation?: 'vertical' | 'horizontal' | 'both' }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+  orientation?: 'vertical' | 'horizontal' | 'both'
+}>()
+const tag = props.as || ScrollAreaRoot
 </script>
 <template>
-  <ScrollAreaRoot v-bind="props" :class="cn('relative overflow-hidden', props.class)">
+  <component :is="tag" v-bind="props" :class="cn('relative overflow-hidden', props.class)">
     <ScrollAreaViewport class="h-full w-full rounded-[inherit] scroll-py-1" tabindex="0"><slot /></ScrollAreaViewport>
     <ScrollAreaScrollbar v-if="props.orientation !== 'horizontal'" orientation="vertical" class="flex touch-none select-none transition-colors h-full w-2.5 border-s border-s-transparent p-[1px]">
       <ScrollAreaThumb class="relative flex-1 rounded-full bg-border" />
@@ -24,5 +29,5 @@ const props = defineProps<{ class?: string; orientation?: 'vertical' | 'horizont
       <ScrollAreaThumb class="relative rounded-full bg-border" />
     </ScrollAreaScrollbar>
     <ScrollAreaCorner />
-  </ScrollAreaRoot>
+  </component>
 </template>

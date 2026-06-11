@@ -14,14 +14,19 @@ import { cn } from '@/lib/utils'
  * @accessibility The `content` prop becomes the tooltip text. For icon-only triggers also add `aria-label`.
  */
 defineOptions({ name: 'Tooltip' })
-const props = defineProps<{ content: string; class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  content: string
+  class?: string
+}>()
+const tag = props.as || TooltipContent
 </script>
 <template>
   <TooltipProvider>
     <TooltipRoot>
       <TooltipTrigger as-child><slot /></TooltipTrigger>
       <TooltipPortal>
-        <TooltipContent v-bind="props" :class="cn('z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-xs text-primary-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 print:hidden', props.class)">{{ props.content }}</TooltipContent>
+        <component :is="tag" v-bind="props" :class="cn('z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-xs text-primary-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 print:hidden', props.class)">{{ props.content }}</component>
       </TooltipPortal>
     </TooltipRoot>
   </TooltipProvider>

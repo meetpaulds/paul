@@ -7,6 +7,7 @@ const spinnerVariants = cva('animate-spin text-muted-foreground', {
   defaultVariants: { size: 'default' },
 })
 interface SpinnerProps {
+  as?: string | any
   size?: 'sm' | 'default' | 'lg' | 'xl'
   class?: string
 }
@@ -23,5 +24,10 @@ interface SpinnerProps {
  */
 defineOptions({ name: 'Spinner' })
 const props = defineProps<SpinnerProps>()
+const tag = props.as || 'div'
 </script>
-<template><div :class="cn('flex items-center justify-center', props.class)"><Loader2 :class="spinnerVariants({ size: props.size })" /></div></template>
+<template>
+  <component :is="tag" :class="cn('flex items-center justify-center', props.class)">
+    <Loader2 :class="spinnerVariants({ size: props.size })" />
+  </component>
+</template>

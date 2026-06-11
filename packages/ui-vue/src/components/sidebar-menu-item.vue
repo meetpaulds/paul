@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import { cn } from '../lib/utils'
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || 'li'
 </script>
-<template><li :class="cn('group/menu-item relative', props.class)"><slot /></li></template>
+<template>
+  <component :is="tag" :class="cn('group/menu-item relative', props.class)">
+    <slot />
+  </component>
+</template>

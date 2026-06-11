@@ -11,10 +11,12 @@ import { cn } from '../lib/utils'
  * - `autocomplete="email"` enables autofill.
  */
 const props = defineProps<{
+  as?: string | any
   status?: 'idle' | 'sending' | 'sent' | 'error'
   statusMessage?: string
   class?: string
 }>()
+const tag = props.as || 'form'
 const emit = defineEmits<{ (e: 'submit', email: string): void }>()
 
 const email = ref('')
@@ -38,7 +40,8 @@ defineOptions({ name: 'MagicLink' })
 </script>
 
 <template>
-  <form
+  <component
+    :is="tag"
     :class="cn('flex flex-col gap-3', props.class)"
     novalidate
     @submit="handleSubmit"
@@ -80,5 +83,5 @@ defineOptions({ name: 'MagicLink' })
     >
       {{ message }}
     </div>
-  </form>
+  </component>
 </template>

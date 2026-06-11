@@ -12,6 +12,14 @@ import { cn } from '@/lib/utils'
  * ```
  */
 defineOptions({ name: 'InputGroup' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || 'div'
 </script>
-<template><div :class="cn('flex [&>*:not(:first-child)]:-ms-px [&>*:not(:last-child)]:rounded-e-none [&>*:not(:first-child)]:rounded-s-none', props.class)"><slot /></div></template>
+<template>
+  <component :is="tag" :class="cn('flex [&>*:not(:first-child)]:-ms-px [&>*:not(:last-child)]:rounded-e-none [&>*:not(:first-child)]:rounded-s-none', props.class)">
+    <slot />
+  </component>
+</template>

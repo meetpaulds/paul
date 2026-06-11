@@ -4,11 +4,18 @@ import { Check } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 /** A single selectable option inside SelectContent. Shows a checkmark when selected. */
 defineOptions({ name: 'SelectItem' })
-const props = defineProps<{ value: string; disabled?: boolean; textValue?: string; class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  value: string
+  disabled?: boolean
+  textValue?: string
+  class?: string
+}>()
+const tag = props.as || SelectItem
 </script>
 <template>
-  <SelectItem v-bind="props" :class="cn('relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 ps-2 pe-8 text-sm outline-none focus:bg-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50', props.class)">
+  <component :is="tag" v-bind="props" :class="cn('relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 ps-2 pe-8 text-sm outline-none focus:bg-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50', props.class)">
     <span class="absolute end-2 flex h-3.5 w-3.5 items-center justify-center"><SelectItemIndicator><Check class="h-4 w-4" /></SelectItemIndicator></span>
     <SelectItemText><slot /></SelectItemText>
-  </SelectItem>
+  </component>
 </template>

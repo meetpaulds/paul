@@ -4,10 +4,14 @@ import { Circle } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 /** Individual radio button inside a RadioGroup. Requires a unique `value` prop. */
 defineOptions({ name: 'RadioGroupItem' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || RadioGroupItem
 </script>
 <template>
-  <RadioGroupItem v-bind="props" :class="cn('aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50', props.class)">
+  <component :is="tag" v-bind="props" :class="cn('aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50', props.class)">
     <RadioGroupIndicator class="flex items-center justify-center"><Circle class="h-3.5 w-3.5 fill-primary" /></RadioGroupIndicator>
-  </RadioGroupItem>
+  </component>
 </template>

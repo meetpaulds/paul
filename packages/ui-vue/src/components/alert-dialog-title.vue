@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { cn } from '../lib/utils'
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || 'h2'
 </script>
-<template><h2 :class="cn('text-lg font-semibold', props.class)"><slot /></h2></template>
+<template><component :is="tag" :class="cn('text-lg font-semibold', props.class)"><slot /></component></template>

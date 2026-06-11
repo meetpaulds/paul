@@ -21,6 +21,10 @@ import { cn } from '@/lib/utils'
  * @accessibility Arrow keys navigate between menus and items. Escape closes submenus.
  */
 defineOptions({ name: 'Menubar' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || MenubarRoot
 </script>
-<template><MenubarRoot v-bind="props" :class="cn('flex h-9 items-center gap-x-1 rounded-md border bg-background p-1 shadow-sm', props.class)"><slot /></MenubarRoot></template>
+<template><component :is="tag" v-bind="props" :class="cn('flex h-9 items-center gap-x-1 rounded-md border bg-background p-1 shadow-sm', props.class)"><slot /></component></template>

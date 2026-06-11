@@ -10,6 +10,12 @@ import { cn } from '@/lib/utils'
  * ```
  */
 defineOptions({ name: 'Skeleton' })
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || 'div'
 </script>
-<template><div :class="cn('animate-pulse rounded-md bg-primary/10', props.class)" /></template>
+<template>
+  <component :is="tag" :class="cn('animate-pulse rounded-md bg-primary/10', props.class)" />
+</template>

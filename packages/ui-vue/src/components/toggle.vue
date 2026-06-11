@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Toggle, type ToggleProps as RadixToggleProps } from 'radix-vue'
+import { Toggle as RadixToggle, type ToggleProps as RadixToggleProps } from 'radix-vue'
 import { type VariantProps, cva } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 const toggleVariants = cva('inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground', {
@@ -10,6 +10,7 @@ const toggleVariants = cva('inline-flex items-center justify-center gap-2 rounde
   defaultVariants: { variant: 'default', size: 'default' },
 })
 interface ToggleProps extends /* @vue-ignore */ RadixToggleProps {
+  as?: string | any
   variant?: 'default' | 'outline'
   size?: 'default' | 'sm' | 'lg'
   class?: string
@@ -28,5 +29,6 @@ interface ToggleProps extends /* @vue-ignore */ RadixToggleProps {
  */
 defineOptions({ name: 'Toggle' })
 const props = defineProps<ToggleProps>()
+const tag = props.as || RadixToggle
 </script>
-<template><Toggle v-bind="props" :class="cn(toggleVariants({ variant: props.variant, size: props.size }), props.class)"><slot /></Toggle></template>
+<template><component :is="tag" v-bind="props" :class="cn(toggleVariants({ variant: props.variant, size: props.size }), props.class)"><slot /></component></template>

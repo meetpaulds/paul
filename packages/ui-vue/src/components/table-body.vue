@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { cn } from '../lib/utils'
-const props = defineProps<{ class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  class?: string
+}>()
+const tag = props.as || 'tbody'
 </script>
 
 <template>
-  <tbody :class="cn('[&_tr:last-child]:border-0', props.class)"><slot /></tbody>
+  <component :is="tag" :class="cn('[&_tr:last-child]:border-0', props.class)"><slot /></component>
 </template>

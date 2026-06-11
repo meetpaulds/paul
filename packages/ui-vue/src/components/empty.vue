@@ -12,13 +12,19 @@ import { cn } from '@/lib/utils'
  * ```
  */
 defineOptions({ name: 'Empty' })
-const props = defineProps<{ title?: string; description?: string; class?: string }>()
+const props = defineProps<{
+  as?: string | any
+  title?: string
+  description?: string
+  class?: string
+}>()
+const tag = props.as || 'div'
 </script>
 <template>
-  <div :class="cn('flex flex-col items-center justify-center text-center p-8', props.class)">
+  <component :is="tag" :class="cn('flex flex-col items-center justify-center text-center p-8', props.class)">
     <slot name="icon" />
     <h3 v-if="props.title" class="mt-4 text-lg font-semibold">{{ props.title }}</h3>
     <p v-if="props.description" class="mt-2 text-sm text-muted-foreground">{{ props.description }}</p>
     <div v-if="$slots.action" class="mt-4"><slot name="action" /></div>
-  </div>
+  </component>
 </template>
