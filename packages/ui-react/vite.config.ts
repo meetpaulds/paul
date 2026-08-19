@@ -61,6 +61,7 @@ export default defineConfig({
         'vaul',
       ],
       output: {
+        banner: "'use client';",
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
