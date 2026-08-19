@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.2] — 2026-08-19
+
+### Fixed & Improved
+
+- **React Server Components (RSC):** Added `'use client'` handling and Rollup output banner to `@meetpaul/ui-react` for Next.js App Router, Remix, Astro, and TanStack Start compatibility.
+- **Button Form Safety:** Defaulted `type="button"` on `<Button>` to prevent unintended form submissions inside `<form>` elements.
+- **CSS Architecture:** Removed render-blocking remote Google Fonts `@import` and dev-only paths from distributed CSS.
+- **Accessibility:** Added `prefers-reduced-motion` safety rules for WCAG 2.2 Criterion 2.3.3 compliance.
+- **Multi-Framework:** Fixed TypeScript declaration ambient types for Svelte 5 (`@meetpaul/ui-svelte`) and configured package metadata and test scripts for Angular (`@meetpaul/ui-angular`).
+- **Tooling:** Migrated Turborepo configuration to Turbo v2 `tasks` schema and cleaned up orphaned workspace directories.
+
+---
+
 ## [1.2.0] — 2026-05-12
 
 ### Added — RTL Support, Auth Patterns, and i18n Localization (European Accessibility Differentiation)
