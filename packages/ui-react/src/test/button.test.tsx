@@ -55,4 +55,26 @@ describe('Button', () => {
     )
     expect(screen.getByRole('link', { name: 'Link Button' })).toBeInTheDocument()
   })
+
+  it('defaults to type="button" to prevent accidental form submission', () => {
+    render(<Button>Form Button</Button>)
+    const btn = screen.getByRole('button', { name: 'Form Button' })
+    expect(btn).toHaveAttribute('type', 'button')
+  })
+
+  it('allows explicit type="submit" override', () => {
+    render(<Button type="submit">Submit Form</Button>)
+    const btn = screen.getByRole('button', { name: 'Submit Form' })
+    expect(btn).toHaveAttribute('type', 'submit')
+  })
+
+  it('does not set type attribute when asChild is used', () => {
+    render(
+      <Button asChild>
+        <a href="/test">Link Button</a>
+      </Button>
+    )
+    const link = screen.getByRole('link', { name: 'Link Button' })
+    expect(link).not.toHaveAttribute('type')
+  })
 })
