@@ -1,6 +1,5 @@
-import { Component, Input, ContentChildren, QueryList, AfterContentInit, ChangeDetectionStrategy } from '@angular/core'
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { AccordionItemComponent } from './accordion-item.component'
 
 /**
  * Accordion — root container that manages a list of collapsible sections.

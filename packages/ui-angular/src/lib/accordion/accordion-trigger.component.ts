@@ -1,4 +1,4 @@
-import { Component, HostBinding, ChangeDetectionStrategy } from '@angular/core'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { cn } from '../../lib/utils'
 

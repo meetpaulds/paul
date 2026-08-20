@@ -44,7 +44,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-      const dir = (context.globals as any).dir ?? 'ltr'
+      const dir = (context.globals as Record<string, string | undefined>).dir ?? 'ltr'
       return React.createElement('div', { dir, style: { width: '100%', minHeight: '100%' } },
         React.createElement(Story)
       )

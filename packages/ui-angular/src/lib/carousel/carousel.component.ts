@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy, ContentChildren, QueryList, AfterContentInit } from '@angular/core'
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
 @Component({ selector: 'paul-carousel-item', standalone: true, template: `<div class="min-w-0 shrink-0 grow-0 basis-full ps-4"><ng-content /></div>`, changeDetection: ChangeDetectionStrategy.OnPush })
