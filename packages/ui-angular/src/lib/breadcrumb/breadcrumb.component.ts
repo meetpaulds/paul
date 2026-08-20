@@ -1,6 +1,5 @@
-import { Component, ChangeDetectionStrategy, HostBinding } from '@angular/core'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { cn } from '../../lib/utils'
 
 @Component({ selector: 'paul-breadcrumb', standalone: true, imports: [CommonModule], template: `<nav aria-label="breadcrumb"><ng-content /></nav>`, changeDetection: ChangeDetectionStrategy.OnPush })
 export class BreadcrumbComponent {}

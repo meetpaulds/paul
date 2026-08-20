@@ -55,7 +55,7 @@ export class DatePickerComponent implements OnChanges {
   }
 
   private resolvedLocale(): string {
-    return this.locale ?? (typeof (globalThis as any).navigator !== 'undefined' ? (globalThis as any).navigator.language : 'en-US')
+    return this.locale ?? (typeof navigator !== 'undefined' ? navigator.language : 'en-US')
   }
 
   private updateFormatted(): void {

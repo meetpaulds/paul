@@ -1,6 +1,5 @@
-import { Component, Input, ChangeDetectionStrategy, HostBinding } from '@angular/core'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { cn } from '../../lib/utils'
 
 @Component({ selector: 'paul-menubar', standalone: true, template: `<div class="flex h-9 items-center gap-x-1 rounded-md border bg-background p-1 shadow-sm"><ng-content /></div>`, changeDetection: ChangeDetectionStrategy.OnPush })
 export class MenubarComponent {}

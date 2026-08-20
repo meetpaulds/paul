@@ -28,19 +28,11 @@ RUN --mount=type=secret,id=npm_token \
 
 COPY . .
 
-# Build packages in dependency order, then all four Storybooks.
-# The ui-* packages export from ./dist/, so they must be compiled before the
+# Build packages and Storybooks in parallel respecting topological dependencies.
+# The ui-* packages export from ./dist/, so they are compiled before the
 # Storybook apps that consume them.
-RUN pnpm --filter @meetpaul/tokens build && \
-    pnpm --filter @meetpaul/ui-react build && \
-    pnpm --filter @meetpaul/ui-svelte build && \
-    pnpm --filter @meetpaul/ui-vue build && \
-    pnpm --filter @meetpaul/ui-angular build && \
-    export STORYBOOK_STATIC_DEPLOYMENT=true && \
-    pnpm --filter paul-storybook-react build && \
-    pnpm --filter paul-storybook-vue build && \
-    pnpm --filter paul-storybook-svelte build && \
-    pnpm --filter paul-storybook-angular build
+ENV STORYBOOK_STATIC_DEPLOYMENT=true
+RUN pnpm turbo run build
 
 # ─── Serve ────────────────────────────────────────────────────────────────────
 FROM nginx:1.27-alpine AS server

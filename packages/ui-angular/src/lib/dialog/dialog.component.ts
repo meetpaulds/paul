@@ -102,7 +102,7 @@ export class DialogComponent implements OnDestroy {
 
   close() { this.openChange.emit(false) }
 
-  onOverlayClick(e: MouseEvent) { this.close() }
+  onOverlayClick(_e: MouseEvent) { this.close() }
 
   ngOnDestroy() { this.hide() }
 }
