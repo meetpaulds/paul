@@ -1,6 +1,6 @@
 {
   "name": "@meetpaul/ui-react",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "paul — Pattern, Asset & UI Library. A complete design system built for teams who ship great products.",
   "license": "MIT",
   "author": "SirPauls <office@sirpauls.com>",
@@ -37,7 +37,8 @@
       "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     },
-    "./styles": "./dist/styles/globals.css"
+    "./styles": "./dist/styles/globals.css",
+    "./styles/*": "./dist/styles/*"
   },
   "files": [
     "dist",

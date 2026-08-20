@@ -1,7 +1,5 @@
-import { Directive, Input, HostListener, OnDestroy, inject, ViewContainerRef, TemplateRef, Component, ChangeDetectionStrategy } from '@angular/core'
-import { Overlay, OverlayRef, OverlayModule } from '@angular/cdk/overlay'
-import { TemplatePortal, PortalModule } from '@angular/cdk/portal'
-import { CommonModule } from '@angular/common'
+import { Directive, Input, HostListener, OnDestroy, inject, ViewContainerRef } from '@angular/core'
+import { Overlay, OverlayRef } from '@angular/cdk/overlay'
 import { cn } from '../../lib/utils'
 
 /**

@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 import { buttonVariants } from './button'
 import { getWeekStartDay, formatMonthYear, getWeekdayNames } from '@/lib/calendar-locale'
 
-export type CalendarProps = Omit<React.ComponentProps<typeof DayPicker>, 'locale'> & {
+export type CalendarProps = React.ComponentProps<typeof DayPicker> & {
   /** BCP 47 locale string, e.g. 'de-DE', 'ar-SA'. Defaults to the browser locale. */
   locale?: string
 }
@@ -25,7 +25,7 @@ function Calendar({
   locale,
   ...props
 }: CalendarProps) {
-  const resolvedLocale = locale ?? (typeof (globalThis as any).navigator !== 'undefined' ? (globalThis as any).navigator.language : 'en-US')
+  const resolvedLocale = locale ?? (typeof navigator !== 'undefined' ? navigator.language : 'en-US')
   const weekStart = getWeekStartDay(resolvedLocale)
   const weekdayNames = getWeekdayNames(resolvedLocale, 'short')
 

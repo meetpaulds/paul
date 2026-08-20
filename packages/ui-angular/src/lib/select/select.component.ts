@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, HostBinding, ChangeDetectionStrategy, forwardRef } from '@angular/core'
+import { Component, Input, ChangeDetectionStrategy, forwardRef } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms'
 import { cn } from '../../lib/utils'

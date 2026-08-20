@@ -6,7 +6,7 @@ class ResizeObserverMock {
   disconnect() {}
 }
 
-(global as any).ResizeObserver = ResizeObserverMock
+;(globalThis as unknown as { ResizeObserver: typeof ResizeObserverMock }).ResizeObserver = ResizeObserverMock
 
 class IntersectionObserverMock {
   observe() {}
@@ -14,7 +14,7 @@ class IntersectionObserverMock {
   disconnect() {}
 }
 
-(global as any).IntersectionObserver = IntersectionObserverMock
+;(globalThis as unknown as { IntersectionObserver: typeof IntersectionObserverMock }).IntersectionObserver = IntersectionObserverMock
 
 if (typeof window !== 'undefined' && !window.matchMedia) {
   Object.defineProperty(window, 'matchMedia', {

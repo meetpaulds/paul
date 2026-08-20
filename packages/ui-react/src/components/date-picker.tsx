@@ -43,7 +43,7 @@ export function DatePicker({
   className,
 }: DatePickerProps) {
   const [open, setOpen] = React.useState(false)
-  const resolvedLocale = locale ?? (typeof (globalThis as any).navigator !== 'undefined' ? (globalThis as any).navigator.language : 'en-US')
+  const resolvedLocale = locale ?? (typeof navigator !== 'undefined' ? navigator.language : 'en-US')
 
   return (
     <Popover open={open} onOpenChange={setOpen}>

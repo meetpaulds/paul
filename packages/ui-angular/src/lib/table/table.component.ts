@@ -1,5 +1,4 @@
-import { Component, ChangeDetectionStrategy, HostBinding, Input } from '@angular/core'
-import { cn } from '../../lib/utils'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 
 @Component({ selector: 'paul-table', standalone: true, template: `<div class="relative w-full overflow-auto"><table class="w-full caption-bottom text-sm print:border-black"><ng-content /></table></div>`, changeDetection: ChangeDetectionStrategy.OnPush })
 export class TableComponent {}

@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.3] — 2026-08-20
+
+### Fixed & Improved
+
+- **Monorepo & Build Performance:** Updated root build, test, and lint scripts to leverage Turborepo topological task graphs and build caching.
+- **Docker Build Optimization:** Modernized multi-package container build step with `turbo run build` for concurrent package compilation.
+- **CI/CD Pipeline:** Parallelized GitHub Actions workflow into dedicated `check`, `test`, and `build` jobs with caching for faster CI verification.
+- **Code Quality & Lint Cleanups:** Resolved 47+ ESLint warnings and unsafe `any` types across Angular, React, Vue, and Storybook codebases.
+- **Package Distribution:** Added explicit `./styles/*` export mappings in `@meetpaul/ui-react` for seamless CSS imports in modern React bundlers.
+- **Developer Experience:** Added dedicated individual framework storybook scripts (`dev:react`, `dev:vue`, `dev:svelte`, `dev:angular`, `build:all`).
+
+---
+
 ## [1.3.2] — 2026-08-19
 
 ### Fixed & Improved

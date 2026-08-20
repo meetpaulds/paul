@@ -19,6 +19,8 @@ export default [
         // Browser globals
         window: 'readonly',
         document: 'readonly',
+        navigator: 'readonly',
+        Intl: 'readonly',
         HTMLElement: 'readonly',
         HTMLSpanElement: 'readonly',
         HTMLButtonElement: 'readonly',

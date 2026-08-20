@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStrategy } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
-import { cn } from '../../lib/utils'
 
 /**
  * RadioGroup — single-selection control for choosing one option from a set.
